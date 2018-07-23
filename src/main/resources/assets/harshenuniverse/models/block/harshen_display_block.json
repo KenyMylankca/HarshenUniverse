@@ -1,0 +1,13 @@
+{
+	"ambientocclusion": false,
+    "parent": "block/cube",
+    "textures": {
+        "up": "harshenuniverse:blocks/harshen_display_block_top",
+		"down": "harshenuniverse:blocks/harshen_dimensional_stone",
+        "north": "harshenuniverse:blocks/harshen_display_block_edge",
+        "east": "harshenuniverse:blocks/harshen_display_block_edge",
+		"south": "harshenuniverse:blocks/harshen_display_block_edge",
+		"west": "harshenuniverse:blocks/harshen_display_block_edge",
+		"particle": "harshenuniverse:blocks/harshen_display_block_top"
+    }
+}

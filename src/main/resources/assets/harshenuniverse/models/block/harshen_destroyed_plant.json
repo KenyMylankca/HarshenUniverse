@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "harshenuniverse:blocks/harshen_destroyed_plant"
+    }
+}

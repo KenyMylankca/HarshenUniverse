@@ -1,0 +1,19 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "harshen_items",
+  "ingredients": [
+    {
+      "item": "harshenuniverse:light_emitted_essence"
+    },
+	{
+      "item": "minecraft:ender_eye"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "ingotGold"
+    }
+  ],
+  "result": {
+    "item": "harshenuniverse:fearring"
+  }
+}

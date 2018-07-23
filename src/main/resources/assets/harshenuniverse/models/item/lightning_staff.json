@@ -1,0 +1,29 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "harshenuniverse:items/lightning_staff"
+    },
+	
+	"display": {
+        "thirdperson_righthand": {
+            "rotation": [ -80, 260, -80 ],
+            "translation": [ -1, 4, 5.5 ],
+            "scale": [ 1.7, 1.7, 1.7 ]
+        },
+        "thirdperson_lefthand": {
+            "rotation": [ -80, -280, 80 ],
+            "translation": [ -1, 4, 5.5 ],
+            "scale": [ 1.7, 1.7, 1.7 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, -90, 35 ],
+            "translation": [ 1.13, 3.2, 1.13],
+            "scale": [ 1.0, 1.0, 1.0 ]
+        },
+        "firstperson_lefthand": {
+            "rotation": [ 0, 90, -35 ],
+            "translation": [ 1.13, 3.2, 1.13],
+            "scale": [ 1.0, 1.0, 1.0 ]
+        }
+    }
+}

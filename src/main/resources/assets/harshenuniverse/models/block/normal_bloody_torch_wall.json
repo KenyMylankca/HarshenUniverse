@@ -1,0 +1,6 @@
+{
+    "parent": "harshenuniverse:block/bloody_torch_wall",
+    "textures": {
+        "bloody_torch": "harshenuniverse:blocks/bloody_torch"
+    }
+}

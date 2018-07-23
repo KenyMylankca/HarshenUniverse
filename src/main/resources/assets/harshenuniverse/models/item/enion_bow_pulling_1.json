@@ -1,0 +1,6 @@
+{
+    "parent": "item/bow",
+    "textures": {
+        "layer0": "harshenuniverse:items/enion_bow_pulling_1"
+    }
+}

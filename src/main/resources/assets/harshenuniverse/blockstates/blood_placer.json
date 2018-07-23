@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "harshenuniverse:blood_placer" },
+        "facing=south": { "model": "harshenuniverse:blood_placer", "y": 180 },
+        "facing=west":  { "model": "harshenuniverse:blood_placer", "y": 270 },
+        "facing=east":  { "model": "harshenuniverse:blood_placer", "y": 90 }
+    }
+}

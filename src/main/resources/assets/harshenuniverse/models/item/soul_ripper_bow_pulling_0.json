@@ -1,0 +1,6 @@
+{
+    "parent": "item/bow",
+    "textures": {
+        "layer0": "harshenuniverse:items/soul_ripper_bow_pulling_0"
+    }
+}

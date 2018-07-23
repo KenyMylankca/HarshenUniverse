@@ -1,0 +1,15 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "harshen_items",
+  "ingredients": [
+    {
+      "item": "minecraft:blaze_powder"
+    },
+    {
+      "item": "harshenuniverse:light_emitted_essence"
+    }
+  ],
+  "result": {
+    "item": "harshenuniverse:powder_of_heretism"
+  }
+}

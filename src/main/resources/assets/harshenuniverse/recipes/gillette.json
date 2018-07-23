@@ -1,0 +1,19 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "harshen_items",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_nugget"
+    },
+	{
+      "item": "minecraft:iron_nugget"
+    },
+	{
+      "item": "minecraft:iron_nugget"
+    }
+  ],
+  "result": {
+    "item": "harshenuniverse:gillette",
+	"count": 1
+  }
+}

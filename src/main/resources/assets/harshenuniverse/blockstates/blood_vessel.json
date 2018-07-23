@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "node_active=true": { "model": "harshenuniverse:blood_vessel_node" },
+		"node_active=false": { "model": "harshenuniverse:blood_vessel" }
+	}
+}

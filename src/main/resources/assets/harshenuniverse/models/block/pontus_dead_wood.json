@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "harshenuniverse:blocks/pontus_dead_wood_top",
+        "side": "harshenuniverse:blocks/pontus_dead_wood"
+    }
+}

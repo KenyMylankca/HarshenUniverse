@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "harshen_items",
+  "ingredients": [
+    {
+      "item": "minecraft:emerald"
+    },
+	{
+      "item": "minecraft:flint"
+    }
+  ],
+  "result": {
+    "item": "harshenuniverse:emerald_shard",
+	 "count": 4
+  }
+}

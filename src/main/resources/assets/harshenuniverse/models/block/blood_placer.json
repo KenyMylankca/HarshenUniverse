@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "up": "harshenuniverse:blocks/blood_placer_top",
+		"down": "harshenuniverse:blocks/blood_placer_bottom",
+        "north": "harshenuniverse:blocks/blood_placer_front",
+        "east": "harshenuniverse:blocks/blood_placer_right",
+		"south": "harshenuniverse:blocks/blood_placer_back",
+		"west": "harshenuniverse:blocks/blood_placer_left",
+		"particle": "harshenuniverse:blocks/blood_placer_top"
+    }
+}

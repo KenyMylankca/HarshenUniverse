@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=true": { "model": "harshenuniverse:harshen_dimensional_stone" },
+        "powered=false": { "model": "harshenuniverse:harshen_dimensional_stone" }
+    }
+}

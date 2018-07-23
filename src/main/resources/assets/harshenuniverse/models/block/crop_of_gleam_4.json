@@ -1,0 +1,48 @@
+{
+    "textures": {
+        "particle": "harshenuniverse:blocks/yellow",
+        "0": "harshenuniverse:blocks/green",
+        "yellow": "harshenuniverse:blocks/yellow"
+    },
+    "elements": [
+        {
+            "name": "Cube",
+            "from": [ 7.0, 0.0, 8.0 ], 
+            "to": [ 8.0, 5.0, 9.0 ], 
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+                "east": { "texture": "#0", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+                "south": { "texture": "#0", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+                "west": { "texture": "#0", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+                "up": { "texture": "#0", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+                "down": { "texture": "#0", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 7.0, 5.0, 7.0 ], 
+            "to": [ 8.0, 6.0, 9.0 ], 
+            "faces": {
+                "north": { "texture": "#yellow", "uv": [ 0.0, 0.0, 1.0, 2.0 ] },
+                "east": { "texture": "#yellow", "uv": [ 0.0, 0.0, 1.0, 2.0 ] },
+                "south": { "texture": "#yellow", "uv": [ 0.0, 0.0, 1.0, 2.0 ] },
+                "west": { "texture": "#yellow", "uv": [ 0.0, 0.0, 1.0, 2.0 ] },
+                "up": { "texture": "#yellow", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+                "down": { "texture": "#yellow", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 6.0, 5.0, 8.0 ], 
+            "to": [ 9.0, 6.0, 9.0 ], 
+            "faces": {
+                "north": { "texture": "#yellow", "uv": [ 0.0, 0.0, 1.0, 2.0 ] },
+                "east": { "texture": "#yellow", "uv": [ 0.0, 0.0, 1.0, 2.0 ] },
+                "south": { "texture": "#yellow", "uv": [ 0.0, 0.0, 1.0, 2.0 ] },
+                "west": { "texture": "#yellow", "uv": [ 0.0, 0.0, 1.0, 2.0 ] },
+                "up": { "texture": "#yellow", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+                "down": { "texture": "#yellow", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+            }
+        }
+    ]
+}

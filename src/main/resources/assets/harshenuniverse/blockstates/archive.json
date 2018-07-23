@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "harshenuniverse:archive" },
+        "facing=south": { "model": "harshenuniverse:archive", "y": 180 },
+        "facing=west":  { "model": "harshenuniverse:archive", "y": 270 },
+        "facing=east":  { "model": "harshenuniverse:archive", "y": 90 }
+    }
+}

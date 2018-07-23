@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "harshenuniverse:harshen_magic_table" },
+        "facing=south": { "model": "harshenuniverse:harshen_magic_table", "y": 180 },
+        "facing=west":  { "model": "harshenuniverse:harshen_magic_table", "y": 270 },
+        "facing=east":  { "model": "harshenuniverse:harshen_magic_table", "y": 90 }
+    }
+}

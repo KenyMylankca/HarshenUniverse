@@ -1,0 +1,42 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "harshen_items",
+  "ingredients": [
+    {
+	  "item": "minecraft:skull",
+	  "data": 0
+    },
+	{
+	  "item": "minecraft:skull",
+	  "data": 1
+    },
+	{
+      "item": "minecraft:skull",
+	  "data": 2
+    },
+	{
+      "item": "minecraft:skull",
+	  "data": 4
+    },
+	{
+	  "item": "minecraft:skull",
+	  "data": 0
+    },
+	{
+	  "item": "minecraft:skull",
+	  "data": 1
+    },
+	{
+      "item": "minecraft:skull",
+	  "data": 2
+    },
+	{
+      "item": "minecraft:skull",
+	  "data": 4
+    }
+  ],
+  "result": {
+    "item": "harshenuniverse:block_of_heads",
+	 "count": 1
+  }
+}

@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "dirt_type=0": { "model": "harshenuniverse:jewel_dirt.overworld" },
+        "dirt_type=1": { "model": "harshenuniverse:jewel_dirt.pontus" }
+    }
+}

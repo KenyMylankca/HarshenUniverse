@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "age=0": { "model": "harshenuniverse:crop_of_gleam_0" },
+        "age=1": { "model": "harshenuniverse:crop_of_gleam_1" },
+		"age=2": { "model": "harshenuniverse:crop_of_gleam_2" },
+		"age=3": { "model": "harshenuniverse:crop_of_gleam_3" },
+		"age=4": { "model": "harshenuniverse:crop_of_gleam_4" },
+		"age=5": { "model": "harshenuniverse:crop_of_gleam_5" },
+		"age=6": { "model": "harshenuniverse:crop_of_gleam_6" },
+		"age=7": { "model": "harshenuniverse:crop_of_gleam_7" }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "pools": [
+		{
+			"name":"iron_heart",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "harshenuniverse:iron_heart",
+                    "weight": 1,
+					"conditions": [
+						{
+							"condition": "random_chance_with_looting",
+							"chance": 0.85,
+							"looting_multiplier": 0.0
+						}
+					]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "textures": {
+        "0": "harshenuniverse:blocks/harshen_dimensional_flat_plate",
+        "particle": "harshenuniverse:blocks/harshen_dimensional_flat_plate"
+    },
+    "elements": [
+        {
+            "name": "main",
+            "from": [ 0.0, 0.0, 0.0 ], 
+            "to": [ 16.0, 0.1, 16.0 ], 
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 0.0 ] },
+                "east": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 0.0 ] },
+                "south": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 0.0 ] },
+                "west": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 0.0 ] },
+                "up": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        }
+    ]
+}

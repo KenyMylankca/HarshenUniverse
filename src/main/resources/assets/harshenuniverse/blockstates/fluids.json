@@ -1,0 +1,13 @@
+{
+    "forge_marker": 1,
+    "variants": {
+        "harshen_dimensional_fluid": {
+            "model": "forge:fluid",
+            "custom": { "fluid": "harshen_dimensional_fluid" }
+        },
+		"harshing_water": {
+            "model": "forge:fluid",
+            "custom": { "fluid": "harshing_water" }
+        }
+    }
+}

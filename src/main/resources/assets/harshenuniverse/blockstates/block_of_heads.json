@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "harshenuniverse:block_of_heads" },
+        "facing=south": { "model": "harshenuniverse:block_of_heads", "y": 180 },
+        "facing=west":  { "model": "harshenuniverse:block_of_heads", "y": 270 },
+        "facing=east":  { "model": "harshenuniverse:block_of_heads", "y": 90 }
+    }
+}

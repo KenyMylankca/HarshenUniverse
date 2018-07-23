@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "harshenuniverse:items/soul_harsher_pickaxe"
+    }
+}

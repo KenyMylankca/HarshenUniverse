@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "harshenuniverse:blocks/harshen_dimensional_dirt"
+    }
+}
