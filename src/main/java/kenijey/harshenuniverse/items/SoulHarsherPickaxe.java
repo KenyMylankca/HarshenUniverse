@@ -23,7 +23,6 @@ public class SoulHarsherPickaxe extends ItemPickaxe
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		tooltip.add("\u00A73" + new TextComponentTranslation("pickaxe1").getFormattedText());
-		tooltip.add("\u00A73" + new TextComponentTranslation("pickaxe2").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 

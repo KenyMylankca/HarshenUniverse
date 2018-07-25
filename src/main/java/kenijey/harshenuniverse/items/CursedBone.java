@@ -36,7 +36,7 @@ public class CursedBone extends Item
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add("\u00A74" + new TextComponentTranslation("cursedbone1").getFormattedText());
+		tooltip.add("\u00A73" + new TextComponentTranslation("cursedbone1").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 	

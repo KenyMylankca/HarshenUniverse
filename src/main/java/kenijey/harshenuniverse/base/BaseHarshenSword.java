@@ -26,9 +26,8 @@ public abstract class BaseHarshenSword extends ItemSword
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new TextComponentTranslation(" ").getFormattedText());
 		String type = this.getSwordType();
-		tooltip.add("\u00a74" + new TextComponentTranslation(type + "1").getFormattedText());
+		tooltip.add("\u00A73" + new TextComponentTranslation(type + "1").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 }

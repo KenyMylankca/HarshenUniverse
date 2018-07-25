@@ -45,7 +45,7 @@ public class LightningStaff extends BaseHarshenStaff
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add("\u00A7b" + new TextComponentTranslation("lightning_staff0").getFormattedText());
+		tooltip.add(new TextComponentTranslation("lightning_staff0").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 	

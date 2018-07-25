@@ -117,8 +117,8 @@ public class BloodBlock extends Block
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add("\u00A74" + new TextComponentTranslation("blood1").getFormattedText());
-		tooltip.add("\u00a74" + new TextComponentTranslation("blood2").getFormattedText());
+		tooltip.add(new TextComponentTranslation("blood1").getFormattedText());
+		tooltip.add(new TextComponentTranslation("blood2").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 }

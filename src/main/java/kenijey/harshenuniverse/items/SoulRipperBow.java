@@ -53,7 +53,7 @@ public class SoulRipperBow extends BaseHarshenStaff
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		tooltip.add("\u00A73" + new TextComponentTranslation("soulripperbow1").getFormattedText());
-		tooltip.add("\u00A74" + new TextComponentTranslation("soulripperbow2").getFormattedText());
+		tooltip.add("\u00A73" + new TextComponentTranslation("soulripperbow2").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 
