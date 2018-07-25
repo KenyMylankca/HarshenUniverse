@@ -11,6 +11,7 @@ import kenijey.harshenuniverse.HarshenVillagers;
 import kenijey.harshenuniverse.WorldGen;
 import kenijey.harshenuniverse.api.EnumInventorySlots;
 import kenijey.harshenuniverse.armor.HarshenArmors;
+import kenijey.harshenuniverse.base.BaseHarshenBiped;
 import kenijey.harshenuniverse.base.HarshenStructure;
 import kenijey.harshenuniverse.biomes.HarshenBiomes;
 import kenijey.harshenuniverse.config.HarshenConfigs;
@@ -41,7 +42,6 @@ import kenijey.harshenuniverse.handlers.HandlerServerNeedingHarshenEffects;
 import kenijey.harshenuniverse.handlers.HandlerVillagerSpawn;
 import kenijey.harshenuniverse.interfaces.ICommandStructure;
 import kenijey.harshenuniverse.internal.HarshenAPIHandler;
-import kenijey.harshenuniverse.models.ModelJaguarArmor;
 import kenijey.harshenuniverse.network.HarshenNetwork;
 import kenijey.harshenuniverse.objecthandlers.FaceRenderer;
 import kenijey.harshenuniverse.potions.HarshenPotions;
@@ -202,7 +202,7 @@ public class CommonProxy
 	
     public Particle spawnParticle(EnumHarshenParticle type, Vec3d position, Vec3d directionSpeed, float scale, boolean disableMoving, Object...info){return null;};
 	
-	public ModelJaguarArmor getArmorModel(int id)
+	public BaseHarshenBiped getArmorModel(int id)
 	{
 		return null;
 	};

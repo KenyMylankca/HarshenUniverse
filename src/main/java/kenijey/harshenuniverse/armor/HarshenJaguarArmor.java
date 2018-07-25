@@ -38,11 +38,11 @@ public class HarshenJaguarArmor extends ItemArmor
 				switch (type) {
 				case HEAD:
 				case LEGS:
-					armorModel = HarshenUniverse.proxy.getArmorModel(0);
+					armorModel = (ModelJaguarArmor) HarshenUniverse.proxy.getArmorModel(0);
 					break;
 				case FEET:
 				case CHEST:
-					armorModel = HarshenUniverse.proxy.getArmorModel(1);
+					armorModel = (ModelJaguarArmor) HarshenUniverse.proxy.getArmorModel(1);
 					break;
 				default:
 					break;
