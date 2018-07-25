@@ -11,6 +11,7 @@ import kenijey.harshenuniverse.blocks.BloodFactory;
 import kenijey.harshenuniverse.blocks.BloodPlacer;
 import kenijey.harshenuniverse.blocks.BloodVessel;
 import kenijey.harshenuniverse.blocks.BloodyTorch;
+import kenijey.harshenuniverse.blocks.BloodyWool;
 import kenijey.harshenuniverse.blocks.CropOfGleam;
 import kenijey.harshenuniverse.blocks.GildedObsidian;
 import kenijey.harshenuniverse.blocks.HarshenChaoticRock;
@@ -111,6 +112,7 @@ public class HarshenBlocks
 	public static final Block GILDED_OBSIDIAN = new GildedObsidian();
 	public static final Block JEWEL_DIRT = new JewelDirt();
 	public static final Block BLOODY_TORCH = new BloodyTorch();
+	public static final Block BLOODY_WOOL = new BloodyWool();
 	
 	public static final BlockCrops CROP_OF_GLEAM = new CropOfGleam();
 	
@@ -164,6 +166,7 @@ public class HarshenBlocks
 		regBlock(GILDED_OBSIDIAN, 64);
 		regBlock(JEWEL_DIRT, 64);
 		regBlock(BLOODY_TORCH, 64);
+		regBlock(BLOODY_WOOL, 64);
 		
 		regSingleBlock(HERETIC_CAULDRON_TOP);
 		regSingleBlock(CROP_OF_GLEAM);

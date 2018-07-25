@@ -175,7 +175,7 @@ tile.pontus_far_leaves.name=Pontus Far Leaves
 tile.jewel_dirt.overworld.name=Jewely Dirt
 tile.jewel_dirt.pontus.name=Jewely Dirt
 tile.bloody_torch.name=§4Bloody Torch§r
-
+tile.bloody_wool.name=§4Bloody Wool§r
 
 #fluids
 fluid.harshen_dimensional_fluid=Harshen Dimensional Fluid

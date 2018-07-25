@@ -71,6 +71,7 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 		registry.registerPedestalSlabRecipe(new HarshenStack(new ItemStack(HarshenItems.PONTUS_CUBE)), new ItemStack(HarshenItems.BLOODY_PONTUS_CUBE));
 		registry.registerPedestalSlabRecipe(new HarshenStack(new ItemStack(Items.BONE)), new ItemStack(HarshenItems.CURSED_BONE));
 		registry.registerPedestalSlabRecipe(new HarshenStack(new ItemStack(Blocks.TORCH)), new ItemStack(HarshenBlocks.BLOODY_TORCH));
+		registry.registerPedestalSlabRecipe(new HarshenStack(new ItemStack(Blocks.WOOL)), new ItemStack(HarshenBlocks.BLOODY_WOOL));
 		
 		//cauldron recipes
 		registry.registerCauldronRecipe(new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL)), new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1), GlassContainerValues.BLOOD.getType());
