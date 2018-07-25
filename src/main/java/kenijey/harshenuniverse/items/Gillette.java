@@ -40,7 +40,7 @@ public class Gillette extends BaseItemMetaData
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add("\u00A74" + new TextComponentTranslation("gillette1").getFormattedText());
+		tooltip.add("\u00A73" + new TextComponentTranslation("gillette1").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 
