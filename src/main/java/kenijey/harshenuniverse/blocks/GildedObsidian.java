@@ -14,5 +14,4 @@ public class GildedObsidian extends Block
         setResistance(40.0f);
         setHarvestLevel("pickaxe", 3);
     }
-
 }

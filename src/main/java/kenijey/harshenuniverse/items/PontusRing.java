@@ -16,9 +16,4 @@ public class PontusRing extends Item implements IHarshenProvider
 	public EnumInventorySlots getSlot() {
 		return EnumInventorySlots.RING1;
 	}
-	
-	@Override
-	public int toolTipLines() {
-		return 1;
-	}
 }

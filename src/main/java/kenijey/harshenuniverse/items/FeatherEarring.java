@@ -16,4 +16,9 @@ public class FeatherEarring extends Item implements IHarshenProvider
 	public EnumInventorySlots getSlot() {
 		return EnumInventorySlots.LEFT_EAR;
 	}
+	
+	@Override
+	public int toolTipLines() {
+		return 1;
+	}
 }

@@ -31,4 +31,9 @@ public class OneRing extends Item implements IHarshenProvider
 		player.playSound(SoundEvents.ENTITY_ENDEREYE_DEATH, 1f, 0.3f);
 		IHarshenProvider.super.onRemove(player, slot);
 	}
+	
+	@Override
+	public int toolTipLines() {
+		return 1;
+	}
 }
