@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import kenijey.harshenuniverse.base.BaseItemMetaData;
 import kenijey.harshenuniverse.config.HarshenConfigs;
 import kenijey.harshenuniverse.enums.items.EnumBloodCollector;
+import kenijey.harshenuniverse.enums.items.EnumGillette;
 import kenijey.harshenuniverse.enums.items.EnumPontusGateSpawner;
 import kenijey.harshenuniverse.enums.items.EnumPontusGateSpawnerParts;
 import kenijey.harshenuniverse.enums.items.EnumProp;
@@ -147,7 +148,7 @@ public class HarshenItems
 	public static final Item SOUL_BINDING_PENDANT = new SoulBindingPendant();
 	public static final Item REACH_PENDANT = new ReachPendant();
 	public static final Item EMPTY_RING = new EmptyRing();
-	public static final Item GILLETTE = new Gillette();
+	public static final BaseItemMetaData GILLETTE = new Gillette();
 	public static final Item CURSED_BONE = new CursedBone();
 	public static final Item SOUL_HARSHER_SPADE = new SoulHarsherSpade();
 	public static final Item REFLECTOR_PENDANT = new ReflectorPendant();
@@ -211,10 +212,10 @@ public class HarshenItems
 		regItem(RING_OF_BLOOD);
 		regItem(SOUL_BINDING_PENDANT);
 		regItem(REACH_PENDANT);
-		regItem(GILLETTE);
 		regItem(SOUL_HARSHER_SPADE);
 		regItem(REFLECTOR_PENDANT);
 		
+		regMetaItem(GILLETTE, EnumGillette.getNames(), "gillette_");
 		regMetaItem(RITUAL_STICK, emptyList(EnumRitualStick.values().length), "ritual_stick");
 		regMetaItem(PONTUS_WORLD_GATE_SPAWNER, EnumPontusGateSpawner.getNames(), "pontus_world_gate_spawner_");
 		regMetaItem(PONTUS_WORLD_GATE_PARTS, EnumPontusGateSpawnerParts.getNames(), "pontus_world_gate_part_");

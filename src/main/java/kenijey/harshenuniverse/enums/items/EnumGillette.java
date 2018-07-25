@@ -2,28 +2,21 @@ package kenijey.harshenuniverse.enums.items;
 
 import net.minecraft.util.IStringSerializable;
 
-public enum EnumRitualCrystal implements IStringSerializable
+public enum EnumGillette implements IStringSerializable
 {
-	PASSIVE("passive", false),
-	ACTIVE("active", true);
+	CLEAN("clean"),
+	BLOODY("bloody");
 	
-	private boolean active;
 	private String name;
 	
-	private EnumRitualCrystal(String name, boolean active)
+	private EnumGillette(String name)
 	{
 		this.name = name;
-		this.active = active;
 	}
 
 	@Override
 	public String getName() {
 		return name;
-	}
-	
-	public boolean isActive()
-	{
-		return this.active;
 	}
 	
 	@Override
@@ -34,7 +27,7 @@ public enum EnumRitualCrystal implements IStringSerializable
 	public static String[] getNames()
 	{
 		String s = "";
-		for(EnumRitualCrystal l : EnumRitualCrystal.values())
+		for(EnumGillette l : EnumGillette.values())
 			s += l.getName() + " ";
 		return s.split(" ");
 	}
