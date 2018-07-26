@@ -80,6 +80,40 @@ public class HarshenCraftingRecipes
 				
 				'i', new ItemStack(HarshenItems.HARSHEN_SOUL_INGOT));
 		
+		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "bloody_armor_helmet"), new ResourceLocation(group),
+				new ItemStack(HarshenArmors.BLOODY_ARMOR_HELMET),
+				"ili",
+				"i i",
+				
+				'i', new ItemStack(Items.LEATHER),
+				'l', new ItemStack(HarshenBlocks.BLOODY_WOOL));
+		
+		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "bloody_armor_chestplate"), new ResourceLocation(group),
+				new ItemStack(HarshenArmors.BLOODY_ARMOR_CHESTPLATE),
+				"i i",
+				"ili",
+				"ili",
+				
+				'i', new ItemStack(Items.LEATHER),
+				'l', new ItemStack(HarshenBlocks.BLOODY_WOOL));
+		
+		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "bloody_armor_leggings"), new ResourceLocation(group),
+				new ItemStack(HarshenArmors.BLOODY_ARMOR_LEGGINGS),
+				"ili",
+				"i i",
+				"i i",
+				
+				'i', new ItemStack(Items.LEATHER),
+				'l', new ItemStack(HarshenBlocks.BLOODY_WOOL));
+		
+		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "bloody_armor_boots"), new ResourceLocation(group),
+				new ItemStack(HarshenArmors.BLOODY_ARMOR_BOOTS),
+				"l l",
+				"i i",
+				
+				'l', new ItemStack(Items.LEATHER),
+				'i', new ItemStack(HarshenBlocks.BLOODY_WOOL));
+		
 		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "harshen_dimensional_pedestal"), new ResourceLocation(group),
 				new ItemStack(HarshenBlocks.HARSHEN_DIMENSIONAL_PEDESTAL),
 				" i ",
