@@ -961,6 +961,20 @@ public class HarshenUtils
     	return c==4;
     }
     
+    public static boolean hasBloodyArmorSet(EntityLivingBase livingbase)
+    {
+    	int c=0;
+    	if(livingbase instanceof EntityLivingBase)
+    		for (ItemStack stack : livingbase.getArmorInventoryList())
+    		{
+    			if(stack.getItem() == HarshenArmors.BLOODY_ARMOR_BOOTS) c++;
+    			if(stack.getItem() == HarshenArmors.BLOODY_ARMOR_CHESTPLATE) c++;
+    			if(stack.getItem() == HarshenArmors.BLOODY_ARMOR_HELMET) c++;
+    			if(stack.getItem() == HarshenArmors.BLOODY_ARMOR_LEGGINGS) c++;
+    		}
+    	return c==4;
+    }
+    
     public static boolean hasBloodyTorch(EntityPlayer player)
     {
     	int px = MathHelper.floor(player.posX);

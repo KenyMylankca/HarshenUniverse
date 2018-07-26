@@ -86,12 +86,12 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class HarshenItems 
 {
+	public static final Item ITEM_HARSHEN_DIMENSIONAL_DOOR = new HarshenDimensionalDoor();
 	public static final Item HARSHEN_BOOK = new GuidanceOfHarshenUniverse();
 	public static final Item HARSHEN_SOUL_FRAGMENT = new HarshenSoulFragment();
 	public static final Item SOUL_HARSHER_SWORD = new SoulHarsherSword();
 	public static final Item EMPOWERED_SOUL_HARSHER_SWORD = new EmpoweredSoulHarsherSword();
 	public static final Item SOUL_HARSHER_PICKAXE = new SoulHarsherPickaxe();
-	public static final Item ITEM_HARSHEN_DIMENSIONAL_DOOR = new HarshenDimensionalDoor();
 	public static final Item ITIUM = new Itium();
 	public static final Item HARSHEN_CRYSTAL = new HarshenCrystal();
 	public static final Item HARSHEN_SOUL_INGOT = new HarshenSoulIngot();
@@ -155,8 +155,8 @@ public class HarshenItems
 	
 	public static void preInit()
 	{
-		regItem(HARSHEN_SOUL_FRAGMENT, 8);
 		regItem(ITEM_HARSHEN_DIMENSIONAL_DOOR,8);
+		regItem(HARSHEN_SOUL_FRAGMENT, 8);
 		regItem(ITIUM,8);
 		regItem(HARSHEN_CRYSTAL, 18);
 		regItem(HARSHEN_SOUL_INGOT, 8);

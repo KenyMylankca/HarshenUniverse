@@ -48,7 +48,6 @@ public class HarshenDimensionalDoor extends BlockDoor
 		}
 	}
 	
-	
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
@@ -59,7 +58,6 @@ public class HarshenDimensionalDoor extends BlockDoor
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		return HarshenItems.ITEM_HARSHEN_DIMENSIONAL_DOOR;
 	}
-	
 	
 	@Override
 	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos,
