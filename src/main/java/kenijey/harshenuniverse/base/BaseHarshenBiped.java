@@ -6,11 +6,6 @@ import net.minecraft.client.model.ModelRenderer;
 
 public class BaseHarshenBiped extends ModelBiped 
 {
-	public BaseHarshenBiped()
-	{
-		this(0.0F);
-	}
-
 	public BaseHarshenBiped(float modelSize)
     {
         this(modelSize, 0.0F, 64, 32);

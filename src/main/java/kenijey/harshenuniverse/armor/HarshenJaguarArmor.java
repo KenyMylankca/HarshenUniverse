@@ -34,19 +34,7 @@ public class HarshenJaguarArmor extends ItemArmor
 			if (itemStack.getItem() instanceof ItemArmor)
 			{
 				EntityEquipmentSlot type = ((ItemArmor) itemStack.getItem()).armorType;
-				ModelJaguarArmor armorModel = null;
-				switch (type) {
-				case HEAD:
-				case LEGS:
-					armorModel = (ModelJaguarArmor) HarshenUniverse.proxy.getArmorModel(0);
-					break;
-				case FEET:
-				case CHEST:
-					armorModel = (ModelJaguarArmor) HarshenUniverse.proxy.getArmorModel(1);
-					break;
-				default:
-					break;
-				}
+				ModelJaguarArmor armorModel = new ModelJaguarArmor(1f);
 				armorModel.slotActive = armorSlot;
 				armorModel.isSneak = _default.isSneak;
 				armorModel.isRiding = _default.isRiding;

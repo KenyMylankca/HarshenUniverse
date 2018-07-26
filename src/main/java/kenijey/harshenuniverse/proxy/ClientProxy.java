@@ -26,7 +26,6 @@ import kenijey.harshenuniverse.handlers.client.HandlerKeyBinding;
 import kenijey.harshenuniverse.handlers.client.HandlerRenderError;
 import kenijey.harshenuniverse.handlers.client.HandlerRendererGuiInventory;
 import kenijey.harshenuniverse.internal.HarshenAPIHandler;
-import kenijey.harshenuniverse.models.ModelJaguarArmor;
 import kenijey.harshenuniverse.objecthandlers.FaceRenderer;
 import kenijey.harshenuniverse.particle.ParticleBlood;
 import kenijey.harshenuniverse.particle.ParticleCauldron;
@@ -212,17 +211,6 @@ public class ClientProxy extends CommonProxy
 	        }
         if (entityFx != null) {minecraft.effectRenderer.addEffect(entityFx);}
         return entityFx;
-    }
-    
-    @Override
-    public ModelJaguarArmor getArmorModel(int id) {
-    	switch (id) {
-    	 case 0:
-    	 return new ModelJaguarArmor(1.0f);
-    	 case 1:
-    	 return new ModelJaguarArmor(0.5f);
-    	}
-    	return null;
     }
     
     @Override

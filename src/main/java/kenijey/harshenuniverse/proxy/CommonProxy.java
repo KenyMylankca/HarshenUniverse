@@ -11,7 +11,6 @@ import kenijey.harshenuniverse.HarshenVillagers;
 import kenijey.harshenuniverse.WorldGen;
 import kenijey.harshenuniverse.api.EnumInventorySlots;
 import kenijey.harshenuniverse.armor.HarshenArmors;
-import kenijey.harshenuniverse.base.BaseHarshenBiped;
 import kenijey.harshenuniverse.base.HarshenStructure;
 import kenijey.harshenuniverse.biomes.HarshenBiomes;
 import kenijey.harshenuniverse.config.HarshenConfigs;
@@ -201,11 +200,6 @@ public class CommonProxy
 	}
 	
     public Particle spawnParticle(EnumHarshenParticle type, Vec3d position, Vec3d directionSpeed, float scale, boolean disableMoving, Object...info){return null;};
-	
-	public BaseHarshenBiped getArmorModel(int id)
-	{
-		return null;
-	};
 	
 	public void addErroredPosition(FaceRenderer renderer){}
 	
