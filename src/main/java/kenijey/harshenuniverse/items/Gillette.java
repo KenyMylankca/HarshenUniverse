@@ -1,12 +1,9 @@
 package kenijey.harshenuniverse.items;
 
 import java.util.List;
-import java.util.Random;
 
-import kenijey.harshenuniverse.HarshenBlocks;
 import kenijey.harshenuniverse.HarshenUtils;
 import kenijey.harshenuniverse.base.BaseItemMetaData;
-import kenijey.harshenuniverse.config.GeneralConfig;
 import kenijey.harshenuniverse.damagesource.DamageSourceBleeding;
 import kenijey.harshenuniverse.potions.HarshenPotions;
 import net.minecraft.client.util.ITooltipFlag;
@@ -30,10 +27,8 @@ public class Gillette extends BaseItemMetaData
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
     {
-		playerIn.addPotionEffect(new PotionEffect(HarshenPotions.potionBleeding, 100, 0));
+		playerIn.addPotionEffect(new PotionEffect(HarshenPotions.potionBleeding, 80, 0));
 		playerIn.attackEntityFrom(new DamageSourceBleeding(), 1f);
-		if(worldIn.isAirBlock(playerIn.getPosition()) && GeneralConfig.bloodDrops && new Random().nextDouble() < GeneralConfig.bloodChance)
-			worldIn.setBlockState(playerIn.getPosition(), HarshenBlocks.BLOOD_BLOCK.getDefaultState(), 3);
 		playerIn.getHeldItemMainhand().setItemDamage(1);
         return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, playerIn.getHeldItem(handIn));
     }

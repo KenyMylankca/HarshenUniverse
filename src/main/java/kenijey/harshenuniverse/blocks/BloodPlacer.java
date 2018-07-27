@@ -3,6 +3,7 @@ package kenijey.harshenuniverse.blocks;
 import java.util.HashMap;
 
 import kenijey.harshenuniverse.HarshenBlocks;
+import kenijey.harshenuniverse.config.GeneralConfig;
 import kenijey.harshenuniverse.network.HarshenNetwork;
 import kenijey.harshenuniverse.network.packets.MessagePacketTileEntityBloodPlacerUpdated;
 import kenijey.harshenuniverse.tileentity.TileEntityBloodVessel;
@@ -40,7 +41,7 @@ public class BloodPlacer extends BlockHorizontal
 				worldIn.getBlockState(pos.up()).getBlock() instanceof BloodVessel &&
 					((TileEntityBloodVessel)worldIn.getTileEntity(pos.up())).canRemove(1))
 		{
-			for(int i=0; i<10; i++)
+			for(int i=0; i<GeneralConfig.bloodHeightRange; i++)
 			{
 				if(!(worldIn.getBlockState(frontPos.down(i)).getBlock() instanceof BloodBlock) &&
 					!blocksOnMap.containsKey(frontPos.down(i)) && worldIn.isSideSolid(frontPos.down(i), EnumFacing.UP))

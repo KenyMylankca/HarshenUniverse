@@ -51,6 +51,9 @@ import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.monster.EntityWitch;
+import net.minecraft.entity.passive.EntityAnimal;
+import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
@@ -71,6 +74,7 @@ import net.minecraft.network.play.server.SPacketRespawn;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EntityDamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
@@ -997,5 +1001,28 @@ public class HarshenUtils
 					}
 				}
 		return false;
+    }
+    
+    public static void splashBlood(EntityLivingBase entityIn)
+    {
+    	Class[] AllowedEntities = {EntityPlayerMP.class, EntityWitch.class, EntityVillager.class, EntityAnimal.class};
+    	
+    	World world = entityIn.getEntityWorld();
+    	BlockPos pos = entityIn.getPosition();
+    	IBlockState state = world.getBlockState(pos);
+		
+    	if(GeneralConfig.bloodDrops && new Random().nextDouble() < GeneralConfig.bloodChance && HarshenUtils.toArray(AllowedEntities).contains(entityIn.getClass()) && world.isAirBlock(pos))
+			for(int i=0; i<GeneralConfig.bloodHeightRange; i++)
+			{
+				if(world.isAirBlock(pos.down(i)) && world.isSideSolid(pos.down(i+1), EnumFacing.UP) && !(world.isAirBlock(pos.down(i+1))))
+				{
+					BlockPos bloodpos = pos.down(i);
+					if(world.getBlockState(bloodpos).getBlock().canPlaceBlockAt(world, bloodpos) )
+					{
+						world.setBlockState(bloodpos, HarshenBlocks.BLOOD_BLOCK.getDefaultState(), 3);
+						break;
+					}
+				}
+			}
     }
 }
