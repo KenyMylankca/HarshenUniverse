@@ -12,11 +12,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 
-public class EnderPendant extends Item implements IHarshenProvider
+public class EnderNecklace extends Item implements IHarshenProvider
 {
-	public EnderPendant() {
-		setRegistryName("ender_pendant");
-		setUnlocalizedName("ender_pendant");
+	public EnderNecklace() {
+		setRegistryName("ender_necklace");
+		setUnlocalizedName("ender_necklace");
 	}
 	
 	@Override

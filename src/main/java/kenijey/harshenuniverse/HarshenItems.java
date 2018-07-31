@@ -26,7 +26,7 @@ import kenijey.harshenuniverse.items.EmeraldShard;
 import kenijey.harshenuniverse.items.EmpoweredSoulHarsherSword;
 import kenijey.harshenuniverse.items.EmptyRing;
 import kenijey.harshenuniverse.items.EnderBow;
-import kenijey.harshenuniverse.items.EnderPendant;
+import kenijey.harshenuniverse.items.EnderNecklace;
 import kenijey.harshenuniverse.items.EnionBow;
 import kenijey.harshenuniverse.items.Fearring;
 import kenijey.harshenuniverse.items.FeatherEarring;
@@ -124,7 +124,7 @@ public class HarshenItems
 	public static final Item BLOODY_PONTUS_CUBE = new BloodyPontusCube();
 	public static final Item PUNCHY_RING = new PunchyRing();
 	public static final Item LOOTING_EARRING = new LootingEarring();
-	public static final Item ENDER_PENDANT = new EnderPendant();
+	public static final Item ENDER_NECKLACE = new EnderNecklace();
 	public static final Item SOUL_SHIELD = new SoulShield();
 	public static final Item WATER_EARRING = new WaterEarring();
 	public static final Item XRAY_PENDANT = new XrayPendant();
@@ -194,7 +194,7 @@ public class HarshenItems
 		regItem(ZOMBI_PENDANT);
 		regItem(PUNCHY_RING);
 		regItem(LOOTING_EARRING);
-		regItem(ENDER_PENDANT);
+		regItem(ENDER_NECKLACE);
 		regItem(FEATHER_EARRING);
 		regItem(FEARRING);
 		regItem(ONE_RING);

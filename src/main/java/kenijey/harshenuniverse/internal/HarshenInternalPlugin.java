@@ -118,7 +118,7 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 				new HarshenStack("blockRedstone"), new HarshenStack("blockPrismarineDark"));
 		registry.registerLightningRecipe(new ItemStack(HarshenItems.LOOTING_EARRING), true, new HarshenStack(new ItemStack(HarshenBlocks.BLOCK_OF_HEADS)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)),
 				new HarshenStack(HarshenUtils.getLapis()), new HarshenStack("gemEmerald"));
-		registry.registerLightningRecipe(new ItemStack(HarshenItems.ENDER_PENDANT), true, new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)), new HarshenStack(new ItemStack(Items.ENDER_EYE)),
+		registry.registerLightningRecipe(new ItemStack(HarshenItems.ENDER_NECKLACE), true, new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)), new HarshenStack(new ItemStack(Items.ENDER_EYE)),
 				new HarshenStack(new ItemStack(HarshenItems.POWDER_OF_HERETISM)), new HarshenStack(new ItemStack(HarshenItems.SOUL_INFUSED_INGOT)));
 		registry.registerLightningRecipe(new ItemStack(HarshenItems.WATER_EARRING), true, new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)), new HarshenStack(new ItemStack(Items.PRISMARINE_CRYSTALS)),
 				new HarshenStack(new ItemStack(HarshenItems.ITIUM)), new HarshenStack(new ItemStack(HarshenItems.BLOOD_ESSENCE)));

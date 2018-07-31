@@ -27,7 +27,7 @@ public class AccessoryConfig extends BaseConfig
 		xrayAreaY = get("xray.distance.y", HarshenItems.XRAY_PENDANT, 30);
 		xrayAreaZ = get("xray.distance.z", HarshenItems.XRAY_PENDANT, 30);
 		xrayListSize = get("xray.listsize", HarshenItems.XRAY_PENDANT, 20); 
-		enderPendantDistance = get("enderpendant.distance", HarshenItems.ENDER_PENDANT, 66);
+		enderPendantDistance = get("enderpendant.distance", HarshenItems.ENDER_NECKLACE, 66);
 		reachPendantLength = get("reach.length", HarshenItems.REACH_PENDANT, 7d);
 	}
 	
