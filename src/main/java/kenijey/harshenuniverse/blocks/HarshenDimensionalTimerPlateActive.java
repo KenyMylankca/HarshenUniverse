@@ -14,12 +14,12 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class HarshenHiddenPlateActive extends BaseHarshenBlockBreakableWithSHPickaxe
+public class HarshenDimensionalTimerPlateActive extends BaseHarshenBlockBreakableWithSHPickaxe
 {
-	public HarshenHiddenPlateActive() {
+	public HarshenDimensionalTimerPlateActive() {
 		setTickRandomly(true);
-        setUnlocalizedName("harshen_dimensional_plate_active");
-        setRegistryName("harshen_dimensional_plate_active");		
+        setUnlocalizedName("harshen_dimensional_timer_plate_active");
+        setRegistryName("harshen_dimensional_timer_plate_active");		
 	}
 	
 	@Override
@@ -32,7 +32,7 @@ public class HarshenHiddenPlateActive extends BaseHarshenBlockBreakableWithSHPic
 	
 	@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-		worldIn.setBlockState(pos, HarshenBlocks.HARSHEN_HIDDEN_PLATE.getDefaultState(), 3);
+		worldIn.setBlockState(pos, HarshenBlocks.HARSHEN_DIMENSIONAL_TIMER_PLATE.getDefaultState(), 3);
 		super.updateTick(worldIn, pos, state, rand);
 	}
 	
@@ -49,6 +49,6 @@ public class HarshenHiddenPlateActive extends BaseHarshenBlockBreakableWithSHPic
 	 @Override
 	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos,
 			EntityPlayer player) {
-		return new ItemStack(HarshenBlocks.HARSHEN_HIDDEN_PLATE);
+		return new ItemStack(HarshenBlocks.HARSHEN_DIMENSIONAL_TIMER_PLATE);
 	}
 }

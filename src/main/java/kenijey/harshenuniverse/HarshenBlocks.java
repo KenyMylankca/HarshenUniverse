@@ -23,15 +23,15 @@ import kenijey.harshenuniverse.blocks.HarshenDimensionalGate;
 import kenijey.harshenuniverse.blocks.HarshenDimensionalGlass;
 import kenijey.harshenuniverse.blocks.HarshenDimensionalLadder;
 import kenijey.harshenuniverse.blocks.HarshenDimensionalPedestal;
-import kenijey.harshenuniverse.blocks.HarshenDimensionalPlate;
+import kenijey.harshenuniverse.blocks.HarshenDimensionalPressurePlate;
 import kenijey.harshenuniverse.blocks.HarshenDimensionalRock;
 import kenijey.harshenuniverse.blocks.HarshenDimensionalStairs;
 import kenijey.harshenuniverse.blocks.HarshenDimensionalStone;
+import kenijey.harshenuniverse.blocks.HarshenDimensionalTimerPlate;
+import kenijey.harshenuniverse.blocks.HarshenDimensionalTimerPlateActive;
 import kenijey.harshenuniverse.blocks.HarshenDimensionalWoodCrate;
 import kenijey.harshenuniverse.blocks.HarshenDisplayBlock;
 import kenijey.harshenuniverse.blocks.HarshenFarRock;
-import kenijey.harshenuniverse.blocks.HarshenHiddenPlate;
-import kenijey.harshenuniverse.blocks.HarshenHiddenPlateActive;
 import kenijey.harshenuniverse.blocks.HarshenMagicTable;
 import kenijey.harshenuniverse.blocks.HarshenSoulFlower;
 import kenijey.harshenuniverse.blocks.HarshenSoulOre;
@@ -77,12 +77,12 @@ public class HarshenBlocks
 	public static final Block HARSHEN_DIMENSIONAL_STONE = new HarshenDimensionalStone();
 	public static final Block HARSHEN_DISPLAY_BLOCK = new HarshenDisplayBlock();
 	public static final Block HARSHEN_DIMENSIONAL_DOOR = new HarshenDimensionalDoor();
-	public static final Block HARSHEN_HIDDEN_PLATE = new HarshenHiddenPlate();
-	public static final Block HARSHEN_HIDDEN_PLATE_ACTIVE = new HarshenHiddenPlateActive();
+	public static final Block HARSHEN_DIMENSIONAL_TIMER_PLATE = new HarshenDimensionalTimerPlate();
+	public static final Block HARSHEN_DIMENSIONAL_TIMER_PLATE_ACTIVE = new HarshenDimensionalTimerPlateActive();
 	public static final Block HARSHEN_DIMENSIONAL_STAIRS = new HarshenDimensionalStairs();
 	public static final Block HARSHEN_DIMENSIONAL_GLASS = new HarshenDimensionalGlass();
 	public static final Block HARSHEN_DIMENSIONAL_LADDER = new HarshenDimensionalLadder();
-	public static final Block HARSHEN_DIMENSIONAL_PRESSURE_PLATE = new HarshenDimensionalPlate();
+	public static final Block HARSHEN_DIMENSIONAL_PRESSURE_PLATE = new HarshenDimensionalPressurePlate();
 	public static final Block HARSHEN_DIMENSIONAL_FLAT_PLATE = new HarshenDimensionalFlatPlate();
 	public static final Block SOUL_REMINDER = new SoulReminder();
 	public static final Block HARSHEN_DIMENSIONAL_WOOD_CRATE = new HarshenDimensionalWoodCrate();
@@ -126,7 +126,7 @@ public class HarshenBlocks
 	public static void preInit() 
 	{
 		regBlock(HARSHEN_DIMENSIONAL_STONE, 64);
-		regBlock(HARSHEN_HIDDEN_PLATE, 64);
+		regBlock(HARSHEN_DIMENSIONAL_TIMER_PLATE, 64);
 		regBlock(HARSHEN_DIMENSIONAL_PRESSURE_PLATE, 64);
 		regBlock(HARSHEN_DIMENSIONAL_FLAT_PLATE, 64);
 		regBlock(HARSHEN_DIMENSIONAL_STAIRS, 64);
@@ -171,7 +171,7 @@ public class HarshenBlocks
 		regSingleBlock(HERETIC_CAULDRON_TOP);
 		regSingleBlock(CROP_OF_GLEAM);
 		regSingleBlock(HARSHEN_DIMENSIONAL_DOOR, HarshenDimensionalDoor.POWERED);
-		regSingleBlock(HARSHEN_HIDDEN_PLATE_ACTIVE);
+		regSingleBlock(HARSHEN_DIMENSIONAL_TIMER_PLATE_ACTIVE);
 	}
 
 	public static void regRenders() {

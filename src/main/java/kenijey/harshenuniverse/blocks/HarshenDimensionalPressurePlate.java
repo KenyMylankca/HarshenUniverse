@@ -15,11 +15,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class HarshenDimensionalPlate extends BaseHarshenBlockBreakableWithSHPickaxe
+public class HarshenDimensionalPressurePlate extends BaseHarshenBlockBreakableWithSHPickaxe
 {
     public static final PropertyBool POWERED = PropertyBool.create("powered");
 
-	public HarshenDimensionalPlate() {
+	public HarshenDimensionalPressurePlate() {
 		setUnlocalizedName("harshen_dimensional_pressure_plate");
 		setRegistryName("harshen_dimensional_pressure_plate");
 		this.setDefaultState(this.blockState.getBaseState().withProperty(POWERED, Boolean.valueOf(false)));
