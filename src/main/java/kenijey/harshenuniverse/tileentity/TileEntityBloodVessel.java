@@ -15,7 +15,7 @@ import net.minecraft.util.math.Vec3d;
 public class TileEntityBloodVessel extends BaseHarshenTileEntity implements IHudDisplay, ITickable
 {
 	private int bloodLevel = 0;
-	public static final int maxLevel = 50;
+	public static final int maxLevel = 100;
 		
 	public void change(int amount)
 	{
