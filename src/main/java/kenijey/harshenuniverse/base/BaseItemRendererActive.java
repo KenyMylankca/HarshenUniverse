@@ -6,5 +6,4 @@ public abstract class BaseItemRendererActive<T extends BaseTileEntityHarshenSing
 	protected float getMovementSpeed(T te) {
 		return te.isActive() ? te.getActiveTimer() / 10f: 1f;
 	}
-
 }

@@ -39,7 +39,7 @@ public class TileEntityHarshenDimensionalPedestal extends BaseTileEntityHarshenS
 			dirty();
 		}
 		if(isActive && workingRecipe != null && !flag)
-			if(checkForCompleation(true))
+			if(checkForCompletion(true))
 			{
 				BlockPos pos = workingRecipe.getPositionOfRitual();
 				for(EnumFacing facing : EnumFacing.HORIZONTALS)
@@ -96,7 +96,7 @@ public class TileEntityHarshenDimensionalPedestal extends BaseTileEntityHarshenS
 	}
 
 	@Override
-	protected boolean checkForCompleation(boolean checkingUp)
+	protected boolean checkForCompletion(boolean checkingUp)
 	{
 		boolean found = false;
 		for(LightningRitualRecipes recipe : LightningRitualRecipes.getRecipes(getItem()))
@@ -141,7 +141,7 @@ public class TileEntityHarshenDimensionalPedestal extends BaseTileEntityHarshenS
 						{
 							world.playSound(null, position, HarshenSounds.LIGHTNING_RITUAL, SoundCategory.BLOCKS, 3f, 1f);
 							this.workingRecipe = recipe.setUpRitual(world, position);
-							activate(position, blocks);
+							activateLightningRitual(position, blocks);
 						}
 						found = true;
 						break;
@@ -153,10 +153,10 @@ public class TileEntityHarshenDimensionalPedestal extends BaseTileEntityHarshenS
 			
 	}
 	
-	private void activate(BlockPos pos, ArrayList<BlockPos> positions)
+	private void activateLightningRitual(BlockPos pos, ArrayList<BlockPos> positions)
 	{
 		for(BlockPos position : positions)
-			((TileEntityHarshenDimensionalPedestal) world.getTileEntity(position)).activateRecipe();
+			((TileEntityHarshenDimensionalPedestal) world.getTileEntity(position)).activate();
 	}
 	@Override
 	protected int getTicksUntillDone() {

@@ -15,7 +15,7 @@ public abstract class BaseTileEntityHarshenSingleItemInventoryActive extends Bas
 				finishedTicking();
 				deactivate();
 			}
-			else if(!checkForCompleation(true))
+			else if(!checkForCompletion(true))
 				deactivate();
 			else;
 		else activeTimer = 0;
@@ -24,10 +24,10 @@ public abstract class BaseTileEntityHarshenSingleItemInventoryActive extends Bas
 	
 	@Override
 	protected void onItemAdded() {
-		checkForCompleation(false);
+		checkForCompletion(false);
 	}
 	
-	protected boolean checkForCompleation(boolean checkingUp)
+	protected boolean checkForCompletion(boolean checkingUp)
 	{
 		return false;
 	}
@@ -46,7 +46,7 @@ public abstract class BaseTileEntityHarshenSingleItemInventoryActive extends Bas
 		return activeTimer;
 	}
 	
-	public void activateRecipe()
+	public void activate()
 	{
 		this.activeTimer = 0;
 		this.isActive = true;

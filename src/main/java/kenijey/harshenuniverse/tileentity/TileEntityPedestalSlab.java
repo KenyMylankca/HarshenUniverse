@@ -16,7 +16,7 @@ public class TileEntityPedestalSlab extends BaseTileEntityHarshenSingleItemInven
 	private PedestalSlabRecipes workingRecipe;
 	
 	@Override
-	protected boolean checkForCompleation(boolean checkingUp) {
+	protected boolean checkForCompletion(boolean checkingUp) {
 		boolean flag = false;
 		for(PedestalSlabRecipes recipe : HarshenAPIHandler.allPedestalRecipes)
 			if(recipe.getInput().containsItem(getItem()))
@@ -38,7 +38,7 @@ public class TileEntityPedestalSlab extends BaseTileEntityHarshenSingleItemInven
 	
 	@Override
 	protected void tick() {
-		if(!checkForCompleation(true) && isActive())
+		if(!checkForCompletion(true) && isActive())
 			deactivate();
 		else if(isActive())
 		{
@@ -50,24 +50,24 @@ public class TileEntityPedestalSlab extends BaseTileEntityHarshenSingleItemInven
 							Vec3d pos = new Vec3d(this.pos.add(x, 0, z)).addVector(randPos(), -0.1, randPos());
 							HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.BLOOD, pos, 
 									new Vec3d((this.pos.getX() + 0.5 - pos.x) / 20D, (this.pos.getY() + 0.5 - pos.y) / 20D, (this.pos.getZ() + 0.5 - pos.z) / 20D), 1f, false);
-
 						}
 			
 		}	
-		else if(checkForCompleation(false))
-			activateRecipe();			
+		else if(checkForCompletion(false))
+			activate();			
 	}
 	
 	@Override
 	protected void onItemAdded() {
-		if(checkForCompleation(false))
-			activateRecipe();
+		if(checkForCompletion(false))
+			activate();
 	}
-
+	
 	@Override
 	protected int getTicksUntillDone() {
 		return 300;
 	}
+	
 	@Override
 	protected void finishedTicking() {
 		if(workingRecipe != null)
@@ -81,8 +81,5 @@ public class TileEntityPedestalSlab extends BaseTileEntityHarshenSingleItemInven
 					for(int i = 0; i < new Random().nextInt(10) + 100; i++)
 						HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.BLOOD, new Vec3d(pos.add(x, 0, z)).addVector(randPos(), 0, randPos()), new Vec3d(0, 0.01, 0), 1f, false);
 				}
-					
 	}
-	
-	
 }

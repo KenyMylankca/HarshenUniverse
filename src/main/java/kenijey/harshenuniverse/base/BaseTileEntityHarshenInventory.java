@@ -128,6 +128,4 @@ public abstract class BaseTileEntityHarshenInventory extends BaseHarshenTileEnti
 		nbt.setTag("ItemStackHandler", this.handler.serializeNBT());
 		return super.writeToNBT(nbt);
 	}
-
 }
-

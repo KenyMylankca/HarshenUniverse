@@ -22,19 +22,19 @@ public class TileEntityBloodFactory extends BaseTileEntityHarshenSingleItemInven
 	}
 	
 	@Override
-	protected boolean checkForCompleation(boolean checkingUp) {
+	protected boolean checkForCompletion(boolean checkingUp) {
 		if(getItem().getItem() instanceof IBloodSupply && !checkingUp && world.getTileEntity(pos.down()) instanceof TileEntityBloodVessel
 				&& ((TileEntityBloodVessel)world.getTileEntity(pos.down())).canAdd(((IBloodSupply) getItem().getItem()).getAmountPerSecond()))
 		{
 			itemSupply = (IBloodSupply) getItem().getItem();
-			activateRecipe();
+			activate();
 		}
 		return getItem().getItem() instanceof IBloodSupply;
 	}
 	
 	@Override
 	protected void tick() {	
-		if(!isActive()) checkForCompleation(false);
+		if(!isActive()) checkForCompletion(false);
 		if(isActive() && !(getItem().getItem() instanceof IBloodSupply))
 		{
 			itemSupply = null;
