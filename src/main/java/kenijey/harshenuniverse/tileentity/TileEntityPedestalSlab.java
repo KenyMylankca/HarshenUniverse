@@ -3,12 +3,14 @@ package kenijey.harshenuniverse.tileentity;
 import java.util.Random;
 
 import kenijey.harshenuniverse.HarshenBlocks;
+import kenijey.harshenuniverse.HarshenSounds;
 import kenijey.harshenuniverse.HarshenUniverse;
 import kenijey.harshenuniverse.base.BaseTileEntityHarshenSingleItemInventoryActive;
 import kenijey.harshenuniverse.enums.particle.EnumHarshenParticle;
 import kenijey.harshenuniverse.internal.HarshenAPIHandler;
 import kenijey.harshenuniverse.recipies.PedestalSlabRecipes;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.Vec3d;
 
 public class TileEntityPedestalSlab extends BaseTileEntityHarshenSingleItemInventoryActive
@@ -51,21 +53,17 @@ public class TileEntityPedestalSlab extends BaseTileEntityHarshenSingleItemInven
 							HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.BLOOD, pos, 
 									new Vec3d((this.pos.getX() + 0.5 - pos.x) / 20D, (this.pos.getY() + 0.5 - pos.y) / 20D, (this.pos.getZ() + 0.5 - pos.z) / 20D), 1f, false);
 						}
-			
-		}	
+		}
 		else if(checkForCompletion(false))
-			activate();			
-	}
-	
-	@Override
-	protected void onItemAdded() {
-		if(checkForCompletion(false))
+		{
+			world.playSound(null, this.pos, HarshenSounds.BLOOD_RITUAL, SoundCategory.BLOCKS, 1f, 1f);
 			activate();
+		}
 	}
 	
 	@Override
 	protected int getTicksUntillDone() {
-		return 300;
+		return 140;
 	}
 	
 	@Override

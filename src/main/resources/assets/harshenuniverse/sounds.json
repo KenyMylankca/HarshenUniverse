@@ -20,5 +20,6 @@
 	"kazzendre_ambient":{"category": "master","sounds": [ { "name": "harshenuniverse:kazzendre_ambient", "stream": false }]},
 	"kazzendre_hit":{"category": "master","sounds": [ { "name": "harshenuniverse:kazzendre_hit", "stream": false }]},
 	"kazzendre_hurt":{"category": "master","sounds": [ { "name": "harshenuniverse:kazzendre_hurt", "stream": false }]},
-	"spawner_summon":{"category": "master","sounds": [ { "name": "harshenuniverse:spawner_summon", "stream": false }]}
+	"spawner_summon":{"category": "master","sounds": [ { "name": "harshenuniverse:spawner_summon", "stream": false }]},
+	"blood_ritual":{"category": "master","sounds": [ { "name": "harshenuniverse:blood_ritual", "stream": false }]}
 }
