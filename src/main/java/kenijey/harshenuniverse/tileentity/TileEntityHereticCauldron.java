@@ -143,7 +143,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 				HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.CAULDRON,
 						new Vec3d(pos).addVector((new Random().nextDouble() / 2) + 0.25D, yPosOfDrains[layersDrained], (new Random().nextDouble() / 2) + 0.25D), new Vec3d(0, 0.01d, 0), 1f, false,
 						workingFluid.getStateOrLoc());
-
+			
 			reactivate(1);
 		}
 	}
@@ -311,7 +311,6 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 	private ArrayList<BlockPos> erroredPositions = new ArrayList<>();
 	private ArrayList<Block> blockErrorList = new ArrayList<>();
 	private ArrayList<IBlockState> renderBlockErrorList = new ArrayList<>();
-
 	
 	private boolean checkForHereticRitual(boolean setRecipe, EntityPlayer... players)
 	{

@@ -70,7 +70,6 @@ public class TileEntityBloodVessel extends BaseHarshenTileEntity implements IHud
 		return super.writeToNBT(nbt);
 	}
 	
-	
 	@Override
 	public void update() {
 		for(int i = 0; i < this.bloodLevel / (maxLevel / 10); i++)

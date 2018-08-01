@@ -11,7 +11,6 @@ import net.minecraft.util.math.AxisAlignedBB;
 
 public class TileEntityHarshenDimensionalGate extends BaseHarshenTileEntity implements ITickable
 {
-	
 	public final static int TOTAL_TICKS = 12000; // make sure divisible by 20
 	private int ticksLeft = -1;
 

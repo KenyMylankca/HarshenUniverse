@@ -7,7 +7,6 @@ import net.minecraft.util.ITickable;
 
 public class TileEntityFlatPlate extends TileEntity implements ITickable
 {
-
 	@Override
 	public void update() {
 		if(HarshenConfigs.GENERAL.renderPlates)
