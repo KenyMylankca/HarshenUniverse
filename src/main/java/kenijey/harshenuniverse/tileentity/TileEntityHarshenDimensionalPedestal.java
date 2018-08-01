@@ -133,8 +133,6 @@ public class TileEntityHarshenDimensionalPedestal extends BaseTileEntityHarshenS
 						if(removeStack != null)
 							localItems.remove(removeStack);
 					}
-					//	if(localItems.contains(((TileEntityHarshenDimensionalPedestal) world.getTileEntity(position.offset(face))).getItem().getItem()))
-						//	localItems.remove(((TileEntityHarshenDimensionalPedestal) world.getTileEntity(position.offset(face))).getItem().getItem());
 					if(localItems.isEmpty())
 					{
 						if(!checkingUp)
@@ -150,7 +148,6 @@ public class TileEntityHarshenDimensionalPedestal extends BaseTileEntityHarshenS
 			}
 		}
 		return found;
-			
 	}
 	
 	private void activateLightningRitual(BlockPos pos, ArrayList<BlockPos> positions)

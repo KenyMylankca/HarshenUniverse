@@ -34,7 +34,6 @@ public abstract class BaseTileEntityHarshenInventory extends BaseHarshenTileEnti
 		tick();
 		if(dirtyTimer++ % 5 == 0)
 			dirty();
-		
 	}
 	
 	public int getTimer()
@@ -58,7 +57,6 @@ public abstract class BaseTileEntityHarshenInventory extends BaseHarshenTileEnti
 				return false;
 		return true;
 	}
-	
 	
 	public boolean setItem(int slot, ItemStack item)
 	{
