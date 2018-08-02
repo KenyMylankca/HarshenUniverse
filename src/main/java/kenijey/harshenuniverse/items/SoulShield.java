@@ -13,7 +13,7 @@ public class SoulShield extends Item implements IHarshenProvider
 	public SoulShield() {
 		setRegistryName("soul_shield");
 		setUnlocalizedName("soul_shield");
-		setMaxDamage(350);
+		setMaxDamage(270);
 	}
 	
 	@Override
