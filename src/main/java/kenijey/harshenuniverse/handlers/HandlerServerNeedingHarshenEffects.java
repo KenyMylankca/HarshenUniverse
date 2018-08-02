@@ -218,8 +218,7 @@ public class HandlerServerNeedingHarshenEffects
 					for(EntityItem e : event.getDrops())
 						if(event.getEntityLiving().getRNG().nextBoolean())
 							drops.add(new EntityItem(e.world, e.posX, e.posY, e.posZ, e.getItem()));
-					for(int i=0; i<HarshenUtils.hasAccessoryTimes(player, HarshenItems.LOOTING_EARRING); i++)
-						event.getDrops().addAll(drops);
+					event.getDrops().addAll(drops);
 				}
 		}
 	}
