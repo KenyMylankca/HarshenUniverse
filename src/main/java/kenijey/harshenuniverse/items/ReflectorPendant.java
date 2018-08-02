@@ -10,6 +10,7 @@ public class ReflectorPendant extends Item implements IHarshenProvider
 	{
 		setUnlocalizedName("reflector_pendant");
 		setRegistryName("reflector_pendant");
+		setMaxDamage(840);
 	}
 	
 	@Override

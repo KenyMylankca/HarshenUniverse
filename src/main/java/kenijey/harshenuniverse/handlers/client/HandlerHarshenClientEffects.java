@@ -1,18 +1,16 @@
 package kenijey.harshenuniverse.handlers.client;
 
+import kenijey.harshenuniverse.HarshenItems;
 import kenijey.harshenuniverse.HarshenSounds;
 import kenijey.harshenuniverse.HarshenUtils;
 import kenijey.harshenuniverse.entity.EntityKazzendre;
 import kenijey.harshenuniverse.items.EmpoweredSoulHarsherSword;
 import kenijey.harshenuniverse.items.EnionBow;
-import kenijey.harshenuniverse.items.FieryRing;
 import kenijey.harshenuniverse.items.IronBow;
 import kenijey.harshenuniverse.items.IronScythe;
-import kenijey.harshenuniverse.items.PunchyRing;
 import kenijey.harshenuniverse.items.RaptorScythe;
 import kenijey.harshenuniverse.items.SoulHarsherSword;
 import kenijey.harshenuniverse.items.SoulRipperBow;
-import kenijey.harshenuniverse.objecthandlers.HarshenItemStackHandler;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -31,7 +29,6 @@ public class HandlerHarshenClientEffects
 			EntityLivingBase entity = event.getEntityLiving();
 			EntityPlayer player = (EntityPlayer) event.getSource().getTrueSource();
 			Item item = player.getHeldItemMainhand().getItem();
-			HarshenItemStackHandler handler = HarshenUtils.getHandler(player);
 			
 			if (item instanceof IronScythe) entity.playSound(HarshenSounds.IRON_SCYTHE_HIT, 1f, 1f);
 			if (item instanceof IronBow) entity.playSound(HarshenSounds.IRON_HIT, 1f, 1f);
@@ -55,11 +52,11 @@ public class HandlerHarshenClientEffects
 				else
 					entity.playSound(HarshenSounds.SOUL_RIPPER_BOW_HIT, 1f, 1f);
 			
-			if(handler.getStackInSlot(3).getItem() instanceof PunchyRing ||	handler.getStackInSlot(4).getItem() instanceof PunchyRing)
+			if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.PUNCHY_RING) > 0)
 				if(item instanceof ItemAir)
 					entity.playSound(HarshenSounds.IRON_HIT, 1f, 1.5f);
 			
-			if(handler.getStackInSlot(3).getItem() instanceof FieryRing ||	handler.getStackInSlot(4).getItem() instanceof FieryRing)
+			if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.FIERY_RING) > 0)
 				entity.playSound(SoundEvents.BLOCK_FIRE_AMBIENT, 1f, 1.3f);
 		}
 		if(event.getEntityLiving() instanceof EntityPlayer)

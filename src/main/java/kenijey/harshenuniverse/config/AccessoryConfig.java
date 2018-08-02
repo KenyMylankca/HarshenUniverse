@@ -13,6 +13,7 @@ public class AccessoryConfig extends BaseConfig
 	public static int xrayAreaX, xrayAreaY, xrayAreaZ, xrayListSize;
 	public static int enderNecklaceDistance;
 	public static double reachPendantLength;
+	public static float punchyRingAttackDamage;
 
 	@Override
 	public String getName() {
@@ -29,6 +30,7 @@ public class AccessoryConfig extends BaseConfig
 		xrayListSize = get("xray.listsize", HarshenItems.XRAY_PENDANT, 20); 
 		enderNecklaceDistance = get("endernecklace.distance", HarshenItems.ENDER_NECKLACE, 66);
 		reachPendantLength = get("reach.length", HarshenItems.REACH_PENDANT, 7d);
+		punchyRingAttackDamage = get("punchy.ring.attack.damage", HarshenItems.PUNCHY_RING, 2.5f);
 	}
 	
 	private HashMap<String, String> keyMap = new HashMap<>();

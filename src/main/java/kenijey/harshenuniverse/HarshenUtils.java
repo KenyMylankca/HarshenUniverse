@@ -286,13 +286,25 @@ public class HarshenUtils
 	{
 		HarshenItemStackHandler handler = HarshenUtils.getHandler(player);
         for(int i =0; i < handler.getSlots(); i++)
-        	if(handler.getStackInSlot(i).getItem() == item)
+        	if(handler.getStackInSlot(i).getItem() == item && handler.getStackInSlot(i).getItem() instanceof IHarshenProvider)
         	{
-        		if(amount > handler.getStackInSlot(i).getMaxDamage() - handler.getStackInSlot(i).getItemDamage())
+        		if(amount > (handler.getStackInSlot(i).getMaxDamage() - handler.getStackInSlot(i).getItemDamage()))
         			handler.getStackInSlot(i).setCount(0);
-        			if(handler.getStackInSlot(i).getItem() instanceof IHarshenProvider)
         		handler.getStackInSlot(i).damageItem(amount, player);
         		break;
+        	}
+        player.getEntityData().setTag("harshenInventory", handler.serializeNBT());
+	}
+	
+	public static void damageAllOccuringItems(EntityPlayer player, Item item, int amount)
+	{
+		HarshenItemStackHandler handler = HarshenUtils.getHandler(player);
+        for(int i =0; i < handler.getSlots(); i++)
+        	if(handler.getStackInSlot(i).getItem() == item && handler.getStackInSlot(i).getItem() instanceof IHarshenProvider)
+        	{
+        		if(amount > (handler.getStackInSlot(i).getMaxDamage() - handler.getStackInSlot(i).getItemDamage()))
+        			handler.getStackInSlot(i).setCount(0);
+        		handler.getStackInSlot(i).damageItem(amount, player);
         	}
         player.getEntityData().setTag("harshenInventory", handler.serializeNBT());
 	}
@@ -1024,5 +1036,16 @@ public class HarshenUtils
 					}
 				}
 			}
+    }
+    
+    public static int hasAccessoryTimes(EntityPlayer player, Item accessory)
+    {
+    	int c=0;
+    	HarshenItemStackHandler handler = getHandler(player);
+    	
+    	for(int i=0; i<5; i++)
+    		if(handler.getStackInSlot(i).getItem() == accessory) c++;
+    	
+    	return c;
     }
 }

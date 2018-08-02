@@ -67,7 +67,6 @@ public class BloodBlock extends Block
 		return null;
 	}
 	
-	
 	@Override
 	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox,
 			List<AxisAlignedBB> collidingBoxes, Entity entityIn, boolean p_185477_7_) {
@@ -112,7 +111,7 @@ public class BloodBlock extends Block
 	
 	public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos)
 	{
-	        return true;
+		return true;
 	}
 	
 	@Override
