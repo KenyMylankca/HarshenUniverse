@@ -31,6 +31,7 @@ public class HarshenSounds {
 	public final static SoundEvent KAZZENDRE_HURT = reg("kazzendre_hurt");
 	public final static SoundEvent SPAWNER_SUMMON = reg("spawner_summon");
 	public final static SoundEvent BLOOD_RITUAL = reg("blood_ritual");
+	public final static SoundEvent PONTUS_WIND = reg("pontus_wind");
 	
 	public static void register()
 	{
@@ -55,6 +56,7 @@ public class HarshenSounds {
 		loadSound(KAZZENDRE_HURT);
 		loadSound(SPAWNER_SUMMON);
 		loadSound(BLOOD_RITUAL);
+		loadSound(PONTUS_WIND);
 	}
 	
 	private static void loadSound(SoundEvent event)

@@ -1,8 +1,11 @@
 package kenijey.harshenuniverse.handlers.client;
 
+import java.util.Random;
+
 import kenijey.harshenuniverse.HarshenItems;
 import kenijey.harshenuniverse.HarshenSounds;
 import kenijey.harshenuniverse.HarshenUtils;
+import kenijey.harshenuniverse.config.IdConfig;
 import kenijey.harshenuniverse.entity.EntityKazzendre;
 import kenijey.harshenuniverse.items.EmpoweredSoulHarsherSword;
 import kenijey.harshenuniverse.items.EnionBow;
@@ -18,9 +21,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemAir;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 public class HandlerHarshenClientEffects
 {
+	int tick = 0;
 	@SubscribeEvent
 	public void onLivingHurt(LivingHurtEvent event)
 	{
@@ -65,6 +70,23 @@ public class HandlerHarshenClientEffects
 			{
 				event.getSource().getTrueSource().playSound(HarshenSounds.KAZZENDRE_HIT, 1f, 1f);
 			}
+		}
+	}
+
+	@SubscribeEvent
+	public void onTick(TickEvent.PlayerTickEvent event)
+	{
+		tick++;
+		
+		if(event.player.world.provider.getDimension() == IdConfig.PontusDimension)
+		{
+			Random rand = new Random();
+			if(rand.nextInt(100) == tick)
+			{
+				event.player.playSound(HarshenSounds.PONTUS_WIND, rand.nextFloat(), 1f);
+				tick=0;
+			}
+			if(tick>100) tick=0;
 		}
 	}
 }
