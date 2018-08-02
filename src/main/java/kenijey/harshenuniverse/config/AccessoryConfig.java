@@ -11,7 +11,7 @@ public class AccessoryConfig extends BaseConfig
 {
 	public static String[] blackListedXrays;
 	public static int xrayAreaX, xrayAreaY, xrayAreaZ, xrayListSize;
-	public static int enderPendantDistance;
+	public static int enderNecklaceDistance;
 	public static double reachPendantLength;
 
 	@Override
@@ -27,7 +27,7 @@ public class AccessoryConfig extends BaseConfig
 		xrayAreaY = get("xray.distance.y", HarshenItems.XRAY_PENDANT, 30);
 		xrayAreaZ = get("xray.distance.z", HarshenItems.XRAY_PENDANT, 30);
 		xrayListSize = get("xray.listsize", HarshenItems.XRAY_PENDANT, 20); 
-		enderPendantDistance = get("enderpendant.distance", HarshenItems.ENDER_NECKLACE, 66);
+		enderNecklaceDistance = get("endernecklace.distance", HarshenItems.ENDER_NECKLACE, 66);
 		reachPendantLength = get("reach.length", HarshenItems.REACH_PENDANT, 7d);
 	}
 	

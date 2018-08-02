@@ -26,7 +26,7 @@ public class EnderNecklace extends Item implements IHarshenProvider
 	
 	@Override
 	public Object getProvider(ItemStack stack) {
-		return new EnderPendantHandler();
+		return new EnderNecklaceHandler();
 	}
 	
 	@Override
@@ -42,14 +42,14 @@ public class EnderNecklace extends Item implements IHarshenProvider
 		IHarshenProvider.super.onAdd(player, slot);
 	}
 	
-	public class EnderPendantHandler
+	public class EnderNecklaceHandler
 	{
 		@HarshenEvent
 		public void renderGame(RenderGameOverlayEvent.Pre event)
 		{
 			for(Entity e : net.minecraft.client.Minecraft.getMinecraft().world.getLoadedEntityList())
 				e.setGlowing(e instanceof EntityLivingBase &&
-						net.minecraft.client.Minecraft.getMinecraft().player.getDistance(e) < AccessoryConfig.enderPendantDistance);
+						net.minecraft.client.Minecraft.getMinecraft().player.getDistance(e) < AccessoryConfig.enderNecklaceDistance);
 		}
 	}
 }
