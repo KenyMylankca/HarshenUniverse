@@ -5,6 +5,7 @@ import java.util.Random;
 import kenijey.harshenuniverse.HarshenBlocks;
 import kenijey.harshenuniverse.HarshenUtils;
 import kenijey.harshenuniverse.base.BasePontusResourceBiome;
+import kenijey.harshenuniverse.entity.EntitySoulPart;
 import kenijey.harshenuniverse.worldgenerators.pontus.PontusWorldGeneratorDestroyedPlants;
 import net.minecraft.block.Block;
 import net.minecraft.entity.monster.EntityEnderman;
@@ -16,17 +17,18 @@ import net.minecraftforge.common.BiomeDictionary.Type;
 
 public class PontusBiome extends BasePontusResourceBiome
 {
-	
 	public PontusBiome() {
 		super("Pontus");
 		
 		this.spawnableCaveCreatureList.clear();
-		this.spawnableCaveCreatureList.add(new SpawnListEntry(EntityEnderman.class, 25, 2, 5));
+		this.spawnableCaveCreatureList.add(new SpawnListEntry(EntityEnderman.class, 25, 1, 1));
 		
 		this.spawnableCreatureList.clear();
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityEndermite.class, 50, 1, 10));	
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityEndermite.class, 40, 1, 2));
+		
+		this.spawnableMonsterList.clear();
+		this.spawnableMonsterList.add(new SpawnListEntry(EntitySoulPart.class, 30, 1, 1));
 	}
-	
 	
 	@Override
 	public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
@@ -74,6 +76,5 @@ public class PontusBiome extends BasePontusResourceBiome
 	@Override
 	public Type[] getTypes() {
 		return new Type[]{Type.DRY, Type.HILLS};
-	}	
-
+	}
 }

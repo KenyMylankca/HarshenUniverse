@@ -27,13 +27,13 @@ public class EntitySoulPart extends EntityMob implements IBurnInDay
 	public EntitySoulPart(World worldIn) {
 		super(worldIn);
         this.moveHelper = new MoveHelperSoulPart(this);
-        this.experienceValue = 80;
+        this.experienceValue = 100;
 	}
 	
 	@Override
 	protected void initEntityAI() {
 		this.tasks.addTask(8, new AIEntityFlyingTowardsPlayer(this));
-        this.tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 3.0F, 1.0F));
+        this.tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 3.0F, 0.6F));
         this.tasks.addTask(10, new EntityAIWatchClosest(this, EntityLiving.class, 8.0F));
 		this.tasks.addTask(11, new EntityAILookIdle(this));
 
@@ -49,9 +49,9 @@ public class EntitySoulPart extends EntityMob implements IBurnInDay
 	public void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
-	    this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(14.0D);
-	    this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
-	    this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(700D);
+	    this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2D);
+	    this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(1D);
+	    this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(20D);
 	}  
 	
 	public void onUpdate()
@@ -60,8 +60,8 @@ public class EntitySoulPart extends EntityMob implements IBurnInDay
         super.onUpdate();
         this.noClip = false;
         this.setNoGravity(true);
-        if(this.getAttackTarget() != null && this.getPosition().distanceSq(this.getAttackTarget().getPosition()) < 25)
-        	this.getAttackTarget().attackEntityFrom(new DamageSourceSoulPart(this), 2.5f);
+        if(this.getAttackTarget() != null && this.getPosition().distanceSq(this.getAttackTarget().getPosition()) < 15)
+        	this.getAttackTarget().attackEntityFrom(new DamageSourceSoulPart(this), 1f);
     }
 	
 	@Override

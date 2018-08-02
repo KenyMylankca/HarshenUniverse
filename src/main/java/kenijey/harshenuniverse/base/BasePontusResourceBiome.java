@@ -4,7 +4,6 @@ import java.util.Random;
 
 import kenijey.harshenuniverse.HarshenUniverse;
 import kenijey.harshenuniverse.dimensions.PontusBiomeDecorator;
-import kenijey.harshenuniverse.entity.EntitySoulPart;
 import kenijey.harshenuniverse.worldgenerators.pontus.PontusWorldGeneratorDestroyedPlants;
 import kenijey.harshenuniverse.worldgenerators.pontus.PontusWorldGeneratorStone;
 import net.minecraft.block.Block;
@@ -20,9 +19,6 @@ public abstract class BasePontusResourceBiome extends Biome
 		super(new Biome.BiomeProperties(biomeName).setTemperature(5f).setRainDisabled().setBaseHeight(0.7f).setHeightVariation(2f));
 		
 		setRegistryName(HarshenUniverse.MODID, biomeName);
-		
-		this.spawnableMonsterList.clear();
-		this.spawnableMonsterList.add(new SpawnListEntry(EntitySoulPart.class, 2, 1, 1));
 		
 		this.decorator = new PontusBiomeDecorator();
 	}
