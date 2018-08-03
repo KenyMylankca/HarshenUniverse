@@ -6,6 +6,7 @@ import kenijey.harshenuniverse.HarshenUniverse;
 import kenijey.harshenuniverse.HarshenUtils;
 import kenijey.harshenuniverse.armor.HarshenArmors;
 import kenijey.harshenuniverse.dimensions.pontus.PontusWorldProvider;
+import kenijey.harshenuniverse.entity.EntityBloodySheep;
 import kenijey.harshenuniverse.entity.EntityHarshenSoul;
 import kenijey.harshenuniverse.entity.EntityKazzendre;
 import kenijey.harshenuniverse.entity.EntityRenderFactoryRegisters;
@@ -98,6 +99,7 @@ public class ClientProxy extends CommonProxy
 		RenderingRegistry.registerEntityRenderingHandler(EntityHarshenSoul.class, new EntityRenderFactoryRegisters.FactoryHarhenSoul());
 		RenderingRegistry.registerEntityRenderingHandler(EntitySoulShooter.class, new EntityRenderFactoryRegisters.FactorySoulShooter());
 		RenderingRegistry.registerEntityRenderingHandler(EntityKazzendre.class, new EntityRenderFactoryRegisters.FactoryKazzendre());
+		RenderingRegistry.registerEntityRenderingHandler(EntityBloodySheep.class, new EntityRenderFactoryRegisters.FactoryBloodySheep());
 	}
 	
 	 @Override

@@ -108,6 +108,7 @@ entity.soul_part.name=Soul Part
 entity.harshen_soul.name=Harshen Soul
 entity.soul_shooter.name=Soul Shooter
 entity.kazzendre.name=Kazzendre
+entity.bloody_sheep.name=Bloody Sheep
 
 #damage sources
 death.attack.entitySoulPart=%1$s's soul was taken away

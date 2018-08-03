@@ -13,6 +13,7 @@ public class IdConfig extends BaseConfig
 	public static int EntityHarshenSoul;
 	public static int EntitySoulShooter;
 	public static int Kazzendre;
+	public static int BloodySheep;
 	
 	@Override
 	public String getName() {
@@ -29,6 +30,7 @@ public class IdConfig extends BaseConfig
 		EntityHarshenSoul = get("entity_harshen_soul", 86);
 		EntitySoulShooter = get("entity_soul_shooter", 87);
 		Kazzendre = get("kazzendre", 88);
+		BloodySheep = get("bloody_sheep", 89);
 	}
 	
 	@Override

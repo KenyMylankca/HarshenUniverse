@@ -1,5 +1,6 @@
 package kenijey.harshenuniverse.entity;
 
+import kenijey.harshenuniverse.renderers.entity.RenderBloodySheep;
 import kenijey.harshenuniverse.renderers.entity.RenderEntityThrown;
 import kenijey.harshenuniverse.renderers.entity.RenderHarshenSoul;
 import kenijey.harshenuniverse.renderers.entity.RenderKazzendre;
@@ -57,6 +58,14 @@ public class EntityRenderFactoryRegisters
     	@Override
         public Render<? super EntityKazzendre> createRenderFor(RenderManager manager) {
           return new RenderKazzendre(manager);
+        }
+    }
+    
+    public static class FactoryBloodySheep implements IRenderFactory<EntityBloodySheep> 
+    {
+    	@Override
+        public Render<? super EntityBloodySheep> createRenderFor(RenderManager manager) {
+          return new RenderBloodySheep(manager);
         }
     }
 }

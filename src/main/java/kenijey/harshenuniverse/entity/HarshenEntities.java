@@ -22,6 +22,7 @@ public class HarshenEntities
 		registerEntity(EntityHarshenSoul.class, IdConfig.EntityHarshenSoul, "harshen_soul",  295051, 0xaed1515);
 		registerEntity(EntitySoulShooter.class, IdConfig.EntitySoulShooter, "soul_shooter", 295051, 0xAA00AA);
 		registerEntity(EntityKazzendre.class, IdConfig.Kazzendre, "kazzendre", 0xAA0000, 0xFFFFFF);
+		registerEntity(EntityBloodySheep.class, IdConfig.BloodySheep, "bloody_sheep", 0xFFFFFF, 0xAA0000);
 		
 		registerEntity(EntityThrown.class, IdConfig.EntityThrown, "entity_thrown");
 		

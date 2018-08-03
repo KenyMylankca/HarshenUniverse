@@ -4,6 +4,7 @@ import java.util.List;
 
 import kenijey.harshenuniverse.HarshenLootTables;
 import kenijey.harshenuniverse.HarshenUtils;
+import kenijey.harshenuniverse.entity.EntityBloodySheep;
 import kenijey.harshenuniverse.entity.EntityHarshenSoul;
 import kenijey.harshenuniverse.entity.EntityKazzendre;
 import kenijey.harshenuniverse.entity.EntitySoulPart;
@@ -58,6 +59,12 @@ public class HandlerHarshenDrops
 		{
 			List<ItemStack> stackList = HarshenUtils.getItemsFromLootTable(event.getEntity().world, HarshenLootTables.kazzendreDrop);
 			event.getDrops().add(new EntityItem(event.getEntity().world, vec.x, vec.y, vec.z, stackList.get(0)));
+		}
+		if(event.getEntity() instanceof EntityBloodySheep)
+		{
+			List<ItemStack> stackList = HarshenUtils.getItemsFromLootTable(event.getEntity().world, HarshenLootTables.bloodySheepDrop);
+			if(!((EntityBloodySheep)event.getEntity()).getSheared())
+				event.getDrops().add(new EntityItem(event.getEntity().world, vec.x, vec.y, vec.z, stackList.get(0)));
 		}
 	}
 }
