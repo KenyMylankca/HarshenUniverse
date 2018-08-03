@@ -8,7 +8,7 @@ import net.minecraft.world.biome.Biome;
 
 public class BiomesForHarshenMobsOverworld
 {
-	public static List<Biome> getBiomes() {
+	public static List<Biome> getBiomes(boolean pontus) {
 		List<Biome> biomesList = new ArrayList<Biome>();
 		biomesList.add(Biomes.BEACH);
 		biomesList.add(Biomes.BIRCH_FOREST);
@@ -28,7 +28,8 @@ public class BiomesForHarshenMobsOverworld
 		biomesList.add(Biomes.ROOFED_FOREST);
 		biomesList.add(Biomes.TAIGA);
 		biomesList.add(Biomes.TAIGA_HILLS);
-		biomesList.add(HarshenBiomes.pontus_dimensional_biome);
+		if(pontus)
+			biomesList.add(HarshenBiomes.pontus_dimensional_biome);
 		
 		Biome[] biomes = new Biome[biomesList.size()];
 		biomes = biomesList.toArray(biomes);
