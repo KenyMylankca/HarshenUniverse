@@ -26,8 +26,9 @@ public class HarshenEntities
 		
 		registerEntity(EntityThrown.class, IdConfig.EntityThrown, "entity_thrown");
 		
-		registerSpawn(EntitySoulShooter.class, 40, 1, 1, EnumCreatureType.MONSTER, BiomesForHarshenMobsOverworld.getBiomes(true));
+		registerSpawn(EntitySoulShooter.class, 40, 0, 1, EnumCreatureType.MONSTER, BiomesForHarshenMobsOverworld.getBiomes(true));
 		registerSpawn(EntityHarshenSoul.class, 40, 1, 1, EnumCreatureType.MONSTER, BiomesForHarshenMobsOverworld.getBiomes(true));
+		registerSpawn(EntityBloodySheep.class, 40, 0, 1, EnumCreatureType.CREATURE, BiomesForHarshenMobsOverworld.getBiomes(false));
 	}
 	
 	public static void registerSpawn(Class <? extends EntityLiving > entityClass, int weightedProb, int min, int max, EnumCreatureType typeOfCreature, List<Biome> biomes)

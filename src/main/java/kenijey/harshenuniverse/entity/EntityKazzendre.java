@@ -19,14 +19,18 @@ public class EntityKazzendre extends EntityMob
 {
 	public EntityKazzendre(World worldIn) {
 		super(worldIn);
+		
+		this.experienceValue = 500;
+		this.isImmuneToFire = true;
+	}
+	
+	@Override
+	protected void initEntityAI() {
 		this.tasks.addTask(0, new EntityAIAttackMelee(this, 1d, true));
 		this.tasks.addTask(0, new EntityAIMoveTowardsTarget(this, 1d, 100));
 		this.tasks.addTask(0, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
 		
 		this.targetTasks.addTask(0, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
-		
-		this.experienceValue = 500;
-		this.isImmuneToFire = true;
 	}
 	
 	@Override
