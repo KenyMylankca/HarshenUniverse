@@ -17,6 +17,7 @@ import kenijey.harshenuniverse.items.BloodInfusedEnderEye;
 import kenijey.harshenuniverse.items.BloodyApple;
 import kenijey.harshenuniverse.items.BloodyEarring;
 import kenijey.harshenuniverse.items.BloodyPontusCube;
+import kenijey.harshenuniverse.items.BrokenArrow;
 import kenijey.harshenuniverse.items.CriminalPendant;
 import kenijey.harshenuniverse.items.CursedBone;
 import kenijey.harshenuniverse.items.DiamondShard;
@@ -132,6 +133,7 @@ public class HarshenItems
 	public static final Item ENION_BOW = new EnionBow();
 	public static final Item SOUL_RIPPER_BOW = new SoulRipperBow();
 	public static final Item FIERY_RING = new FieryRing();
+	public static final Item BROKEN_ARROW = new BrokenArrow();
 	public static final Item VALOR_BADGE = new ValorBadge();
 	public static final Item IRON_SCYTHE = new IronScythe();
 	public static final Item RAPTOR_SCYTHE = new RaptorScythe();
@@ -169,6 +171,7 @@ public class HarshenItems
 		regItem(BLOODY_APPLE, 13);
 		regItem(PONTUS_CUBE, 7);
 		regItem(BLOODY_PONTUS_CUBE, 6);
+		regItem(BROKEN_ARROW, 64);
 		regItem(VALOR_BADGE, 32);
 		regItem(MYSTIC_FEATHER, 12);
 		regItem(SOLIDIFYING_PASTE, 64);

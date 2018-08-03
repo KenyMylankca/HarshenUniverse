@@ -1,6 +1,10 @@
 package kenijey.harshenuniverse.entity.vanilla;
 
+import java.util.Random;
+
+import kenijey.harshenuniverse.HarshenItems;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.entity.projectile.EntityTippedArrow;
 import net.minecraft.init.Items;
@@ -36,4 +40,30 @@ public class HarshenEntityArrow extends EntityTippedArrow
 			playCustomSound = true;
 		super.onHit(ray);
 	}
+	
+	@Override
+	public void onCollideWithPlayer(EntityPlayer entityIn)
+    {
+		ItemStack stack;
+		Random rand = new Random();
+		if(rand.nextFloat() < 0.5f)
+			stack = new ItemStack(HarshenItems.BROKEN_ARROW);
+		else stack = this.getArrowStack();
+		
+        if (!this.world.isRemote && this.inGround && this.arrowShake <= 0)
+        {
+            boolean flag = this.pickupStatus == EntityArrow.PickupStatus.ALLOWED || this.pickupStatus == EntityArrow.PickupStatus.CREATIVE_ONLY && entityIn.capabilities.isCreativeMode;
+
+            if (this.pickupStatus == EntityArrow.PickupStatus.ALLOWED && !entityIn.inventory.addItemStackToInventory(stack))
+            {
+                flag = false;
+            }
+
+            if (flag)
+            {
+                entityIn.onItemPickup(this, 1);
+                this.setDead();
+            }
+        }
+    }
 }

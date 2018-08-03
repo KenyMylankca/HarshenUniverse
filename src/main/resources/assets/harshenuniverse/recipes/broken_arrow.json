@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "harshen_items",
+  "ingredients": [
+    {
+      "item": "harshenuniverse:broken_arrow"
+    },
+	{
+      "item": "harshenuniverse:broken_arrow"
+    }
+  ],
+  "result": {
+    "item": "minecraft:arrow",
+	 "count": 1
+  }
+}

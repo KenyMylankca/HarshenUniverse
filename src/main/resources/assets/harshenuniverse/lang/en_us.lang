@@ -90,6 +90,7 @@ item.gillette.bloody.name=§4Gillette§r
 item.cursed_bone.name=§4Cursed Bone§r
 item.soul_harsher_spade.name=Soul Harsher Spade
 item.reflector_pendant.name=Reflector Pendant
+item.broken_arrow.name=Broken Arrow
 
 #keybindings
 key.telering.description=Telering Teleport Key
