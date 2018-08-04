@@ -47,7 +47,7 @@ import kenijey.harshenuniverse.potions.HarshenPotions;
 import kenijey.harshenuniverse.structures.pontus.FauxCauldronStructure;
 import kenijey.harshenuniverse.tileentity.TileEntityBloodFactory;
 import kenijey.harshenuniverse.tileentity.TileEntityBloodVessel;
-import kenijey.harshenuniverse.tileentity.TileEntityFlatPlate;
+import kenijey.harshenuniverse.tileentity.TileEntityHiddenPlate;
 import kenijey.harshenuniverse.tileentity.TileEntityHarshenDimensionalGate;
 import kenijey.harshenuniverse.tileentity.TileEntityHarshenDimensionalPedestal;
 import kenijey.harshenuniverse.tileentity.TileEntityHarshenDisplayBlock;
@@ -145,7 +145,7 @@ public class CommonProxy
     			TileEntityPedestalSlab.class,
     			TileEntityBloodVessel.class,
     			TileEntityBloodFactory.class,
-    			TileEntityFlatPlate.class,
+    			TileEntityHiddenPlate.class,
     			TileEntityHarshenMagicTable.class,
     	};
     	for(Class clas : tileEntityClasses)

@@ -19,7 +19,7 @@ import kenijey.harshenuniverse.enums.items.GlassContainerValue;
 import kenijey.harshenuniverse.enums.particle.EnumHarshenParticle;
 import kenijey.harshenuniverse.fluids.HarshenFluids;
 import kenijey.harshenuniverse.handlers.client.HandlerEntityUpdater;
-import kenijey.harshenuniverse.handlers.client.HandlerFlatPlateRenderer;
+import kenijey.harshenuniverse.handlers.client.HandlerHiddenPlateRenderer;
 import kenijey.harshenuniverse.handlers.client.HandlerGameOverlay;
 import kenijey.harshenuniverse.handlers.client.HandlerGuiEvent;
 import kenijey.harshenuniverse.handlers.client.HandlerHarshenClientEffects;
@@ -121,7 +121,7 @@ public class ClientProxy extends CommonProxy
     			new HandlerGameOverlay(),
     			new HandlerGuiEvent(),
     			new HandlerRendererGuiInventory(), 
-    			new HandlerFlatPlateRenderer(),
+    			new HandlerHiddenPlateRenderer(),
     			//new HandlerUpdateChecker(),
     			new HandlerRenderError(),
     			new RenderEntityThrown(null),

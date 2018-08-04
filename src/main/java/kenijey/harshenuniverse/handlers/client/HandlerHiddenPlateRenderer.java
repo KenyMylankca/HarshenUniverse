@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import javax.vecmath.Vector4f;
 
 import kenijey.harshenuniverse.HarshenClientUtils;
-import kenijey.harshenuniverse.blocks.HarshenDimensionalFlatPlate;
+import kenijey.harshenuniverse.blocks.HarshenDimensionalHiddenPlate;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class HandlerFlatPlateRenderer 
+public class HandlerHiddenPlateRenderer 
 {
 	
 	private static ArrayList<BlockPos> platePositions = new ArrayList<BlockPos>();
@@ -25,7 +25,7 @@ public class HandlerFlatPlateRenderer
 		ArrayList<BlockPos> nonRemovedPlates = new ArrayList<>();
 		int time = platePositions.size();
 		for(int i = 0; i < time; i++)
-			if(Minecraft.getMinecraft().world.getBlockState(platePositions.get(i)).getBlock() instanceof HarshenDimensionalFlatPlate)
+			if(Minecraft.getMinecraft().world.getBlockState(platePositions.get(i)).getBlock() instanceof HarshenDimensionalHiddenPlate)
 				nonRemovedPlates.add(renderAt(platePositions.get(i), event.getPartialTicks()));
 		platePositions = nonRemovedPlates;
 	}

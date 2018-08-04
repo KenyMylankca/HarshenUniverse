@@ -7,7 +7,7 @@ public class GeneralConfig extends BaseConfig
 	public static boolean bloodDrops;
 	public static double bloodChance;
 	public static int bloodHeightRange;
-	public static boolean renderPlates;
+	public static boolean renderHiddenPlates;
 	public static double structureRuinChance;
 	public static int bloodyTorchDistance;
 	
@@ -21,7 +21,7 @@ public class GeneralConfig extends BaseConfig
 		bloodDrops = get("blood_drops", true);
 		bloodChance = get("blood_chance", 0.35D);
 		bloodHeightRange = get("blood_height_range", 15);
-		renderPlates = get("render_flatplates", true);
+		renderHiddenPlates = get("render_hidden_plate", true);
 		structureRuinChance = get("structure_ruin_chance", 0.2D);
 		bloodyTorchDistance = get("bloody_torch_distance", 6);
 	}
