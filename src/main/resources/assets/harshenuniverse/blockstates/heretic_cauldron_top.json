@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "harshenuniverse:harshen_dimensional_flat_plate" }
+        "normal": { "model": "harshenuniverse:blank_model" }
     }
 }

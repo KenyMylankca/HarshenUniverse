@@ -1,9 +1,9 @@
 {
 	"parent": "block/block",
     "textures": {
+		"particle": "blocks/cauldron_side",
         "0": "blocks/cauldron_inner",
-        "1": "blocks/cauldron_side",
-        "particle": "blocks/cauldron_side"
+        "1": "blocks/cauldron_side"
     },
     "elements": [
         {
