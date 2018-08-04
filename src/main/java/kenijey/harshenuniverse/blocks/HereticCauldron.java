@@ -36,7 +36,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class HereticCauldron extends BaseBlockHarshenSingleInventory
 {	
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
-	protected static final AxisAlignedBB AABB_LEGS = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.3125D, 1.0D);
 	protected static final AxisAlignedBB AABB_WALL_NORTH = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 0.125D);
 	protected static final AxisAlignedBB AABB_WALL_SOUTH = new AxisAlignedBB(0.0D, 0.0D, 0.875D, 1.0D, 1.0D, 1.0D);
 	protected static final AxisAlignedBB AABB_WALL_EAST = new AxisAlignedBB(0.875D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
@@ -45,7 +44,6 @@ public class HereticCauldron extends BaseBlockHarshenSingleInventory
 	@Override
 	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean p_185477_7_)
     {
-        addCollisionBoxToList(pos, entityBox, collidingBoxes, AABB_LEGS);
         addCollisionBoxToList(pos, entityBox, collidingBoxes, AABB_WALL_WEST);
         addCollisionBoxToList(pos, entityBox, collidingBoxes, AABB_WALL_NORTH);
         addCollisionBoxToList(pos, entityBox, collidingBoxes, AABB_WALL_EAST);
@@ -70,7 +68,7 @@ public class HereticCauldron extends BaseBlockHarshenSingleInventory
 	
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-		return new AxisAlignedBB(0.08f, 0f, 0.08f, 0.92f, 0.875f, 0.92f);
+		return new AxisAlignedBB(0.06f, 0f, 0.06f, 0.94f, 0.95f, 0.94f);
 	}
 	
 	@Override

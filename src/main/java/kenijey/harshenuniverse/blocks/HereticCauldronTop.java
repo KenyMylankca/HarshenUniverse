@@ -28,7 +28,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class HereticCauldronTop extends Block implements ITileEntityProvider	
 {
-
 	public HereticCauldronTop() {
 		super(Material.IRON);
 		setRegistryName("heretic_cauldron_top");
