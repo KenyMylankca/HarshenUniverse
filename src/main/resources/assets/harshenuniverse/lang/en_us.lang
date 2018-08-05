@@ -182,6 +182,7 @@ tile.jewel_dirt.overworld.name=Jewely Dirt
 tile.jewel_dirt.pontus.name=Jewely Dirt
 tile.bloody_torch.name=§4Bloody Torch§r
 tile.bloody_wool.name=§4Bloody Wool§r
+tile.bloody_bed.name=§4Bloody Bed§r (WIP)
 
 #fluids
 fluid.harshen_dimensional_fluid=Harshen Dimensional Fluid
@@ -290,6 +291,8 @@ reflector_pendant2=damage you took to the enemy
 bloodytorch1=It will prevent mobs attacking to you in the area it lights up or if
 bloodytorch2=you are holding it in your any hand, unless you attack the mobs
 bloodyarmor1=Full set will regenerate 1 heart every 6 seconds
+bed1=You can't sleep on it, but
+bed2=you can lie on it and get healed well
 
 #The One Probe
 top.gate.timeleft=Seconds Left: %s

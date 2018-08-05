@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "harshenuniverse:blank_model" },
+        "facing=south": { "model": "harshenuniverse:blank_model", "y": 180 },
+        "facing=west":  { "model": "harshenuniverse:blank_model", "y": 270 },
+        "facing=east":  { "model": "harshenuniverse:blank_model", "y": 90 }
+    }
+}

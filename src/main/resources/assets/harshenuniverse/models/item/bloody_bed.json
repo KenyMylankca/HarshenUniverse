@@ -1,0 +1,125 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"0": "harshenuniverse:blocks/bloody_wool",
+		"1": "harshenuniverse:blocks/harshen_dimensional_wood_crate",
+		"2": "harshenuniverse:blocks/brown",
+		"particle": "harshenuniverse:blocks/harshen_dimensional_wood_crate"
+	},
+	"elements": [
+		{
+			"name": "Leg1",
+			"from": [2, 1, 0],
+			"to": [4, 4, 2],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3, 2.5, 1]},
+			"faces": {
+				"north": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"east": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"south": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"west": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"up": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"down": {"uv": [2.5, 7.5, 5.5, 10.5], "texture": "#1"}
+			}
+		},
+		{
+			"name": "Leg2",
+			"from": [10, 1, 0],
+			"to": [12, 4, 2],
+			"rotation": {"angle": 0, "axis": "y", "origin": [5, 9, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"east": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"south": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"west": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"up": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"down": {"uv": [9, 0, 12, 3], "texture": "#1"}
+			}
+		},
+		{
+			"name": "Leg3",
+			"from": [10, 1, 15],
+			"to": [12, 4, 17],
+			"rotation": {"angle": 0, "axis": "y", "origin": [11, 2.5, 16]},
+			"faces": {
+				"north": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"east": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"south": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"west": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"up": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"down": {"uv": [8, 0.5, 11, 3.5], "texture": "#1"}
+			}
+		},
+		{
+			"name": "Leg4",
+			"from": [2, 1, 15],
+			"to": [4, 4, 17],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3, 2.5, 16]},
+			"faces": {
+				"north": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"east": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"south": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"west": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"up": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"down": {"uv": [6, 6.5, 9, 9.5], "texture": "#1"}
+			}
+		},
+		{
+			"name": "Body",
+			"from": [2, 4, 0],
+			"to": [12, 6, 17],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 5, 8.5]},
+			"faces": {
+				"north": {"uv": [0.06, 3.56, 15.94, 6.44], "texture": "#1", "cullface": "north"},
+				"east": {"uv": [0.06, 7.56, 15.94, 10.44], "texture": "#1", "cullface": "east"},
+				"south": {"uv": [0.06, 3.56, 15.94, 6.44], "texture": "#1", "cullface": "south"},
+				"west": {"uv": [0.06, 9.06, 15.94, 11.94], "texture": "#1", "cullface": "west"},
+				"up": {"uv": [0.06, 0.06, 15.94, 31.94], "texture": "#1"},
+				"down": {"uv": [0.06, 0.06, 15.94, 15.94], "texture": "#1"}
+			}
+		},
+		{
+			"name": "Wool",
+			"from": [2, 6, 0],
+			"to": [12, 9, 17],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 7.5, 8.5]},
+			"faces": {
+				"north": {"uv": [0.06, 0.06, 15.94, 2.94], "texture": "#0"},
+				"east": {"uv": [0.06, 0.06, 15.94, 2.94], "texture": "#0"},
+				"south": {"uv": [0.06, 0.06, 15.94, 2.94], "texture": "#0"},
+				"west": {"uv": [0.06, 5.06, 15.94, 7.94], "texture": "#0"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"down": {"uv": [0.06, 0.06, 15.94, 31.94], "texture": "#0"}
+			}
+		},
+		{
+			"name": "Pillow",
+			"from": [3, 9, 13],
+			"to": [11, 10, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 9.5, 14.5]},
+			"faces": {
+				"north": {"uv": [0.032, 0.032, 13.968, 1.968], "texture": "#2"},
+				"east": {"uv": [0.032, 0.032, 5.968, 1.968], "texture": "#2"},
+				"south": {"uv": [0.032, 0.032, 13.968, 1.968], "texture": "#2"},
+				"west": {"uv": [0.032, 0.032, 5.968, 1.968], "texture": "#2"},
+				"up": {"uv": [0.032, 0.032, 13.968, 5.968], "texture": "#2"},
+				"down": {"uv": [0.032, 0.032, 13.968, 5.968], "texture": "#2"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 3, -2],
+			"rotation": [40, -168, 0]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, -180, 0]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -180, 0]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -180, 0]
+		}
+	}
+}

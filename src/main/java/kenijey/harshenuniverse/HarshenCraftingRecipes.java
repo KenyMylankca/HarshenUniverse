@@ -327,6 +327,15 @@ public class HarshenCraftingRecipes
 				
 				'c', new ItemStack(Blocks.WEB),
 				's', new ItemStack(Items.STRING));
+		
+		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "bloody_bed"), new ResourceLocation(group),
+				new ItemStack(HarshenBlocks.BLOODY_BED),
+				"lww",
+				"ccc",
+				
+				'c', new ItemStack(HarshenBlocks.HARSHEN_DIMENSIONAL_WOOD_CRATE),
+				'l', new ItemStack(Items.LEATHER),
+				'w', new ItemStack(HarshenBlocks.BLOODY_WOOL));
 		for(GlassContainerValue glass : GlassContainerValue.values())
 			if(HarshenUtils.glassContainerHasState(glass))
 			{

@@ -10,6 +10,8 @@ import kenijey.harshenuniverse.blocks.BloodBlock;
 import kenijey.harshenuniverse.blocks.BloodFactory;
 import kenijey.harshenuniverse.blocks.BloodPlacer;
 import kenijey.harshenuniverse.blocks.BloodVessel;
+import kenijey.harshenuniverse.blocks.BloodyBed;
+import kenijey.harshenuniverse.blocks.BloodyBedHead;
 import kenijey.harshenuniverse.blocks.BloodyTorch;
 import kenijey.harshenuniverse.blocks.BloodyWool;
 import kenijey.harshenuniverse.blocks.CropOfGleam;
@@ -113,6 +115,8 @@ public class HarshenBlocks
 	public static final Block JEWEL_DIRT = new JewelDirt();
 	public static final Block BLOODY_TORCH = new BloodyTorch();
 	public static final Block BLOODY_WOOL = new BloodyWool();
+	public static final Block BLOODY_BED = new BloodyBed();
+	public static final Block BLOODY_BED_HEAD = new BloodyBedHead();
 	
 	public static final BlockCrops CROP_OF_GLEAM = new CropOfGleam();
 	
@@ -167,11 +171,13 @@ public class HarshenBlocks
 		regBlock(JEWEL_DIRT, 64);
 		regBlock(BLOODY_TORCH, 64);
 		regBlock(BLOODY_WOOL, 64);
+		regBlock(BLOODY_BED, 1);
 		
 		regSingleBlock(HERETIC_CAULDRON_TOP);
 		regSingleBlock(CROP_OF_GLEAM);
 		regSingleBlock(HARSHEN_DIMENSIONAL_DOOR, HarshenDimensionalDoor.POWERED);
 		regSingleBlock(HARSHEN_DIMENSIONAL_TIMER_PLATE_ACTIVE);
+		regSingleBlock(BLOODY_BED_HEAD);
 	}
 
 	public static void regRenders() {

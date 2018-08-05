@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "harshenuniverse:bloody_bed" },
+        "facing=south": { "model": "harshenuniverse:bloody_bed", "y": 180 },
+        "facing=west":  { "model": "harshenuniverse:bloody_bed", "y": 270 },
+        "facing=east":  { "model": "harshenuniverse:bloody_bed", "y": 90 }
+    }
+}
