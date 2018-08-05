@@ -251,11 +251,12 @@ public class HarshenCraftingRecipes
 		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "blood_vessel"), new ResourceLocation(group),
 				new ItemStack(HarshenBlocks.BLOOD_VESSEL),
 				" t ",
-				"ggg",
+				"gwg",
 				" t ",
 				
 				't', new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, 0),
-				'g', new ItemStack(Blocks.STAINED_GLASS, 1, 14));
+				'g', new ItemStack(Blocks.STAINED_GLASS, 1, 14),
+				'w', new ItemStack(HarshenBlocks.BLOODY_WOOL));
 		
 		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "iron_scythe"), new ResourceLocation(group),
 				new ItemStack(HarshenItems.IRON_SCYTHE),

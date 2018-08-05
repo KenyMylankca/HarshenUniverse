@@ -31,6 +31,7 @@ import kenijey.harshenuniverse.armor.HarshenArmors;
 import kenijey.harshenuniverse.base.BasePontusResourceBiome;
 import kenijey.harshenuniverse.biomes.HarshenBiomes;
 import kenijey.harshenuniverse.biomes.PontusBiomeProvider;
+import kenijey.harshenuniverse.blocks.BloodVessel;
 import kenijey.harshenuniverse.config.GeneralConfig;
 import kenijey.harshenuniverse.config.HarshenConfigs;
 import kenijey.harshenuniverse.enchantment.HarshenEnchantmetns;
@@ -40,6 +41,7 @@ import kenijey.harshenuniverse.network.HarshenNetwork;
 import kenijey.harshenuniverse.network.packets.MessagePacketSetItemInSlot;
 import kenijey.harshenuniverse.objecthandlers.HarshenItemStackHandler;
 import kenijey.harshenuniverse.objecthandlers.HarshenMap;
+import kenijey.harshenuniverse.tileentity.TileEntityBloodVessel;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.state.IBlockState;
@@ -78,6 +80,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -1026,13 +1029,26 @@ public class HarshenUtils
     	if(GeneralConfig.bloodDrops && new Random().nextDouble() < GeneralConfig.bloodChance && HarshenUtils.toArray(AllowedEntities).contains(entityIn.getClass()) && world.isAirBlock(pos))
 			for(int i=0; i<GeneralConfig.bloodHeightRange; i++)
 			{
-				if(world.isAirBlock(pos.down(i)) && world.isSideSolid(pos.down(i+1), EnumFacing.UP) && !(world.isAirBlock(pos.down(i+1))))
+				if(world.isAirBlock(pos.down(i)) && !(world.isAirBlock(pos.down(i+1))))
 				{
 					BlockPos bloodpos = pos.down(i);
-					if(world.getBlockState(bloodpos).getBlock().canPlaceBlockAt(world, bloodpos) )
+					if(world.getBlockState(bloodpos.down()).getBlock() instanceof BloodVessel)
 					{
-						world.setBlockState(bloodpos, HarshenBlocks.BLOOD_BLOCK.getDefaultState(), 3);
-						break;
+						TileEntityBloodVessel vessel = ((TileEntityBloodVessel)world.getTileEntity(bloodpos.down()));
+						if(vessel.canAdd(1))
+						{
+							vessel.change(1);
+							world.playSound(bloodpos.getX(), bloodpos.getY(), bloodpos.getZ(), HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 0.8f, 1f, false);
+							break;
+						}
+					}
+					else if(world.isSideSolid(pos.down(i+1), EnumFacing.UP))
+					{
+						if(world.getBlockState(bloodpos).getBlock().canPlaceBlockAt(world, bloodpos))
+						{
+							world.setBlockState(bloodpos, HarshenBlocks.BLOOD_BLOCK.getDefaultState(), 3);
+							break;
+						}
 					}
 				}
 			}
