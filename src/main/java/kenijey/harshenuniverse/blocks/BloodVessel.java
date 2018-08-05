@@ -128,7 +128,7 @@ public class BloodVessel extends Block implements ITileEntityProvider
 	}
 	
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add("\u00A74" + new TextComponentTranslation("vessel1").getFormattedText());
+		tooltip.add("\u00A73" + new TextComponentTranslation("vessel1").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 	

@@ -48,7 +48,7 @@ public class Archive extends BaseHarshenFacedBlock
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add("\u00A76" + new TextComponentTranslation("archive1").getFormattedText());
+		tooltip.add("\u00A73" + new TextComponentTranslation("archive1").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 }

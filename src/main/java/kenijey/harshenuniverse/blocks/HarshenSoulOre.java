@@ -113,8 +113,8 @@ public class HarshenSoulOre extends Block
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add("\u00A74" + new TextComponentTranslation("ore1").getFormattedText());
-		tooltip.add("\u00A74" + new TextComponentTranslation("item.soul_harsher_pickaxe.name").getFormattedText());
+		tooltip.add("\u00A73" + new TextComponentTranslation("ore1").getFormattedText());
+		tooltip.add("\u00A73" + new TextComponentTranslation("item.soul_harsher_pickaxe.name").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 }

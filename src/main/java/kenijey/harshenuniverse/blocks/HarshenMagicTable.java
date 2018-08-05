@@ -66,7 +66,7 @@ public class HarshenMagicTable extends Block implements ITileEntityProvider
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add("\u00A76" + new TextComponentTranslation("magic_table1").getFormattedText());
+		tooltip.add("\u00A73" + new TextComponentTranslation("magic_table1").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 

@@ -1,6 +1,44 @@
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "harshenuniverse:items/gillette_bloody"
-    }
+	"credit": "Made with Blockbench",
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "harshenuniverse:items/gillette_bloody"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 7],
+			"to": [16, 15, 7.1],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#layer0"},
+				"east": {"uv": [0, 0, 0.16667, 2.5], "texture": "#layer0"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#layer0", "rotation": 90},
+				"west": {"uv": [0, 0, 0.16667, 2.5], "texture": "#layer0"},
+				"up": {"uv": [0, 0, 2.66667, 0.16667], "texture": "#layer0"},
+				"down": {"uv": [0, 0, 2.66667, 0.16667], "texture": "#layer0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, 0, 0],
+			"scale": [0.7, 0.7, 0.1]
+		},
+		"thirdperson_lefthand": {
+			"scale": [0.7, 0.7, 0.1]
+		},
+		"firstperson_righthand": {
+			"scale": [0.675, 0.675, 0.1]
+		},
+		"firstperson_lefthand": {
+			"scale": [0.65, 0.65, 0.1],
+			"translation": [0, 0, 0],
+			"rotation": [0, 157, 7]
+		},
+		"ground": {
+			"scale": [0.675, 0.675, 0.1]
+		},
+		"fixed": {
+			"scale": [1, 1, 0.1]
+		}
+	}
 }

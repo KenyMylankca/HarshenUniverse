@@ -46,8 +46,8 @@ public class BloodyTorch extends BlockTorch
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add("\u00A74" + new TextComponentTranslation("bloodytorch1").getFormattedText());
-		tooltip.add("\u00a74" + new TextComponentTranslation("bloodytorch2").getFormattedText());
+		tooltip.add("\u00A73" + new TextComponentTranslation("bloodytorch1").getFormattedText());
+		tooltip.add("\u00a73" + new TextComponentTranslation("bloodytorch2").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 }

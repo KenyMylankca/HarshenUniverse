@@ -26,7 +26,7 @@ public class BloodyArmor extends ItemArmor
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new TextComponentTranslation("bloodyarmor1").getFormattedText());
+		tooltip.add("\u00A73" + new TextComponentTranslation("bloodyarmor1").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 }
