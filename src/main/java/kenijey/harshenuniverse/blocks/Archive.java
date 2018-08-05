@@ -38,12 +38,12 @@ public class Archive extends BaseHarshenFacedBlock
 	
 	@Override
 	public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
-		return new AxisAlignedBB(0.12f, 0f, 0.12f, 0.88f, 0.83f, 0.94f);
+		return new AxisAlignedBB(0.05f, 0f, 0.05f, 0.95f, 1f, 0.95f);
 	}
 	
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-		return new AxisAlignedBB(0.12f, 0f, 0.12f, 0.88f, 0.83f, 0.94f);
+		return new AxisAlignedBB(0.05f, 0f, 0.05f, 0.95f, 1f, 0.95f);
 	}
 	
 	@Override
