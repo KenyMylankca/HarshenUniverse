@@ -3,6 +3,7 @@ package kenijey.harshenuniverse.blocks;
 import kenijey.harshenuniverse.base.BaseBlockHarshenSingleInventory;
 import kenijey.harshenuniverse.base.BaseTileEntityHarshenSingleItemInventory;
 import kenijey.harshenuniverse.tileentity.TileEntityHarshenDimensionalPedestal;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -43,4 +44,22 @@ public class HarshenDimensionalPedestal extends BaseBlockHarshenSingleInventory
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		return ((TileEntityHarshenDimensionalPedestal)worldIn.getTileEntity(pos)).isActive() ? true : super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
 	}
+	
+	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
+    {
+        this.checkForDrop(worldIn, pos, state);
+    }
+
+    private boolean checkForDrop(World worldIn, BlockPos pos, IBlockState state)
+    {
+        if (!worldIn.isSideSolid(pos, EnumFacing.UP))
+        {
+            worldIn.destroyBlock(pos, true);
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 }

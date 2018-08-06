@@ -6,7 +6,6 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.particle.ParticleManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.Potion;
@@ -14,7 +13,6 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -102,20 +100,5 @@ public class SoulReminder extends Block
 			if (world instanceof WorldServer)
 				((WorldServer)world).spawnParticle(EnumParticleTypes.CLOUD, false, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 7,  0.3, 0.2, 0.3, 0, new int[EnumParticleTypes.CLOUD.getArgumentCount()]);
 		super.updateTick(worldIn, pos, state, rand);
-	}
-	
-	@Override
-	public boolean addHitEffects(IBlockState state, World worldObj, RayTraceResult target, ParticleManager manager) {
-		if(world != null && pos != null)
-			if (world instanceof WorldServer)
-				((WorldServer)world).spawnParticle(EnumParticleTypes.CLOUD, false, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 20,  0.7, 0.7, 0.7, 0, new int[EnumParticleTypes.CLOUD.getArgumentCount()]);
-		return super.addHitEffects(state, worldObj, target, manager);
-	}
-	
-	@Override
-	public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
-		this.pos = pos;
-		this.world = worldIn;
-		super.onBlockClicked(worldIn, pos, playerIn);
 	}
 }
