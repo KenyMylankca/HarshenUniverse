@@ -10,7 +10,8 @@ import kenijey.harshenuniverse.worldgenerators.overworld.JewelDirtGenOverworld;
 import kenijey.harshenuniverse.worldgenerators.pontus.JewelDirtGenPontus;
 import kenijey.harshenuniverse.worldgenerators.pontus.PontusWorldGeneratorItiumOre;
 import kenijey.harshenuniverse.worldgenerators.pontus.PontusWorldGeneratorPontusEmeraldOre;
-import net.minecraft.block.BlockFlower;
+import net.minecraft.block.Block;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -48,7 +49,6 @@ public class WorldGen implements IWorldGenerator
 	    	runGenerator(this.pontusEmeraldOre, world, random, chunkX, chunkZ, 12, 0, 255);
 	    	flowerGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.5f);
 	    	runGenerator(jewelDirtPontus, world, random, chunkX, chunkZ, 22, 0, 200);
-	    	
 		}
 		generateStructure(world, HarshenStructure.get(dim), random, chunkX, chunkZ);
 	}
@@ -73,7 +73,7 @@ public class WorldGen implements IWorldGenerator
 	    	} 
 	}
 	
-	private void flowerGenerator(BlockFlower flower, World worldIn, Random random, int chunkX, int chunkZ, float chancesToSpawn)
+	private void flowerGenerator(Block flower, World worldIn, Random random, int chunkX, int chunkZ, float chancesToSpawn)
 	{
 		for(int i = 0; i < chancesToSpawn; i++)
 			if(random.nextFloat() < chancesToSpawn)
@@ -83,10 +83,9 @@ public class WorldGen implements IWorldGenerator
 				BlockPos position = worldIn.getTopSolidOrLiquidBlock(new BlockPos(x, 0, z));
 				BlockPos blockpos = position.add(random.nextInt(8) - random.nextInt(8), random.nextInt(4) - random.nextInt(4), random.nextInt(8) - random.nextInt(8));
 		
-		        if (worldIn.isAirBlock(blockpos) && (worldIn.provider.isSurfaceWorld() || blockpos.getY() < 255) && 
-		        		flower.canBlockStay(worldIn, blockpos, flower.getDefaultState()))
+		        if (worldIn.isAirBlock(blockpos) && (worldIn.provider.isSurfaceWorld() || blockpos.getY() < 255) && worldIn.isSideSolid(blockpos.down(), EnumFacing.UP))
 		        {
-		            worldIn.setBlockState(blockpos,flower.getDefaultState(), 2);
+		            worldIn.setBlockState(blockpos,flower.getDefaultState(), 1);
 		        }
 			}
 	}	
