@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "mushrooms=0": { "model": "harshenuniverse:akzenia_mushroom_0" },
+		"mushrooms=1": { "model": "harshenuniverse:akzenia_mushroom_0" },
+		"mushrooms=2": { "model": "harshenuniverse:akzenia_mushroom_1" },
+		"mushrooms=3": { "model": "harshenuniverse:akzenia_mushroom_2" },
+		"mushrooms=4": { "model": "harshenuniverse:akzenia_mushroom_2" }
+	}
+}

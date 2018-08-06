@@ -11,6 +11,7 @@ import kenijey.harshenuniverse.enums.items.EnumPontusGateSpawnerParts;
 import kenijey.harshenuniverse.enums.items.EnumProp;
 import kenijey.harshenuniverse.enums.items.EnumRitualCrystal;
 import kenijey.harshenuniverse.enums.items.EnumRitualStick;
+import kenijey.harshenuniverse.items.AkzeniaSoup;
 import kenijey.harshenuniverse.items.BloodCollector;
 import kenijey.harshenuniverse.items.BloodEssence;
 import kenijey.harshenuniverse.items.BloodInfusedEnderEye;
@@ -154,6 +155,7 @@ public class HarshenItems
 	public static final Item CURSED_BONE = new CursedBone();
 	public static final Item SOUL_HARSHER_SPADE = new SoulHarsherSpade();
 	public static final Item REFLECTOR_PENDANT = new ReflectorPendant();
+	public static final Item AKZENIA_SOUP = new AkzeniaSoup();
 	
 	public static void preInit()
 	{
@@ -181,6 +183,7 @@ public class HarshenItems
 		regItem(EMPTY_RING, 16);
 		regItem(CURSED_BONE, 16);
 		regItem(BLOOD_INFUSED_ENDER_EYE, 4);
+		regItem(AKZENIA_SOUP, 1);
 		
 		regItem(EMPOWERED_SOUL_HARSHER_SWORD);
 		regItem(SOUL_HARSHER_PICKAXE);

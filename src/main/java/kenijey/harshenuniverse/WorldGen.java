@@ -41,6 +41,7 @@ public class WorldGen implements IWorldGenerator
 			runGenerator(this.soulore, world, random, chunkX, chunkZ, 10, 0, 20);
 			plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.1f);
 			plantGenerator(HarshenBlocks.PLANT_OF_GLEAM, world, random, chunkX, chunkZ, 0.1f);
+			plantGenerator(HarshenBlocks.AKZENIA_MUSHROOM, world, random, chunkX, chunkZ, 0.1f);
 	    	runGenerator(jewelDirtOverworld, world, random, chunkX, chunkZ, 200, 0, 200);
 		}
 		else if(dim == DimensionPontus.DIMENSION_ID)

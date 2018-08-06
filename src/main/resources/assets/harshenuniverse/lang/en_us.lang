@@ -91,6 +91,7 @@ item.cursed_bone.name=§4Cursed Bone§r
 item.soul_harsher_spade.name=Soul Harsher Spade
 item.reflector_pendant.name=Reflector Pendant
 item.broken_arrow.name=Broken Arrow
+item.akzenia_soup.name=§5Akzenia Soup§r
 
 #keybindings
 key.telering.description=Telering Teleport Key
@@ -183,6 +184,7 @@ tile.jewel_dirt.pontus.name=Jewely Dirt
 tile.bloody_torch.name=§4Bloody Torch§r
 tile.bloody_wool.name=§4Bloody Wool§r
 tile.bloody_bed.name=§4Bloody Bed§r (WIP)
+tile.akzenia_mushroom.name=§5Akzenia Mushroom§r
 
 #fluids
 fluid.harshen_dimensional_fluid=Harshen Dimensional Fluid
@@ -343,3 +345,4 @@ jei.harshen_jaguar_armor.info=The full set gives night vision and speed. Also, i
 jei.jewel_dirt_0.info=Found under water lakes.
 jei.soul_harsher_spade.info=This spade can break all DIRT types of Harshen Universe.
 jei.blood_placer.info=Can be easily activated by redstone. And can be filled by placing a blood filled Blood Vessel on it.
+jei.akzenia_mushroom.info=Spawns on overworld. It can be farmed such like vanilla mushrooms.

@@ -94,8 +94,8 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 				new HarshenStack("gemEmerald"), new HarshenStack("gemQuartz"), new HarshenStack(new ItemStack(Items.ENDER_EYE)),
 				new HarshenStack(new ItemStack(Blocks.END_ROD)), new HarshenStack("oreLapis"));
 		
-		registry.registerHereticRecipe(GlassContainerValues.EMPTY.getHarshenStack(3), GlassContainerValues.MAGIC.getStack(3), GlassContainerValues.HARSHING_WATER.getType(), 
-				new HarshenStack(new ItemStack(HarshenItems.LIGHT_EMITTED_ESSENCE)), new HarshenStack("dyePurple"), new HarshenStack("dyePink"),
+		registry.registerHereticRecipe(GlassContainerValues.EMPTY.getHarshenStack(), GlassContainerValues.MAGIC.getStack(), GlassContainerValues.HARSHING_WATER.getType(), 
+				new HarshenStack(new ItemStack(HarshenItems.LIGHT_EMITTED_ESSENCE)), new HarshenStack("dyePurple"), new HarshenStack(new ItemStack(HarshenBlocks.AKZENIA_MUSHROOM)),
 				new HarshenStack(new ItemStack(Items.SUGAR)), new HarshenStack("enderpearl"), new HarshenStack(new ItemStack(Items.CHORUS_FRUIT_POPPED)),
 				new HarshenStack(new ItemStack(Items.BLAZE_POWDER)), new HarshenStack(new ItemStack(Items.SPIDER_EYE)));
 		

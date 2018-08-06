@@ -1,0 +1,19 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "harshen_items",
+  "ingredients": [
+    {
+      "item": "harshenuniverse:akzenia_mushroom"
+    },
+	{
+      "item": "minecraft:snowball"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "harshenuniverse:akzenia_soup",
+	 "count": 1
+  }
+}
