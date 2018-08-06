@@ -316,30 +316,30 @@ jei.pedestal_slab.name=§4Blood Ritual§r
 jei.heretic_ritual.name=§5Heretic Ritual§r
 jei.magic_table.name=§3Magic Table§r
 
-#JEI Description
-jei.harshen_soul_fragment.description=You can mine Harshen Soul Ore, but you need to use Soul Harsher Pickaxe to do that. Neither way, you will die in pain.
-jei.harshen_crystal.description=It's obtainable from Harshen Soul Flower which spawns on overworld.
-jei.light_emitted_seed.description=You can obtain it by destroying the Plant of Gleam that spawns in overworld.
-jei.light_emitted_essence.description=The Essence of Sunlight. This essence is obtainable from Light Emitted Seed plant.
-jei.soul_harsher_pickaxe.description=Need this? Find the Kazzendre's Castle and kill Kazzendre. There is also a treasure room just after him. This pickaxe can break all ROCK types of Harshen Universe.
-jei.blood_block.description=Need it? Use Blood Collector.
-jei.harshen_soul_flower.description=No enough drops? You may need Fortune enchantment for your tool.
-jei.pontus_world_gate_part_0.description=These parts found in chests in Kazzendre's Castle. It spawns in overworld, but there's only 1. Also found in a small shrine in overworld surface.
-jei.blood_essence.description=You can obtain it by killing Bloody Mary in Pontus World. But she will probably hate you and...
-jei.blood_collector.description=You can fill it with blood by right clicking blood(s) on the ground. Or, you can hold it in your offhand then kill mobs, that will work too.
-jei.blood_vessel.description=There are 2 ways to fill it. First is filling it with Blood Collector. You can fill your Blood Collector back from it by holding your Blood Collector in your offhand then right click to this. Second way is placing a Blood Factory on it, then place Blood Essence on the Blood Factory.
-jei.valor_badge.description=A ancient artifact dating back thousands of years. A few villagers have begun collecting these.
-jei.iron_heart.description=Iron Golem drop.
-jei.lightning_staff.description=You can refill it with gold on anvil.
-jei.heretic_cauldron.description=You can fill it by right clicking with Blood Collector when it's in your main hand. If the Blood Collector in your off hand, your Blood Collector will be filled from the Heretic Cauldron.
-jei.glass_container_1.description=You can obtain it by right clicking on the diggest bedrock block (Y=0) with an empty Glass Container.
-jei.glass_container_6.description=You can obtain it by right clicking on a Blood Block on ground with an empty Glass Container. You can fill it from Heretic Cauldron filled with blood too.
-jei.glass_container_8.description=You can obtain it by right clicking on a cow with an empty Glass Container.
-jei.glass_container_10.description=You can obtain it by right clicking on a Dirt Block with an empty Glass Container.
-jei.glass_container_11.description=You can obtain it by right clicking on a Sand Block with an empty Glass Container.
-jei.glass_container_4.description=You can obtain it by right clicking on the related fluid with an empty Glass Container.
-jei.soul_shield.description=Repairable with Harshen Soul Fragment on anvil.
-jei.harshen_jaguar_armor.description=The full set gives night vision and speed. Also, it will protect you from the Bleeding effect, and soul harshing curses.
-jei.jewel_dirt_0.description=Found under water lakes.
-jei.soul_harsher_spade.description=This spade can break all DIRT types of Harshen Universe.
-jei.blood_placer.description=Can be easily activated by redstone. And can be filled by placing a blood filled Blood Vessel on it.
+#JEI Info
+jei.harshen_soul_fragment.info=You can mine Harshen Soul Ore, but you need to use Soul Harsher Pickaxe to do that. Neither way, you will die in pain.
+jei.harshen_crystal.info=It's obtainable from Harshen Soul Flower which spawns on overworld.
+jei.light_emitted_seed.info=You can obtain it by destroying the Plant of Gleam that spawns in overworld.
+jei.light_emitted_essence.info=The Essence of Sunlight. This essence is obtainable from Light Emitted Seed plant.
+jei.soul_harsher_pickaxe.info=Need this? Find the Kazzendre's Castle and kill Kazzendre. There is also a treasure room just after him. This pickaxe can break all ROCK types of Harshen Universe.
+jei.blood_block.info=Need it? Use Blood Collector.
+jei.harshen_soul_flower.info=No enough drops? You may need Fortune enchantment for your tool.
+jei.pontus_world_gate_part_0.info=These parts found in chests in Kazzendre's Castle. It spawns in overworld, but there's only 1. Also found in a small shrine in overworld surface.
+jei.blood_essence.info=You can obtain it by killing Bloody Mary in Pontus World. But she will probably hate you and...
+jei.blood_collector.info=You can fill it with blood by right clicking blood(s) on the ground. Or, you can hold it in your offhand then kill mobs, that will work too.
+jei.blood_vessel.info=There are 2 ways to fill it. First is filling it with Blood Collector. You can fill your Blood Collector back from it by holding your Blood Collector in your offhand then right click to this. Second way is placing a Blood Factory on it, then place Blood Essence on the Blood Factory.
+jei.valor_badge.info=A ancient artifact dating back thousands of years. A few villagers have begun collecting these.
+jei.iron_heart.info=Iron Golem drop.
+jei.lightning_staff.info=You can refill it with gold on anvil.
+jei.heretic_cauldron.info=You can fill it by right clicking with Blood Collector when it's in your main hand. If the Blood Collector in your off hand, your Blood Collector will be filled from the Heretic Cauldron.
+jei.glass_container_1.info=You can obtain it by right clicking on the diggest bedrock block (Y=0) with an empty Glass Container.
+jei.glass_container_6.info=You can obtain it by right clicking on a Blood Block on ground with an empty Glass Container. You can fill it from Heretic Cauldron filled with blood too.
+jei.glass_container_8.info=You can obtain it by right clicking on a cow with an empty Glass Container.
+jei.glass_container_10.info=You can obtain it by right clicking on a Dirt Block with an empty Glass Container.
+jei.glass_container_11.info=You can obtain it by right clicking on a Sand Block with an empty Glass Container.
+jei.glass_container_4.info=You can obtain it by right clicking on the related fluid with an empty Glass Container.
+jei.soul_shield.info=Repairable with Harshen Soul Fragment on anvil.
+jei.harshen_jaguar_armor.info=The full set gives night vision and speed. Also, it will protect you from the Bleeding effect, and soul harshing curses.
+jei.jewel_dirt_0.info=Found under water lakes.
+jei.soul_harsher_spade.info=This spade can break all DIRT types of Harshen Universe.
+jei.blood_placer.info=Can be easily activated by redstone. And can be filled by placing a blood filled Blood Vessel on it.

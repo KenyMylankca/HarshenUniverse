@@ -103,34 +103,34 @@ public class JEIHarshenUniverse implements IModPlugin
 	private void info(String name, Item... items)
 	{
 		for(Item item : items)
-		registry.addIngredientInfo(new ItemStack(item), ItemStack.class, "jei." + name + ".description");
+		registry.addIngredientInfo(new ItemStack(item), ItemStack.class, "jei." + name + ".info");
 	}
 
 	private void info(Block block)
 	{
-		registry.addIngredientInfo(new ItemStack(block), ItemStack.class, "jei." + block.getRegistryName().getResourcePath() + ".description");
+		registry.addIngredientInfo(new ItemStack(block), ItemStack.class, "jei." + block.getRegistryName().getResourcePath() + ".info");
 	}
 	
 	private void info(Block block, int meta)
 	{
-		registry.addIngredientInfo(new ItemStack(block, 1, meta), ItemStack.class, "jei." + block.getRegistryName().getResourcePath() + "_" + meta + ".description");
+		registry.addIngredientInfo(new ItemStack(block, 1, meta), ItemStack.class, "jei." + block.getRegistryName().getResourcePath() + "_" + meta + ".info");
 	}
 	
 	private void info(Item item)
 	{
-		registry.addIngredientInfo(new ItemStack(item), ItemStack.class, "jei." + item.getRegistryName().getResourcePath() + ".description");
+		registry.addIngredientInfo(new ItemStack(item), ItemStack.class, "jei." + item.getRegistryName().getResourcePath() + ".info");
 	}
 	
 	private void info(Item item, int meta)
 	{
-		registry.addIngredientInfo(new ItemStack(item, 1, meta), ItemStack.class, "jei." + item.getRegistryName().getResourcePath() + "_" + meta + ".description");
+		registry.addIngredientInfo(new ItemStack(item, 1, meta), ItemStack.class, "jei." + item.getRegistryName().getResourcePath() + "_" + meta + ".info");
 	}
 	
 	private void info(Item item, int[] meta)
 	{
 		for(int i=0; i<meta.length; i++)
 		{
-			registry.addIngredientInfo(new ItemStack(item, 1, meta[i]), ItemStack.class, "jei." + item.getRegistryName().getResourcePath() + "_" + meta[0] + ".description");
+			registry.addIngredientInfo(new ItemStack(item, 1, meta[i]), ItemStack.class, "jei." + item.getRegistryName().getResourcePath() + "_" + meta[0] + ".info");
 		}
 	}
 	
