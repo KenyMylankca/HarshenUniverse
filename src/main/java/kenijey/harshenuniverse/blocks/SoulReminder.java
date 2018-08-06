@@ -36,11 +36,6 @@ public class SoulReminder extends Block
 	}
 	
 	@Override
-	public int tickRate(World worldIn) {
-		return 10;
-	}
-	
-	@Override
 	public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random) {
 		if(!isTicking)
 			updateTick(worldIn, pos, state, random);
