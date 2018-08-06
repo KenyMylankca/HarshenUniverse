@@ -17,6 +17,7 @@ public class BloodyApple extends ItemFood implements IBloodSupply
 		super(1, 1, true);
 		setUnlocalizedName("bloody_apple");
 		setRegistryName("bloody_apple");
+		this.setAlwaysEdible();
 	}
 
 	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player)
