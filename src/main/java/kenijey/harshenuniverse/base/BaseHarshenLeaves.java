@@ -2,9 +2,10 @@ package kenijey.harshenuniverse.base;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
+import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.util.BlockRenderLayer;
@@ -14,16 +15,15 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public abstract class BaseHarshenLeaves extends Block
+public abstract class BaseHarshenLeaves extends BlockLeaves
 {
-
 	public BaseHarshenLeaves() {
-		super(Material.LEAVES);
 		setRegistryName(getName());
 		setUnlocalizedName(getName());
 		this.setSoundType(SoundType.PLANT);
 		this.setHardness(0.2F);
         this.setLightOpacity(1);
+        this.setDefaultState(this.blockState.getBaseState().withProperty(DECAYABLE, Boolean.valueOf(false)).withProperty(CHECK_DECAY, Boolean.valueOf(false)));
 	}
 	
 	protected abstract String getName();
@@ -59,4 +59,20 @@ public abstract class BaseHarshenLeaves extends Block
     {
         return true;
     }
+	
+	@Override
+    protected BlockStateContainer createBlockState()
+    {
+        return new BlockStateContainer(this, new IProperty[] {DECAYABLE, CHECK_DECAY});
+    }
+	
+	@Override
+	public int getMetaFromState(IBlockState state) {
+		return 0;
+	}
+	
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
+		return this.getDefaultState();
+	}
 }

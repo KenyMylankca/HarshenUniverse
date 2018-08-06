@@ -46,6 +46,7 @@ public class BaseHarshenFacedBlock extends Block
     	return state.getValue(FACING).getHorizontalIndex();
     }
     
+	@Override
     protected BlockStateContainer createBlockState()
     {
         return new BlockStateContainer(this, new IProperty[] {FACING});

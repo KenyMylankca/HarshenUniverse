@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal":    { "model": "harshenuniverse:pontus_far_leaves" }
+        "check_decay=false,decayable=false":    { "model": "harshenuniverse:pontus_far_leaves" }
     }
 }
