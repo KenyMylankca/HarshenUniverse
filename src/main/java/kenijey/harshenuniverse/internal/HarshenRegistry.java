@@ -51,8 +51,8 @@ public class HarshenRegistry implements IHarshenRegistry
 	}
 	
 	@Override
-	public void registerLightningRecipe(ItemStack output, boolean useLightning, HarshenStack input1, HarshenStack input2, HarshenStack input3, HarshenStack input4) {
-		LightningRitualRecipes.addRecipe(HarshenUtils.toArray(input1, input2, input3, input4), output, useLightning);
+	public void registerLightningRecipe(ItemStack output, HarshenStack input1, HarshenStack input2, HarshenStack input3, HarshenStack input4) {
+		LightningRitualRecipes.addRecipe(HarshenUtils.toArray(input1, input2, input3, input4), output);
 	}
 
 	@Override

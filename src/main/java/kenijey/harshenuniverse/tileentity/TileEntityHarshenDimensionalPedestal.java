@@ -166,8 +166,7 @@ public class TileEntityHarshenDimensionalPedestal extends BaseTileEntityHarshenS
 		if(world.isRemote || workingRecipe == null)
 			return;
 		BlockPos pos = workingRecipe.getPositionOfRitual();
-		if(workingRecipe.lightning())
-			world.addWeatherEffect(new EntityLightningBolt(world, pos.getX(), pos.getY(), pos.getZ(), true));
+		world.addWeatherEffect(new EntityLightningBolt(world, pos.getX(), pos.getY(), pos.getZ(), true));
 		InventoryHelper.spawnItemStack(world, pos.getX(), pos.getY(), pos.getZ(), workingRecipe.getOutput().copy());
 		HarshenNetwork.sendToPlayersInWorld(world, new MessagePacketKillAllWithTag(workingRecipe.getTag()));
 		workingRecipe = null;

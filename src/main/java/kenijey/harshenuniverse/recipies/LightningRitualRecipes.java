@@ -15,12 +15,11 @@ public class LightningRitualRecipes {
 	private static ArrayList<LightningRitualRecipes> allRecipies = new ArrayList<LightningRitualRecipes>();
 	private final List<HarshenStack> inputs;
 	private final ItemStack output;
-	private final boolean useLightning;
 	private BlockPos positionOfRitual;
 	private boolean isFalse;
 	private String tag;
 	
-	private LightningRitualRecipes(List<HarshenStack> inputs, ItemStack output, boolean useLightning) 
+	private LightningRitualRecipes(List<HarshenStack> inputs, ItemStack output) 
 	{
 		if(inputs.size() != 4)
 			throw new IllegalArgumentException("input size for ritual recipe was not 4");
@@ -32,13 +31,12 @@ public class LightningRitualRecipes {
 		
 		this.inputs = new ArrayList<HarshenStack>(inputs);
 		this.output = output.copy();
-		this.useLightning = useLightning;
 		allRecipies.add(this);
 	}
 	
-	private LightningRitualRecipes(List<HarshenStack> inputs, ItemStack output, boolean useLightning, BlockPos position) 
+	private LightningRitualRecipes(List<HarshenStack> inputs, ItemStack output, BlockPos position) 
 	{
-		this(inputs, output, useLightning);
+		this(inputs, output);
 		this.positionOfRitual = position;
 	}
 	
@@ -67,7 +65,7 @@ public class LightningRitualRecipes {
 	
 	public LightningRitualRecipes setUpRitual(World world, BlockPos position)
 	{
-		return new LightningRitualRecipes(inputs, output, useLightning, position).setTag(HarshenUtils.getTagLine(world, position, "lightning_"));
+		return new LightningRitualRecipes(inputs, output, position).setTag(HarshenUtils.getTagLine(world, position, "lightning_"));
 	}
 	
 	public BlockPos getPositionOfRitual() {
@@ -87,14 +85,9 @@ public class LightningRitualRecipes {
 		return false;
 	}
 	
-	public boolean lightning()
+	public static void addRecipe(List<HarshenStack> inputs, ItemStack output)
 	{
-		return this.useLightning;
-	}
-	
-	public static void addRecipe(List<HarshenStack> inputs, ItemStack output, boolean useLightning)
-	{
-		LightningRitualRecipes recipe = new LightningRitualRecipes(inputs, output, useLightning);
+		LightningRitualRecipes recipe = new LightningRitualRecipes(inputs, output);
 		if(!recipe.isFalse)
 			HarshenAPIHandler.allRitualRecipes.add(recipe);
 	}

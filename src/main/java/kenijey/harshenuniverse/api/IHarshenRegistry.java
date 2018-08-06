@@ -15,13 +15,12 @@ public interface IHarshenRegistry
 	/**
 	 * Used to register a lightning ritual recipe. This recipe will be automatically be added to JEI and into game. 
 	 * @param output The ItemStack of what the output item should be
-	 * @param useLightning Should lightning strike when its finished.
 	 * @param input1 One of the inputs for the recipe
 	 * @param input2 One of the inputs for the recipe
 	 * @param input3 One of the inputs for the recipe
 	 * @param input4 One of the inputs for the recipe
 	 */
-	void registerLightningRecipe(ItemStack output, boolean useLightning, HarshenStack input1, HarshenStack input2, HarshenStack input3, HarshenStack input4);
+	void registerLightningRecipe(ItemStack output, HarshenStack input1, HarshenStack input2, HarshenStack input3, HarshenStack input4);
 	
 	/**
 	 * Used to register a cauldron recipe. This recipe will be automatically be added to JEI and into game.
