@@ -26,6 +26,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BloodVessel extends Block implements ITileEntityProvider
 {
@@ -52,7 +54,7 @@ public class BloodVessel extends Block implements ITileEntityProvider
 	
 	@Override
 	public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
-		return new AxisAlignedBB(0.12f, 0f, 0.12f, 0.88f, 0.83f, 0.88f);
+		return new AxisAlignedBB(0f, 0f, 0f, 1f, 0.83f, 1f);
 	}
 	
 	@Override
@@ -75,10 +77,11 @@ public class BloodVessel extends Block implements ITileEntityProvider
 		return false;
 	}
 	
-	@Override
-	public BlockRenderLayer getBlockLayer() {
-		return BlockRenderLayer.TRANSLUCENT;
-	}
+	@SideOnly(Side.CLIENT)
+    public BlockRenderLayer getBlockLayer()
+    {
+        return BlockRenderLayer.TRANSLUCENT;
+    }
 	
 	@Override
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer,

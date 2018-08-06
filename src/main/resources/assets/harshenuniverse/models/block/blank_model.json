@@ -1,7 +1,5 @@
 {
     "textures": {
         "particle": "harshenuniverse:blocks/blank"
-    },
-    "elements": [
-    ]
+    }
 }

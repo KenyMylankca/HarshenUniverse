@@ -20,7 +20,6 @@ public class JewelDirt extends Block implements IMetaItemBlock
 {
 	public static final PropertyInteger DIRT_TYPE = PropertyInteger.create("dirt_type", 0, 1);
 
-	
 	public JewelDirt()
 	{
 		super(Material.GRASS);
@@ -72,5 +71,4 @@ public class JewelDirt extends Block implements IMetaItemBlock
 		if(x>2) return HarshenItems.DIAMOND_SHARD;
 		else return HarshenItems.EMERALD_SHARD;
 	}
-
 }

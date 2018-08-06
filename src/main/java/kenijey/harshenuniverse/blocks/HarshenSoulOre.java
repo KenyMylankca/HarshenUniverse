@@ -36,6 +36,7 @@ public class HarshenSoulOre extends Block
 		setHardness(31f);
 		setResistance(100f);
 		setCreativeTab(HarshenUniverse.harshenTab);
+		this.setLightLevel(0.35f);
     }
 	private BlockPos pos;
 	private World world;
