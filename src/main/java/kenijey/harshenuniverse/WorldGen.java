@@ -39,15 +39,15 @@ public class WorldGen implements IWorldGenerator
 			if(chunkX == 11 && chunkZ == -5)
 				HarshenStructures.GRAVEYARD.generateStucture(world, random, chunkX, chunkZ);
 			runGenerator(this.soulore, world, random, chunkX, chunkZ, 10, 0, 20);
-	    	flowerGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.1f);
-	    	flowerGenerator(HarshenBlocks.PLANT_OF_GLEAM, world, random, chunkX, chunkZ, 0.1f);
+			plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.1f);
+			plantGenerator(HarshenBlocks.PLANT_OF_GLEAM, world, random, chunkX, chunkZ, 0.1f);
 	    	runGenerator(jewelDirtOverworld, world, random, chunkX, chunkZ, 200, 0, 200);
 		}
 		else if(dim == DimensionPontus.DIMENSION_ID)
 		{
 	    	runGenerator(this.itiumOre, 		world, random, chunkX, chunkZ, 11, 0, 255);
 	    	runGenerator(this.pontusEmeraldOre, world, random, chunkX, chunkZ, 12, 0, 255);
-	    	flowerGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.5f);
+	    	plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.5f);
 	    	runGenerator(jewelDirtPontus, world, random, chunkX, chunkZ, 22, 0, 200);
 		}
 		generateStructure(world, HarshenStructure.get(dim), random, chunkX, chunkZ);
@@ -73,7 +73,7 @@ public class WorldGen implements IWorldGenerator
 	    	} 
 	}
 	
-	private void flowerGenerator(Block flower, World worldIn, Random random, int chunkX, int chunkZ, float chancesToSpawn)
+	private void plantGenerator(Block plant, World worldIn, Random random, int chunkX, int chunkZ, float chancesToSpawn)
 	{
 		for(int i = 0; i < chancesToSpawn; i++)
 			if(random.nextFloat() < chancesToSpawn)
@@ -85,7 +85,7 @@ public class WorldGen implements IWorldGenerator
 		
 		        if (worldIn.isAirBlock(blockpos) && (worldIn.provider.isSurfaceWorld() || blockpos.getY() < 255) && worldIn.isSideSolid(blockpos.down(), EnumFacing.UP))
 		        {
-		            worldIn.setBlockState(blockpos,flower.getDefaultState(), 1);
+		            worldIn.setBlockState(blockpos,plant.getDefaultState(), 1);
 		        }
 			}
 	}	
