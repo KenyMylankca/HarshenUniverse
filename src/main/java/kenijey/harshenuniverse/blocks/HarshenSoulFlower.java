@@ -15,7 +15,6 @@ import net.minecraft.world.World;
 
 public class HarshenSoulFlower extends BlockFlower
 {
-	
 	public HarshenSoulFlower() {
 		setUnlocalizedName("harshen_soul_flower");
         setRegistryName("harshen_soul_flower");
@@ -53,6 +52,6 @@ public class HarshenSoulFlower extends BlockFlower
 	
 	public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos)
 	{
-	        return true;
+		return true;
 	}
 }

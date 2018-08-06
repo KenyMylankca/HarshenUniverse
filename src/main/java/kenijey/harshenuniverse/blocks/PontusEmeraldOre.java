@@ -2,7 +2,6 @@ package kenijey.harshenuniverse.blocks;
 
 import java.util.Random;
 
-import kenijey.harshenuniverse.HarshenUniverse;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -27,7 +26,6 @@ public class PontusEmeraldOre extends Block
         setHarvestLevel("pickaxe", 2);
 		setHardness(31f);
 		setResistance(100f);
-		setCreativeTab(HarshenUniverse.harshenTab);
     }
 
 	private BlockPos pos;

@@ -82,13 +82,13 @@ public class SoulReminder extends Block
 	public boolean isOpaqueCube(IBlockState state)
 	{
 		return false;
-
 	}
 	
 	@Override
 	public boolean isNormalCube(IBlockState state, IBlockAccess world, BlockPos pos) {
 		return false;
 	}
+	
 	@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		isTicking = true;

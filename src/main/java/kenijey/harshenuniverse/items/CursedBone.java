@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-import kenijey.harshenuniverse.HarshenUniverse;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
@@ -31,7 +30,6 @@ public class CursedBone extends Item
 	{
 		setUnlocalizedName("cursed_bone");
 		setRegistryName("cursed_bone");
-		this.setCreativeTab(HarshenUniverse.harshenTab);
 	}
 	
 	@Override

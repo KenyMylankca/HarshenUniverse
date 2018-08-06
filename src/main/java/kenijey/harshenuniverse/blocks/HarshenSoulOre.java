@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Random;
 
 import kenijey.harshenuniverse.HarshenItems;
-import kenijey.harshenuniverse.HarshenUniverse;
 import kenijey.harshenuniverse.items.SoulHarsherPickaxe;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -35,7 +34,6 @@ public class HarshenSoulOre extends Block
         setHarvestLevel("pickaxe", 2);
 		setHardness(31f);
 		setResistance(100f);
-		setCreativeTab(HarshenUniverse.harshenTab);
 		this.setLightLevel(0.35f);
     }
 	private BlockPos pos;

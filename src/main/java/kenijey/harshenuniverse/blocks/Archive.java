@@ -20,8 +20,8 @@ public class Archive extends BaseHarshenFacedBlock
 		super(Material.WOOD);
 		setRegistryName("archive");
 		setUnlocalizedName("archive");
-		setHardness(2.0F);
-		setResistance(2.0F);
+		setHardness(2F);
+		setResistance(2F);
 	}
 
 	@Override
