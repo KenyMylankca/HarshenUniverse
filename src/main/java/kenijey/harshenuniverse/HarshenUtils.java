@@ -292,7 +292,7 @@ public class HarshenUtils
         	if(handler.getStackInSlot(i).getItem() == item && handler.getStackInSlot(i).getItem() instanceof IHarshenProvider)
         	{
         		if(amount > (handler.getStackInSlot(i).getMaxDamage() - handler.getStackInSlot(i).getItemDamage()))
-        			handler.getStackInSlot(i).setCount(0);
+        			handler.setStackInSlot(i, new ItemStack(Items.AIR));
         		handler.getStackInSlot(i).damageItem(amount, player);
         		break;
         	}
@@ -306,7 +306,7 @@ public class HarshenUtils
         	if(handler.getStackInSlot(i).getItem() == item && handler.getStackInSlot(i).getItem() instanceof IHarshenProvider)
         	{
         		if(amount > (handler.getStackInSlot(i).getMaxDamage() - handler.getStackInSlot(i).getItemDamage()))
-        			handler.getStackInSlot(i).setCount(0);
+        			handler.setStackInSlot(i, new ItemStack(Items.AIR));
         		handler.getStackInSlot(i).damageItem(amount, player);
         	}
         player.getEntityData().setTag("harshenInventory", handler.serializeNBT());
@@ -318,7 +318,7 @@ public class HarshenUtils
         	if(handler.getStackInSlot(slot).getItem() == item)
         	{
         		if(amount > handler.getStackInSlot(slot).getMaxDamage() - handler.getStackInSlot(slot).getItemDamage())
-        			handler.getStackInSlot(slot).setCount(0);
+        			handler.setStackInSlot(slot, new ItemStack(Items.AIR));
         		handler.getStackInSlot(slot).damageItem(amount, player);
         		HarshenNetwork.sendToPlayer(player, new MessagePacketSetItemInSlot(slot, handler.getStackInSlot(slot)));
         	}
