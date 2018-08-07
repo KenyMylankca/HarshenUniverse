@@ -6,7 +6,7 @@ import kenijey.harshenuniverse.network.packets.MessagePacketKillAllWithTag;
 import kenijey.harshenuniverse.network.packets.MessagePacketOpenInv;
 import kenijey.harshenuniverse.network.packets.MessagePacketPlayerHasAccess;
 import kenijey.harshenuniverse.network.packets.MessagePacketPlayerTeleportEffects;
-import kenijey.harshenuniverse.network.packets.MessagePacketRequestInv;
+import kenijey.harshenuniverse.network.packets.MessagePacketRequestHarshenInv;
 import kenijey.harshenuniverse.network.packets.MessagePacketReviveInventory;
 import kenijey.harshenuniverse.network.packets.MessagePacketRingUpdate;
 import kenijey.harshenuniverse.network.packets.MessagePacketSendStartupData;
@@ -49,7 +49,7 @@ public class HarshenNetwork
 		registerMessage(MessagePacketSetItemInSlot.class, Side.SERVER);
 		registerMessage(MessagePacketUpdateXrayBlock.class, Side.SERVER);
 		registerMessage(MessagePacketSummonFirework.class, Side.SERVER);
-		registerMessage(MessagePacketRequestInv.class, Side.SERVER);
+		registerMessage(MessagePacketRequestHarshenInv.class, Side.SERVER);
 		registerMessage(MessagePacketHitWithRange.class, Side.SERVER);
 		registerMessage(MessagePacketSendStartupData.class, Side.SERVER);
 	}

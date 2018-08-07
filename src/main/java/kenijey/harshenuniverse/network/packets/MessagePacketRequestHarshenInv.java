@@ -5,7 +5,7 @@ import kenijey.harshenuniverse.base.BaseMessagePacket;
 import kenijey.harshenuniverse.network.HarshenNetwork;
 import net.minecraft.entity.player.EntityPlayer;
 
-public class MessagePacketRequestInv extends BaseMessagePacket<MessagePacketRequestInv>{
+public class MessagePacketRequestHarshenInv extends BaseMessagePacket<MessagePacketRequestHarshenInv>{
 
 	@Override
 	public void fromBytes(ByteBuf buf) {		
@@ -18,9 +18,7 @@ public class MessagePacketRequestInv extends BaseMessagePacket<MessagePacketRequ
 	}
 
 	@Override
-	public void onReceived(MessagePacketRequestInv message, EntityPlayer player) {
+	public void onReceived(MessagePacketRequestHarshenInv message, EntityPlayer player) {
 		HarshenNetwork.sendToPlayer(player, new MessageSendPlayerInvToClient(player));
 	}
-
 }
-

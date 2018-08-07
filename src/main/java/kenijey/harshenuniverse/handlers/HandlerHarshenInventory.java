@@ -11,7 +11,7 @@ import kenijey.harshenuniverse.api.BlockItem;
 import kenijey.harshenuniverse.api.HarshenEvent;
 import kenijey.harshenuniverse.api.IHarshenProvider;
 import kenijey.harshenuniverse.network.HarshenNetwork;
-import kenijey.harshenuniverse.network.packets.MessagePacketRequestInv;
+import kenijey.harshenuniverse.network.packets.MessagePacketRequestHarshenInv;
 import kenijey.harshenuniverse.objecthandlers.HarshenItemStackHandler;
 import net.minecraft.client.entity.EntityOtherPlayerMP;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -44,7 +44,7 @@ public class HandlerHarshenInventory
 		{
 			if(event.player instanceof EntityOtherPlayerMP) return;
 			if(!event.player.getEntityData().hasKey("harshenInventory"))
-				HarshenNetwork.sendToServer(new MessagePacketRequestInv());
+				HarshenNetwork.sendToServer(new MessagePacketRequestHarshenInv());
 		}
 		if(!tickMap.containsKey(event.player)) tickMap.put(event.player, 0);
 		tickMap.put(event.player, tickMap.get(event.player) + 1);
