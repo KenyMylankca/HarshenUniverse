@@ -269,7 +269,7 @@ public class HarshenClientUtils
 	public static void openInventory()
 	{
 		EntityPlayer player = Minecraft.getMinecraft().player;
-		player.openGui(HarshenUniverse.instance, GuiHandler.CUSTOMINVENTORY, player.world, (int)player.posX, (int)player.posY, (int)player.posZ);
+		player.openGui(HarshenUniverse.instance, GuiHandler.HARSHENINVENTORY, player.world, (int)player.posX, (int)player.posY, (int)player.posZ);
 		HarshenNetwork.sendToServer(new MessagePacketOpenInv());
 	}
 	

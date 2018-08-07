@@ -13,8 +13,6 @@ import net.minecraftforge.items.ItemStackHandler;
 
 public class ContainerPlayerInventory extends BaseHarshenContainer
 {
-	
-	
 	public ContainerPlayerInventory(EntityPlayer player)
 	{
 		super(HarshenUtils.getHandler(player), player);

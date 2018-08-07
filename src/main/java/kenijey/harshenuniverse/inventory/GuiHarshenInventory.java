@@ -9,19 +9,18 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.util.ResourceLocation;
 
-public class GuiPlayerInventoryExtended extends InventoryEffectRenderer
+public class GuiHarshenInventory extends InventoryEffectRenderer
 {
-
 	 /** The old x position of the mouse pointer */
     private float oldMouseX;
     /** The old y position of the mouse pointer */
-    private float oldMouseY;	
+    private float oldMouseY;
 	
 	public static ResourceLocation background = new ResourceLocation(HarshenUniverse.MODID,"textures/gui/inventory.png");
 
 	private IInventory playerInv;
 	
-	public GuiPlayerInventoryExtended(EntityPlayer player)
+	public GuiHarshenInventory(EntityPlayer player)
 	{
 		super(new ContainerPlayerInventory(player));
 		this.playerInv = player.inventory;
@@ -50,4 +49,3 @@ public class GuiPlayerInventoryExtended extends InventoryEffectRenderer
         this.oldMouseY = (float)mouseY;
 	}
 }
-

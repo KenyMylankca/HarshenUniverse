@@ -41,7 +41,7 @@ public class GuiHarshenButton extends GuiButton {
 			int x = this.x + this.parentGui.getGuiLeft();
 			FontRenderer fontrenderer = mc.fontRenderer;
 			int k = this.getHoverState(this.hovered);
-			mc.getTextureManager().bindTexture(GuiPlayerInventoryExtended.background);
+			mc.getTextureManager().bindTexture(GuiHarshenInventory.background);
 			GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 			this.hovered = mouseX >= x && mouseY >= this.y && mouseX < x + this.width && mouseY < this.y + this.height;
 			GlStateManager.enableBlend();

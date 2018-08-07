@@ -20,8 +20,6 @@ public class MessagePacketOpenInv extends BaseMessagePacket<MessagePacketOpenInv
 
 	@Override
 	public void onReceived(MessagePacketOpenInv message, EntityPlayer player) {
-		player.openGui(HarshenUniverse.instance, GuiHandler.CUSTOMINVENTORY, player.world, (int)player.posX, (int)player.posY, (int)player.posZ);
+		player.openGui(HarshenUniverse.instance, GuiHandler.HARSHENINVENTORY, player.world, (int)player.posX, (int)player.posY, (int)player.posZ);
 	}
-
 }
-
