@@ -62,7 +62,7 @@ public class BloodyBed extends BaseHarshenFacedBlock
         	playerIn.renderOffsetX = -1.8F * (float)state.getValue(FACING).getFrontOffsetX();
         	playerIn.renderOffsetZ = -1.8F * (float)state.getValue(FACING).getFrontOffsetZ();
         	playerIn.heal(2f);
-        	occupied=true;
+        	//occupied=true;
         	return true;
         }
         else
