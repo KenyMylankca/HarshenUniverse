@@ -27,9 +27,12 @@ public class Gillette extends BaseItemMetaData
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
     {
-		playerIn.addPotionEffect(new PotionEffect(HarshenPotions.potionBleeding, 80, 0));
-		playerIn.attackEntityFrom(new DamageSourceBleeding(), 1f);
-		playerIn.getHeldItemMainhand().setItemDamage(1);
+		if(!playerIn.isCreative())
+		{
+			playerIn.addPotionEffect(new PotionEffect(HarshenPotions.potionBleeding, 80, 0));
+			playerIn.attackEntityFrom(new DamageSourceBleeding(), 1f);
+			playerIn.getHeldItemMainhand().setItemDamage(1);
+		}
         return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, playerIn.getHeldItem(handIn));
     }
 	
