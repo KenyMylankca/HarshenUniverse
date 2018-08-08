@@ -21,7 +21,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemAir;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 
 public class HandlerHarshenClientEffects
 {
@@ -74,7 +74,7 @@ public class HandlerHarshenClientEffects
 	}
 
 	@SubscribeEvent
-	public void onTick(TickEvent.PlayerTickEvent event)
+	public void onPlayerTick(PlayerTickEvent event)
 	{
 		tick++;
 		

@@ -25,7 +25,7 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent;
 
 public class HandlerServerNeedingHarshenEffects
 {
@@ -96,7 +96,7 @@ public class HandlerServerNeedingHarshenEffects
 	}
 	
 	@SubscribeEvent
-	public void onTick(TickEvent.WorldTickEvent event)
+	public void onWorldTick(WorldTickEvent event)
 	{
 		if(trusttimer < 700) trusttimer++;
 		if(tick>600) tick =1; else tick++;
