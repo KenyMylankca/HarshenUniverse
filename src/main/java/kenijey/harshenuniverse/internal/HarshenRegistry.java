@@ -6,7 +6,7 @@ import kenijey.harshenuniverse.HarshenItems;
 import kenijey.harshenuniverse.HarshenUtils;
 import kenijey.harshenuniverse.api.BlockItem;
 import kenijey.harshenuniverse.api.CauldronLiquid;
-import kenijey.harshenuniverse.api.EnumInventorySlots;
+import kenijey.harshenuniverse.api.EnumAccessoryInventorySlots;
 import kenijey.harshenuniverse.api.HarshenStack;
 import kenijey.harshenuniverse.api.IHarshenHelper;
 import kenijey.harshenuniverse.api.IHarshenProvider;
@@ -170,7 +170,7 @@ public class HarshenRegistry implements IHarshenRegistry
 	}
 
 	@Override
-	public void registerInventoryItem(BlockItem item, EnumInventorySlots slot, Object provider, boolean multiplyEvent,
+	public void registerInventoryItem(BlockItem item, EnumAccessoryInventorySlots slot, Object provider, boolean multiplyEvent,
 			int toolTipLines) 
 	{		
 		registerInventoryItem(item, new VanillaProviderToInterface(slot, provider, multiplyEvent, toolTipLines));

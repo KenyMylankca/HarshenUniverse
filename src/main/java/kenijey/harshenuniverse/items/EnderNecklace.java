@@ -1,6 +1,6 @@
 package kenijey.harshenuniverse.items;
 
-import kenijey.harshenuniverse.api.EnumInventorySlots;
+import kenijey.harshenuniverse.api.EnumAccessoryInventorySlots;
 import kenijey.harshenuniverse.api.HarshenEvent;
 import kenijey.harshenuniverse.api.IHarshenProvider;
 import kenijey.harshenuniverse.config.AccessoryConfig;
@@ -20,8 +20,8 @@ public class EnderNecklace extends Item implements IHarshenProvider
 	}
 	
 	@Override
-	public EnumInventorySlots getSlot() {
-		return EnumInventorySlots.NECK;
+	public EnumAccessoryInventorySlots getSlot() {
+		return EnumAccessoryInventorySlots.NECK;
 	}
 	
 	@Override

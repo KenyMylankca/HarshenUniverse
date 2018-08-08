@@ -1,19 +1,19 @@
 package kenijey.harshenuniverse.objecthandlers;
 
-import kenijey.harshenuniverse.api.EnumInventorySlots;
+import kenijey.harshenuniverse.api.EnumAccessoryInventorySlots;
 import kenijey.harshenuniverse.api.IHarshenProvider;
 import net.minecraft.item.ItemStack;
 
 public class VanillaProviderToInterface implements IHarshenProvider
 {
-	private final EnumInventorySlots slot;
+	private final EnumAccessoryInventorySlots slot;
 	private final Object provider;
 	
 	private final boolean multiplyEvent;
 	private final int toolTipLines;
 
 	
-	public VanillaProviderToInterface(EnumInventorySlots slot, Object provider, boolean multiplyEvent, int toolTipLines) {
+	public VanillaProviderToInterface(EnumAccessoryInventorySlots slot, Object provider, boolean multiplyEvent, int toolTipLines) {
 		this.slot = slot;
 		this.provider = provider;
 		this.multiplyEvent = multiplyEvent;
@@ -25,7 +25,7 @@ public class VanillaProviderToInterface implements IHarshenProvider
 	}
 	
 	@Override
-	public EnumInventorySlots getSlot() {
+	public EnumAccessoryInventorySlots getSlot() {
 		return slot;
 	}
 	

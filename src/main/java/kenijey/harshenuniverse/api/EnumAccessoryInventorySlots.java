@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @author Wyn Price
  *
  */
-public enum EnumInventorySlots implements IIDSet
+public enum EnumAccessoryInventorySlots implements IIDSet
 {
 	LEFT_EAR("earring", 56, 14, 1),
 	RIGHT_EAR("earring", 104, 14, 0),
@@ -20,7 +20,7 @@ public enum EnumInventorySlots implements IIDSet
 	private final Point point;
 	private final String name;
 	
-	private EnumInventorySlots(String name, int x, int y, int... relatedTypes)
+	private EnumAccessoryInventorySlots(String name, int x, int y, int... relatedTypes)
 	{
 		this.point = new Point(x, y);
 		alowedIds = new ArrayList<>();
@@ -41,14 +41,14 @@ public enum EnumInventorySlots implements IIDSet
 		return point;
 	}
 	
-	public boolean isAllowed(EnumInventorySlots slotType)
+	public boolean isAllowed(EnumAccessoryInventorySlots slotType)
 	{
 		return this.alowedIds.contains(slotType.getId());
 	}
 	
-	public static EnumInventorySlots getFromMeta(int meta)
+	public static EnumAccessoryInventorySlots getFromMeta(int meta)
 	{
-		for(EnumInventorySlots slot : EnumInventorySlots.values())
+		for(EnumAccessoryInventorySlots slot : EnumAccessoryInventorySlots.values())
 			if(slot.id == meta)
 				return slot;
 		return null;

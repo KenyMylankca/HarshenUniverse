@@ -3,7 +3,7 @@ package kenijey.harshenuniverse.inventory;
 import java.awt.Point;
 
 import kenijey.harshenuniverse.HarshenUtils;
-import kenijey.harshenuniverse.api.EnumInventorySlots;
+import kenijey.harshenuniverse.api.EnumAccessoryInventorySlots;
 import kenijey.harshenuniverse.base.BaseHarshenContainer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ClickType;
@@ -20,7 +20,7 @@ public class ContainerPlayerInventory extends BaseHarshenContainer
 	
 	@Override
 	protected Slot getSlot(ItemStackHandler handler, int index, int xPosition, int yPosition) {
-		return new SlotHarshenInventory(handler, EnumInventorySlots.getFromMeta(index), index, xPosition, yPosition);
+		return new SlotHarshenInventory(handler, EnumAccessoryInventorySlots.getFromMeta(index), index, xPosition, yPosition);
 	}
 	
 	@Override
@@ -32,7 +32,7 @@ public class ContainerPlayerInventory extends BaseHarshenContainer
 
 	@Override
 	protected Point getPoint(int index) {
-		return EnumInventorySlots.getFromMeta(index).getPoint();
+		return EnumAccessoryInventorySlots.getFromMeta(index).getPoint();
 	}
 
 	@Override

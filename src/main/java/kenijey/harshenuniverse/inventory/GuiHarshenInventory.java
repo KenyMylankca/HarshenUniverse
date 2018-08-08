@@ -2,7 +2,7 @@ package kenijey.harshenuniverse.inventory;
 
 import kenijey.harshenuniverse.HarshenClientUtils;
 import kenijey.harshenuniverse.HarshenUniverse;
-import kenijey.harshenuniverse.api.EnumInventorySlots;
+import kenijey.harshenuniverse.api.EnumAccessoryInventorySlots;
 import net.minecraft.client.gui.inventory.GuiInventory;
 import net.minecraft.client.renderer.InventoryEffectRenderer;
 import net.minecraft.entity.player.EntityPlayer;
@@ -34,7 +34,7 @@ public class GuiHarshenInventory extends InventoryEffectRenderer
         this.drawDefaultBackground();
 		this.mc.getTextureManager().bindTexture(background);
 		this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
-		for(EnumInventorySlots slot : EnumInventorySlots.values())
+		for(EnumAccessoryInventorySlots slot : EnumAccessoryInventorySlots.values())
 			if(!inventorySlots.getSlot(slot.getId()).getHasStack())
 				HarshenClientUtils.drawTexture(slot.getPoint().x + this.guiLeft, slot.getPoint().y + this.guiTop,
 						13.26f, 9.89f + (slot.getId()), 1f, 1f, 16, 16, 16, 16);

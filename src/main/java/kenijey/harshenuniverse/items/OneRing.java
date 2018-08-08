@@ -1,7 +1,7 @@
 package kenijey.harshenuniverse.items;
 
 import kenijey.harshenuniverse.HarshenSounds;
-import kenijey.harshenuniverse.api.EnumInventorySlots;
+import kenijey.harshenuniverse.api.EnumAccessoryInventorySlots;
 import kenijey.harshenuniverse.api.IHarshenProvider;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -16,8 +16,8 @@ public class OneRing extends Item implements IHarshenProvider
 	}
 
 	@Override
-	public EnumInventorySlots getSlot() {
-		return EnumInventorySlots.RING1;
+	public EnumAccessoryInventorySlots getSlot() {
+		return EnumAccessoryInventorySlots.RING1;
 	}
 
 	@Override

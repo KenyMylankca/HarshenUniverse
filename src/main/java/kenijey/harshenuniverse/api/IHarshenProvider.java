@@ -12,10 +12,10 @@ public interface IHarshenProvider
 {
 	/**
 	 * The Slot that the item can go into. Slots with the same "type" can go into each-other. For Example:
-	 * <br>A item registered to {@link EnumInventorySlots#LEFT_EAR} will be allowed to be put in {@link EnumInventorySlots#RIGHT_EAR}, but not {@link EnumInventorySlots#NECK}.
+	 * <br>A item registered to {@link EnumAccessoryInventorySlots#LEFT_EAR} will be allowed to be put in {@link EnumAccessoryInventorySlots#RIGHT_EAR}, but not {@link EnumAccessoryInventorySlots#NECK}.
 	 * @return
 	 */
-	public EnumInventorySlots getSlot();
+	public EnumAccessoryInventorySlots getSlot();
 	
 	/**
 	 * The amount of lines that is shown on the items tooltip. The language id of what you need to translate is the domain path of the item, plus the number (as default is 2, it would look for the domain path, + 1 and then 2)

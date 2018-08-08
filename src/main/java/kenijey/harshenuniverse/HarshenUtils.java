@@ -24,7 +24,7 @@ import com.google.common.collect.Lists;
 
 import kenijey.harshenuniverse.api.BlockItem;
 import kenijey.harshenuniverse.api.CauldronLiquid;
-import kenijey.harshenuniverse.api.EnumInventorySlots;
+import kenijey.harshenuniverse.api.EnumAccessoryInventorySlots;
 import kenijey.harshenuniverse.api.HarshenStack;
 import kenijey.harshenuniverse.api.IHarshenProvider;
 import kenijey.harshenuniverse.armor.HarshenArmors;
@@ -226,7 +226,7 @@ public class HarshenUtils
 	
 	public static HarshenItemStackHandler getHandler(EntityPlayer player)
 	{
-		HarshenItemStackHandler handler = new HarshenItemStackHandler(EnumInventorySlots.values().length);
+		HarshenItemStackHandler handler = new HarshenItemStackHandler(EnumAccessoryInventorySlots.values().length);
 		if(player.getEntityData().getCompoundTag("harshenInventory").getInteger("Size") != handler.getSlots())
 		{
 			HarshenItemStackHandler handler2 = getHandler(player.getEntityData());
@@ -814,7 +814,7 @@ public class HarshenUtils
 		return getBookWith(HarshenEnchantmetns.MIXUP, 1);
 	}
 	
-	public static boolean isSlotAllowed(ItemStack stack, EnumInventorySlots slotIn, EnumInventorySlots askingSlot)
+	public static boolean isSlotAllowed(ItemStack stack, EnumAccessoryInventorySlots slotIn, EnumAccessoryInventorySlots askingSlot)
 	{
 		return slotIn.isAllowed(askingSlot) || EnchantmentHelper.getEnchantmentLevel(HarshenEnchantmetns.MIXUP, stack) > 0;
 	}

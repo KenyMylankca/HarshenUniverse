@@ -1,6 +1,6 @@
 package kenijey.harshenuniverse.items;
 
-import kenijey.harshenuniverse.api.EnumInventorySlots;
+import kenijey.harshenuniverse.api.EnumAccessoryInventorySlots;
 import kenijey.harshenuniverse.api.IHarshenProvider;
 import net.minecraft.item.Item;
 
@@ -13,7 +13,7 @@ public class PontusRing extends Item implements IHarshenProvider
 	}
 
 	@Override
-	public EnumInventorySlots getSlot() {
-		return EnumInventorySlots.RING1;
+	public EnumAccessoryInventorySlots getSlot() {
+		return EnumAccessoryInventorySlots.RING1;
 	}
 }

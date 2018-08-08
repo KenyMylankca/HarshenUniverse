@@ -9,7 +9,7 @@ import kenijey.harshenuniverse.HarshenUniverse;
 import kenijey.harshenuniverse.HarshenUtils;
 import kenijey.harshenuniverse.HarshenVillagers;
 import kenijey.harshenuniverse.WorldGen;
-import kenijey.harshenuniverse.api.EnumInventorySlots;
+import kenijey.harshenuniverse.api.EnumAccessoryInventorySlots;
 import kenijey.harshenuniverse.armor.HarshenArmors;
 import kenijey.harshenuniverse.base.HarshenStructure;
 import kenijey.harshenuniverse.biomes.HarshenBiomes;
@@ -123,7 +123,7 @@ public class CommonProxy
 		SetIds.setup(EnumPontusGateSpawnerParts.values());
 		SetIds.setup(EnumProp.values());
 		SetIds.setup(EnumRitualStick.values());
-		SetIds.setup(EnumInventorySlots.values());
+		SetIds.setup(EnumAccessoryInventorySlots.values());
     }
 
     public void init(FMLInitializationEvent event) 

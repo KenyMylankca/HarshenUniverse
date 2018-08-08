@@ -89,7 +89,7 @@ public interface IHarshenRegistry
 	/**
 	 * Registers a basic inventory item that can go into the harshenuniverse custom inventory.
 	 * @param item The item/block that is being registered.
-	 * @param slot The Slot that this item can go in. A item registered to {@link EnumInventorySlots#LEFT_EAR} will be allowed to be put in {@link EnumInventorySlots#RIGHT_EAR}, but not {@link EnumInventorySlots#NECK}.
+	 * @param slot The Slot that this item can go in. A item registered to {@link EnumAccessoryInventorySlots#LEFT_EAR} will be allowed to be put in {@link EnumAccessoryInventorySlots#RIGHT_EAR}, but not {@link EnumAccessoryInventorySlots#NECK}.
 	 * @param provider The Event Provider for this item. Use regular forge events, except with the annotation {@link HarshenEvent} instead of {@link SubscribeEvent}
 	 * 		The event will only be called when the player has the item in their custom inventory If null, nothing will happen to the player when the items in their inventory
 	 * @param multiplyEvent Should the Event be multiplied. If the player has more than on of this item in their custom inventory, should the code run once per item, or only on the first available item. 
@@ -100,7 +100,7 @@ public interface IHarshenRegistry
 	 * @see HarshenEvent
 	 * @see IHarshenProvider
 	 */
-	void registerInventoryItem(BlockItem item, EnumInventorySlots slot, Object provider, boolean multiplyEvent, int toolTipLines);
+	void registerInventoryItem(BlockItem item, EnumAccessoryInventorySlots slot, Object provider, boolean multiplyEvent, int toolTipLines);
 		
 	/**
 	 * Registers a more advance item that can go into the harshenuniverse custom inventory
