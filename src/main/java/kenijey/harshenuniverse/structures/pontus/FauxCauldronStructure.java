@@ -13,7 +13,6 @@ import net.minecraft.world.World;
 
 public class FauxCauldronStructure implements ICommandStructure
 {
-
 	@Override
 	public String structureName() {
 		return "hereticritual";
@@ -49,5 +48,4 @@ public class FauxCauldronStructure implements ICommandStructure
 				world.setBlockState(pos.add(x, 0, z), HarshenBlocks.HARSHEN_DIMENSIONAL_PEDESTAL.getDefaultState(), 3);
 		world.setBlockState(pos, HarshenBlocks.HERETIC_CAULDRON.getDefaultState(), 3);
 	}
-	
 }

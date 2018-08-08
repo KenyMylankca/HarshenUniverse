@@ -42,9 +42,4 @@ public class Shrine extends HarshenStructure
 				}
 		}
 	}
-	
-	private BlockPos getRelativeSize(World world, BlockPos pos)
-	{
-		return size.add(0, -1, 0);
-	}
 }

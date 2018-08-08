@@ -30,9 +30,4 @@ public class Castle extends HarshenStructure
 		for(BlockPos chestPos : possOfFillableChests)
 			new ChestGenerator(BlockPos.ORIGIN, 1f, HarshenLootTables.castle, false).generate(world, random, pos.add(chestPos));
 	}
-	
-	private BlockPos getRelativeSize(World world, BlockPos pos)
-	{
-		return size.add(0, -5, 0);
-	}
 }
