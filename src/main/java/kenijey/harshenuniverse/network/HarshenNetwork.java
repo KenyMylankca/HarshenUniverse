@@ -43,10 +43,10 @@ public class HarshenNetwork
 		registerMessage(MessagePacketUpdateComplexEntity.class, Side.CLIENT);
 		registerMessage(MessagePacketKillAllWithTag.class, Side.CLIENT);
 		
+		registerMessage(MessagePacketSetItemInSlot.class);
 		
 		registerMessage(MessagePacketOpenInv.class, Side.SERVER);
 		registerMessage(MessagePacketRingUpdate.class, Side.SERVER);
-		registerMessage(MessagePacketSetItemInSlot.class, Side.SERVER);
 		registerMessage(MessagePacketUpdateXrayBlock.class, Side.SERVER);
 		registerMessage(MessagePacketSummonFirework.class, Side.SERVER);
 		registerMessage(MessagePacketRequestHarshenInv.class, Side.SERVER);
@@ -58,6 +58,12 @@ public class HarshenNetwork
     public static void registerMessage(Class claz, Side recievingSide)
     {
     	INSTANCE.registerMessage(claz, claz, idCount++, recievingSide);
+    }
+    
+    public static void registerMessage(Class claz)
+    {
+    	INSTANCE.registerMessage(claz, claz, idCount++, Side.CLIENT);
+    	INSTANCE.registerMessage(claz, claz, idCount++, Side.SERVER);
     }
     
 	public static void sendToServer(IMessage message)

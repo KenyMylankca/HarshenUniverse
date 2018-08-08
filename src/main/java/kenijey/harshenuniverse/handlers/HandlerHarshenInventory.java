@@ -32,24 +32,22 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class HandlerHarshenInventory 
-{	
-	HashMap<EntityPlayer, Integer> tickMap = new HashMap<>();
+{
 	private static ArrayList<ItemStack> prevInvClient = new ArrayList<>();
+	private static ArrayList<ItemStack> prevInvServer = new ArrayList<>();
 	
 	@SubscribeEvent
 	public void playerTick(PlayerTickEvent event)
 	{
-		ArrayList<ItemStack> prevInvServer = new ArrayList<>();
 		if(event.player.world.isRemote)
 		{
 			if(event.player instanceof EntityOtherPlayerMP) return;
 			if(!event.player.getEntityData().hasKey("harshenInventory"))
 				HarshenNetwork.sendToServer(new MessagePacketRequestHarshenInv());
 		}
-		if(!tickMap.containsKey(event.player)) tickMap.put(event.player, 0);
-		tickMap.put(event.player, tickMap.get(event.player) + 1);
-		HarshenItemStackHandler handler = HarshenUtils.getHandler(event.player);
 		ArrayList<ItemStack> prevInv = event.side.isServer() ? prevInvServer : prevInvClient;
+		
+		HarshenItemStackHandler handler = HarshenUtils.getHandler(event.player);
 		if(prevInv.size() > 0)
 			for(int slot = 0; slot < handler.getSlots(); slot++)
 				if(!(prevInv.get(slot).getItem() == handler.getStackInSlot(slot).getItem()) && (handler.getStackInSlot(slot).getItem() instanceof IHarshenProvider || prevInv.get(slot).getItem() instanceof IHarshenProvider))
@@ -59,15 +57,8 @@ public class HandlerHarshenInventory
 					if(prevInv.get(slot).getItem() instanceof IHarshenProvider)
 						((IHarshenProvider)prevInv.get(slot).getItem()).onRemove(event.player, slot);
 				}
-		ArrayList<ItemStack> tickHandlerInventory = new ArrayList<>();
-		for(int slot = 0; slot < handler.getSlots(); slot++)
-		{
-			if(handler.getStackInSlot(slot).getItem() instanceof IHarshenProvider)
-				((IHarshenProvider)handler.getStackInSlot(slot).getItem()).onTick(event.player, tickMap.get(event.player));
-			tickHandlerInventory.add(handler.getStackInSlot(slot));
-		}	
 		prevInv.clear();
-		prevInv.addAll(tickHandlerInventory);
+		prevInv.addAll(handler.getStacks());
 	}
 	
 	private static HashMap<UUID, HarshenItemStackHandler> stackMap = new HashMap<>();

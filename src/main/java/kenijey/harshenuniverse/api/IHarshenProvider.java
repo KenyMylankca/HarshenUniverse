@@ -40,13 +40,6 @@ public interface IHarshenProvider
 	public default boolean isMultiplyEvent(ItemStack stack){return true;};
 	
 	/**
-	 * Called every tick the items in the players inventory. Useful if you just want to add potion effects
-	 * @param player The players inventory the items in.
-	 * @param tick The Total amount of ticks the items been in the players inventory.
-	 */
-	public default void onTick(EntityPlayer player, int tick){};
-	
-	/**
 	 * Called when the items removed from the players inventory. Called ServerSide and ClientSide
 	 * @param player The Player who just removed the item out of their inventory
 	 */

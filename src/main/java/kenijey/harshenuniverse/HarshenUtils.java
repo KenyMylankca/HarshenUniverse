@@ -294,6 +294,7 @@ public class HarshenUtils
         		if(amount > (handler.getStackInSlot(i).getMaxDamage() - handler.getStackInSlot(i).getItemDamage()))
         			handler.setStackInSlot(i, new ItemStack(Items.AIR));
         		handler.getStackInSlot(i).damageItem(amount, player);
+        		HarshenNetwork.sendToPlayer(player, new MessagePacketSetItemInSlot(i, handler.getStackInSlot(i)));
         		break;
         	}
         player.getEntityData().setTag("harshenInventory", handler.serializeNBT());
@@ -308,6 +309,7 @@ public class HarshenUtils
         		if(amount > (handler.getStackInSlot(i).getMaxDamage() - handler.getStackInSlot(i).getItemDamage()))
         			handler.setStackInSlot(i, new ItemStack(Items.AIR));
         		handler.getStackInSlot(i).damageItem(amount, player);
+        		HarshenNetwork.sendToPlayer(player, new MessagePacketSetItemInSlot(i, handler.getStackInSlot(i)));
         	}
         player.getEntityData().setTag("harshenInventory", handler.serializeNBT());
 	}
