@@ -29,7 +29,7 @@ public class HarshenUniverse
 {
     public static final String MODID = "harshenuniverse";
     public static final String MODNAME = "Harshen Universe";
-    public static final String VERSION = "0.21.0";
+    public static final String VERSION = "0.21.1";
     public static final String UPDATE_URL = "http://www.wynprice.com/moddedUpdateCheckers/harshenuniverse.json";
     
     public static boolean hasLoaded;
