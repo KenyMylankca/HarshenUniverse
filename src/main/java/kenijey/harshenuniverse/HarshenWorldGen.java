@@ -20,7 +20,7 @@ import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
-public class WorldGen implements IWorldGenerator
+public class HarshenWorldGen implements IWorldGenerator
 {
     private final WorldGenMinable soulore = new WorldGenMinable(HarshenBlocks.HARSHEN_SOUL_ORE.getDefaultState(), 3);
     private final WorldGenerator itiumOre = new PontusWorldGeneratorItiumOre();

@@ -8,7 +8,7 @@ import kenijey.harshenuniverse.HarshenStructures;
 import kenijey.harshenuniverse.HarshenUniverse;
 import kenijey.harshenuniverse.HarshenUtils;
 import kenijey.harshenuniverse.HarshenVillagers;
-import kenijey.harshenuniverse.WorldGen;
+import kenijey.harshenuniverse.HarshenWorldGen;
 import kenijey.harshenuniverse.api.EnumAccessoryInventorySlots;
 import kenijey.harshenuniverse.armor.HarshenArmors;
 import kenijey.harshenuniverse.base.HarshenStructure;
@@ -165,7 +165,7 @@ public class CommonProxy
     		new HandlerExtraRange(),
     		new HandlerBurnInDaylight());
     	
-    	GameRegistry.registerWorldGenerator(new WorldGen(), 0);
+    	GameRegistry.registerWorldGenerator(new HarshenWorldGen(), 0);
     	
     	ICommandStructure[] customStructures = {
     			new FauxCauldronStructure()

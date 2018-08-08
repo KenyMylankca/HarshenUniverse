@@ -25,7 +25,6 @@ public class ChestGenerator extends WorldGenerator
 		this.setBlock = setBlock;
 	}
 	
-	
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos position) {
 		if(size.equals(BlockPos.ORIGIN) && rand.nextFloat() < this.chance)
@@ -51,5 +50,4 @@ public class ChestGenerator extends WorldGenerator
 				}
 		return false;
 	}
-
 }
