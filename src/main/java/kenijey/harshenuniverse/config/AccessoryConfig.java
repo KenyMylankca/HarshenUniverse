@@ -24,9 +24,9 @@ public class AccessoryConfig extends BaseConfig
 	public void read() 
 	{
 		blackListedXrays = get("xray.blacklist", HarshenItems.XRAY_PENDANT, HarshenUtils.listOf("minecraft:stone"));
-		xrayAreaX = get("xray.distance.x", HarshenItems.XRAY_PENDANT, 30);
-		xrayAreaY = get("xray.distance.y", HarshenItems.XRAY_PENDANT, 30);
-		xrayAreaZ = get("xray.distance.z", HarshenItems.XRAY_PENDANT, 30);
+		xrayAreaX = get("xray.distance.x", HarshenItems.XRAY_PENDANT, 35);
+		xrayAreaY = get("xray.distance.y", HarshenItems.XRAY_PENDANT, 35);
+		xrayAreaZ = get("xray.distance.z", HarshenItems.XRAY_PENDANT, 35);
 		xrayListSize = get("xray.listsize", HarshenItems.XRAY_PENDANT, 20); 
 		enderNecklaceDistance = get("endernecklace.distance", HarshenItems.ENDER_NECKLACE, 66);
 		reachPendantLength = get("reach.length", HarshenItems.REACH_PENDANT, 7d);
