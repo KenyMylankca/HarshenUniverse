@@ -107,10 +107,9 @@ public class SoulBindingPendant extends Item implements IHarshenProvider
 		        HarshenUtils.setFlag(player, 0, false);
 		        player.getCombatTracker().reset();
 		        INVENTORY_MAP.put(event.getEntity().getUniqueID(), ((EntityPlayer)event.getEntity()).inventory.writeToNBT(new NBTTagList()));
-		        HarshenUtils.damageOccuringItemNoPacket(player, HarshenItems.SOUL_BINDING_PENDANT, 1);
-		        if(HarshenUtils.getFirstOccuringItem(player, HarshenItems.SOUL_BINDING_PENDANT).getItemDamage() == 
-		        		HarshenUtils.getFirstOccuringItem(player, HarshenItems.SOUL_BINDING_PENDANT).getMaxDamage())
-		        			HarshenUtils.damageOccuringItemNoPacket(player, HarshenItems.SOUL_BINDING_PENDANT, 1);    	
+		        HarshenUtils.damageFirstOccuringItemNoPacket(player, HarshenItems.SOUL_BINDING_PENDANT, 1);
+		        if(HarshenUtils.getFirstOccuringItem(player, HarshenItems.SOUL_BINDING_PENDANT).getItemDamage() == HarshenUtils.getFirstOccuringItem(player, HarshenItems.SOUL_BINDING_PENDANT).getMaxDamage())
+		        			HarshenUtils.damageFirstOccuringItemNoPacket(player, HarshenItems.SOUL_BINDING_PENDANT, 1);    	
 			}	
 			new HandlerHarshenInventory().onPlayerDeath(event);
 		}

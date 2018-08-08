@@ -339,7 +339,7 @@ public class HarshenUtils
 		damageFirstOccuringItem(player, item, 1);
 	}
 	
-	public static void damageOccuringItemNoPacket(EntityPlayer player, Item item, int amount)
+	public static void damageFirstOccuringItemNoPacket(EntityPlayer player, Item item, int amount)
 	{
 		HarshenItemStackHandler handler = HarshenUtils.getHandler(player);
         for(int i =0; i < handler.getSlots(); i++)
