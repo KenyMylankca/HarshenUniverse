@@ -105,7 +105,6 @@ public class HandlerUpdateChecker
 	        }
 	        else
 	        	HarshenUniverse.LOGGER.info("Update checker returned: " + status);
-			
 		}
 	}
 }

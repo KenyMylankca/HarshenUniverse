@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class GuiHarshenInventory extends InventoryEffectRenderer
 {
-	 /** The old x position of the mouse pointer */
+	/** The old x position of the mouse pointer */
     private float oldMouseX;
     /** The old y position of the mouse pointer */
     private float oldMouseY;

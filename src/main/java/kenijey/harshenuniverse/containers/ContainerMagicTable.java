@@ -14,7 +14,6 @@ import net.minecraftforge.items.ItemStackHandler;
 
 public class ContainerMagicTable extends BaseHarshenContainer
 {
-
 	private final TileEntityHarshenMagicTable te;
 	
 	public ContainerMagicTable(TileEntityHarshenMagicTable te, EntityPlayer player) 
@@ -49,6 +48,4 @@ public class ContainerMagicTable extends BaseHarshenContainer
 		te.markDirty();
 		return super.slotClick(slotId, dragType, clickTypeIn, player);
 	}
-	
-
 }

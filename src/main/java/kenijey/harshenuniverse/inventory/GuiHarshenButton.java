@@ -27,7 +27,7 @@ public class GuiHarshenButton extends GuiButton {
 		boolean pressed = super.mousePressed(mc, mouseX - this.parentGui.getGuiLeft(), mouseY);
 		if (pressed)
 			if(directionToInventory)
-				HarshenClientUtils.openInventory();
+				HarshenClientUtils.openAccessoryInventory();
 			else
 				mc.displayGuiScreen(new GuiInventory(mc.player));
 		return pressed;

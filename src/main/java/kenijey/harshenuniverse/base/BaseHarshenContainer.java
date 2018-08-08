@@ -11,7 +11,6 @@ import net.minecraftforge.items.SlotItemHandler;
 
 public abstract class BaseHarshenContainer extends Container
 {
-
 	private final int totalSize;
 	private final boolean playerInventory;
 	protected final ItemStackHandler handler;
@@ -91,5 +90,4 @@ public abstract class BaseHarshenContainer extends Container
 	    }
 	    return previous;
 	}
-
 }

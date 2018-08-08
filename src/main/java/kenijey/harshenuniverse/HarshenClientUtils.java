@@ -266,7 +266,7 @@ public class HarshenClientUtils
         GlStateManager.enableTexture2D();
 	}
 	
-	public static void openInventory()
+	public static void openAccessoryInventory()
 	{
 		EntityPlayer player = Minecraft.getMinecraft().player;
 		player.openGui(HarshenUniverse.instance, GuiHandler.HARSHENINVENTORY, player.world, (int)player.posX, (int)player.posY, (int)player.posZ);

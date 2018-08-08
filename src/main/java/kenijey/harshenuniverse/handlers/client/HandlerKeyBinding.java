@@ -16,7 +16,7 @@ public class HandlerKeyBinding
 {
 	private final KeyBinding telering;
 	private final KeyBinding minering;
-	private final KeyBinding openInventory;
+	private final KeyBinding openAccessoryInventory;
 	
 	ArrayList<KeyBinding> ringEvents = new ArrayList<>();
 	
@@ -24,7 +24,7 @@ public class HandlerKeyBinding
 	{
 		telering = regRingKey("telering", Keyboard.KEY_LMENU);
 		minering = regRingKey("minering", Keyboard.KEY_V);
-		openInventory = regKey("open_inventory", Keyboard.KEY_H);
+		openAccessoryInventory = regKey("open_inventory", Keyboard.KEY_H);
 	}
 	
 	private KeyBinding regKey(String name, int keycode)
@@ -47,8 +47,8 @@ public class HandlerKeyBinding
 		for(KeyBinding key : ringEvents)
 			if(key.isPressed())
 				sendRingEvent(ringEvents.indexOf(key));
-		if(openInventory.isPressed())
-			HarshenClientUtils.openInventory();
+		if(openAccessoryInventory.isPressed())
+			HarshenClientUtils.openAccessoryInventory();
 	}
 	
 	private void sendRingEvent(int ringType)
