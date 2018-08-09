@@ -33,6 +33,9 @@
 	{
       "item": "minecraft:skull",
 	  "data": 4
+    },
+	{
+      "item": "minecraft:string"
     }
   ],
   "result": {
