@@ -15,6 +15,5 @@ public class HandlerGlassContainer
 	{
 		if(event.getEntityPlayer().getHeldItemMainhand().isItemEqual(new ItemStack(HarshenItems.GLASS_CONTAINER)) && event.getTarget().getClass() == EntityCow.class)
 			event.getEntityPlayer().setHeldItem(EnumHand.MAIN_HAND, GlassContainerValues.MILK.getStack());
-
 	}
 }

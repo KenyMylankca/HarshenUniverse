@@ -22,5 +22,4 @@ public class RitualStick extends BaseItemMetaData
 	protected String[] getNames() {
 		return EnumRitualStick.getNames();
 	}
-
 }

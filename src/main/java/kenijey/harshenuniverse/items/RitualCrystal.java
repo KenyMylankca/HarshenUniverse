@@ -6,7 +6,7 @@ import kenijey.harshenuniverse.base.BaseItemMetaData;
 import kenijey.harshenuniverse.enums.items.EnumRitualCrystal;
 
 public class RitualCrystal extends BaseItemMetaData
-{		
+{
 	public RitualCrystal() {
 		setRegistryName("ritual_crystal");
 		setUnlocalizedName("ritual_crystal");
@@ -22,5 +22,4 @@ public class RitualCrystal extends BaseItemMetaData
 	protected List<Integer> getMetaForTab() {
 		return null;
 	}
-	
 }

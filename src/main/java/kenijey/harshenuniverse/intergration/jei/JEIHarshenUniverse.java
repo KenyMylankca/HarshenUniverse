@@ -88,6 +88,7 @@ public class JEIHarshenUniverse implements IModPlugin
 		info(HarshenItems.GLASS_CONTAINER, new int[] {4,5,7,9});
 		info(HarshenItems.SOUL_SHIELD);
 		info(HarshenItems.SOUL_HARSHER_SPADE);
+		info(HarshenItems.DARK_EWYDOEN);
 		
 		info("harshen_jaguar_armor", HarshenArmors.HARSHEN_JAGUAR_ARMOR_BOOTS, HarshenArmors.HARSHEN_JAGUAR_ARMOR_CHESTPLATE, 
 			HarshenArmors.HARSHEN_JAGUAR_ARMOR_HELMET, HarshenArmors.HARSHEN_JAGUAR_ARMOR_LEGGINGS);

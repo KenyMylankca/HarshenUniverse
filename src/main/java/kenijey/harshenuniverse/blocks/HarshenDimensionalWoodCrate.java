@@ -1,8 +1,8 @@
 package kenijey.harshenuniverse.blocks;
 
-import kenijey.harshenuniverse.base.BaseHarshenBlockBreakableWithSHAxe;
+import kenijey.harshenuniverse.base.BaseHarshenBlockBreakableWithEwydoen;
 
-public class HarshenDimensionalWoodCrate extends BaseHarshenBlockBreakableWithSHAxe
+public class HarshenDimensionalWoodCrate extends BaseHarshenBlockBreakableWithEwydoen
 {
 	public HarshenDimensionalWoodCrate()
 	{

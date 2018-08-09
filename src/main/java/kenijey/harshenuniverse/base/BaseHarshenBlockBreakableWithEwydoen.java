@@ -1,6 +1,6 @@
 package kenijey.harshenuniverse.base;
 
-import kenijey.harshenuniverse.items.SoulHarsherPickaxe;
+import kenijey.harshenuniverse.items.DarkEwydoen;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -10,9 +10,9 @@ import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class BaseHarshenBlockBreakableWithSHAxe extends Block
+public class BaseHarshenBlockBreakableWithEwydoen extends Block
 {
-	public BaseHarshenBlockBreakableWithSHAxe()
+	public BaseHarshenBlockBreakableWithEwydoen()
 	{
 		super(Material.WOOD);
 		setHarvestLevel("axe", 3);
@@ -21,7 +21,7 @@ public class BaseHarshenBlockBreakableWithSHAxe extends Block
 	
 	@Override
 	public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
-		if((playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(Blocks.AIR)? playerIn.getHeldItemOffhand() : playerIn.getHeldItemMainhand()).getItem() instanceof SoulHarsherPickaxe)
+		if((playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(Blocks.AIR)? playerIn.getHeldItemOffhand() : playerIn.getHeldItemMainhand()).getItem() instanceof DarkEwydoen)
 		{
 			setHardness(3f);
 			setResistance(3f);
