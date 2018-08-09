@@ -2,6 +2,10 @@
   "type": "forge:ore_shapeless",
   "group": "harshen_items",
   "ingredients": [
+	{
+      "type": "forge:ore_dict",
+      "ore": "dustRedstone"
+    },
     {
       "item": "minecraft:blaze_powder"
     },
