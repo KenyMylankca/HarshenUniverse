@@ -40,6 +40,7 @@ public class HereticCauldron extends BaseBlockHarshenSingleInventory
 	protected static final AxisAlignedBB AABB_WALL_SOUTH = new AxisAlignedBB(0.0D, 0.0D, 0.875D, 1.0D, 1.0D, 1.0D);
 	protected static final AxisAlignedBB AABB_WALL_EAST = new AxisAlignedBB(0.875D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
 	protected static final AxisAlignedBB AABB_WALL_WEST = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.125D, 1.0D, 1.0D);
+	protected static final AxisAlignedBB AABB_WALL_BASE = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1D, 0.2D, 1D);
 
 	@Override
 	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean p_185477_7_)
@@ -48,6 +49,7 @@ public class HereticCauldron extends BaseBlockHarshenSingleInventory
         addCollisionBoxToList(pos, entityBox, collidingBoxes, AABB_WALL_NORTH);
         addCollisionBoxToList(pos, entityBox, collidingBoxes, AABB_WALL_EAST);
         addCollisionBoxToList(pos, entityBox, collidingBoxes, AABB_WALL_SOUTH);
+        addCollisionBoxToList(pos, entityBox, collidingBoxes, AABB_WALL_BASE);
     }
 	 
 	@Override
