@@ -163,13 +163,6 @@ public class HarshenCraftingRecipes
 				
 				's', "stickWood");
 		
-		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "heretic_stick"), new ResourceLocation(group),
-				new ItemStack(HarshenItems.RITUAL_STICK, 1, 1),
-				"psp",
-				
-				'p', new ItemStack(HarshenItems.POWDER_OF_HERETISM),
-				's', new ItemStack(HarshenItems.RITUAL_STICK, 1, 0));
-		
 		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "blood_collector"), new ResourceLocation(group),
 				new ItemStack(HarshenItems.BLOOD_COLLECTOR, 1, 0),
 				"  i",

@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "harshen_items",
+  "ingredients": [
+    {
+      "item": "harshenuniverse:ritual_stick",
+	  "data": 0
+    },
+	{
+      "item": "harshenuniverse:powder_of_heretism"
+    }
+  ],
+  "result": {
+    "item": "harshenuniverse:ritual_stick",
+	 "data": 1
+  }
+}
