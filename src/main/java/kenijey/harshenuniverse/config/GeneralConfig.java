@@ -23,6 +23,6 @@ public class GeneralConfig extends BaseConfig
 		bloodHeightRange = get("blood_height_range", 15);
 		renderHiddenPlates = get("render_hidden_plate", true);
 		structureRuinChance = get("structure_ruin_chance", 0.2D);
-		bloodyTorchDistance = get("bloody_torch_distance", 6);
+		bloodyTorchDistance = get("bloody_torch_distance", 5);
 	}
 }
