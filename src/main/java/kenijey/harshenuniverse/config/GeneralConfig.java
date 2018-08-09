@@ -10,6 +10,7 @@ public class GeneralConfig extends BaseConfig
 	public static boolean renderHiddenPlates;
 	public static double structureRuinChance;
 	public static int bloodyTorchDistance;
+	public static int nocturnalTorchDistance;
 	
 	@Override
 	public String getName() {
@@ -24,5 +25,6 @@ public class GeneralConfig extends BaseConfig
 		renderHiddenPlates = get("render_hidden_plate", true);
 		structureRuinChance = get("structure_ruin_chance", 0.2D);
 		bloodyTorchDistance = get("bloody_torch_distance", 5);
+		nocturnalTorchDistance = get("nocturnal_torch_distance", 2);
 	}
 }

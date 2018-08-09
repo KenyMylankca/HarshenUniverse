@@ -58,11 +58,23 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 		GlassContainerValues.reloadAll();
 		
 		//magic table recipes
-		registry.registerMagicTableRecipe(HarshenUtils.getMixupBook(), GlassContainerValues.VOID.getHarshenStack(), GlassContainerValues.HARSHEN_DIMENSIONAL_FLUID.getHarshenStack(), new HarshenStack(new ItemStack(Items.BOOK), new ItemStack(HarshenBlocks.ARCHIVE)), GlassContainerValues.MAGIC.getHarshenStack());
-		registry.registerMagicTableRecipe(new ItemStack(HarshenBlocks.JEWEL_DIRT), GlassContainerValues.EARTH.getHarshenStack(), new HarshenStack(new ItemStack(HarshenItems.SOLIDIFYING_PASTE)), GlassContainerValues.BLOOD.getHarshenStack(), GlassContainerValues.MAGIC.getHarshenStack());
-		registry.registerMagicTableRecipe(new ItemStack(HarshenItems.REACH_PENDANT), new HarshenStack(new ItemStack(Items.SLIME_BALL)), GlassContainerValues.MAGIC.getHarshenStack(), new HarshenStack(new ItemStack(HarshenItems.POWDER_OF_HERETISM)), new HarshenStack(new ItemStack(Items.SPECKLED_MELON)));
-		registry.registerMagicTableRecipe(new ItemStack(Items.DIAMOND), new HarshenStack(new ItemStack(HarshenItems.DIAMOND_SHARD)), new HarshenStack(new ItemStack(HarshenItems.DIAMOND_SHARD)), new HarshenStack(new ItemStack(HarshenItems.DIAMOND_SHARD)), new HarshenStack(new ItemStack(HarshenItems.DIAMOND_SHARD)));
-		registry.registerMagicTableRecipe(new ItemStack(Items.EMERALD), new HarshenStack(new ItemStack(HarshenItems.EMERALD_SHARD)), new HarshenStack(new ItemStack(HarshenItems.EMERALD_SHARD)), new HarshenStack(new ItemStack(HarshenItems.EMERALD_SHARD)), new HarshenStack(new ItemStack(HarshenItems.EMERALD_SHARD)));
+		registry.registerMagicTableRecipe(HarshenUtils.getMixupBook(),
+				GlassContainerValues.VOID.getHarshenStack(), GlassContainerValues.HARSHEN_DIMENSIONAL_FLUID.getHarshenStack(), new HarshenStack(new ItemStack(Items.BOOK), new ItemStack(HarshenBlocks.ARCHIVE)), GlassContainerValues.MAGIC.getHarshenStack());
+		
+		registry.registerMagicTableRecipe(new ItemStack(HarshenBlocks.JEWEL_DIRT),
+				GlassContainerValues.EARTH.getHarshenStack(), new HarshenStack(new ItemStack(HarshenItems.SOLIDIFYING_PASTE)), GlassContainerValues.BLOOD.getHarshenStack(), GlassContainerValues.MAGIC.getHarshenStack());
+		
+		registry.registerMagicTableRecipe(new ItemStack(HarshenItems.REACH_PENDANT),
+				new HarshenStack(new ItemStack(Items.SLIME_BALL)), GlassContainerValues.MAGIC.getHarshenStack(), new HarshenStack(new ItemStack(HarshenItems.POWDER_OF_HERETISM)), new HarshenStack(new ItemStack(Items.SPECKLED_MELON)));
+		
+		registry.registerMagicTableRecipe(new ItemStack(Items.DIAMOND),
+				new HarshenStack(new ItemStack(HarshenItems.DIAMOND_SHARD)), new HarshenStack(new ItemStack(HarshenItems.DIAMOND_SHARD)), new HarshenStack(new ItemStack(HarshenItems.DIAMOND_SHARD)), new HarshenStack(new ItemStack(HarshenItems.DIAMOND_SHARD)));
+		
+		registry.registerMagicTableRecipe(new ItemStack(Items.EMERALD),
+				new HarshenStack(new ItemStack(HarshenItems.EMERALD_SHARD)), new HarshenStack(new ItemStack(HarshenItems.EMERALD_SHARD)), new HarshenStack(new ItemStack(HarshenItems.EMERALD_SHARD)), new HarshenStack(new ItemStack(HarshenItems.EMERALD_SHARD)));
+		
+		registry.registerMagicTableRecipe(new ItemStack(HarshenBlocks.NOCTURNAL_TORCH),
+				new HarshenStack(new ItemStack(HarshenItems.EMERALD_SHARD)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_STICK, 1, 1)), new HarshenStack(new ItemStack(HarshenItems.ZOMBIE_EYE)), GlassContainerValues.VOID.getHarshenStack());
 		
 		//pedestal slab recipes
 		registry.registerPedestalSlabRecipe(new HarshenStack("cobblestone"), new ItemStack(Blocks.NETHERRACK));

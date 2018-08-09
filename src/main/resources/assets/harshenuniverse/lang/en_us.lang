@@ -186,6 +186,7 @@ tile.bloody_torch.name=§4Bloody Torch§r
 tile.bloody_wool.name=§4Bloody Wool§r
 tile.bloody_bed.name=§4Bloody Bed§r (WIP)
 tile.akzenia_mushroom.name=§5Akzenia Mushroom§r
+tile.nocturnal_torch.name=§2Nocturnal Torch§r
 
 #fluids
 fluid.harshen_dimensional_fluid=Harshen Dimensional Fluid
@@ -296,8 +297,10 @@ bloodytorch2=you are holding it in your any hand, unless you attack the mobs
 bloodyarmor1=Full set will regenerate 1 heart every 6 seconds
 bed1=You can't sleep on it, but
 bed2=you can lie on it and get healed well
-darkewydoen1=Still holds the tears of the elf Shio, as an artifact; it reminds the power of the elder frost giants.
+darkewydoen1=Still holds the tears of the elf Shio, as an artifact; it reminds the power of the elder frost giants
 darkewydoen2=Frosts target, and accelerates you by every hit.
+nocturnaltorch1=A fallen wizards last wishes... A lodestar from nocturns of nights...
+nocturnaltorch2=Provides night vision as much as you wait near to it
 
 #The One Probe
 top.gate.timeleft=Seconds Left: %s

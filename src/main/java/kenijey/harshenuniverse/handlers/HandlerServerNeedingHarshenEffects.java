@@ -31,6 +31,7 @@ public class HandlerServerNeedingHarshenEffects
 {
 	int tick=0;
 	int trusttimer=666;
+	int nocturnetimer=0;
 	
 	@SubscribeEvent
 	public void onLivingHurt(LivingHurtEvent event)
@@ -102,6 +103,23 @@ public class HandlerServerNeedingHarshenEffects
 		if(tick>600) tick =1; else tick++;
 		for(EntityPlayer player : event.world.playerEntities)
 		{
+			if(HarshenUtils.hasNocturnalTorch(player))
+			{
+				nocturnetimer++;
+				if(nocturnetimer > 180)
+					player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 205));
+				if(nocturnetimer > 500)
+					player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 402));
+				if(nocturnetimer > 800)
+					player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 702));
+				if(nocturnetimer > 1300)
+					player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 1202));
+				if(nocturnetimer > 2000)
+					player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 2002));
+			}
+			else
+				nocturnetimer=0;
+			
 			if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.FEATHER_EARRING) > 0)
 			{
 				player.addPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST, 50, HarshenUtils.hasAccessoryTimes(player, HarshenItems.FEATHER_EARRING)-1, false, false));

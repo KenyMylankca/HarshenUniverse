@@ -1020,6 +1020,30 @@ public class HarshenUtils
 		return false;
     }
     
+    public static boolean hasNocturnalTorch(EntityPlayer player)
+    {
+    	int px = MathHelper.floor(player.posX);
+		int py = MathHelper.floor(player.posY);
+		int pz = MathHelper.floor(player.posZ);
+		int distance = GeneralConfig.nocturnalTorchDistance;
+		
+		ArrayList<BlockPos> allBlockPos = new ArrayList<>();
+		HashMap<Double, BlockPos> distanceMap = new HashMap<>();
+		
+		for(int x = px - distance; x < px + distance; x++)
+			for(int z = pz - distance; z < pz + distance; z++)
+				for(int y = py - distance; y < py + distance; y++)
+				{
+					if((net.minecraft.client.Minecraft.getMinecraft().world.getBlockState(new BlockPos(x, y, z)).getBlock() == HarshenBlocks.NOCTURNAL_TORCH ||
+							player.getHeldItemMainhand().getItem() == Item.getItemFromBlock(HarshenBlocks.NOCTURNAL_TORCH) ||
+								player.getHeldItemOffhand().getItem() == Item.getItemFromBlock(HarshenBlocks.NOCTURNAL_TORCH)))
+					{
+						return true;
+					}
+				}
+		return false;
+    }
+    
     public static void splashBlood(EntityLivingBase entityIn)
     {
     	Class[] AllowedEntities = {EntityPlayerMP.class, EntityWitch.class, EntityVillager.class, EntityAnimal.class};

@@ -43,6 +43,7 @@ import kenijey.harshenuniverse.blocks.HereticCauldron;
 import kenijey.harshenuniverse.blocks.HereticCauldronTop;
 import kenijey.harshenuniverse.blocks.ItiumOre;
 import kenijey.harshenuniverse.blocks.JewelDirt;
+import kenijey.harshenuniverse.blocks.NocturnalTorch;
 import kenijey.harshenuniverse.blocks.PedestalSlab;
 import kenijey.harshenuniverse.blocks.PlantOfGleam;
 import kenijey.harshenuniverse.blocks.PontusChaoticLeaves;
@@ -115,6 +116,7 @@ public class HarshenBlocks
 	public static final Block GILDED_OBSIDIAN = new GildedObsidian();
 	public static final Block JEWEL_DIRT = new JewelDirt();
 	public static final Block BLOODY_TORCH = new BloodyTorch();
+	public static final Block NOCTURNAL_TORCH = new NocturnalTorch();
 	public static final Block BLOODY_WOOL = new BloodyWool();
 	public static final Block BLOODY_BED = new BloodyBed();
 	public static final Block BLOODY_BED_HEAD = new BloodyBedHead();
@@ -172,6 +174,7 @@ public class HarshenBlocks
 		regBlock(GILDED_OBSIDIAN, 64);
 		regBlock(JEWEL_DIRT, 64);
 		regBlock(BLOODY_TORCH, 64);
+		regBlock(NOCTURNAL_TORCH, 64);
 		regBlock(BLOODY_WOOL, 64);
 		regBlock(BLOODY_BED, 1);
 		regBlock(AKZENIA_MUSHROOM, 64);
