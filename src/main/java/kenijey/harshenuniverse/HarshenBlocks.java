@@ -198,7 +198,7 @@ public class HarshenBlocks
 
 	public static void regBlock(Block block, int stackSize) {
 		blocksWithItems.add(block);
-		blockStackSize.put(block, stackSize);	
+		blockStackSize.put(block, stackSize);
 		HarshenConfigs.BLOCKS.allComponants.add(block);
 	}
 	

@@ -8,5 +8,4 @@ public class PontusChaoticWood extends BaseHarshenLog
 	protected String getName() {
 		return "pontus_chaotic_wood";
 	}
-
 }

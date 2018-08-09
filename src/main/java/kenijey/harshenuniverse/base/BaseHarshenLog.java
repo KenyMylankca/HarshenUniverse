@@ -62,5 +62,4 @@ public abstract class BaseHarshenLog extends BlockLog
 	    {
 	        return new BlockStateContainer(this, new IProperty[] {LOG_AXIS});
 	    }
-
 }

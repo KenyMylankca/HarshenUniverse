@@ -161,14 +161,14 @@ public class HarshenItems
 	
 	public static void preInit()
 	{
-		regItem(ITEM_HARSHEN_DIMENSIONAL_DOOR,8);
+		regItem(ITEM_HARSHEN_DIMENSIONAL_DOOR, 8);
 		regItem(HARSHEN_SOUL_FRAGMENT, 8);
-		regItem(ITIUM,8);
+		regItem(ITIUM, 8);
 		regItem(HARSHEN_CRYSTAL, 18);
 		regItem(HARSHEN_SOUL_INGOT, 8);
 		regItem(BLOOD_ESSENCE, 8);
-		regItem(LIGHT_EMITTED_ESSENCE,8);
-		regItem(LIGHT_EMITTED_SEED,16);
+		regItem(LIGHT_EMITTED_ESSENCE, 8);
+		regItem(LIGHT_EMITTED_SEED, 16);
 		regItem(SOUL_INFUSED_INGOT, 2);
 		regItem(POWDER_OF_HERETISM, 8);
 		regItem(ZOMBIE_EYE, 64);
