@@ -187,6 +187,7 @@ tile.bloody_wool.name=§4Bloody Wool§r
 tile.bloody_bed.name=§4Bloody Bed§r (WIP)
 tile.akzenia_mushroom.name=§5Akzenia Mushroom§r
 tile.nocturnal_torch.name=§2Nocturnal Torch§r
+tile.nocturne_bloom.name=Nocturne Bloom
 
 #fluids
 fluid.harshen_dimensional_fluid=Harshen Dimensional Fluid

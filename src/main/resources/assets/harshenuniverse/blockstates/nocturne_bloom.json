@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "grown=false": { "model": "harshenuniverse:nocturne_bloom" },
+		"grown=true": { "model": "harshenuniverse:nocturne_bloom_grown" }
+	}
+}

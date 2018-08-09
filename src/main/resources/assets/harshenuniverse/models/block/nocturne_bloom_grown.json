@@ -1,0 +1,27 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "harshenuniverse:blocks/nocturne_bloom_grown",
+		"particle": "harshenuniverse:blocks/nocturne_bloom_grown"
+	},
+	"elements": [
+		{
+			"from": [8, 0, 0],
+			"to": [8.1, 32, 18],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8.5, 8, 8]},
+			"faces": {
+				"east": {"uv": [4, 0, 12.25, 16], "texture": "#0"},
+				"west": {"uv": [4, 0, 12.25, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [7, 0, -1],
+			"to": [7.1, 32, 17],
+			"rotation": {"angle": 45, "axis": "y", "origin": [7.5, 8, 7]},
+			"faces": {
+				"east": {"uv": [4, 0, 12.25, 16], "texture": "#0"},
+				"west": {"uv": [4, 0, 12.25, 16], "texture": "#0"}
+			}
+		}
+	]
+}

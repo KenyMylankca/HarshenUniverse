@@ -44,6 +44,7 @@ import kenijey.harshenuniverse.blocks.HereticCauldronTop;
 import kenijey.harshenuniverse.blocks.ItiumOre;
 import kenijey.harshenuniverse.blocks.JewelDirt;
 import kenijey.harshenuniverse.blocks.NocturnalTorch;
+import kenijey.harshenuniverse.blocks.NocturneBloom;
 import kenijey.harshenuniverse.blocks.PedestalSlab;
 import kenijey.harshenuniverse.blocks.PlantOfGleam;
 import kenijey.harshenuniverse.blocks.PontusChaoticLeaves;
@@ -121,6 +122,7 @@ public class HarshenBlocks
 	public static final Block BLOODY_BED = new BloodyBed();
 	public static final Block BLOODY_BED_HEAD = new BloodyBedHead();
 	public static final Block AKZENIA_MUSHROOM = new AkzeniaMushroom();
+	public static final Block NOCTURNE_BLOOM = new NocturneBloom();
 	
 	public static final BlockCrops CROP_OF_GLEAM = new CropOfGleam();
 	
@@ -178,6 +180,7 @@ public class HarshenBlocks
 		regBlock(BLOODY_WOOL, 64);
 		regBlock(BLOODY_BED, 1);
 		regBlock(AKZENIA_MUSHROOM, 64);
+		regBlock(NOCTURNE_BLOOM, 64);
 		
 		regSingleBlock(HERETIC_CAULDRON_TOP);
 		regSingleBlock(CROP_OF_GLEAM);

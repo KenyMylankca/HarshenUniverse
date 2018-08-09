@@ -7,6 +7,7 @@ import java.util.Random;
 import kenijey.harshenuniverse.base.HarshenStructure;
 import kenijey.harshenuniverse.dimensions.DimensionPontus;
 import kenijey.harshenuniverse.worldgenerators.overworld.JewelDirtGenOverworld;
+import kenijey.harshenuniverse.worldgenerators.overworld.NocturneBloomGenerator;
 import kenijey.harshenuniverse.worldgenerators.pontus.JewelDirtGenPontus;
 import kenijey.harshenuniverse.worldgenerators.pontus.PontusWorldGeneratorItiumOre;
 import kenijey.harshenuniverse.worldgenerators.pontus.PontusWorldGeneratorPontusEmeraldOre;
@@ -27,6 +28,7 @@ public class HarshenWorldGen implements IWorldGenerator
     private final WorldGenerator pontusEmeraldOre = new PontusWorldGeneratorPontusEmeraldOre();
     private final WorldGenerator jewelDirtOverworld = new JewelDirtGenOverworld();
     private final WorldGenerator jewelDirtPontus = new JewelDirtGenPontus();
+    private final WorldGenerator nocturneBloom = new NocturneBloomGenerator();
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
@@ -38,11 +40,12 @@ public class HarshenWorldGen implements IWorldGenerator
 				HarshenStructures.CASTLE.generateStucture(world, random, chunkX, chunkZ);
 			if(chunkX == 11 && chunkZ == -5)
 				HarshenStructures.GRAVEYARD.generateStucture(world, random, chunkX, chunkZ);
-			runGenerator(this.soulore, world, random, chunkX, chunkZ, 10, 0, 20);
+			runGenerator(this.soulore, world, random, chunkX, chunkZ, 8, 0, 20);
 			plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.1f);
 			plantGenerator(HarshenBlocks.PLANT_OF_GLEAM, world, random, chunkX, chunkZ, 0.1f);
 			plantGenerator(HarshenBlocks.AKZENIA_MUSHROOM, world, random, chunkX, chunkZ, 0.1f);
 	    	runGenerator(jewelDirtOverworld, world, random, chunkX, chunkZ, 200, 0, 200);
+	    	runGenerator(nocturneBloom, world, random, chunkX, chunkZ, 50, 0, 60);
 		}
 		else if(dim == DimensionPontus.DIMENSION_ID)
 		{
@@ -89,5 +92,5 @@ public class HarshenWorldGen implements IWorldGenerator
 		            worldIn.setBlockState(blockpos,plant.getDefaultState(), 1);
 		        }
 			}
-	}	
+	}
 }
