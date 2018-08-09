@@ -92,6 +92,7 @@ item.soul_harsher_spade.name=Soul Harsher Spade
 item.reflector_pendant.name=Reflector Pendant
 item.broken_arrow.name=Broken Arrow
 item.akzenia_soup.name=§5Akzenia Soup§r
+item.dark_ewydoen.name=§bDark Ewydoen§r
 
 #keybindings
 key.telering.description=Telering Teleport Key
@@ -295,6 +296,8 @@ bloodytorch2=you are holding it in your any hand, unless you attack the mobs
 bloodyarmor1=Full set will regenerate 1 heart every 6 seconds
 bed1=You can't sleep on it, but
 bed2=you can lie on it and get healed well
+darkewydoen1=Still holds the tears of the elf Shio, as an artifact; it reminds the power of the elder frost giants.
+darkewydoen2=Frosts target, and accelerates you by every hit.
 
 #The One Probe
 top.gate.timeleft=Seconds Left: %s

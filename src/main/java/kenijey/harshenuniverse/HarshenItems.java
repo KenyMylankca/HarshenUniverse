@@ -21,6 +21,7 @@ import kenijey.harshenuniverse.items.BloodyPontusCube;
 import kenijey.harshenuniverse.items.BrokenArrow;
 import kenijey.harshenuniverse.items.CriminalPendant;
 import kenijey.harshenuniverse.items.CursedBone;
+import kenijey.harshenuniverse.items.DarkEwydoen;
 import kenijey.harshenuniverse.items.DiamondShard;
 import kenijey.harshenuniverse.items.ElementalPendant;
 import kenijey.harshenuniverse.items.ElytraPendant;
@@ -156,6 +157,7 @@ public class HarshenItems
 	public static final Item SOUL_HARSHER_SPADE = new SoulHarsherSpade();
 	public static final Item REFLECTOR_PENDANT = new ReflectorPendant();
 	public static final Item AKZENIA_SOUP = new AkzeniaSoup();
+	public static final Item DARK_EWYDOEN = new DarkEwydoen();
 	
 	public static void preInit()
 	{
@@ -186,6 +188,7 @@ public class HarshenItems
 		regItem(AKZENIA_SOUP, 1);
 		
 		regItem(EMPOWERED_SOUL_HARSHER_SWORD);
+		regItem(DARK_EWYDOEN);
 		regItem(SOUL_HARSHER_PICKAXE);
 		regItem(SOUL_HARSHER_SWORD);
 		regItem(HARSHEN_BOOK);

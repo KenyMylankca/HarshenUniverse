@@ -99,6 +99,11 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 				new HarshenStack(new ItemStack(Items.SUGAR)), new HarshenStack("enderpearl"), new HarshenStack(new ItemStack(Items.CHORUS_FRUIT_POPPED)),
 				new HarshenStack(new ItemStack(Items.BLAZE_POWDER)), new HarshenStack(new ItemStack(Items.SPIDER_EYE)));
 		
+		registry.registerHereticRecipe(new HarshenStack(new ItemStack(Items.IRON_AXE)), new ItemStack(HarshenItems.DARK_EWYDOEN), GlassContainerValues.EARTH.getType(), 
+				new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)), new HarshenStack(new ItemStack(HarshenItems.VALOR_BADGE)), new HarshenStack(new ItemStack(Blocks.PACKED_ICE)),
+				new HarshenStack(new ItemStack(HarshenItems.CURSED_BONE)), new HarshenStack(new ItemStack(HarshenItems.ZOMBIE_EYE)), new HarshenStack(new ItemStack(Items.GHAST_TEAR)),
+				new HarshenStack(new ItemStack(HarshenBlocks.GILDED_OBSIDIAN)), new HarshenStack(new ItemStack(HarshenBlocks.BLOCK_OF_HEADS)));
+		
 		//lightning ritual recipes
 		registry.registerLightningRecipe(new ItemStack(HarshenItems.PONTUS_WORLD_GATE_SPAWNER), new HarshenStack(new ItemStack(HarshenItems.PONTUS_WORLD_GATE_PARTS)), new HarshenStack(new ItemStack(HarshenItems.PONTUS_WORLD_GATE_PARTS, 1, 1)),
 				new HarshenStack(new ItemStack(HarshenItems.PONTUS_WORLD_GATE_PARTS, 1 ,2)), new HarshenStack(new ItemStack(HarshenItems.HARSHEN_SOUL_FRAGMENT)));
