@@ -36,7 +36,7 @@ public class BloodVessel extends Block implements ITileEntityProvider
 	public static HashMap<BlockPos, Integer> updateMap = new HashMap<>();
 	
 	public BloodVessel() {
-		super(Material.IRON);
+		super(Material.GLASS);
 		setRegistryName("blood_vessel");
 		setUnlocalizedName("blood_vessel");
 		setDefaultState(this.blockState.getBaseState().withProperty(NODE, false));

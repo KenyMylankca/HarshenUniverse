@@ -8,7 +8,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.potion.Potion;
+import net.minecraft.init.MobEffects;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -25,7 +25,7 @@ public class SoulReminder extends Block
 	
 	public SoulReminder()
 	{
-		super(Material.ROCK);
+		super(Material.WEB);
 		setUnlocalizedName("soul_reminder");
         setRegistryName("soul_reminder");
 		setHardness(-1);
@@ -57,6 +57,15 @@ public class SoulReminder extends Block
         entityIn.motionY *= 0.8D;
         entityIn.motionZ *= 0.8D;
         entityIn.fallDistance = 0f;
+        if(entityIn instanceof EntityPlayer)
+        {
+        	if(!((EntityPlayer) entityIn).isCreative())
+        	{
+        		((EntityPlayer) entityIn).addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 200));
+        		((WorldServer)world).spawnParticle(EnumParticleTypes.CLOUD, true, pos.getX() + 1, pos.getY() + 1, pos.getZ() + 1, 17,  1, 1, 1, 0, new int[EnumParticleTypes.CLOUD.getArgumentCount()]);
+        		worldIn.setBlockToAir(pos);
+        	}
+        }
     }
 
 	@Override
@@ -85,14 +94,6 @@ public class SoulReminder extends Block
 	@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		isTicking = true;
-		List<Entity> playersWithin = worldIn.getEntitiesWithinAABB(EntityPlayer.class, new  AxisAlignedBB(pos, pos.add(1, 1, 1)));
-		if(!playersWithin.isEmpty())
-			for(Object player: playersWithin.toArray())
-				if(!((EntityPlayer)player).capabilities.isCreativeMode)
-				{
-					((EntityPlayer)player).addPotionEffect(new PotionEffect(Potion.getPotionById(9), 200));
-					worldIn.setBlockToAir(pos);
-				}
 		this.world = worldIn;
 		this.pos = pos;
 		worldIn.scheduleBlockUpdate(pos, this, 10, 3);

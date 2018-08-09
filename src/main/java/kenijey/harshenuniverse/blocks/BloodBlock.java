@@ -25,9 +25,9 @@ public class BloodBlock extends Block
 	private static HashMap<BlockPos, Integer> tickMap = new HashMap<>();
 	private static ArrayList<BlockPos> inUse = new ArrayList<>();
 	
-	public BloodBlock() 
+	public BloodBlock()
 	{
-		 super(Material.CARPET);
+		 super(Material.CLAY);
 		 setUnlocalizedName("blood_block");
 	     setRegistryName("blood_block");
 	     blockSoundType = blockSoundType.SLIME;

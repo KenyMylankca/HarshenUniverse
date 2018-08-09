@@ -22,7 +22,7 @@ public class JewelDirt extends Block implements IMetaItemBlock
 
 	public JewelDirt()
 	{
-		super(Material.GRASS);
+		super(Material.GROUND);
 		setUnlocalizedName("jewel_dirt");
         setRegistryName("jewel_dirt");
         setHarvestLevel("shovel", 1);

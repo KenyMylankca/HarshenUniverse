@@ -29,7 +29,7 @@ public class AkzeniaMushroom extends Block
 	private World world;
 	
 	public AkzeniaMushroom() {
-		super(Material.CAKE);
+		super(Material.PLANTS);
 		setRegistryName("akzenia_mushroom");
 		setUnlocalizedName("akzenia_mushroom");
 		setHardness(0.5F);

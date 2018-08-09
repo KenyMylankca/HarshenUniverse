@@ -18,7 +18,7 @@ public class HarshenDestroyedPlant extends Block
 {
 	
 	public HarshenDestroyedPlant() {
-		super(Material.GRASS);
+		super(Material.PLANTS);
 		setUnlocalizedName("harshen_destroyed_plant");
         setRegistryName("harshen_destroyed_plant");
         blockSoundType = blockSoundType.PLANT;
