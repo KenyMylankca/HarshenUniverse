@@ -106,13 +106,15 @@ public class AkzeniaMushroom extends Block
 			count++;
 		if(worldIn.getBlockState(pos.south()).getBlock() instanceof AkzeniaMushroom)
 			count++;
-		worldIn.setBlockState(pos, this.blockState.getBaseState().withProperty(MUSHROOMS, count));
+		worldIn.setBlockState(pos, state.withProperty(MUSHROOMS, count));
 	}
 	
 	@Override
 	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
 		if(!worldIn.isSideSolid(pos.down(), EnumFacing.UP))
 			worldIn.destroyBlock(pos, true);
+		else
+			worldIn.setBlockState(pos, state.withProperty(MUSHROOMS, 0));
 		super.onBlockAdded(worldIn, pos, state);
 	}
 	
@@ -136,12 +138,30 @@ public class AkzeniaMushroom extends Block
 	
 	@Override
 	public int getMetaFromState(IBlockState state) {
-		return 0;
+		if(state.getValue(MUSHROOMS) == 0)
+			return 0;
+		else if(state.getValue(MUSHROOMS) == 1)
+			return 1;
+		else if(state.getValue(MUSHROOMS) == 2)
+			return 2;
+		else if(state.getValue(MUSHROOMS) == 3)
+			return 3;
+		else
+			return 4;
 	}
 	
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState();
+		if(meta == 0)
+			return this.getDefaultState().withProperty(MUSHROOMS, 0);
+		else if(meta == 1)
+			return this.getDefaultState().withProperty(MUSHROOMS, 1);
+		else if(meta == 2)
+			return this.getDefaultState().withProperty(MUSHROOMS, 2);
+		else if(meta == 3)
+			return this.getDefaultState().withProperty(MUSHROOMS, 3);
+		else
+			return this.getDefaultState().withProperty(MUSHROOMS, 4);
 	}
 	
 	@Override
