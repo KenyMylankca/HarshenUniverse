@@ -31,7 +31,7 @@ public class HereticRitualRecipes
 				isFalse = true;
 			else
 				stackList.add(pedstalItems[i]);
-		if(HarshenUtils.isItemFalse(cauldronItem) || HarshenUtils.isItemFalse(output))
+		if(HarshenUtils.isItemFalse(cauldronItem) || !HarshenUtils.isItemAvalible(output))
 			isFalse = true;
 		
 		this.cauldronItem = cauldronItem;
@@ -90,5 +90,4 @@ public class HereticRitualRecipes
 	{
 		return this.setTag(HarshenUtils.getTagLine(world, position, "heretic_cauldron"));
 	}
-	
 }

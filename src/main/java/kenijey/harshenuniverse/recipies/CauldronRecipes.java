@@ -19,8 +19,7 @@ public class CauldronRecipes
 	
 	private CauldronRecipes(HarshenStack input, ItemStack output, CauldronLiquid catalyst)
 	{
-		if(HarshenUtils.isItemFalse(input) || HarshenUtils.isItemFalse(output))
-			isFalse = true;
+		isFalse = HarshenUtils.isItemFalse(input) || !HarshenUtils.isItemAvalible(output);
 		this.input = input;
 		this.output = output;
 		this.catalyst = catalyst;
@@ -57,5 +56,4 @@ public class CauldronRecipes
 		if(!recipe.isFalse)
 			HarshenAPIHandler.allCauldronRecipes.add(recipe);
 	}
-	
 }

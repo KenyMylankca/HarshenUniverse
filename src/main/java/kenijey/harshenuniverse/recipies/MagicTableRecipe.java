@@ -9,15 +9,13 @@ import net.minecraft.item.ItemStack;
 
 public class MagicTableRecipe 
 {	
-	
 	private final ArrayList<HarshenStack> inputStacks;
 	private final ItemStack output;
 	private boolean isFalse;
 	
 	private MagicTableRecipe(ArrayList<HarshenStack> inputStacks, ItemStack output) {
 		for(HarshenStack stack : inputStacks)
-			if(HarshenUtils.isItemFalse(stack) || HarshenUtils.isItemFalse(output))
-				isFalse = true;
+			isFalse = HarshenUtils.isItemFalse(stack) || !HarshenUtils.isItemAvalible(output);
 		this.inputStacks = inputStacks;
 		this.output = output;
 	}

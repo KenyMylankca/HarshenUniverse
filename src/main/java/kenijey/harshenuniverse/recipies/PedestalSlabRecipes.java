@@ -17,8 +17,7 @@ public class PedestalSlabRecipes
 	
 	private PedestalSlabRecipes(HarshenStack input, ItemStack output)
 	{
-		if(HarshenUtils.isItemFalse(input) || HarshenUtils.isItemFalse(output))
-			isFalse = true;
+		isFalse =HarshenUtils.isItemFalse(input) || !HarshenUtils.isItemAvalible(output);
 		this.input = input;
 		this.output = output;
 		allRecipes.add(this);
@@ -49,5 +48,4 @@ public class PedestalSlabRecipes
 		if(!recipe.isFalse)
 			HarshenAPIHandler.allPedestalRecipes.add(recipe);
 	}
-	
 }

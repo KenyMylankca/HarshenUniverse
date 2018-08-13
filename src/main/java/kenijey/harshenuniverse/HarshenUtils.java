@@ -443,14 +443,6 @@ public class HarshenUtils
 				return true;
 		return false;
 	}
-	/**
-	 * @Deprecated use the HarshenStack version
-	 */
-	@Deprecated 
-	public static boolean isItemFalse(ItemStack stack)
-	{
-		return !isItemAvalible(stack);
-	}
 	
 	public static NBTTagCompound getNBT(ItemStack stack)
 	{
