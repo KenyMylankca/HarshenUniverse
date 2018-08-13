@@ -16,7 +16,6 @@ import net.minecraft.util.math.BlockPos;
 
 public class HarshenCommandLoader extends BaseHarshenCommand
 {
-
 	@Override
 	public String getName() {
 		return "harshenuniverse";
@@ -105,8 +104,5 @@ public class HarshenCommandLoader extends BaseHarshenCommand
 				}
 			return super.getTabCompletions(server, sender, args, targetPos);
 		}
-		
-		
 	}
-
 }
