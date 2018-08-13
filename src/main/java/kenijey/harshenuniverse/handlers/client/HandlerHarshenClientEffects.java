@@ -7,6 +7,7 @@ import kenijey.harshenuniverse.HarshenSounds;
 import kenijey.harshenuniverse.HarshenUtils;
 import kenijey.harshenuniverse.config.IdConfig;
 import kenijey.harshenuniverse.entity.EntityKazzendre;
+import kenijey.harshenuniverse.items.DarkEwydoen;
 import kenijey.harshenuniverse.items.EmpoweredSoulHarsherSword;
 import kenijey.harshenuniverse.items.EnionBow;
 import kenijey.harshenuniverse.items.IronBow;
@@ -38,6 +39,7 @@ public class HandlerHarshenClientEffects
 			if (item instanceof IronScythe) entity.playSound(HarshenSounds.IRON_SCYTHE_HIT, 1f, 1f);
 			if (item instanceof IronBow) entity.playSound(HarshenSounds.IRON_HIT, 1f, 1f);
 			if (item instanceof EnionBow) entity.playSound(HarshenSounds.LIGHTNING_HIT, 1f, 1f);
+			if (item instanceof DarkEwydoen) entity.playSound(HarshenSounds.EWYDOEN_HIT, 1f, 1f);
 			
 			if (item instanceof RaptorScythe)
 				if(HarshenUtils.hasJaguarArmorSet(entity))
@@ -64,6 +66,7 @@ public class HandlerHarshenClientEffects
 			if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.FIERY_RING) > 0)
 				entity.playSound(SoundEvents.BLOCK_FIRE_AMBIENT, 1f, 1.3f);
 		}
+		
 		if(event.getEntityLiving() instanceof EntityPlayer)
 		{
 			if(event.getSource().getTrueSource() instanceof EntityKazzendre)

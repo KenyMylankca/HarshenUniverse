@@ -23,5 +23,6 @@
 	"spawner_summon":{"category": "master","sounds": [ { "name": "harshenuniverse:spawner_summon", "stream": false }]},
 	"blood_ritual":{"category": "master","sounds": [ { "name": "harshenuniverse:blood_ritual", "stream": false }]},
 	"pontus_wind":{"category": "master","sounds": [ { "name": "harshenuniverse:pontus_wind", "stream": false }]},
-	"freezing":{"category": "master","sounds": [ { "name": "harshenuniverse:freezing", "stream": false }]}
+	"freezing":{"category": "master","sounds": [ { "name": "harshenuniverse:freezing", "stream": false }]},
+	"ewydoen_hit":{"category": "master","sounds": [ { "name": "harshenuniverse:ewydoen_hit", "stream": false }]}
 }

@@ -33,6 +33,7 @@ public class HarshenSounds {
 	public final static SoundEvent BLOOD_RITUAL = reg("blood_ritual");
 	public final static SoundEvent PONTUS_WIND = reg("pontus_wind");
 	public final static SoundEvent FREEZING = reg("freezing");
+	public final static SoundEvent EWYDOEN_HIT = reg("ewydoen_hit");
 	
 	public static void register()
 	{
@@ -59,6 +60,7 @@ public class HarshenSounds {
 		loadSound(BLOOD_RITUAL);
 		loadSound(PONTUS_WIND);
 		loadSound(FREEZING);
+		loadSound(EWYDOEN_HIT);
 	}
 	
 	private static void loadSound(SoundEvent event)
@@ -66,12 +68,12 @@ public class HarshenSounds {
 		event.toString();
 	}
 	
-	private static ArrayList<SoundEvent> reg(String... name)
+	private static ArrayList<SoundEvent> reg(String... names)
 	{
 		ArrayList<SoundEvent> fin = new ArrayList<SoundEvent>();
-		for(String s : name)
+		for(String name : names)
 		{
-			ResourceLocation loc = new ResourceLocation(HarshenUniverse.MODID, s);
+			ResourceLocation loc = new ResourceLocation(HarshenUniverse.MODID, name);
 			ForgeRegistries.SOUND_EVENTS.register(new SoundEvent(loc).setRegistryName(loc));
 			fin.add(ForgeRegistries.SOUND_EVENTS.getValue(loc));
 		}
