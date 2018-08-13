@@ -19,7 +19,7 @@ import net.minecraftforge.common.util.EnumHelper;
 
 public class RaptorScythe extends BaseHarshenScythe
 {
-	private static ToolMaterial toolMaterial = EnumHelper.addToolMaterial("iron_scythe", 3, 1010, 13.5f, 12f, 30);
+	private static ToolMaterial toolMaterial = EnumHelper.addToolMaterial("raptor_scythe", 3, 1010, 13.5f, 12f, 30);
 
 	public RaptorScythe() 
 	{
@@ -30,7 +30,7 @@ public class RaptorScythe extends BaseHarshenScythe
 
 	@Override
 	protected float getSpeed() {
-		return 1.4f;
+		return 1.44f;
 	}
 
 	@Override
@@ -52,7 +52,7 @@ public class RaptorScythe extends BaseHarshenScythe
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add("\u00a73" + new TextComponentTranslation("sword" + "1").getFormattedText());
+		tooltip.add("\u00a73" + new TextComponentTranslation("raptorscythe1").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 }

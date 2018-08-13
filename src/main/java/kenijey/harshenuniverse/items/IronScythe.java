@@ -18,7 +18,7 @@ public class IronScythe extends BaseHarshenScythe
 
 	@Override
 	protected float getSpeed() {
-		return 1.45f;
+		return 1.4f;
 	}
 
 	@Override
