@@ -107,8 +107,13 @@ public abstract class BaseHarshenBow extends ItemBow
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
         boolean flag = !this.findAmmo(playerIn).isEmpty();
-            playerIn.setActiveHand(handIn);
-            return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
+        if(flag)
+        {
+        	playerIn.setActiveHand(handIn);
+        	return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
+        }
+        else
+        	return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
 	}
 	
 	public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityLivingBase entityLiving, int timeLeft)
