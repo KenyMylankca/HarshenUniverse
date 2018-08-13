@@ -1,10 +1,16 @@
-package kenijey.harshenuniverse.entity;
+package kenijey.harshenuniverse;
 
 import java.util.List;
 
-import kenijey.harshenuniverse.HarshenUniverse;
 import kenijey.harshenuniverse.biomes.BiomesForHarshenMobsOverworld;
 import kenijey.harshenuniverse.config.IdConfig;
+import kenijey.harshenuniverse.entity.EntityBloodySheep;
+import kenijey.harshenuniverse.entity.EntityHarshenSoul;
+import kenijey.harshenuniverse.entity.EntityKazzendre;
+import kenijey.harshenuniverse.entity.EntitySoulPart;
+import kenijey.harshenuniverse.entity.EntitySoulShooter;
+import kenijey.harshenuniverse.entity.EntitySoullessKnight;
+import kenijey.harshenuniverse.entity.EntityThrown;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.ResourceLocation;
@@ -26,7 +32,7 @@ public class HarshenEntities
 		
 		registerEntity(EntityThrown.class, IdConfig.EntityThrown, "entity_thrown");
 		
-		registerSpawn(EntitySoulShooter.class, 5, 0, 1, EnumCreatureType.MONSTER, BiomesForHarshenMobsOverworld.getBiomes(true));
+		registerSpawn(EntityHarshenSoul.class, 5, 0, 1, EnumCreatureType.MONSTER, BiomesForHarshenMobsOverworld.getBiomes(true));
 		registerSpawn(EntityBloodySheep.class, 5, 0, 1, EnumCreatureType.CREATURE, BiomesForHarshenMobsOverworld.getBiomes(false));
 	}
 	

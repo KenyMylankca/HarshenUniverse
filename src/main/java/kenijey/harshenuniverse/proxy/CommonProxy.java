@@ -2,6 +2,7 @@ package kenijey.harshenuniverse.proxy;
 
 import kenijey.harshenuniverse.HarshenBlocks;
 import kenijey.harshenuniverse.HarshenCraftingRecipes;
+import kenijey.harshenuniverse.HarshenEntities;
 import kenijey.harshenuniverse.HarshenItems;
 import kenijey.harshenuniverse.HarshenSounds;
 import kenijey.harshenuniverse.HarshenStructures;
@@ -17,7 +18,6 @@ import kenijey.harshenuniverse.config.HarshenConfigs;
 import kenijey.harshenuniverse.dimensions.HarshenDimensions;
 import kenijey.harshenuniverse.dimensions.pontus.PontusWorldProvider;
 import kenijey.harshenuniverse.enchantment.HarshenEnchantmetns;
-import kenijey.harshenuniverse.entity.HarshenEntities;
 import kenijey.harshenuniverse.enums.SetIds;
 import kenijey.harshenuniverse.enums.items.EnumBloodCollector;
 import kenijey.harshenuniverse.enums.items.EnumPontusGateSpawner;
