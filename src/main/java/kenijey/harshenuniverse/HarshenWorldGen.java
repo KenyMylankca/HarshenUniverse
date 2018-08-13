@@ -12,6 +12,7 @@ import kenijey.harshenuniverse.worldgenerators.pontus.JewelDirtGenPontus;
 import kenijey.harshenuniverse.worldgenerators.pontus.PontusWorldGeneratorItiumOre;
 import kenijey.harshenuniverse.worldgenerators.pontus.PontusWorldGeneratorPontusEmeraldOre;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockStone;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -87,7 +88,7 @@ public class HarshenWorldGen implements IWorldGenerator
 				BlockPos position = worldIn.getTopSolidOrLiquidBlock(new BlockPos(x, 0, z));
 				BlockPos blockpos = position.add(random.nextInt(8) - random.nextInt(8), random.nextInt(4) - random.nextInt(4), random.nextInt(8) - random.nextInt(8));
 		
-		        if (worldIn.isAirBlock(blockpos) && (worldIn.provider.isSurfaceWorld() || blockpos.getY() < 255) && worldIn.isSideSolid(blockpos.down(), EnumFacing.UP))
+		        if (worldIn.isAirBlock(blockpos) && (worldIn.provider.isSurfaceWorld() || blockpos.getY() < 255) && worldIn.isSideSolid(blockpos.down(), EnumFacing.UP) && !(worldIn.getBlockState(blockpos.down()).getBlock() instanceof BlockStone))
 		        {
 		            worldIn.setBlockState(blockpos,plant.getDefaultState(), 1);
 		        }
