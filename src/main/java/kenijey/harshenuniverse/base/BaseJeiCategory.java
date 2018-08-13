@@ -12,8 +12,8 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ResourceLocation;
 
-public abstract class BaseJeiCategory implements IRecipeCategory{
-
+public abstract class BaseJeiCategory implements IRecipeCategory
+{
 	protected final IDrawable background;
 	protected final String localizedName;
 	protected final IDrawable overlay;
@@ -23,7 +23,7 @@ public abstract class BaseJeiCategory implements IRecipeCategory{
 		IGuiHelper guiHelper = reg.getJeiHelpers().getGuiHelper();
 		this.UID = UID;
 		String name = UID.split("\\.")[UID.split("\\.").length-1];
-		background = guiHelper.createBlankDrawable(150, 100 + (render2PerPage()? 0 : 10));
+		background = guiHelper.createBlankDrawable(150, 100 + (render2PerPage()? 0 : 30));
 		localizedName = I18n.format("jei." + name + ".name");
 		overlay = getOverlay(guiHelper, name);
 		createDrawable(guiHelper);
@@ -77,4 +77,3 @@ public abstract class BaseJeiCategory implements IRecipeCategory{
 	{
 	}
 }
-	
