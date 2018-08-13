@@ -557,22 +557,6 @@ public class HarshenUtils
 		return blockList;
 	}
 	
-	/**@Deprecated use HarshenStack version instead*/
-	@Deprecated
-	public static boolean areInputsEqual(ArrayList<ItemStack> inputList, ArrayList<ItemStack> worldInputList)
-	{
-		ArrayList<ItemStack> doneItems = new ArrayList<>(worldInputList);
-		stackTestingLoop:
-		for(ItemStack stack : inputList)
-			for(ItemStack stack1 : worldInputList)
-				if(OreDictionary.itemMatches(stack, stack1, false) && doneItems.contains(stack1))
-				{
-					doneItems.remove(stack1);
-					continue stackTestingLoop;
-				}
-		return doneItems.isEmpty();
-	}
-	
 	public static boolean areHStacksEqual(ArrayList<HarshenStack> inputList, ArrayList<ItemStack> worldInputList)
 	{
 		ArrayList<ItemStack> doneItems = new ArrayList<>(worldInputList);
