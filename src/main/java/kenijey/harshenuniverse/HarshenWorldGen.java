@@ -42,9 +42,9 @@ public class HarshenWorldGen implements IWorldGenerator
 			if(chunkX == 11 && chunkZ == -5)
 				HarshenStructures.GRAVEYARD.generateStucture(world, random, chunkX, chunkZ);
 			runGenerator(this.soulore, world, random, chunkX, chunkZ, 8, 0, 20);
-			plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.1f);
-			plantGenerator(HarshenBlocks.PLANT_OF_GLEAM, world, random, chunkX, chunkZ, 0.1f);
-			plantGenerator(HarshenBlocks.AKZENIA_MUSHROOM, world, random, chunkX, chunkZ, 0.1f);
+			plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.1f, 60, 130);
+			plantGenerator(HarshenBlocks.PLANT_OF_GLEAM, world, random, chunkX, chunkZ, 0.1f, 111, 255);
+			plantGenerator(HarshenBlocks.AKZENIA_MUSHROOM, world, random, chunkX, chunkZ, 0.1f, 0, 120);
 	    	runGenerator(jewelDirtOverworld, world, random, chunkX, chunkZ, 200, 0, 200);
 	    	runGenerator(nocturneBloom, world, random, chunkX, chunkZ, 50, 0, 60);
 		}
@@ -52,7 +52,7 @@ public class HarshenWorldGen implements IWorldGenerator
 		{
 	    	runGenerator(this.itiumOre, 		world, random, chunkX, chunkZ, 11, 0, 255);
 	    	runGenerator(this.pontusEmeraldOre, world, random, chunkX, chunkZ, 12, 0, 255);
-	    	plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.5f);
+	    	plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.5f, 100, 200);
 	    	runGenerator(jewelDirtPontus, world, random, chunkX, chunkZ, 22, 0, 200);
 		}
 		generateStructure(world, HarshenStructure.get(dim), random, chunkX, chunkZ);
@@ -78,20 +78,21 @@ public class HarshenWorldGen implements IWorldGenerator
 	    	} 
 	}
 	
-	private void plantGenerator(Block plant, World worldIn, Random random, int chunkX, int chunkZ, float chancesToSpawn)
+	private void plantGenerator(Block plant, World worldIn, Random random, int chunkX, int chunkZ, float chancesToSpawn, int minHeight, int maxHeight)
 	{
-		for(int i = 0; i < chancesToSpawn; i++)
-			if(random.nextFloat() < chancesToSpawn)
-			{
-				int x = chunkX * 16 + random.nextInt(16);
-				int z = chunkZ * 16 + random.nextInt(16);
-				BlockPos position = worldIn.getTopSolidOrLiquidBlock(new BlockPos(x, 0, z));
-				BlockPos blockpos = position.add(random.nextInt(8) - random.nextInt(8), random.nextInt(4) - random.nextInt(4), random.nextInt(8) - random.nextInt(8));
-		
-		        if (worldIn.isAirBlock(blockpos) && (worldIn.provider.isSurfaceWorld() || blockpos.getY() < 255) && worldIn.isSideSolid(blockpos.down(), EnumFacing.UP) && !(worldIn.getBlockState(blockpos.down()).getBlock() instanceof BlockStone))
-		        {
-		            worldIn.setBlockState(blockpos,plant.getDefaultState(), 1);
-		        }
-			}
+		int heightDiff = maxHeight - minHeight + 1;
+		if(random.nextFloat() < chancesToSpawn)
+		{
+			int x = chunkX * 16 + random.nextInt(16);
+			int y = minHeight + random.nextInt(heightDiff);
+			int z = chunkZ * 16 + random.nextInt(16);
+			BlockPos position = worldIn.getTopSolidOrLiquidBlock(new BlockPos(x, y, z));
+			BlockPos blockpos = position.add(random.nextInt(8) - random.nextInt(8), random.nextInt(4) - random.nextInt(4), random.nextInt(8) - random.nextInt(8));
+	
+	        if (worldIn.isAirBlock(blockpos) && (worldIn.provider.isSurfaceWorld() || blockpos.getY() < 255) && worldIn.isSideSolid(blockpos.down(), EnumFacing.UP) && !(worldIn.getBlockState(blockpos.down()).getBlock() instanceof BlockStone))
+	        {
+	            worldIn.setBlockState(blockpos,plant.getDefaultState(), 1);
+	        }
+		}
 	}
 }
