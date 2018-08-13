@@ -20,13 +20,11 @@ public abstract class BaseHarsherSword extends ItemSword
 		setNoRepair();
 	}
 	
-	protected abstract String getSwordType();
-	
 	protected abstract String getName();
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		String type = this.getSwordType();
+		String type = this.getName();
 		tooltip.add("\u00A73" + new TextComponentTranslation(type + "1").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}

@@ -12,11 +12,6 @@ import net.minecraft.potion.PotionEffect;
 public class SoulHarsherSword extends BaseHarsherSword
 {
 	@Override
-	protected String getSwordType() {
-		return "sword";
-	}
-
-	@Override
 	protected String getName() {
 		return "soul_harsher_sword";
 	}
