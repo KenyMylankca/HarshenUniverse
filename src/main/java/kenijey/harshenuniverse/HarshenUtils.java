@@ -1010,7 +1010,7 @@ public class HarshenUtils
 			for(int z = pz - distance; z < pz + distance; z++)
 				for(int y = py - distance; y < py + distance; y++)
 				{
-					if((net.minecraft.client.Minecraft.getMinecraft().world.getBlockState(new BlockPos(x, y, z)).getBlock() == HarshenBlocks.BLOODY_TORCH ||
+					if((player.world.getBlockState(new BlockPos(x, y, z)).getBlock() == HarshenBlocks.BLOODY_TORCH ||
 							player.getHeldItemMainhand().getItem() == Item.getItemFromBlock(HarshenBlocks.BLOODY_TORCH) ||
 								player.getHeldItemOffhand().getItem() == Item.getItemFromBlock(HarshenBlocks.BLOODY_TORCH)))
 					{
@@ -1034,7 +1034,7 @@ public class HarshenUtils
 			for(int z = pz - distance; z < pz + distance; z++)
 				for(int y = py - distance; y < py + distance; y++)
 				{
-					if((net.minecraft.client.Minecraft.getMinecraft().world.getBlockState(new BlockPos(x, y, z)).getBlock() == HarshenBlocks.NOCTURNAL_TORCH ||
+					if((player.world.getBlockState(new BlockPos(x, y, z)).getBlock() == HarshenBlocks.NOCTURNAL_TORCH ||
 							player.getHeldItemMainhand().getItem() == Item.getItemFromBlock(HarshenBlocks.NOCTURNAL_TORCH) ||
 								player.getHeldItemOffhand().getItem() == Item.getItemFromBlock(HarshenBlocks.NOCTURNAL_TORCH)))
 					{
