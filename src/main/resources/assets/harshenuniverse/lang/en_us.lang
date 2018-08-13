@@ -293,15 +293,15 @@ cursedbone1=Right click to spawn a skeleton
 spade1=Can be found in Jacob's Graveyard
 reflector_pendant1=It will reflect half of the
 reflector_pendant2=damage you took to the enemy
-bloodytorch1=It will prevent mobs attacking to you in the area it lights up or if
-bloodytorch2=you are holding it in your any hand, unless you attack the mobs
+bloodytorch1=It will prevent mobs attacking to players in the area it lights up or if
+bloodytorch2=a player holds it, unless any mob attacked by a player
 bloodyarmor1=Full set will regenerate 1 heart every 6 seconds
 bed1=You can't sleep on it, but
 bed2=you can lie on it and get healed well
 darkewydoen1=Still holds the tears of the elf Shio, as an artifact; it reminds the power of the elder frost giants
 darkewydoen2=Frosts target, and accelerates you by every hit.
 nocturnaltorch1=A fallen wizards last wishes... A lodestar from nocturns of nights...
-nocturnaltorch2=Provides night vision as much as you wait near to it
+nocturnaltorch2=Provides night vision as much as you wait near to it or while holding
 
 #The One Probe
 top.gate.timeleft=Seconds Left: %s
