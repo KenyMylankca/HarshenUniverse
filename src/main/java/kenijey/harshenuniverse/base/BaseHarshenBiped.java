@@ -8,7 +8,7 @@ public class BaseHarshenBiped extends ModelBiped
 {
 	public BaseHarshenBiped(float modelSize)
     {
-        this(modelSize, 0.0F, 64, 32);
+        super(modelSize, 0.0F, 64, 32);
     }
 	
 	public BaseHarshenBiped(float modelSize, float p_i1149_2_, int textureWidthIn, int textureHeightIn)

@@ -31,7 +31,7 @@ public class HarshenJaguarArmor extends ItemArmor
 	public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot armorSlot,
 			ModelBiped _default) {
 		if (itemStack != null) {
-			if (itemStack.getItem() instanceof ItemArmor)
+			if (itemStack.getItem() instanceof HarshenJaguarArmor)
 			{
 				EntityEquipmentSlot type = ((ItemArmor) itemStack.getItem()).armorType;
 				ModelJaguarArmor armorModel = new ModelJaguarArmor(1f);
