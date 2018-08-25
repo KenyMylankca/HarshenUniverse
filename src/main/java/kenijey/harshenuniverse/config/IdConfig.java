@@ -29,17 +29,17 @@ public class IdConfig extends BaseConfig
 		EntityThrown = get("entity_thrown", 85);
 		EntityHarshenSoul = get("entity_harshen_soul", 86);
 		EntitySoulShooter = get("entity_soul_shooter", 87);
-		Kazzendre = get("kazzendre", 88);
-		BloodySheep = get("bloody_sheep", 89);
+		Kazzendre = get("entity_kazzendre", 88);
+		BloodySheep = get("entity_bloody_sheep", 89);
 	}
 	
 	@Override
-	protected <T> T get(String name, String configName, T normal) {
-		return super.get(name, getName(), new TextComponentTranslation("config.id",  new TextComponentTranslation(configName).getUnformattedText()).getUnformattedText(), normal);
+	protected <T> T get(String name, String configName, T id) {
+		return super.get(name, getName(), new TextComponentTranslation("config.id",  new TextComponentTranslation(configName).getUnformattedText()).getUnformattedText(), id);
 	}
 	
 	@Override
-	protected <T> T get(String name, T normal) {
-		return get(name, name.replaceFirst("_", ".") + ".name", normal);
+	protected <T> T get(String name, T id) {
+		return get(name, name.replaceFirst("_", ".") + ".name", id);
 	}
 }
