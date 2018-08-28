@@ -1,8 +1,12 @@
 {
     "variants": {
-        "facing=north": { "model": "harshenuniverse:bloody_bed" },
-        "facing=south": { "model": "harshenuniverse:bloody_bed", "y": 180 },
-        "facing=west":  { "model": "harshenuniverse:bloody_bed", "y": 270 },
-        "facing=east":  { "model": "harshenuniverse:bloody_bed", "y": 90 }
+        "facing=north,occupied=false": { "model": "harshenuniverse:bloody_bed" },
+        "facing=south,occupied=false": { "model": "harshenuniverse:bloody_bed", "y": 180 },
+        "facing=west,occupied=false":  { "model": "harshenuniverse:bloody_bed", "y": 270 },
+        "facing=east,occupied=false":  { "model": "harshenuniverse:bloody_bed", "y": 90 },
+		"facing=north,occupied=true": { "model": "harshenuniverse:bloody_bed" },
+        "facing=south,occupied=true": { "model": "harshenuniverse:bloody_bed", "y": 180 },
+        "facing=west,occupied=true":  { "model": "harshenuniverse:bloody_bed", "y": 270 },
+        "facing=east,occupied=true":  { "model": "harshenuniverse:bloody_bed", "y": 90 }
     }
 }

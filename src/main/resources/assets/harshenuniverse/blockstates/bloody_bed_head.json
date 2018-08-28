@@ -1,8 +1,12 @@
 {
     "variants": {
-        "facing=north": { "model": "harshenuniverse:blank_model" },
-        "facing=south": { "model": "harshenuniverse:blank_model", "y": 180 },
-        "facing=west":  { "model": "harshenuniverse:blank_model", "y": 270 },
-        "facing=east":  { "model": "harshenuniverse:blank_model", "y": 90 }
+        "facing=north,occupied=false": { "model": "harshenuniverse:blank_model" },
+        "facing=south,occupied=false": { "model": "harshenuniverse:blank_model"},
+        "facing=west,occupied=false":  { "model": "harshenuniverse:blank_model"},
+        "facing=east,occupied=false":  { "model": "harshenuniverse:blank_model"},
+		"facing=north,occupied=true": { "model": "harshenuniverse:blank_model" },
+        "facing=south,occupied=true": { "model": "harshenuniverse:blank_model"},
+        "facing=west,occupied=true":  { "model": "harshenuniverse:blank_model"},
+        "facing=east,occupied=true":  { "model": "harshenuniverse:blank_model"}
     }
 }
