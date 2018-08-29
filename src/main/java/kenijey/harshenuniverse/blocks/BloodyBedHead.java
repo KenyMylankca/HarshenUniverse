@@ -16,10 +16,10 @@ public class BloodyBedHead extends BaseBloodyBed
 	
 	@Override
 	public void onBlockHarvested(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player) {
-		if(worldIn.getBlockState(pos.offset(state.getValue(FACING))).getBlock() instanceof BloodyBed)
+		if(worldIn.getBlockState(pos.offset(state.getValue(FACING).getOpposite())).getBlock() instanceof BloodyBed)
 		{
-			worldIn.getBlockState(pos.offset(state.getValue(FACING))).getBlock().onBlockHarvested(worldIn, pos.offset(state.getValue(FACING)), worldIn.getBlockState(pos.offset(state.getValue(FACING))), player);
-			worldIn.destroyBlock(pos.offset(state.getValue(FACING)), !player.isCreative());
+			worldIn.getBlockState(pos.offset(state.getValue(FACING).getOpposite())).getBlock().onBlockHarvested(worldIn, pos.offset(state.getValue(FACING)), worldIn.getBlockState(pos.offset(state.getValue(FACING))), player);
+			worldIn.destroyBlock(pos.offset(state.getValue(FACING).getOpposite()), !player.isCreative());
 		}
 	}
 }

@@ -30,7 +30,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BaseBloodyBed extends BaseHarshenFacedBlock
 {
-	public EntityLivingBase placer;
 	public static final PropertyBool OCCUPIED = PropertyBool.create("occupied");
 	
 	@Override
@@ -46,7 +45,6 @@ public class BaseBloodyBed extends BaseHarshenFacedBlock
 		setHardness(2.0F);
 		setResistance(2.0F);
 		setHarvestLevel("axe", 1);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}
 	
 	@Override
@@ -105,7 +103,7 @@ public class BaseBloodyBed extends BaseHarshenFacedBlock
                 {
                 	state = state.withProperty(OCCUPIED, Boolean.valueOf(true));
                     worldIn.setBlockState(pos, state, 4);
-                    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 200));
+                    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 170));
                     return true;
                 }
                 else
@@ -183,15 +181,6 @@ public class BaseBloodyBed extends BaseHarshenFacedBlock
     {
         return worldIn.getBlockState(pos.down()).isTopSolid() && !worldIn.getBlockState(pos).getMaterial().isSolid() && !worldIn.getBlockState(pos.up()).getMaterial().isSolid();
     }
-	
-	@Override
-    public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
-    {
-		this.placer=placer;
-        return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
-    }
-	
-	
 	
 	@Override
 	 public boolean isOpaqueCube(IBlockState state)
