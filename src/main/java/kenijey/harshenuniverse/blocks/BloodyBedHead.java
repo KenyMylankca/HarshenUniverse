@@ -15,6 +15,7 @@ public class BloodyBedHead extends BaseBloodyBed
 	{
 		setRegistryName("bloody_bed_head");
 		setUnlocalizedName("bloody_bed");
+		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}
 	
 	@Override
