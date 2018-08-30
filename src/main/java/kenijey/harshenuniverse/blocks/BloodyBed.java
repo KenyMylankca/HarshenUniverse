@@ -6,7 +6,9 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BloodyBed extends BaseBloodyBed
@@ -46,4 +48,28 @@ public class BloodyBed extends BaseBloodyBed
 		this.placer=placer;
         return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing());
     }
+	
+	@Override
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+		if(state.getValue(FACING) == EnumFacing.NORTH)
+			return new AxisAlignedBB(0f, 0f, 1f, 1f, 0.6f, -1f);
+		if(state.getValue(FACING) == EnumFacing.SOUTH)
+			return new AxisAlignedBB(0f, 0f, 0f, 1f, 0.6f, 2f);
+		if(state.getValue(FACING) == EnumFacing.EAST)
+			return new AxisAlignedBB(0f, 0f, 1f, 2f, 0.6f, 0f);
+		else
+			return new AxisAlignedBB(-1f, 0f, 0f, 1f, 0.6f, 1f);
+	}
+	
+	@Override
+	public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
+		if(blockState.getValue(FACING) == EnumFacing.NORTH)
+			return new AxisAlignedBB(0f, 0f, 1f, 1f, 0.5f, -1f);
+		if(blockState.getValue(FACING) == EnumFacing.SOUTH)
+			return new AxisAlignedBB(0f, 0f, 0f, 1f, 0.5f, 2f);
+		if(blockState.getValue(FACING) == EnumFacing.EAST)
+			return new AxisAlignedBB(0f, 0f, 1f, 2f, 0.5f, 0f);
+		else
+			return new AxisAlignedBB(-1f, 0f, 0f, 1f, 0.5f, 1f);
+	}
 }

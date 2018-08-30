@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-import kenijey.harshenuniverse.HarshenBlocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -20,7 +19,6 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.IBlockAccess;
@@ -68,17 +66,6 @@ public class BaseBloodyBed extends BaseHarshenFacedBlock
         }
         else
         {
-            if (state.getBlock() != HarshenBlocks.BLOODY_BED_HEAD)
-            {
-                pos = pos.offset((EnumFacing)state.getValue(FACING));
-                state = worldIn.getBlockState(pos);
-
-                if (state.getBlock() != this)
-                {
-                    return true;
-                }
-            }
-
             net.minecraft.world.WorldProvider.WorldSleepResult sleepResult = worldIn.provider.canSleepAt(playerIn, pos);
             if (sleepResult != net.minecraft.world.WorldProvider.WorldSleepResult.BED_EXPLODES)
             {
@@ -193,16 +180,6 @@ public class BaseBloodyBed extends BaseHarshenFacedBlock
 	 {
 	  return false;
 	 }
-	
-	@Override
-	public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
-		return new AxisAlignedBB(0f, 0f, 0f, 1f, 0.6f, 1f);
-	}
-	
-	@Override
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-		return new AxisAlignedBB(0f, 0f, 0f, 1f, 0.6f, 1f);
-	}
 	
 	@Nullable
     private EntityPlayer getPlayerInBed(World worldIn, BlockPos pos)
