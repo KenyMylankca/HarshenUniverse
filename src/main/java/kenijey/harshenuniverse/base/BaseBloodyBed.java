@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import kenijey.harshenuniverse.HarshenBlocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -66,6 +67,17 @@ public class BaseBloodyBed extends BaseHarshenFacedBlock
         }
         else
         {
+        	if (state.getBlock() != HarshenBlocks.BLOODY_BED_HEAD)
+            {
+                pos = pos.offset((EnumFacing)state.getValue(FACING));
+                state = worldIn.getBlockState(pos);
+
+                if (state.getBlock() != HarshenBlocks.BLOODY_BED_HEAD)
+                {
+                    return true;
+                }
+            }
+        	
             net.minecraft.world.WorldProvider.WorldSleepResult sleepResult = worldIn.provider.canSleepAt(playerIn, pos);
             if (sleepResult != net.minecraft.world.WorldProvider.WorldSleepResult.BED_EXPLODES)
             {
