@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import kenijey.harshenuniverse.HarshenItems;
 import kenijey.harshenuniverse.HarshenUtils;
+import kenijey.harshenuniverse.base.BaseBloodyBed;
 import kenijey.harshenuniverse.config.AccessoryConfig;
 import kenijey.harshenuniverse.damagesource.DamageSourceReflectorPendant;
 import net.minecraft.entity.EntityLiving;
@@ -23,6 +24,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
+import net.minecraftforge.event.entity.player.PlayerWakeUpEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent;
@@ -238,6 +240,17 @@ public class HandlerServerNeedingHarshenEffects
 							drops.add(new EntityItem(e.world, e.posX, e.posY, e.posZ, e.getItem()));
 					event.getDrops().addAll(drops);
 				}
+		}
+	}
+
+	@SubscribeEvent
+	public void onPlayerWakeUp(PlayerWakeUpEvent event)
+	{
+		EntityPlayer player = event.getEntityPlayer();
+		if(player.world.getBlockState(player.getBedLocation()).getBlock() instanceof BaseBloodyBed)
+		{
+			if(player.isPotionActive(MobEffects.REGENERATION))
+				player.removePotionEffect(MobEffects.REGENERATION);
 		}
 	}
 }

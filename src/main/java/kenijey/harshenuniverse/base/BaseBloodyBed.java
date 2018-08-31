@@ -82,7 +82,6 @@ public class BaseBloodyBed extends BlockHorizontal
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		tooltip.add("\u00A73" + new TextComponentTranslation("bed1").getFormattedText());
-		tooltip.add("\u00A73" + new TextComponentTranslation("bed2").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 	
@@ -94,13 +93,14 @@ public class BaseBloodyBed extends BlockHorizontal
         }
         else
         {
-        	if (state.getBlock() != this)
+        	if (state.getBlock() == HarshenBlocks.BLOODY_BED)
             {
                 pos = pos.offset((EnumFacing)state.getValue(FACING));
                 state = worldIn.getBlockState(pos);
 
-                if (state.getBlock() != HarshenBlocks.BLOODY_BED_HEAD)
+                if (!(state.getBlock() instanceof BaseBloodyBed))
                 {
+                	System.out.println(state.getBlock());
                     return true;
                 }
             }
@@ -129,7 +129,7 @@ public class BaseBloodyBed extends BlockHorizontal
                 {
                 	state = state.withProperty(OCCUPIED, Boolean.valueOf(true));
                     worldIn.setBlockState(pos, state, 4);
-                    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 170));
+                    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 300));
                     return true;
                 }
                 else
