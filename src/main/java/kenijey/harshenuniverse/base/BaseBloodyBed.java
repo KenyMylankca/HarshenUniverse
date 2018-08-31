@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import kenijey.harshenuniverse.HarshenBlocks;
+import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -18,6 +19,7 @@ import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
@@ -27,7 +29,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BaseBloodyBed extends BaseHarshenFacedBlock
+public class BaseBloodyBed extends BlockHorizontal
 {
 	public static final PropertyBool OCCUPIED = PropertyBool.create("occupied");
 	
@@ -44,7 +46,32 @@ public class BaseBloodyBed extends BaseHarshenFacedBlock
 		setHardness(2.0F);
 		setResistance(2.0F);
 		setHarvestLevel("axe", 1);
+		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}
+	
+	public EnumBlockRenderType getRenderType(IBlockState state)
+    {
+        return EnumBlockRenderType.MODEL;
+    }
+	
+	@Override
+    public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
+    {
+        return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+    }
+	
+	@Override
+    public IBlockState getStateFromMeta(int meta) {
+    	for(EnumFacing facing : EnumFacing.HORIZONTALS)
+    		if(facing.getHorizontalIndex() == meta)
+    			return this.getDefaultState().withProperty(FACING, facing);
+    	return this.getDefaultState();
+    }
+	
+	@Override
+    public int getMetaFromState(IBlockState state) {
+    	return state.getValue(FACING).getHorizontalIndex();
+    }
 	
 	@Override
 	public boolean isBed(IBlockState state, IBlockAccess world, BlockPos pos, @Nullable Entity player)
@@ -67,7 +94,7 @@ public class BaseBloodyBed extends BaseHarshenFacedBlock
         }
         else
         {
-        	if (state.getBlock() != HarshenBlocks.BLOODY_BED_HEAD)
+        	if (state.getBlock() != this)
             {
                 pos = pos.offset((EnumFacing)state.getValue(FACING));
                 state = worldIn.getBlockState(pos);
