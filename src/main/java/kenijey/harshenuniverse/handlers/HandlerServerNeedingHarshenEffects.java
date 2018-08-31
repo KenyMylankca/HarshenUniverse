@@ -247,10 +247,13 @@ public class HandlerServerNeedingHarshenEffects
 	public void onPlayerWakeUp(PlayerWakeUpEvent event)
 	{
 		EntityPlayer player = event.getEntityPlayer();
-		if(player.world.getBlockState(player.getBedLocation()).getBlock() instanceof BaseBloodyBed)
+		if(!player.world.isRemote)
 		{
-			if(player.isPotionActive(MobEffects.REGENERATION))
-				player.removePotionEffect(MobEffects.REGENERATION);
+			if(player.world.getBlockState(player.bedLocation).getBlock() instanceof BaseBloodyBed)
+			{
+				if(player.isPotionActive(MobEffects.REGENERATION))
+					player.removePotionEffect(MobEffects.REGENERATION);
+			}
 		}
 	}
 }
