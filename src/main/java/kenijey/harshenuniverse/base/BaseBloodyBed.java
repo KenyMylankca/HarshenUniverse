@@ -100,7 +100,6 @@ public class BaseBloodyBed extends BlockHorizontal
 
                 if (!(state.getBlock() instanceof BaseBloodyBed))
                 {
-                	System.out.println(state.getBlock());
                     return true;
                 }
             }
