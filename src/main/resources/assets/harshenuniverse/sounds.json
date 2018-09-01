@@ -24,5 +24,6 @@
 	"blood_ritual":{"category": "master","sounds": [ { "name": "harshenuniverse:blood_ritual", "stream": false }]},
 	"pontus_wind":{"category": "master","sounds": [ { "name": "harshenuniverse:pontus_wind", "stream": false }]},
 	"freezing":{"category": "master","sounds": [ { "name": "harshenuniverse:freezing", "stream": false }]},
-	"ewydoen_hit":{"category": "master","sounds": [ { "name": "harshenuniverse:ewydoen_hit", "stream": false }]}
+	"ewydoen_hit":{"category": "master","sounds": [ { "name": "harshenuniverse:ewydoen_hit", "stream": false }]},
+	"night_blade_stab":{"category": "master","sounds": [ { "name": "harshenuniverse:night_blade_stab", "stream": false }]}
 }

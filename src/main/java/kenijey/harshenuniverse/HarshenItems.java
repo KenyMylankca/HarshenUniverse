@@ -40,6 +40,7 @@ import kenijey.harshenuniverse.items.GlassContainer;
 import kenijey.harshenuniverse.items.GuidanceOfHarshenUniverse;
 import kenijey.harshenuniverse.items.HarshenCrystal;
 import kenijey.harshenuniverse.items.HarshenDimensionalDoor;
+import kenijey.harshenuniverse.items.HarshenNightBlade;
 import kenijey.harshenuniverse.items.HarshenProps;
 import kenijey.harshenuniverse.items.HarshenSoulFragment;
 import kenijey.harshenuniverse.items.HarshenSoulIngot;
@@ -158,6 +159,7 @@ public class HarshenItems
 	public static final Item REFLECTOR_PENDANT = new ReflectorPendant();
 	public static final Item AKZENIA_SOUP = new AkzeniaSoup();
 	public static final Item DARK_EWYDOEN = new DarkEwydoen();
+	public static final Item HARSHEN_NIGHT_BLADE = new HarshenNightBlade();
 	
 	public static void preInit()
 	{
@@ -223,6 +225,7 @@ public class HarshenItems
 		regItem(REACH_PENDANT);
 		regItem(SOUL_HARSHER_SPADE);
 		regItem(REFLECTOR_PENDANT);
+		regItem(HARSHEN_NIGHT_BLADE);
 		
 		regMetaItem(GILLETTE, EnumGillette.getNames(), "gillette_");
 		regMetaItem(RITUAL_STICK, emptyList(EnumRitualStick.values().length), "ritual_stick");

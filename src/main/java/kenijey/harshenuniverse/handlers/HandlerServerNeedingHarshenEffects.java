@@ -8,6 +8,8 @@ import kenijey.harshenuniverse.HarshenUtils;
 import kenijey.harshenuniverse.base.BaseBloodyBed;
 import kenijey.harshenuniverse.config.AccessoryConfig;
 import kenijey.harshenuniverse.damagesource.DamageSourceReflectorPendant;
+import kenijey.harshenuniverse.handlers.CooldownHandler.ICooldownHandler;
+import kenijey.harshenuniverse.items.HarshenNightBlade;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -21,12 +23,14 @@ import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.entity.player.PlayerWakeUpEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent;
 
 public class HandlerServerNeedingHarshenEffects
@@ -254,6 +258,23 @@ public class HandlerServerNeedingHarshenEffects
 				if(player.isPotionActive(MobEffects.REGENERATION))
 					player.removePotionEffect(MobEffects.REGENERATION);
 			}
+		}
+	}
+	
+	@SubscribeEvent
+	public void onPlayerTick(PlayerTickEvent event)
+	{
+		if(event.player.getHeldItemMainhand().getItem() instanceof HarshenNightBlade)
+		{
+			ICooldownHandler cap = event.player.getHeldItemMainhand().getCapability(CooldownHandler.COOLDOWN, EnumFacing.DOWN);
+			if(event.player.world.getWorldTime() % 24000 > 12000 || event.player.world.isRaining())
+				cap.addProgress();
+		}
+		if(event.player.getHeldItemOffhand().getItem() instanceof HarshenNightBlade)
+		{
+			ICooldownHandler cap = event.player.getHeldItemOffhand().getCapability(CooldownHandler.COOLDOWN, EnumFacing.DOWN);
+			if(event.player.world.getWorldTime() % 24000 > 12000 || event.player.world.isRaining())
+				cap.addProgress();
 		}
 	}
 }

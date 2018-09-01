@@ -26,6 +26,7 @@ import kenijey.harshenuniverse.enums.items.EnumProp;
 import kenijey.harshenuniverse.enums.items.EnumRitualStick;
 import kenijey.harshenuniverse.enums.particle.EnumHarshenParticle;
 import kenijey.harshenuniverse.fluids.HarshenFluids;
+import kenijey.harshenuniverse.handlers.CooldownHandler;
 import kenijey.harshenuniverse.handlers.GuiHandler;
 import kenijey.harshenuniverse.handlers.HandlerBlockBurn;
 import kenijey.harshenuniverse.handlers.HandlerBloodOnHurt;
@@ -113,6 +114,7 @@ public class CommonProxy
 				
 		HarshenAPIHandler.loadPlugins(event.getAsmData());
 							
+		CooldownHandler.register();
 		HarshenUniverse.LOGGER.info("HarshenUniverse loaded correctly");
     }	
     

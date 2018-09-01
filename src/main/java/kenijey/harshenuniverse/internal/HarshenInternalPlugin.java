@@ -169,6 +169,8 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 				new HarshenStack(new ItemStack(HarshenItems.ITIUM)), new HarshenStack(new ItemStack(HarshenItems.SOUL_INFUSED_INGOT)));
 		registry.registerLightningRecipe(new ItemStack(HarshenItems.FEEDING_EARRING), new HarshenStack(new ItemStack(HarshenItems.BLOODY_APPLE)),new HarshenStack(new ItemStack(HarshenItems.BLOOD_INFUSED_ENDER_EYE)),
 				new HarshenStack(new ItemStack(HarshenItems.IRON_HEART)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)));
+		registry.registerLightningRecipe(new ItemStack(HarshenItems.HARSHEN_NIGHT_BLADE), new HarshenStack(new ItemStack(HarshenBlocks.NOCTURNAL_TORCH)),new HarshenStack(new ItemStack(HarshenItems.BLOOD_INFUSED_ENDER_EYE)),
+				new HarshenStack(new ItemStack(HarshenItems.VALOR_BADGE)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)));
 		
 		//cauldron recipes
 		registry.registerCauldronLiquid(GlassContainerValues.LAVA.getStack(), GlassContainerValues.EMPTY.getStack(), GlassContainerValues.LAVA.getType(), 1);

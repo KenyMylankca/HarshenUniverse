@@ -34,6 +34,7 @@ public class HarshenSounds {
 	public final static SoundEvent PONTUS_WIND = reg("pontus_wind");
 	public final static SoundEvent FREEZING = reg("freezing");
 	public final static SoundEvent EWYDOEN_HIT = reg("ewydoen_hit");
+	public final static SoundEvent NIGHT_BLADE_STAB = reg("night_blade_stab");
 	
 	public static void register()
 	{
@@ -61,6 +62,7 @@ public class HarshenSounds {
 		loadSound(PONTUS_WIND);
 		loadSound(FREEZING);
 		loadSound(EWYDOEN_HIT);
+		loadSound(NIGHT_BLADE_STAB);
 	}
 	
 	private static void loadSound(SoundEvent event)
