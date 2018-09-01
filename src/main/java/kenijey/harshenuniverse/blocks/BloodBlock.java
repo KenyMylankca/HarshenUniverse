@@ -52,7 +52,7 @@ public class BloodBlock extends Block
 		if(!tickMap.containsKey(pos))
 			tickMap.put(pos, 0);
 		tickMap.put(pos, tickMap.get(pos) + 1);
-		if(tickMap.get(pos) > 17)
+		if(tickMap.get(pos) > 17 || worldIn.isRaining())
 			worldIn.setBlockToAir(pos);
 	}
 	
