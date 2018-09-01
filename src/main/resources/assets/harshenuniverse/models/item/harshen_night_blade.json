@@ -1,6 +1,19 @@
 {
-    "parent": "item/generated",
-    "textures": {
+	"credit": "Made with Blockbench",
+	"parent": "item/generated",
+	"textures": {
         "layer0": "harshenuniverse:items/harshen_night_blade"
-    }
+    },
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [0.7, 1, 1],
+			"rotation": [0, -98, 22],
+			"translation": [0, 3.5, 1.5]
+		},
+		"thirdperson_lefthand": {
+			"scale": [0.75, 1, 1],
+			"rotation": [0, -95, -25],
+			"translation": [0, 3, 0]
+		}
+	}
 }
