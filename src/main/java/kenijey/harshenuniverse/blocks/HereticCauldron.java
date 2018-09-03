@@ -11,6 +11,7 @@ import kenijey.harshenuniverse.base.BaseBlockHarshenSingleInventory;
 import kenijey.harshenuniverse.base.BaseTileEntityHarshenSingleItemInventory;
 import kenijey.harshenuniverse.items.GlassContainer;
 import kenijey.harshenuniverse.tileentity.TileEntityHereticCauldron;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
@@ -66,6 +67,7 @@ public class HereticCauldron extends BaseBlockHarshenSingleInventory
 		setHardness(5.0F);
 		setResistance(5.0F);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+		this.setSoundType(SoundType.METAL);
 	}
 	
 	@Override

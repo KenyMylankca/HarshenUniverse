@@ -9,6 +9,7 @@ import kenijey.harshenuniverse.network.packets.MessagePacketTileEntityBloodPlace
 import kenijey.harshenuniverse.tileentity.TileEntityBloodVessel;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
@@ -30,6 +31,7 @@ public class BloodPlacer extends BlockHorizontal
 		setRegistryName("blood_placer");
 		setUnlocalizedName("blood_placer");
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+        this.setSoundType(SoundType.METAL);
 	}
 	
 	@Override

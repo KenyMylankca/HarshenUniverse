@@ -7,6 +7,7 @@ import kenijey.harshenuniverse.dimensions.DimensionPontus;
 import kenijey.harshenuniverse.tileentity.TileEntityHarshenDimensionalGate;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -44,6 +45,7 @@ public class HarshenDimensionalGate extends Block implements ITileEntityProvider
 		setDefaultState(this.blockState.getBaseState().withProperty(ACTIVE, false).withProperty(FOREVER, false).withProperty(TIMER, 0));
 		setHardness(10f);
 		setResistance(50f);
+		this.setSoundType(SoundType.GLASS);
 	}
 	
 	public void deactivate(World worldIn, BlockPos pos)

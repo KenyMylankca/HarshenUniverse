@@ -7,6 +7,7 @@ import java.util.Random;
 import kenijey.harshenuniverse.tileentity.TileEntityBloodVessel;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -42,6 +43,7 @@ public class BloodVessel extends Block implements ITileEntityProvider
 		setDefaultState(this.blockState.getBaseState().withProperty(NODE, false));
 		setHardness(5.0F);
 		setResistance(5.0F);
+		this.setSoundType(SoundType.GLASS);
 	}
 	
 	@Override
