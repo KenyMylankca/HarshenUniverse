@@ -15,14 +15,15 @@ public abstract class BaseTileEntityHarshenInventory extends BaseHarshenTileEnti
 {
 	protected final HarshenItemStackHandler handler;
 	protected boolean hasItem = false;
-	protected int timer;
-	private int dirtyTimer;
+	protected int timer=0;
 	
-	public BaseTileEntityHarshenInventory(int slotsAmount){
+	public BaseTileEntityHarshenInventory(int slotsAmount)
+	{
 		this.handler = new HarshenItemStackHandler(slotsAmount);
 	}
 	
-	public BaseTileEntityHarshenInventory(int slotsAmount, int slotLimit){
+	public BaseTileEntityHarshenInventory(int slotsAmount, int slotLimit)
+	{
 		this(slotsAmount);
 		this.handler.setSlotLimit(slotLimit);
 	}
@@ -30,10 +31,13 @@ public abstract class BaseTileEntityHarshenInventory extends BaseHarshenTileEnti
 	@Override
 	public void update()
 	{
+		if(timer > 999)
+		{
+			timer = 0;
+			dirty();
+		}
 		timer ++;
 		tick();
-		if(dirtyTimer++ % 5 == 0)
-			dirty();
 	}
 	
 	public int getTimer()
@@ -43,6 +47,7 @@ public abstract class BaseTileEntityHarshenInventory extends BaseHarshenTileEnti
 	
 	protected void tick()
 	{
+		
 	}
 	
 	public boolean isSlotEmpty(int slot)
@@ -69,7 +74,7 @@ public abstract class BaseTileEntityHarshenInventory extends BaseHarshenTileEnti
 	
 	protected void onItemAdded(int slot)
 	{
-		
+		dirty();
 	}
 		
 	public void setItemAir(int slot)

@@ -8,7 +8,8 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 
 public abstract class BaseTileEntityHarshenSingleItemInventory extends BaseTileEntityHarshenInventory implements net.minecraft.util.ITickable, ICapabilityProvider
 {
-	public BaseTileEntityHarshenSingleItemInventory(){
+	public BaseTileEntityHarshenSingleItemInventory()
+	{
 		super(1, 1);
 	}
 	
