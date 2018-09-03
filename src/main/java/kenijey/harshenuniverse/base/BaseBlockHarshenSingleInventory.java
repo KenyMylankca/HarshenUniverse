@@ -42,8 +42,8 @@ public abstract class BaseBlockHarshenSingleInventory extends Block implements I
 	public abstract BaseTileEntityHarshenSingleItemInventory getTile();
 	
 	@Override
-	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer,
-			ItemStack stack) {
+	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
+	{
 		ItemStackHandler handlerStack = new ItemStackHandler(1);
 		handlerStack.deserializeNBT(stack.serializeNBT().getCompoundTag("tag").getCompoundTag("ItemStackHandler"));
 		((BaseTileEntityHarshenSingleItemInventory)worldIn.getTileEntity(pos)).setItem(handlerStack.getStackInSlot(0));

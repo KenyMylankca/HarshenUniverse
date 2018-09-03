@@ -1,4 +1,4 @@
-package kenijey.harshenuniverse.renderers.item;
+package kenijey.harshenuniverse.renderers.tileentity;
 
 import kenijey.harshenuniverse.tileentity.TileEntityHarshenSpawner;
 import net.minecraft.client.Minecraft;

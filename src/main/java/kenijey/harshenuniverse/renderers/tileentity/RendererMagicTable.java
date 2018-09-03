@@ -1,4 +1,4 @@
-package kenijey.harshenuniverse.renderers.item;
+package kenijey.harshenuniverse.renderers.tileentity;
 
 import java.awt.Point;
 
