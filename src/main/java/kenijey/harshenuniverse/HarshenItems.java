@@ -188,20 +188,26 @@ public class HarshenItems
 		regItem(CURSED_BONE, 16);
 		regItem(BLOOD_INFUSED_ENDER_EYE, 4);
 		regItem(AKZENIA_SOUP, 1);
+		regItem(HARSHEN_BOOK);
 		
+		//WEAPONS
 		regItem(EMPOWERED_SOUL_HARSHER_SWORD);
 		regItem(DARK_EWYDOEN);
-		regItem(SOUL_HARSHER_PICKAXE);
 		regItem(SOUL_HARSHER_SWORD);
-		regItem(HARSHEN_BOOK);
-		regItem(ELEMENTAL_PENDANT);
+		regItem(IRON_SCYTHE);
+		regItem(RAPTOR_SCYTHE);
+		regItem(HARSHEN_NIGHT_BLADE);
+		regItem(IRON_BOW);
+		regItem(ENION_BOW);
 		regItem(SOUL_RIPPER_BOW);
 		regItem(ENDER_BOW);
 		regItem(LIGHTNING_STAFF);
-		regItem(IRON_SCYTHE);
-		regItem(RAPTOR_SCYTHE);
-		regItem(IRON_BOW);
-		regItem(ENION_BOW);
+		
+		//TOOLS
+		regItem(SOUL_HARSHER_PICKAXE);
+		regItem(SOUL_HARSHER_SPADE);
+		
+		//ACCESSORIES
 		regItem(ZOMBI_PENDANT);
 		regItem(PUNCHY_RING);
 		regItem(LOOTING_EARRING);
@@ -223,9 +229,8 @@ public class HarshenItems
 		regItem(RING_OF_BLOOD);
 		regItem(SOUL_BINDING_PENDANT);
 		regItem(REACH_PENDANT);
-		regItem(SOUL_HARSHER_SPADE);
 		regItem(REFLECTOR_PENDANT);
-		regItem(HARSHEN_NIGHT_BLADE);
+		regItem(ELEMENTAL_PENDANT);
 		
 		regMetaItem(GILLETTE, EnumGillette.getNames(), "gillette_");
 		regMetaItem(RITUAL_STICK, emptyList(EnumRitualStick.values().length), "ritual_stick");
