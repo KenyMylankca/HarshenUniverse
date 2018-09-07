@@ -21,7 +21,8 @@ public class CropOfGleam extends BlockCrops
     		new AxisAlignedBB(0.3125d, 0.0D, 0.3125d, 0.6875d, 0.4375D, 0.6875d),
     		new AxisAlignedBB(0.3125d, 0.0D, 0.3125d, 0.6875d, 0.5D, 0.6875d),
     		new AxisAlignedBB(0.3125d, 0.0D, 0.3125d, 0.6875d, 0.5625D, 0.6875d),
-    		new AxisAlignedBB(0.3125d, 0.0D, 0.3125d, 0.6875d, 0.6875d, 0.6875d)};
+    		new AxisAlignedBB(0.3125d, 0.0D, 0.3125d, 0.6875d, 0.6875d, 0.6875d)
+    		};
     
 	public CropOfGleam() 
 	{
@@ -36,7 +37,7 @@ public class CropOfGleam extends BlockCrops
 	
 	@Override
 	protected Item getCrop() {
-		return HarshenItems.LIGHT_EMITTED_SEED;
+		return HarshenItems.LIGHT_EMITTED_ESSENCE;
 	}
 	
 	@Override
