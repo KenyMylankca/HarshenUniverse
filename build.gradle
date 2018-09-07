@@ -12,7 +12,7 @@ apply plugin: 'maven-publish'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 //author: JanneSoon //same username on Discord
-version = "0.22.5"
+version = "0.22.6"
 group = "kenijey.harshenuniverse"
 archivesBaseName = "HarshenUniverse"
 
