@@ -35,6 +35,7 @@ item.blood_collector.2.name=Blood Collector
 item.blood_collector.3.name=Blood Collector
 item.blood_collector.4.name=Blood Collector
 item.blood_collector.5.name=Blood Collector
+item.ritual_crystal.name=Ritual Crystal
 item.ritual_crystal.passive.name=Ritual Crystal (passive)
 item.ritual_crystal.active.name=Ritual Crystal (active)
 item.prop.knight_sword.name=Soulless Knight Sword
