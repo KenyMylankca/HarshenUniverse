@@ -340,6 +340,15 @@ public class HarshenCraftingRecipes
 				'f', "feather",
 				's', "string");
 		
+		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "harshen_wood_crate"), new ResourceLocation(group),
+				new ItemStack(HarshenBlocks.HARSHEN_DIMENSIONAL_WOOD_CRATE, 3),
+				" p ",
+				"pcp",
+				" p ",
+				
+				'c', new ItemStack(HarshenItems.HARSHEN_CRYSTAL),
+				'p', "plankWood");
+		
 		for(GlassContainerValue glass : GlassContainerValue.values())
 			if(HarshenUtils.glassContainerHasState(glass))
 			{
