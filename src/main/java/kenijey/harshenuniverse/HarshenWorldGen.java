@@ -41,7 +41,7 @@ public class HarshenWorldGen implements IWorldGenerator
 				HarshenStructures.CASTLE.generateStucture(world, random, chunkX, chunkZ);
 			if(chunkX == 11 && chunkZ == -5)
 				HarshenStructures.GRAVEYARD.generateStucture(world, random, chunkX, chunkZ);
-			runGenerator(this.soulore, world, random, chunkX, chunkZ, 8, 0, 20);
+			runGenerator(this.soulore, world, random, chunkX, chunkZ, 6, 0, 20);
 			plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.1f, 60, 130);
 			plantGenerator(HarshenBlocks.PLANT_OF_GLEAM, world, random, chunkX, chunkZ, 0.1f, 111, 255);
 			plantGenerator(HarshenBlocks.AKZENIA_MUSHROOM, world, random, chunkX, chunkZ, 0.1f, 0, 120);
