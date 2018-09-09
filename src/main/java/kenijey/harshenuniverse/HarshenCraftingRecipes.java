@@ -330,6 +330,16 @@ public class HarshenCraftingRecipes
 				'c', new ItemStack(HarshenBlocks.HARSHEN_DIMENSIONAL_WOOD_CRATE),
 				'l', new ItemStack(Items.LEATHER),
 				'w', new ItemStack(HarshenBlocks.BLOODY_WOOL));
+		
+		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "wool"), new ResourceLocation(group),
+				new ItemStack(Blocks.WOOL),
+				"fff",
+				"fsf",
+				"fff",
+				
+				'f', "feather",
+				's', "string");
+		
 		for(GlassContainerValue glass : GlassContainerValue.values())
 			if(HarshenUtils.glassContainerHasState(glass))
 			{
