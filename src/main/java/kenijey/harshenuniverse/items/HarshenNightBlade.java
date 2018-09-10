@@ -68,7 +68,7 @@ public class HarshenNightBlade extends ItemSword
 		{
 			cap.setCooldown(0);
 			entity.playSound(HarshenSounds.NIGHT_BLADE_STAB, 1f, 1f);
-			entity.attackEntityFrom(DamageSource.causePlayerDamage(player), 18f);
+			entity.attackEntityFrom(DamageSource.causePlayerDamage(player), 19f);
 			player.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 70));
 		}
 		return super.onLeftClickEntity(stack, player, entity);
