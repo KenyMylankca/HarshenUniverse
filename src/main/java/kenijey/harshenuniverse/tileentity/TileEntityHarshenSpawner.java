@@ -18,7 +18,7 @@ import net.minecraft.util.math.BlockPos;
 public class TileEntityHarshenSpawner extends BaseTileEntityHarshenSingleItemInventory
 {
 	private EntityLiving entityliving;
-	private double distance = 5.5d;
+	private double distance = 5d;
 	
 	public Entity getEntity(ItemStack stack)
 	{
