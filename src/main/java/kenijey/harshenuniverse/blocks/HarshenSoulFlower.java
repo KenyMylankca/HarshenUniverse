@@ -39,7 +39,7 @@ public class HarshenSoulFlower extends BlockFlower
 	
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		int[] luck = {55,70,85,100};
+		int[] luck = {64,76,88,100};
 		if(rand.nextInt(101) <= luck[fortune])
 			return HarshenItems.HARSHEN_CRYSTAL;
 		return null;
