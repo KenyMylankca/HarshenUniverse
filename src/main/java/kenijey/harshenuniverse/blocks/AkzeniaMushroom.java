@@ -80,7 +80,7 @@ public class AkzeniaMushroom extends Block
 	@Override
 	public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
 	{
-		switch (rand.nextInt(100))
+		switch (rand.nextInt(111))
 		{
 		case 0:
 			if(worldIn.isSideSolid(pos.east().down(), EnumFacing.UP) && worldIn.isAirBlock(pos.east()))
