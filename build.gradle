@@ -11,7 +11,6 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'maven-publish'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
-//author: JanneSoon //same username on Discord
 version = "0.22.7"
 group = "kenijey.harshenuniverse"
 archivesBaseName = "HarshenUniverse"
@@ -41,8 +40,8 @@ repositories {
 }
 dependencies {
 
-    deobfProvided "mezz.jei:jei_1.12.2:4.11.0.212:api"
-    runtime "mezz.jei:jei_1.12.2:4.11.0.212"
+    deobfProvided "mezz.jei:jei_1.12.2:4.12.1.217:api"
+    runtime "mezz.jei:jei_1.12.2:4.12.1.217"
 }
 
 processResources {
