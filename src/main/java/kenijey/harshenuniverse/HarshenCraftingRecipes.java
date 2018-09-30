@@ -313,15 +313,6 @@ public class HarshenCraftingRecipes
 				
 				'n', "nuggetIron");
 		
-		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "soul_reminder"), new ResourceLocation(group),
-				new ItemStack(HarshenBlocks.SOUL_REMINDER),
-				"csc",
-				"s s",
-				"csc",
-				
-				'c', new ItemStack(Blocks.WEB),
-				's', new ItemStack(Items.STRING));
-		
 		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "bloody_bed"), new ResourceLocation(group),
 				new ItemStack(HarshenBlocks.BLOODY_BED),
 				"lww",
