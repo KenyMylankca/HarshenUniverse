@@ -32,7 +32,7 @@ public class CooldownHandler
     {
     	if(event.getObject().getItem() instanceof HarshenNightBlade)
     	{
-    		event.addCapability(new ResourceLocation(HarshenUniverse.MODID, "cooldown"), new Provider(421));
+    		event.addCapability(new ResourceLocation(HarshenUniverse.MODID, "cooldown"), new Provider(400));
     	}
     }
     
