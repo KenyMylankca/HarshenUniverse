@@ -17,7 +17,6 @@ public class SoulHarsherPickaxe extends ItemPickaxe
 		super(EnumHelper.addToolMaterial("soul_harsher_pickaxe", 3, 4305, 13.5f, 2.5f, 30));
 		setUnlocalizedName("soul_harsher_pickaxe");
 		setRegistryName("soul_harsher_pickaxe");
-		setNoRepair();
 	}
 	
 	@Override

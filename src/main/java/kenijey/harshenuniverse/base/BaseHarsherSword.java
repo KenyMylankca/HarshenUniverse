@@ -17,7 +17,6 @@ public abstract class BaseHarsherSword extends ItemSword
 		super(toolMaterial);
 		setUnlocalizedName(getName());
 		setRegistryName(getName());
-		setNoRepair();
 	}
 	
 	protected abstract String getName();

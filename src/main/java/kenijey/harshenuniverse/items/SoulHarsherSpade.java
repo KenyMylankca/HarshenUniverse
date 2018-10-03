@@ -17,7 +17,6 @@ public class SoulHarsherSpade extends ItemSpade
 		super(EnumHelper.addToolMaterial("soul_harsher_spade", 3, 2000, 13.5f, 2.5f, 30));
 		setUnlocalizedName("soul_harsher_spade");
 		setRegistryName("soul_harsher_spade");
-		setNoRepair();
 	}
 	
 	@Override
