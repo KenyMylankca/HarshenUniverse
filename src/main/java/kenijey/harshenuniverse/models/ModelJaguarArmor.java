@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import kenijey.harshenuniverse.base.BaseHarshenBiped;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.util.math.Vec3d;
@@ -124,24 +125,35 @@ public class ModelJaguarArmor extends BaseHarshenBiped
 	public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale)
 	{
 		setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entityIn);
+		GlStateManager.pushMatrix();
+		if (this.isSneak)
+		{
+			GlStateManager.translate(0.0F, 0.2F, 0.0F);
+		}
+		
 		switch (slotActive) {
-		case CHEST:
-			renderAndRotate(chestplate, bipedBody, scale);
-			break;
 		case HEAD:
 			renderAndRotate(helmet, bipedHead, scale);
 			break;
+			
+		case CHEST:
+			renderAndRotate(chestplate, bipedBody, scale);
+			break;
+		
 		case LEGS:
 			renderAndRotate(leggingsLeft, bipedLeftLeg, scale);
 			renderAndRotate(leggingsRight, bipedRightLeg, scale);
 			break;
+			
 		case FEET:
 			renderAndRotate(feetLeft, bipedLeftLeg, scale);
 			renderAndRotate(feetRight, bipedRightLeg, scale);
 			break;
+			
 		default:
 			break;
 		}
+		GlStateManager.popMatrix();
 	}
 	
 	private ModelRenderer addRenderer(ArrayList list, int dimensionX, int dimensionY, int dimensionZ,
