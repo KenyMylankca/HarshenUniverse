@@ -26,7 +26,7 @@ public class Castle extends HarshenStructure
 	
 	@Override
 	public void postAddition(World world, BlockPos pos, Random random) {
-		BlockPos[] possOfFillableChests = {new BlockPos(9, 5, 36), new BlockPos(15, 5, 40), new BlockPos(19, 5, 31)};
+		BlockPos[] possOfFillableChests = {new BlockPos(9, 5, 34), new BlockPos(15, 5, 38), new BlockPos(19, 5, 29)};
 		for(BlockPos chestPos : possOfFillableChests)
 			new ChestGenerator(BlockPos.ORIGIN, 1f, HarshenLootTables.castle, false).generate(world, random, pos.add(chestPos));
 	}
