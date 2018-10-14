@@ -59,7 +59,7 @@ public class SoulReminder extends Block
         entityIn.fallDistance = 0f;
         if(entityIn instanceof EntityPlayer)
         {
-        	if(!((EntityPlayer) entityIn).isCreative())
+        	if(!((EntityPlayer) entityIn).isCreative() && !worldIn.isRemote)
         	{
         		((EntityPlayer) entityIn).addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 200));
         		((WorldServer)world).spawnParticle(EnumParticleTypes.CLOUD, true, pos.getX() + 1, pos.getY() + 1, pos.getZ() + 1, 17,  1, 1, 1, 0, new int[EnumParticleTypes.CLOUD.getArgumentCount()]);
