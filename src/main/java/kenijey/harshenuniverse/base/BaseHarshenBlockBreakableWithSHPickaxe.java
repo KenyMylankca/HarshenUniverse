@@ -44,10 +44,13 @@ public class BaseHarshenBlockBreakableWithSHPickaxe extends Block
 			super.onBlockHarvested(worldIn, pos, state, player);
 			return;
 		}
-		player.attackEntityFrom(DamageSource.MAGIC, 21);
-		if(!worldIn.isRemote)
+		if(!((player.getHeldItemMainhand().getItem() == Item.getItemFromBlock(Blocks.AIR)? player.getHeldItemOffhand() : player.getHeldItemMainhand()).getItem() instanceof SoulHarsherPickaxe))
 		{
-			player.sendMessage((ITextComponent) new TextComponentTranslation("message.broken"));
+			player.attackEntityFrom(DamageSource.MAGIC, 21);
+			if(!worldIn.isRemote)
+			{
+				player.sendMessage((ITextComponent) new TextComponentTranslation("message.broken"));
+			}
 		}
 	}
 }
