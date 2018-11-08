@@ -160,7 +160,7 @@ public class HandlerServerNeedingHarshenEffects
 			if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.ELEMENTAL_PENDANT) > 0)
 			{
 				IAttributeInstance attributeHealth = player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH);
-				AttributeModifier modifierHealth = new AttributeModifier(UUID.fromString("04d5b650-d8a8-45a9-88f1-01992a4f5785"), "elementalPendantHealth", 4, 0).setSaved(true);
+				AttributeModifier modifierHealth = new AttributeModifier(UUID.fromString("04d5b650-d8a8-45a9-88f1-01992a4f5785"), "elementalPendantHealth", 6, 0).setSaved(true);
 				if(!attributeHealth.hasModifier(modifierHealth))	
 					attributeHealth.applyModifier(modifierHealth);
 				
@@ -178,7 +178,7 @@ public class HandlerServerNeedingHarshenEffects
 			if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.CRIMINAL_PENDANT) > 0)
 			{
 				IAttributeInstance attributeHealth = player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH);
-				AttributeModifier modifierHealth = new AttributeModifier(UUID.fromString("72eb8438-8f2b-11e7-bb31-be2e44b06b34"), "criminalPendantHealth6", 6, 0).setSaved(true);
+				AttributeModifier modifierHealth = new AttributeModifier(UUID.fromString("72eb8438-8f2b-11e7-bb31-be2e44b06b34"), "criminalPendantHealth6", 8, 0).setSaved(true);
 				if(!attributeHealth.hasModifier(modifierHealth))	
 					attributeHealth.applyModifier(modifierHealth);
 				player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 19, 0, false, false));
@@ -191,7 +191,7 @@ public class HandlerServerNeedingHarshenEffects
 			if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.RING_OF_BLOOD) == 1)
 			{
 				IAttributeInstance attributeHealth = player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH);
-				AttributeModifier modifierHealth = new AttributeModifier(UUID.fromString("83cd6b7e-a838-11e7-abc4-cec278b6b50"), "ringOfBloodHealth", 4, 0).setSaved(true);
+				AttributeModifier modifierHealth = new AttributeModifier(UUID.fromString("83cd6b7e-a838-11e7-abc4-cec278b6b50"), "ringOfBloodHealth", 6, 0).setSaved(true);
 				if(!attributeHealth.hasModifier(modifierHealth))	
 					attributeHealth.applyModifier(modifierHealth);
 			}else
@@ -203,7 +203,7 @@ public class HandlerServerNeedingHarshenEffects
 			if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.RING_OF_BLOOD) == 2)
 			{
 				IAttributeInstance attributeHealth = player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH);
-				AttributeModifier modifierHealth = new AttributeModifier(UUID.fromString("c37d585a-5a65-4fb1-b604-3f5a8a42d392"), "doubleRingOfBloodHealth", 8, 0).setSaved(true);
+				AttributeModifier modifierHealth = new AttributeModifier(UUID.fromString("c37d585a-5a65-4fb1-b604-3f5a8a42d392"), "doubleRingOfBloodHealth", 12, 0).setSaved(true);
 				if(!attributeHealth.hasModifier(modifierHealth))	
 					attributeHealth.applyModifier(modifierHealth);
 			}else
