@@ -80,18 +80,19 @@ public class AkzeniaMushroom extends Block
 	@Override
 	public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
 	{
+		if(rand.nextInt(5) == 0)
 		switch (rand.nextInt(111))
 		{
-		case 0:
+		case 11:
 			if(worldIn.isSideSolid(pos.east().down(), EnumFacing.UP) && worldIn.isAirBlock(pos.east()))
 				worldIn.setBlockState(pos.east(), this.getDefaultState());
-		case 1:
+		case 22:
 			if(worldIn.isSideSolid(pos.west().down(), EnumFacing.UP) && worldIn.isAirBlock(pos.west()))
 				worldIn.setBlockState(pos.west(), this.getDefaultState());
-		case 2:
+		case 33:
 			if(worldIn.isSideSolid(pos.north().down(), EnumFacing.UP) && worldIn.isAirBlock(pos.north()))
 				worldIn.setBlockState(pos.north(), this.getDefaultState());
-		case 3:
+		case 44:
 			if(worldIn.isSideSolid(pos.south().down(), EnumFacing.UP) && worldIn.isAirBlock(pos.south()))
 				worldIn.setBlockState(pos.south(), this.getDefaultState());
 		default: break;
