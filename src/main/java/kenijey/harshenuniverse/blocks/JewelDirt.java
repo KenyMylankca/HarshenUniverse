@@ -12,6 +12,7 @@ import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
@@ -69,6 +70,6 @@ public class JewelDirt extends Block implements IMetaItemBlock
 		
 		int x=(int) (Math.random()*4);
 		if(x>2) return HarshenItems.DIAMOND_SHARD;
-		else return HarshenItems.EMERALD_SHARD;
+		else return Items.EMERALD;
 	}
 }

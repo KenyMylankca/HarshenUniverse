@@ -71,10 +71,10 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 				new HarshenStack(new ItemStack(HarshenItems.DIAMOND_SHARD)), new HarshenStack(new ItemStack(HarshenItems.DIAMOND_SHARD)), new HarshenStack(new ItemStack(HarshenItems.DIAMOND_SHARD)), new HarshenStack(new ItemStack(HarshenItems.DIAMOND_SHARD)));
 		
 		registry.registerMagicTableRecipe(new ItemStack(Items.EMERALD),
-				new HarshenStack(new ItemStack(HarshenItems.EMERALD_SHARD)), new HarshenStack(new ItemStack(HarshenItems.EMERALD_SHARD)), new HarshenStack(new ItemStack(HarshenItems.EMERALD_SHARD)), new HarshenStack(new ItemStack(HarshenItems.EMERALD_SHARD)));
+				new HarshenStack(new ItemStack(Items.EMERALD)), new HarshenStack(new ItemStack(Items.EMERALD)), new HarshenStack(new ItemStack(Items.EMERALD)), new HarshenStack(new ItemStack(Items.EMERALD)));
 		
 		registry.registerMagicTableRecipe(new ItemStack(HarshenBlocks.NOCTURNAL_TORCH),
-				new HarshenStack(new ItemStack(HarshenItems.EMERALD_SHARD)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_STICK, 1, 1)), new HarshenStack(new ItemStack(HarshenItems.ZOMBIE_EYE)), GlassContainerValues.VOID.getHarshenStack());
+				new HarshenStack(new ItemStack(Items.EMERALD)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_STICK, 1, 1)), new HarshenStack(new ItemStack(HarshenItems.ZOMBIE_EYE)), GlassContainerValues.VOID.getHarshenStack());
 		
 		//pedestal slab recipes
 		registry.registerPedestalSlabRecipe(new HarshenStack("cobblestone"), new ItemStack(Blocks.NETHERRACK));
@@ -122,7 +122,7 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 		registry.registerLightningRecipe(new ItemStack(HarshenItems.EMPOWERED_SOUL_HARSHER_SWORD), new HarshenStack(new ItemStack(HarshenItems.SOUL_HARSHER_SWORD)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)),
 				new HarshenStack(new ItemStack(HarshenBlocks.BLOCK_OF_HEADS)), new HarshenStack(new ItemStack(HarshenItems.BLOOD_ESSENCE)));
 		registry.registerLightningRecipe(new ItemStack(HarshenItems.PONTUS_WORLD_GATE_SPAWNER, 1, 1), new HarshenStack(new ItemStack(HarshenItems.PONTUS_WORLD_GATE_SPAWNER)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)),
-				new HarshenStack(new ItemStack(HarshenItems.EMERALD_SHARD)), new HarshenStack(new ItemStack(HarshenItems.IRON_HEART)));
+				new HarshenStack(new ItemStack(Items.EMERALD)), new HarshenStack(new ItemStack(HarshenItems.IRON_HEART)));
 		registry.registerLightningRecipe(new ItemStack(Items.NETHER_STAR), new HarshenStack(new ItemStack(HarshenItems.ITIUM)), new HarshenStack(new ItemStack(HarshenItems.LIGHT_EMITTED_ESSENCE)),
 				new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1 , 1)), new HarshenStack(new ItemStack(HarshenItems.MYSTIC_FEATHER)));
 		registry.registerLightningRecipe(new ItemStack(HarshenItems.SOUL_HARSHER_SWORD, 1, 0), new HarshenStack(new ItemStack(HarshenItems.HARSHEN_SOUL_INGOT, 1, 0)), new HarshenStack(new ItemStack(HarshenItems.HARSHEN_SOUL_FRAGMENT, 1, 0)),

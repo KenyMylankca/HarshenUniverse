@@ -27,7 +27,7 @@ public class HarshenCraftingRecipes
 				
 				'c', new ItemStack(HarshenItems.HARSHEN_CRYSTAL),
 				's', new ItemStack(HarshenItems.HARSHEN_SOUL_FRAGMENT),
-				'e', new ItemStack(HarshenItems.EMERALD_SHARD));
+				'e', new ItemStack(Items.EMERALD));
 		
 		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "pontus_ring"), new ResourceLocation(group),
 				new ItemStack(HarshenItems.PONTUS_RING),

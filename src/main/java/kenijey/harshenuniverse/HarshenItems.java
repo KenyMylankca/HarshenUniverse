@@ -25,7 +25,6 @@ import kenijey.harshenuniverse.items.DarkEwydoen;
 import kenijey.harshenuniverse.items.DiamondShard;
 import kenijey.harshenuniverse.items.ElementalPendant;
 import kenijey.harshenuniverse.items.ElytraPendant;
-import kenijey.harshenuniverse.items.EmeraldShard;
 import kenijey.harshenuniverse.items.EmpoweredSoulHarsherSword;
 import kenijey.harshenuniverse.items.EmptyRing;
 import kenijey.harshenuniverse.items.EnderBow;
@@ -146,7 +145,6 @@ public class HarshenItems
 	public static final Item SOLIDIFYING_PASTE = new SolidifyingPaste();
 	public static final Item ENDER_BOW = new EnderBow();
 	public static final Item DIAMOND_SHARD = new DiamondShard();
-	public static final Item EMERALD_SHARD = new EmeraldShard();
 	public static final Item FEEDING_EARRING = new FeedingEarring();
 	public static final Item IRON_HEART = new IronHeart();
 	public static final Item RING_OF_BLOOD = new RingOfBlood();
@@ -182,7 +180,6 @@ public class HarshenItems
 		regItem(MYSTIC_FEATHER, 12);
 		regItem(SOLIDIFYING_PASTE, 64);
 		regItem(DIAMOND_SHARD, 64);
-		regItem(EMERALD_SHARD, 64);
 		regItem(IRON_HEART, 64);
 		regItem(EMPTY_RING, 16);
 		regItem(CURSED_BONE, 16);
