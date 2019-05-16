@@ -70,9 +70,6 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 		registry.registerMagicTableRecipe(new ItemStack(Items.DIAMOND),
 				new HarshenStack(new ItemStack(HarshenItems.DIAMOND_SHARD)), new HarshenStack(new ItemStack(HarshenItems.DIAMOND_SHARD)), new HarshenStack(new ItemStack(HarshenItems.DIAMOND_SHARD)), new HarshenStack(new ItemStack(HarshenItems.DIAMOND_SHARD)));
 		
-		registry.registerMagicTableRecipe(new ItemStack(Items.EMERALD),
-				new HarshenStack(new ItemStack(Items.EMERALD)), new HarshenStack(new ItemStack(Items.EMERALD)), new HarshenStack(new ItemStack(Items.EMERALD)), new HarshenStack(new ItemStack(Items.EMERALD)));
-		
 		registry.registerMagicTableRecipe(new ItemStack(HarshenBlocks.NOCTURNAL_TORCH),
 				new HarshenStack(new ItemStack(Items.EMERALD)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_STICK, 1, 1)), new HarshenStack(new ItemStack(HarshenItems.ZOMBIE_EYE)), GlassContainerValues.VOID.getHarshenStack());
 		
