@@ -85,8 +85,8 @@ public class HarshenCraftingRecipes
 				"ili",
 				"i i",
 				
-				'i', new ItemStack(Items.LEATHER),
-				'l', new ItemStack(HarshenBlocks.BLOODY_WOOL));
+				'l', new ItemStack(Items.LEATHER),
+				'i', new ItemStack(HarshenBlocks.BLOODY_WOOL));
 		
 		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "bloody_armor_chestplate"), new ResourceLocation(group),
 				new ItemStack(HarshenArmors.BLOODY_ARMOR_CHESTPLATE),
@@ -94,8 +94,8 @@ public class HarshenCraftingRecipes
 				"ili",
 				"ili",
 				
-				'i', new ItemStack(Items.LEATHER),
-				'l', new ItemStack(HarshenBlocks.BLOODY_WOOL));
+				'l', new ItemStack(Items.LEATHER),
+				'i', new ItemStack(HarshenBlocks.BLOODY_WOOL));
 		
 		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "bloody_armor_leggings"), new ResourceLocation(group),
 				new ItemStack(HarshenArmors.BLOODY_ARMOR_LEGGINGS),
@@ -103,8 +103,8 @@ public class HarshenCraftingRecipes
 				"i i",
 				"i i",
 				
-				'i', new ItemStack(Items.LEATHER),
-				'l', new ItemStack(HarshenBlocks.BLOODY_WOOL));
+				'l', new ItemStack(Items.LEATHER),
+				'i', new ItemStack(HarshenBlocks.BLOODY_WOOL));
 		
 		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "bloody_armor_boots"), new ResourceLocation(group),
 				new ItemStack(HarshenArmors.BLOODY_ARMOR_BOOTS),
