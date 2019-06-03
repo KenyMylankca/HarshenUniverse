@@ -2,7 +2,6 @@ package kenijey.harshenuniverse.blocks;
 
 import java.util.Random;
 
-import kenijey.harshenuniverse.HarshenItems;
 import kenijey.harshenuniverse.HarshenUtils;
 import kenijey.harshenuniverse.interfaces.IMetaItemBlock;
 import net.minecraft.block.Block;
@@ -69,7 +68,7 @@ public class JewelDirt extends Block implements IMetaItemBlock
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		
 		int x=(int) (Math.random()*4);
-		if(x>2) return HarshenItems.DIAMOND_SHARD;
+		if(x>2) return Items.DIAMOND;
 		else return Items.EMERALD;
 	}
 }
