@@ -61,13 +61,13 @@ public class JewelDirt extends Block implements IMetaItemBlock
 	@Override
 	public int quantityDropped(Random random) {
 		
-		return 1 + random.nextInt(5);
+		return 1 + random.nextInt(4);
 	}
 	
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		
-		int x=(int) (Math.random()*4);
+		int x=(int) (Math.random()*6);
 		if(x>2) return Items.DIAMOND;
 		else return Items.EMERALD;
 	}

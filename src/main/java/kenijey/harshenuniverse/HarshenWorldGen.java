@@ -45,7 +45,7 @@ public class HarshenWorldGen implements IWorldGenerator
 			plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.1f, 60, 130);
 			plantGenerator(HarshenBlocks.PLANT_OF_GLEAM, world, random, chunkX, chunkZ, 0.1f, 111, 255);
 			plantGenerator(HarshenBlocks.AKZENIA_MUSHROOM, world, random, chunkX, chunkZ, 0.1f, 0, 120);
-	    	runGenerator(jewelDirtOverworld, world, random, chunkX, chunkZ, 100, 0, 200);
+	    	runGenerator(jewelDirtOverworld, world, random, chunkX, chunkZ, 70, 0, 200);
 	    	runGenerator(nocturneBloom, world, random, chunkX, chunkZ, 50, 0, 60);
 		}
 		else if(dim == DimensionPontus.DIMENSION_ID)
@@ -53,7 +53,7 @@ public class HarshenWorldGen implements IWorldGenerator
 	    	runGenerator(this.itiumOre, 		world, random, chunkX, chunkZ, 11, 0, 255);
 	    	runGenerator(this.pontusEmeraldOre, world, random, chunkX, chunkZ, 12, 0, 255);
 	    	plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.5f, 100, 200);
-	    	runGenerator(jewelDirtPontus, world, random, chunkX, chunkZ, 22, 0, 200);
+	    	runGenerator(jewelDirtPontus, world, random, chunkX, chunkZ, 20, 0, 200);
 		}
 		generateStructure(world, HarshenStructure.get(dim), random, chunkX, chunkZ);
 	}
