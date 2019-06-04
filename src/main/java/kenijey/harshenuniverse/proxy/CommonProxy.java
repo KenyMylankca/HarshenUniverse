@@ -69,18 +69,18 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class CommonProxy 
 {
-    public void preInit(FMLPreInitializationEvent event) 
-    {    	    	
-    	HarshenConfigs.IDS.preInit(); //dont mess with order
+    public void preInit(FMLPreInitializationEvent event) //dont mess with order
+    {
+    	HarshenConfigs.IDS.preInit();
     	HarshenConfigs.GENERAL.preInit();
     	
     	HarshenPotions.preInit();
 		HarshenPotions.register();
-				
+		
     	setUpEnumValues();
     	
     	HarshenEnchantmetns.preInit();
-				
+		
 		HarshenBlocks.preInit();
 		HarshenItems.preInit();
 		HarshenStructures.preInit();
@@ -105,18 +105,18 @@ public class CommonProxy
 		HarshenDimensions.register();
 		
 		HarshenBiomes.register();
-				
+		
 		HarshenNetwork.preInit();
 		
 		HarshenSounds.register();
 		
 		HarshenVillagers.preInit();
-				
+		
 		HarshenAPIHandler.loadPlugins(event.getAsmData());
-							
+		
 		CooldownHandler.register();
 		HarshenUniverse.LOGGER.info("HarshenUniverse loaded correctly");
-    }	
+    }
     
     private void setUpEnumValues()
     {
@@ -130,7 +130,6 @@ public class CommonProxy
 
     public void init(FMLInitializationEvent event) 
     {
-    	
 		HarshenCraftingRecipes.register();
 
     	HarshenEntities.init();
