@@ -35,7 +35,7 @@ public class RaptorScythe extends BaseHarshenScythe
 	protected Item getRepairItem() {
 		return HarshenItems.HARSHEN_SOUL_FRAGMENT;
 	}
-
+	
 	@Override
 	public double getReach() {
 		return 6;
@@ -43,13 +43,18 @@ public class RaptorScythe extends BaseHarshenScythe
 	
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
-		HarshenUtils.bleedTarget((EntityLivingBase)entity, 150, 1);
+		if(entity instanceof EntityLivingBase && player.getCooledAttackStrength(1) == 1)
+		{
+			HarshenUtils.bleedTarget((EntityLivingBase)entity, 150, 1);
+			player.heal(1.9f);
+		}
 		return super.onLeftClickEntity(stack, player, entity);
 	}
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		tooltip.add("\u00a73" + new TextComponentTranslation("raptorscythe1").getFormattedText());
+		tooltip.add("\u00a73" + new TextComponentTranslation("raptorscythe2").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 }
