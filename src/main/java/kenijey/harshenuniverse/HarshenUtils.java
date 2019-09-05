@@ -12,15 +12,19 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 import java.util.Set;
+import java.util.UUID;
 
 import javax.annotation.Nullable;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Multimap;
 
 import kenijey.harshenuniverse.api.BlockItem;
 import kenijey.harshenuniverse.api.CauldronLiquid;
@@ -53,6 +57,8 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.IAttribute;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityWitch;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -1072,4 +1078,16 @@ public class HarshenUtils
     {
     	entity.addPotionEffect(new PotionEffect(HarshenPotions.potionBleeding, duration, tier));
     }
+    
+    public static void replaceModifier(Multimap<String, AttributeModifier> modifierMultimap, IAttribute attribute, UUID id, double multiplier) {
+
+		final Collection<AttributeModifier> modifiers = modifierMultimap.get(attribute.getName());
+		final Optional<AttributeModifier> modifierOptional = modifiers.stream().filter(attributeModifier -> attributeModifier.getID().equals(id)).findFirst();
+
+		if (modifierOptional.isPresent()) {
+			final AttributeModifier modifier = modifierOptional.get();
+			modifiers.remove(modifier);
+			modifiers.add(new AttributeModifier(modifier.getID(), modifier.getName(), modifier.getAmount() * multiplier, modifier.getOperation()));
+		}
+	}
 }
