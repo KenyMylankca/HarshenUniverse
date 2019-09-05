@@ -20,7 +20,7 @@ public class HarshenCraftingRecipes
 	public static void register()
 	{		
 		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "harshen_soul_ingot"), new ResourceLocation(group),
-				new ItemStack(HarshenItems.HARSHEN_SOUL_INGOT, 2),
+				new ItemStack(HarshenItems.HARSHEN_SOUL_INGOT, 3),
 				" e ",
 				"csc",
 				" e ",
