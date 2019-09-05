@@ -33,7 +33,7 @@ public class RaptorScythe extends BaseHarshenScythe
 
 	@Override
 	protected Item getRepairItem() {
-		return HarshenItems.SOUL_INFUSED_INGOT;
+		return HarshenItems.HARSHEN_SOUL_FRAGMENT;
 	}
 
 	@Override

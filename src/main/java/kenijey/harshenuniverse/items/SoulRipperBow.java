@@ -64,7 +64,7 @@ public class SoulRipperBow extends BaseHarshenStaff
 	
 	@Override
 	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
-		return repair.getItem() == HarshenItems.SOUL_INFUSED_INGOT;
+		return repair.getItem() == HarshenItems.HARSHEN_SOUL_FRAGMENT;
 	}
 	
 	@Override
