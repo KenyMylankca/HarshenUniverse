@@ -225,10 +225,11 @@ public class HarshenCraftingRecipes
 		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "iron_bow"), new ResourceLocation(group),
 				new ItemStack(HarshenItems.IRON_BOW),
 				" il",
-				"i l",
+				"i s",
 				" il",
 				
 				'i', new ItemStack(Items.IRON_INGOT),
+				's', new ItemStack(Items.STRING),
 				'l', new ItemStack(Items.LEAD));
 		
 		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "blood_placer"), new ResourceLocation(group),
