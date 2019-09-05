@@ -43,8 +43,7 @@ public class RaptorScythe extends BaseHarshenScythe
 	
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
-			if(!HarshenUtils.hasJaguarArmorSet((EntityLivingBase) entity))
-				HarshenUtils.bleedTarget((EntityLivingBase)entity, 150, 1);
+		HarshenUtils.bleedTarget((EntityLivingBase)entity, 150, 1);
 		return super.onLeftClickEntity(stack, player, entity);
 	}
 	

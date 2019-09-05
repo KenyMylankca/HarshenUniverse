@@ -1070,7 +1070,6 @@ public class HarshenUtils
     
     public static void bleedTarget(EntityLivingBase entity, int duration, int tier)
     {
-    	if(!hasJaguarArmorSet(entity))
-    		entity.addPotionEffect(new PotionEffect(HarshenPotions.potionBleeding, duration, tier));
+    	entity.addPotionEffect(new PotionEffect(HarshenPotions.potionBleeding, duration, tier));
     }
 }
