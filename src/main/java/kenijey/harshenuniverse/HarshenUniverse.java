@@ -22,15 +22,14 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 		name = HarshenUniverse.MODNAME,
 		version = HarshenUniverse.VERSION, 
 		useMetadata = true, 
-		acceptedMinecraftVersions = "[1.12.2,1.13]",
-		dependencies = "required-after:forge@[14.23.4.2705,)")
+		acceptedMinecraftVersions = "[1.12.2]",
+		dependencies = "required-after:forge@[14.23.5.2838,)")
 
 public class HarshenUniverse
 {
     public static final String MODID = "harshenuniverse";
     public static final String MODNAME = "Harshen Universe";
     public static final String VERSION = "0.24.2";
-    public static final String UPDATE_URL = "http://www.wynprice.com/moddedUpdateCheckers/harshenuniverse.json";
     
     public static boolean hasLoaded;
 
