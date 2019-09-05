@@ -18,7 +18,7 @@ public class HarshenVillagers
 		VALOR = regProfession("valor");
 		
 		regCareer(VALOR, "badge", new HarshenTrade() {@Override public ItemStack getOutput(Random random) {return new ItemStack(HarshenItems.VALOR_BADGE);}
-			@Override public ItemStack getInputOne(Random random) {return new ItemStack(Items.EMERALD, random.nextInt(10) + 25);}});
+			@Override public ItemStack getInputOne(Random random) {return new ItemStack(Items.EMERALD, random.nextInt(10) + 15);}});
 	}
 	
 	private static VillagerProfession regProfession(String name)
