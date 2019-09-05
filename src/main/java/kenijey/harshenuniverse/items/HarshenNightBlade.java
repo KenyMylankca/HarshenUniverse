@@ -2,14 +2,20 @@ package kenijey.harshenuniverse.items;
 
 import java.util.List;
 
+import com.google.common.collect.Multimap;
+
 import kenijey.harshenuniverse.HarshenSounds;
+import kenijey.harshenuniverse.HarshenUtils;
 import kenijey.harshenuniverse.handlers.CooldownHandler;
 import kenijey.harshenuniverse.handlers.CooldownHandler.ICooldownHandler;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.potion.PotionEffect;
@@ -31,6 +37,16 @@ public class HarshenNightBlade extends ItemSword
 		super(nightBlade);
 		setUnlocalizedName("harshen_night_blade");
 		setRegistryName("harshen_night_blade");
+	}
+	
+	@Override
+	public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot slot, ItemStack stack) {
+		final Multimap<String, AttributeModifier> modifiers = super.getAttributeModifiers(slot, stack);
+
+		if (slot == EntityEquipmentSlot.MAINHAND)
+			HarshenUtils.replaceModifier(modifiers, SharedMonsterAttributes.ATTACK_SPEED, ATTACK_SPEED_MODIFIER, 0.5);
+
+		return modifiers;
 	}
 	
 	@Override
@@ -74,6 +90,7 @@ public class HarshenNightBlade extends ItemSword
 				entity.attackEntityFrom(DamageSource.causePlayerDamage(player), 19.4f);
 			
 			player.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 90));
+			player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 100));
 		}
 		return super.onLeftClickEntity(stack, player, entity);
 	}
