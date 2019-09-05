@@ -46,7 +46,7 @@ public class RaptorScythe extends BaseHarshenScythe
 		if(entity instanceof EntityLivingBase && player.getCooledAttackStrength(1) == 1)
 		{
 			HarshenUtils.bleedTarget((EntityLivingBase)entity, 150, 1);
-			player.heal(1.9f);
+			player.heal(2f);
 		}
 		return super.onLeftClickEntity(stack, player, entity);
 	}
