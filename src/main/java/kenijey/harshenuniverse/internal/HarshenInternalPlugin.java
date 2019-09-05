@@ -68,7 +68,7 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 				new HarshenStack(new ItemStack(Items.SLIME_BALL)), GlassContainerValues.MAGIC.getHarshenStack(), new HarshenStack(new ItemStack(HarshenItems.POWDER_OF_HERETISM)), new HarshenStack(new ItemStack(Items.SPECKLED_MELON)));
 		
 		registry.registerMagicTableRecipe(new ItemStack(HarshenBlocks.NOCTURNAL_TORCH),
-				new HarshenStack(new ItemStack(Items.EMERALD)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_STICK, 1, 1)), new HarshenStack(new ItemStack(HarshenItems.ZOMBIE_EYE)), GlassContainerValues.VOID.getHarshenStack());
+				new HarshenStack(new ItemStack(Items.EMERALD)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_STICK)), new HarshenStack(new ItemStack(HarshenItems.ZOMBIE_EYE)), GlassContainerValues.VOID.getHarshenStack());
 		
 		//pedestal slab recipes
 		registry.registerPedestalSlabRecipe(new HarshenStack("cobblestone"), new ItemStack(Blocks.NETHERRACK));
@@ -154,9 +154,9 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 		registry.registerLightningRecipe(new ItemStack(HarshenItems.LIGHTNING_STAFF), new HarshenStack("blockPrismarineDark"), new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)),
 				new HarshenStack(new ItemStack(HarshenItems.RITUAL_STICK, 1, 1)), new HarshenStack(new ItemStack(HarshenItems.VALOR_BADGE)));
 		registry.registerLightningRecipe(new ItemStack(HarshenItems.SOUL_HARSHER_PICKAXE), new HarshenStack("blockPrismarineDark"), new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)),
-				new HarshenStack(new ItemStack(Items.IRON_PICKAXE)), new HarshenStack(new ItemStack(HarshenItems.SOUL_INFUSED_INGOT)));
+				new HarshenStack(new ItemStack(Items.IRON_PICKAXE)), new HarshenStack(new ItemStack(HarshenItems.HARSHEN_SOUL_INGOT)));
 		registry.registerLightningRecipe(new ItemStack(HarshenItems.SOUL_HARSHER_SPADE), new HarshenStack("blockPrismarineDark"), new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)),
-				new HarshenStack(new ItemStack(Items.IRON_SHOVEL)), new HarshenStack(new ItemStack(HarshenItems.SOUL_INFUSED_INGOT)));
+				new HarshenStack(new ItemStack(Items.IRON_SHOVEL)), new HarshenStack(new ItemStack(HarshenItems.HARSHEN_SOUL_INGOT)));
 		registry.registerLightningRecipe(new ItemStack(HarshenItems.REFLECTOR_PENDANT), new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)), new HarshenStack(new ItemStack(HarshenItems.BLOOD_INFUSED_ENDER_EYE)),
 				new HarshenStack(new ItemStack(HarshenItems.ITIUM)), new HarshenStack(new ItemStack(HarshenItems.SOUL_INFUSED_INGOT)));
 		registry.registerLightningRecipe(new ItemStack(HarshenItems.FEEDING_EARRING), new HarshenStack(new ItemStack(HarshenItems.BLOODY_APPLE)),new HarshenStack(new ItemStack(HarshenItems.BLOOD_INFUSED_ENDER_EYE)),
