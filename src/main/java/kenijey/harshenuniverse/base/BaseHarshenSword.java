@@ -9,10 +9,10 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 
-public abstract class BaseHarsherSword extends ItemSword
+public abstract class BaseHarshenSword extends ItemSword
 {
 	private static ToolMaterial toolMaterial = EnumHelper.addToolMaterial("soul_sword", 3, 4173, 13.5f, 7f, 30);
-	public BaseHarsherSword()
+	public BaseHarshenSword()
 	{
 		super(toolMaterial);
 		setUnlocalizedName(getName());

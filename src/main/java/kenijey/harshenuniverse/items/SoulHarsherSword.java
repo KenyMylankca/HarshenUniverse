@@ -1,13 +1,13 @@
 package kenijey.harshenuniverse.items;
 
 import kenijey.harshenuniverse.HarshenUtils;
-import kenijey.harshenuniverse.base.BaseHarsherSword;
+import kenijey.harshenuniverse.base.BaseHarshenSword;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 
-public class SoulHarsherSword extends BaseHarsherSword
+public class SoulHarsherSword extends BaseHarshenSword
 {
 	@Override
 	protected String getName() {

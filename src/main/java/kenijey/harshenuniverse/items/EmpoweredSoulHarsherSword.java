@@ -1,8 +1,8 @@
 package kenijey.harshenuniverse.items;
 
-import kenijey.harshenuniverse.base.BaseHarsherSword;
 
-public class EmpoweredSoulHarsherSword extends BaseHarsherSword
+import kenijey.harshenuniverse.base.BaseHarshenSword;
+public class EmpoweredSoulHarsherSword extends BaseHarshenSword
 {
 	@Override
 	protected String getName() {
