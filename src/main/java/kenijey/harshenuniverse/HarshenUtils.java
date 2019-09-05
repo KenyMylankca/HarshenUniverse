@@ -1003,12 +1003,11 @@ public class HarshenUtils
 		return false;
     }
     
-    public static boolean hasNocturnalTorch(EntityPlayer player)
+    public static boolean isInBlocksDistanceOrHolding(EntityPlayer player, Block block, int distance)
     {
     	int px = MathHelper.floor(player.posX);
 		int py = MathHelper.floor(player.posY);
 		int pz = MathHelper.floor(player.posZ);
-		int distance = GeneralConfig.nocturnalTorchDistance;
 		
 		ArrayList<BlockPos> allBlockPos = new ArrayList<>();
 		HashMap<Double, BlockPos> distanceMap = new HashMap<>();
@@ -1017,9 +1016,9 @@ public class HarshenUtils
 			for(int z = pz - distance; z < pz + distance; z++)
 				for(int y = py - distance; y < py + distance; y++)
 				{
-					if((player.world.getBlockState(new BlockPos(x, y, z)).getBlock() == HarshenBlocks.NOCTURNAL_TORCH ||
-							player.getHeldItemMainhand().getItem() == Item.getItemFromBlock(HarshenBlocks.NOCTURNAL_TORCH) ||
-								player.getHeldItemOffhand().getItem() == Item.getItemFromBlock(HarshenBlocks.NOCTURNAL_TORCH)))
+					if((player.world.getBlockState(new BlockPos(x, y, z)).getBlock() == block ||
+							player.getHeldItemMainhand().getItem() == Item.getItemFromBlock(block) ||
+								player.getHeldItemOffhand().getItem() == Item.getItemFromBlock(block)))
 					{
 						return true;
 					}

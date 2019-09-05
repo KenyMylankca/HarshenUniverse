@@ -3,10 +3,12 @@ package kenijey.harshenuniverse.handlers;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import kenijey.harshenuniverse.HarshenBlocks;
 import kenijey.harshenuniverse.HarshenItems;
 import kenijey.harshenuniverse.HarshenUtils;
 import kenijey.harshenuniverse.base.BaseBloodyBed;
 import kenijey.harshenuniverse.config.AccessoryConfig;
+import kenijey.harshenuniverse.config.GeneralConfig;
 import kenijey.harshenuniverse.damagesource.DamageSourceReflectorPendant;
 import kenijey.harshenuniverse.handlers.CooldownHandler.ICooldownHandler;
 import kenijey.harshenuniverse.items.HarshenNightBlade;
@@ -109,7 +111,7 @@ public class HandlerServerNeedingHarshenEffects
 		if(tick>600) tick =1; else tick++;
 		for(EntityPlayer player : event.world.playerEntities)
 		{
-			if(HarshenUtils.hasNocturnalTorch(player))
+			if(HarshenUtils.isInBlocksDistanceOrHolding(player, HarshenBlocks.NOCTURNAL_TORCH, GeneralConfig.nocturnalDistance))
 			{
 				nocturnetimer++;
 				if(nocturnetimer > 180)
@@ -122,6 +124,14 @@ public class HandlerServerNeedingHarshenEffects
 					player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 1202));
 				if(nocturnetimer > 2000)
 					player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 2002));
+			}
+			if(HarshenUtils.isInBlocksDistanceOrHolding(player, HarshenBlocks.NOCTURNE_BLOOM, GeneralConfig.nocturnalDistance))
+			{
+				nocturnetimer++;
+				if(nocturnetimer > 200)
+					player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 90));
+				if(nocturnetimer > 500)
+					player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 230));
 			}
 			else
 				nocturnetimer=0;
