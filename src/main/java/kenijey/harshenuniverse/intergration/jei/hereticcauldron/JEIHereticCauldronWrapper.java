@@ -10,7 +10,7 @@ import kenijey.harshenuniverse.HarshenBlocks;
 import kenijey.harshenuniverse.api.CauldronLiquid;
 import kenijey.harshenuniverse.base.BaseJeiWrapper;
 import kenijey.harshenuniverse.enums.items.GlassContainerValue;
-import kenijey.harshenuniverse.recipies.CauldronRecipes;
+import kenijey.harshenuniverse.recipes.CauldronRecipes;
 import mezz.jei.api.ingredients.IIngredients;
 import net.minecraft.item.ItemStack;
 

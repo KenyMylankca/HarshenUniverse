@@ -10,7 +10,7 @@ import kenijey.harshenuniverse.base.BaseTileEntityHarshenSingleItemInventoryActi
 import kenijey.harshenuniverse.network.HarshenNetwork;
 import kenijey.harshenuniverse.network.packets.MessagePacketKillAllWithTag;
 import kenijey.harshenuniverse.network.packets.MessagePacketSpawnItemParticles;
-import kenijey.harshenuniverse.recipies.LightningRitualRecipes;
+import kenijey.harshenuniverse.recipes.LightningRitualRecipes;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.InventoryHelper;

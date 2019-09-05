@@ -9,7 +9,7 @@ import kenijey.harshenuniverse.api.HarshenStack;
 import kenijey.harshenuniverse.base.HarshenStructure;
 import kenijey.harshenuniverse.dimensions.DimensionPontus;
 import kenijey.harshenuniverse.internal.HarshenAPIHandler;
-import kenijey.harshenuniverse.recipies.LightningRitualRecipes;
+import kenijey.harshenuniverse.recipes.LightningRitualRecipes;
 import kenijey.harshenuniverse.tileentity.TileEntityHarshenDimensionalPedestal;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;

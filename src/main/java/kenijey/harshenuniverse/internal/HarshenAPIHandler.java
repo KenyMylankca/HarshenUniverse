@@ -8,11 +8,11 @@ import kenijey.harshenuniverse.api.HarshenPlugin;
 import kenijey.harshenuniverse.api.IHarshenPlugin;
 import kenijey.harshenuniverse.enums.items.GlassContainerValue;
 import kenijey.harshenuniverse.objecthandlers.HarshenAPIError;
-import kenijey.harshenuniverse.recipies.CauldronRecipes;
-import kenijey.harshenuniverse.recipies.HereticRitualRecipes;
-import kenijey.harshenuniverse.recipies.LightningRitualRecipes;
-import kenijey.harshenuniverse.recipies.MagicTableRecipe;
-import kenijey.harshenuniverse.recipies.PedestalSlabRecipes;
+import kenijey.harshenuniverse.recipes.CauldronRecipes;
+import kenijey.harshenuniverse.recipes.HereticRitualRecipes;
+import kenijey.harshenuniverse.recipes.LightningRitualRecipes;
+import kenijey.harshenuniverse.recipes.MagicTableRecipe;
+import kenijey.harshenuniverse.recipes.PedestalSlabRecipes;
 import net.minecraftforge.fml.common.discovery.ASMDataTable;
 
 public class HarshenAPIHandler

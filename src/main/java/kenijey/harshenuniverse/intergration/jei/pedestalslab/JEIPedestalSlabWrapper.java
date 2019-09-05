@@ -7,7 +7,7 @@ import javax.annotation.Nonnull;
 import com.google.common.collect.ImmutableList;
 
 import kenijey.harshenuniverse.base.BaseJeiWrapper;
-import kenijey.harshenuniverse.recipies.PedestalSlabRecipes;
+import kenijey.harshenuniverse.recipes.PedestalSlabRecipes;
 import mezz.jei.api.ingredients.IIngredients;
 import net.minecraft.item.ItemStack;
 

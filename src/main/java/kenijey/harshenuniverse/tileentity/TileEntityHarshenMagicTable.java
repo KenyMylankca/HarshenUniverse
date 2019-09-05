@@ -9,7 +9,7 @@ import kenijey.harshenuniverse.base.BaseTileEntityHarshenInventory;
 import kenijey.harshenuniverse.enums.particle.EnumHarshenParticle;
 import kenijey.harshenuniverse.objecthandlers.HarshenItemStackHandler;
 import kenijey.harshenuniverse.objecthandlers.HarshenMachineItemStackHandler;
-import kenijey.harshenuniverse.recipies.MagicTableRecipe;
+import kenijey.harshenuniverse.recipes.MagicTableRecipe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.SoundCategory;

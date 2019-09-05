@@ -8,7 +8,7 @@ import kenijey.harshenuniverse.HarshenUniverse;
 import kenijey.harshenuniverse.base.BaseTileEntityHarshenSingleItemInventoryActive;
 import kenijey.harshenuniverse.enums.particle.EnumHarshenParticle;
 import kenijey.harshenuniverse.internal.HarshenAPIHandler;
-import kenijey.harshenuniverse.recipies.PedestalSlabRecipes;
+import kenijey.harshenuniverse.recipes.PedestalSlabRecipes;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.Vec3d;

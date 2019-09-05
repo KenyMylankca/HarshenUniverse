@@ -8,7 +8,7 @@ import com.google.common.collect.ImmutableList;
 
 import kenijey.harshenuniverse.api.HarshenStack;
 import kenijey.harshenuniverse.base.BaseJeiWrapper;
-import kenijey.harshenuniverse.recipies.LightningRitualRecipes;
+import kenijey.harshenuniverse.recipes.LightningRitualRecipes;
 import mezz.jei.api.ingredients.IIngredients;
 import net.minecraft.item.ItemStack;
 

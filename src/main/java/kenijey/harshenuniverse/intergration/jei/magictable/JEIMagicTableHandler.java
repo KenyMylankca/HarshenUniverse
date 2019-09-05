@@ -1,7 +1,7 @@
 package kenijey.harshenuniverse.intergration.jei.magictable;
 
 import kenijey.harshenuniverse.base.BaseJeiHandler;
-import kenijey.harshenuniverse.recipies.MagicTableRecipe;
+import kenijey.harshenuniverse.recipes.MagicTableRecipe;
 import mezz.jei.api.recipe.IRecipeWrapper;
 
 public class JEIMagicTableHandler extends BaseJeiHandler<MagicTableRecipe>

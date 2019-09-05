@@ -1,7 +1,7 @@
 package kenijey.harshenuniverse.intergration.jei.lightningritual;
 
 import kenijey.harshenuniverse.base.BaseJeiHandler;
-import kenijey.harshenuniverse.recipies.LightningRitualRecipes;
+import kenijey.harshenuniverse.recipes.LightningRitualRecipes;
 import mezz.jei.api.recipe.IRecipeWrapper;
 
 public class JEILightningRitualHandler extends BaseJeiHandler<LightningRitualRecipes> 

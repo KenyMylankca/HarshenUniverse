@@ -1,4 +1,4 @@
-package kenijey.harshenuniverse.recipies;
+package kenijey.harshenuniverse.recipes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 
 public class LightningRitualRecipes {
 
-	private static ArrayList<LightningRitualRecipes> allRecipies = new ArrayList<LightningRitualRecipes>();
+	private static ArrayList<LightningRitualRecipes> allRecipes = new ArrayList<LightningRitualRecipes>();
 	private final List<HarshenStack> inputs;
 	private final ItemStack output;
 	private BlockPos positionOfRitual;
@@ -31,7 +31,7 @@ public class LightningRitualRecipes {
 		
 		this.inputs = new ArrayList<HarshenStack>(inputs);
 		this.output = output.copy();
-		allRecipies.add(this);
+		allRecipes.add(this);
 	}
 	
 	private LightningRitualRecipes(List<HarshenStack> inputs, ItemStack output, BlockPos position) 
@@ -43,7 +43,7 @@ public class LightningRitualRecipes {
 	public static ArrayList<LightningRitualRecipes> getRecipes(ItemStack stack)
 	{
 		ArrayList<LightningRitualRecipes> working = new ArrayList<LightningRitualRecipes>();
-		for(LightningRitualRecipes recipe : allRecipies)
+		for(LightningRitualRecipes recipe : allRecipes)
 			if(recipe.hasItem(stack))
 				working.add(recipe);
 		return working;

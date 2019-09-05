@@ -11,7 +11,7 @@ import kenijey.harshenuniverse.api.CauldronLiquid;
 import kenijey.harshenuniverse.api.HarshenStack;
 import kenijey.harshenuniverse.base.BaseJeiWrapper;
 import kenijey.harshenuniverse.enums.items.GlassContainerValue;
-import kenijey.harshenuniverse.recipies.HereticRitualRecipes;
+import kenijey.harshenuniverse.recipes.HereticRitualRecipes;
 import mezz.jei.api.ingredients.IIngredients;
 import net.minecraft.item.ItemStack;
 

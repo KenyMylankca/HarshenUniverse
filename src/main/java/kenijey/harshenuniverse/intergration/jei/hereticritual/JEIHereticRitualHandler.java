@@ -1,7 +1,7 @@
 package kenijey.harshenuniverse.intergration.jei.hereticritual;
 
 import kenijey.harshenuniverse.base.BaseJeiHandler;
-import kenijey.harshenuniverse.recipies.HereticRitualRecipes;
+import kenijey.harshenuniverse.recipes.HereticRitualRecipes;
 import mezz.jei.api.recipe.IRecipeWrapper;
 
 public class JEIHereticRitualHandler extends BaseJeiHandler<HereticRitualRecipes>

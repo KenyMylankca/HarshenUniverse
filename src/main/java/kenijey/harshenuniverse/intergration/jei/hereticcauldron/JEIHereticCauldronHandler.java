@@ -1,7 +1,7 @@
 package kenijey.harshenuniverse.intergration.jei.hereticcauldron;
 
 import kenijey.harshenuniverse.base.BaseJeiHandler;
-import kenijey.harshenuniverse.recipies.CauldronRecipes;
+import kenijey.harshenuniverse.recipes.CauldronRecipes;
 import mezz.jei.api.recipe.IRecipeWrapper;
 
 public class JEIHereticCauldronHandler extends BaseJeiHandler<CauldronRecipes>

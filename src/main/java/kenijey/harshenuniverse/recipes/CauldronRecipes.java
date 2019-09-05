@@ -1,4 +1,4 @@
-package kenijey.harshenuniverse.recipies;
+package kenijey.harshenuniverse.recipes;
 
 import java.util.ArrayList;
 
