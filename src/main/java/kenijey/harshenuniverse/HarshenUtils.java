@@ -41,6 +41,7 @@ import kenijey.harshenuniverse.network.HarshenNetwork;
 import kenijey.harshenuniverse.network.packets.MessagePacketSetItemInSlot;
 import kenijey.harshenuniverse.objecthandlers.HarshenItemStackHandler;
 import kenijey.harshenuniverse.objecthandlers.HarshenMap;
+import kenijey.harshenuniverse.potions.HarshenPotions;
 import kenijey.harshenuniverse.tileentity.TileEntityBloodVessel;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
@@ -1065,5 +1066,11 @@ public class HarshenUtils
     		if(handler.getStackInSlot(i).getItem() == accessory) c++;
     	
     	return c;
+    }
+    
+    public static void bleedTarget(EntityLivingBase entity, int duration, int tier)
+    {
+    	if(!hasJaguarArmorSet(entity))
+    		entity.addPotionEffect(new PotionEffect(HarshenPotions.potionBleeding, duration, tier));
     }
 }

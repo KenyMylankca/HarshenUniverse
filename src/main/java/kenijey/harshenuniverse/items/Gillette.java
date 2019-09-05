@@ -5,11 +5,9 @@ import java.util.List;
 import kenijey.harshenuniverse.HarshenUtils;
 import kenijey.harshenuniverse.base.BaseItemMetaData;
 import kenijey.harshenuniverse.damagesource.DamageSourceBleeding;
-import kenijey.harshenuniverse.potions.HarshenPotions;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
@@ -29,7 +27,7 @@ public class Gillette extends BaseItemMetaData
     {
 		if(!playerIn.isCreative())
 		{
-			playerIn.addPotionEffect(new PotionEffect(HarshenPotions.potionBleeding, 80, 0));
+			HarshenUtils.bleedTarget(playerIn, 80, 0);
 			playerIn.attackEntityFrom(new DamageSourceBleeding(), 1f);
 			playerIn.getHeldItemMainhand().setItemDamage(1);
 		}
