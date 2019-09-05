@@ -44,7 +44,7 @@ public class HarshenNightBlade extends ItemSword
 		final Multimap<String, AttributeModifier> modifiers = super.getAttributeModifiers(slot, stack);
 
 		if (slot == EntityEquipmentSlot.MAINHAND)
-			HarshenUtils.replaceModifier(modifiers, SharedMonsterAttributes.ATTACK_SPEED, ATTACK_SPEED_MODIFIER, 0.5);
+			HarshenUtils.replaceModifier(modifiers, SharedMonsterAttributes.ATTACK_SPEED, ATTACK_SPEED_MODIFIER, 0.4);
 
 		return modifiers;
 	}
