@@ -253,7 +253,7 @@ public class EntityBloodySheep extends EntityAnimal implements net.minecraftforg
 	@Override
 	public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
 		this.setSheared(true);
-        int i = 1 + this.rand.nextInt(3);
+        int i = 2 + this.rand.nextInt(3);
 
         java.util.List<ItemStack> ret = new java.util.ArrayList<ItemStack>();
         for (int j = 0; j < i; ++j)
