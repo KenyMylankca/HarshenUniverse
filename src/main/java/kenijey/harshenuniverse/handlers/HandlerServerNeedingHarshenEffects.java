@@ -254,10 +254,8 @@ public class HandlerServerNeedingHarshenEffects
 		if(!player.world.isRemote)
 		{
 			if(player.world.getBlockState(player.bedLocation).getBlock() instanceof BaseBloodyBed)
-			{
 				if(player.isPotionActive(MobEffects.REGENERATION))
 					player.removePotionEffect(MobEffects.REGENERATION);
-			}
 		}
 	}
 	

@@ -128,7 +128,7 @@ public class BaseBloodyBed extends BlockHorizontal
                 {
                 	state = state.withProperty(OCCUPIED, Boolean.valueOf(true));
                     worldIn.setBlockState(pos, state, 4);
-                    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 300));
+                    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 100, 2));
                     return true;
                 }
                 else
