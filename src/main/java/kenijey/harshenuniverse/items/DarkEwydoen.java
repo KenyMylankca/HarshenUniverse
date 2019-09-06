@@ -9,6 +9,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
@@ -55,16 +56,21 @@ public class DarkEwydoen extends ItemAxe
 	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		RayTraceResult raytraceresult = this.rayTrace(worldIn, player, true);
 		BlockPos blockpos = raytraceresult.getBlockPos();
-		if(worldIn.getBlockState(blockpos).getBlock() == Blocks.WATER)
+		if(player.getCooledAttackStrength(1) == 1)
 		{
-			worldIn.setBlockState(blockpos, Blocks.ICE.getDefaultState());
-			player.getHeldItem(hand).damageItem(35, player);
-			worldIn.playSound(player, blockpos, HarshenSounds.FREEZING, SoundCategory.BLOCKS, 1f, 1.2f);
-		}
-		if(worldIn.getBlockState(blockpos).getBlock() == Blocks.LAVA)
-		{
-			worldIn.setBlockState(blockpos, Blocks.OBSIDIAN.getDefaultState());
-			player.getHeldItem(hand).damageItem(35, player);
+			if(worldIn.getBlockState(blockpos).getBlock() == Blocks.WATER)
+			{
+				worldIn.setBlockState(blockpos, Blocks.ICE.getDefaultState());
+				player.getHeldItem(hand).damageItem(25, player);
+				worldIn.playSound(player, blockpos, HarshenSounds.FREEZING, SoundCategory.BLOCKS, 1f, 1.2f);
+				player.resetCooldown();
+			}
+			if(worldIn.getBlockState(blockpos).getBlock() == Blocks.LAVA)
+			{
+				worldIn.setBlockState(blockpos, Blocks.OBSIDIAN.getDefaultState());
+				player.getHeldItem(hand).damageItem(25, player);
+				worldIn.playSound(player, blockpos, SoundEvents.BLOCK_LAVA_EXTINGUISH, SoundCategory.BLOCKS, 1f, 1.2f);
+			}
 		}
 		return super.onItemUse(player, worldIn, pos, hand, facing, hitX, hitY, hitZ);
 	}
