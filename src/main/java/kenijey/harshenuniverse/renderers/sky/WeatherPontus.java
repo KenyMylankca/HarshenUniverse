@@ -5,6 +5,7 @@ import java.util.Random;
 import kenijey.harshenuniverse.HarshenUniverse;
 import kenijey.harshenuniverse.HarshenUtils;
 import kenijey.harshenuniverse.base.BasePontusResourceBiome;
+import kenijey.harshenuniverse.biomes.HarshenBiomes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.BufferBuilder;
@@ -62,7 +63,7 @@ public class WeatherPontus extends IRenderHandler
         float f1 = update + partialTicks;
         bufferbuilder.setTranslation(-d0, -d1, -d2);
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-        BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
+        BlockPos.MutableBlockPos mutableBlockPos = new BlockPos.MutableBlockPos();
         int t = 15;
         for (int k1 = k - t; k1 <= k + t; ++k1)
         {
@@ -71,8 +72,12 @@ public class WeatherPontus extends IRenderHandler
                 int i2 = (k1 - k + 16) * 32 + l1 - i + 16;
                 double d3 = (double)this.rainXCoords[i2] * 0.5D;
                 double d4 = (double)this.rainYCoords[i2] * 0.5D;
-                blockpos$mutableblockpos.setPos(l1, 0, k1);
-                BasePontusResourceBiome biome = (BasePontusResourceBiome) world.getBiome(blockpos$mutableblockpos);
+                
+                mutableBlockPos.setPos(l1, 0, k1);
+                BasePontusResourceBiome biome = HarshenBiomes.pontus_dimensional_biome;
+                if(world.getBiome(mutableBlockPos) instanceof BasePontusResourceBiome)
+                	biome= (BasePontusResourceBiome) world.getBiome(mutableBlockPos);
+                
                 int j2 = 0;
                 int i1 = 25;
                 int k2 = j - i1;
@@ -95,8 +100,8 @@ public class WeatherPontus extends IRenderHandler
                     i3 = l;
                 }
                 this.random.setSeed((long)(l1 * l1 * 3121 + l1 * 45238971 ^ k1 * k1 * 418711 + k1 * 13761));
-                blockpos$mutableblockpos.setPos(l1, k2, k1);
-                if(!HarshenUtils.isLevelAcceptable(mc.world, blockpos$mutableblockpos, mc.player))
+                mutableBlockPos.setPos(l1, k2, k1);
+                if(!HarshenUtils.isLevelAcceptable(mc.world, mutableBlockPos, mc.player))
                 {
                 	if (j1 != 1)
                     {
@@ -114,9 +119,9 @@ public class WeatherPontus extends IRenderHandler
                     double d11 = (double)((float)l1 + 0.5F) - entity.posX;
                     double d12 = (double)((float)k1 + 0.5F) - entity.posZ;
                     float f6 = MathHelper.sqrt(d11 * d11 + d12 * d12) / (float)i1;
-                    blockpos$mutableblockpos.setPos(l1, i3, k1);
+                    mutableBlockPos.setPos(l1, i3, k1);
                     float f5 = 1;
-                    int i4 = world.getCombinedLight(blockpos$mutableblockpos, 0);
+                    int i4 = world.getCombinedLight(mutableBlockPos, 0);
                     int j4 = i4 >> 16 & 65535;
                     int k4 = i4 & 65535;
                     bufferbuilder.pos((double)l1 - d3 + 0.5D, (double)l2, (double)k1 - d4 + 0.5D).tex(0.0D + d9, (double)k2 * 0.25D + d8 + d10).color(1.0F, 1.0F, 1.0F, f5).lightmap(j4, k4).endVertex();
