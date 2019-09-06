@@ -87,5 +87,4 @@ public class PontusBiomeProvider extends BiomeProvider
 	{
 		return biomeFromPosition(new BlockPos(x, 0, z));
 	}
-	
 }
