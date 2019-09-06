@@ -24,13 +24,14 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class HarshenWorldGen implements IWorldGenerator
 {
-    private final WorldGenMinable soulore = new WorldGenMinable(HarshenBlocks.HARSHEN_SOUL_ORE.getDefaultState(), 3);
-    private final WorldGenerator itiumOre = new PontusWorldGeneratorItiumOre();
-    private final WorldGenerator pontusEmeraldOre = new PontusWorldGeneratorPontusEmeraldOre();
+    private final WorldGenMinable harshenSoulOreOverworld = new WorldGenMinable(HarshenBlocks.HARSHEN_SOUL_ORE.getDefaultState(), 3);
     private final WorldGenerator jewelDirtOverworld = new JewelDirtGenOverworld();
-    private final WorldGenerator jewelDirtPontus = new JewelDirtGenPontus();
-    private final WorldGenerator nocturneBloom = new NocturneBloomGenerator();
-
+    private final WorldGenerator nocturneBloomOverworld = new NocturneBloomGenerator();
+    
+    private final WorldGenerator pontusItiumOre = new PontusWorldGeneratorItiumOre();
+    private final WorldGenerator pontusEmeraldOre = new PontusWorldGeneratorPontusEmeraldOre();
+    private final WorldGenerator pontusJewelDirt = new JewelDirtGenPontus();
+    
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
 	{
@@ -41,19 +42,19 @@ public class HarshenWorldGen implements IWorldGenerator
 				HarshenStructures.CASTLE.generateStucture(world, random, chunkX, chunkZ);
 			if(chunkX == 11 && chunkZ == -5)
 				HarshenStructures.GRAVEYARD.generateStucture(world, random, chunkX, chunkZ);
-			runGenerator(this.soulore, world, random, chunkX, chunkZ, 6, 0, 20);
+			runGenerator(this.harshenSoulOreOverworld, world, random, chunkX, chunkZ, 6, 0, 20);
 			plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.1f, 60, 130);
 			plantGenerator(HarshenBlocks.PLANT_OF_GLEAM, world, random, chunkX, chunkZ, 0.1f, 111, 255);
 			plantGenerator(HarshenBlocks.AKZENIA_MUSHROOM, world, random, chunkX, chunkZ, 0.1f, 0, 120);
 	    	runGenerator(jewelDirtOverworld, world, random, chunkX, chunkZ, 70, 0, 200);
-	    	runGenerator(nocturneBloom, world, random, chunkX, chunkZ, 50, 0, 60);
+	    	runGenerator(nocturneBloomOverworld, world, random, chunkX, chunkZ, 50, 0, 60);
 		}
 		else if(dim == DimensionPontus.DIMENSION_ID)
 		{
-	    	runGenerator(this.itiumOre, 		world, random, chunkX, chunkZ, 11, 0, 255);
+	    	runGenerator(this.pontusItiumOre, world, random, chunkX, chunkZ, 11, 0, 255);
 	    	runGenerator(this.pontusEmeraldOre, world, random, chunkX, chunkZ, 12, 0, 255);
 	    	plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.5f, 100, 200);
-	    	runGenerator(jewelDirtPontus, world, random, chunkX, chunkZ, 20, 0, 200);
+	    	runGenerator(pontusJewelDirt, world, random, chunkX, chunkZ, 20, 0, 200);
 		}
 		generateStructure(world, HarshenStructure.get(dim), random, chunkX, chunkZ);
 	}
