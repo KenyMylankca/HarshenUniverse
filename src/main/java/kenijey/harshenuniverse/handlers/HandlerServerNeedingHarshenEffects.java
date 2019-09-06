@@ -125,7 +125,7 @@ public class HandlerServerNeedingHarshenEffects
 				if(nocturnetimer > 2000)
 					player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 2002));
 			}
-			if(HarshenUtils.isInBlocksDistanceOrHolding(player, HarshenBlocks.NOCTURNE_BLOOM, GeneralConfig.nocturnalDistance))
+			else if(HarshenUtils.isInBlocksDistanceOrHolding(player, HarshenBlocks.NOCTURNE_BLOOM, GeneralConfig.nocturnalDistance))
 			{
 				nocturnetimer++;
 				if(nocturnetimer > 200)
