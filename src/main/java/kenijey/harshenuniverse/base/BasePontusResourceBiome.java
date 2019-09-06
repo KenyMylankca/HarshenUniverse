@@ -19,7 +19,6 @@ public abstract class BasePontusResourceBiome extends Biome
 		super(new Biome.BiomeProperties(biomeName).setTemperature(5f).setRainDisabled().setBaseHeight(0.7f).setHeightVariation(2f));
 		
 		setRegistryName(HarshenUniverse.MODID, biomeName);
-		
 		this.decorator = new PontusBiomeDecorator();
 	}
 	

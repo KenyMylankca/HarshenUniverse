@@ -17,7 +17,7 @@ public class HarshenBiomes
 	public static BasePontusResourceBiome pontus_outer_biome;
 	public static BasePontusResourceBiome pontus_far_biome;
 		
-	public static ArrayList<BasePontusResourceBiome> allBiomes = new ArrayList<>();
+	public static ArrayList<BasePontusResourceBiome> pontusBiomes = new ArrayList<>();
 	
 	public static void initBiomes()
 	{
@@ -29,12 +29,8 @@ public class HarshenBiomes
 	private static BasePontusResourceBiome initAndRegBiome(BasePontusResourceBiome biome)
 	{
 		ForgeRegistries.BIOMES.register(biome);
-		allBiomes.add(biome);
+		pontusBiomes.add(biome);
 		BiomeDictionary.addTypes(biome, biome.getTypes());
 		return biome;
-	}
-	
-	public static ArrayList<BasePontusResourceBiome> getAllBiomes() {
-		return allBiomes;
 	}
 }

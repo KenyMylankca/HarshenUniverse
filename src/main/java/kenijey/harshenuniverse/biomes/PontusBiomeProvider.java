@@ -50,7 +50,7 @@ public class PontusBiomeProvider extends BiomeProvider
 	
 	public static BasePontusResourceBiome biomeFromPosition(BlockPos pos)
 	{
-		ArrayList<BasePontusResourceBiome> biomeList = HarshenBiomes.allBiomes;
+		ArrayList<BasePontusResourceBiome> biomeList = HarshenBiomes.pontusBiomes;
 		double distance = new BlockPos(pos).getDistance(0, pos.getY(), 0);
 		for(int i = 0; i < biomeList.size(); i ++)
 		{

@@ -539,7 +539,7 @@ public class HarshenUtils
 	{
 		BasePontusResourceBiome thisBiome = PontusBiomeProvider.biomeFromPosition(chunkX, chunkZ);
 		ArrayList<Block> blockList = HarshenUtils.toArray(thisBiome.getGroundBlocks());
-		for(BasePontusResourceBiome biome : HarshenBiomes.allBiomes)
+		for(BasePontusResourceBiome biome : HarshenBiomes.pontusBiomes)
 			if(biome.distanceStartSpawn() < 0)
 				continue;
 			else if(PontusBiomeProvider.getDistance(HarshenUtils.chunkToPos(chunkX, chunkZ)) > biome.distanceStartSpawn()  - 80 &&
@@ -548,7 +548,7 @@ public class HarshenUtils
 				for(int i3 = 0; i3 < 19; i3 ++)
 					blockList.addAll(HarshenUtils.toArray(thisBiome.getGroundBlocks()));
 				for(int i3 = 0; i3 < Math.floorDiv(Math.round(80 - Math.abs(PontusBiomeProvider.getDistance(HarshenUtils.chunkToPos(chunkX, chunkZ)) - biome.distanceStartSpawn())), 4); i3 ++)
-    				blockList.add(HarshenBiomes.allBiomes.get(HarshenBiomes.allBiomes.indexOf(thisBiome)
+    				blockList.add(HarshenBiomes.pontusBiomes.get(HarshenBiomes.pontusBiomes.indexOf(thisBiome)
     						+ (PontusBiomeProvider.getDistance(HarshenUtils.chunkToPos(chunkX, chunkZ)) - biome.distanceStartSpawn() < 0 ? 1 : -1))
     							.getMergerBlock(PontusBiomeProvider.getDistance(HarshenUtils.chunkToPos(chunkX, chunkZ)) - biome.distanceStartSpawn() < 0));
 				break;
