@@ -204,7 +204,6 @@ public class PontusChunkProvider implements IChunkGenerator
         for (int i = 0; i < 16; ++i)
         	for (int j = 0; j < 16; ++j)
             	biomeIn.genTerrainBlocks(this.world, this.rand, primer, x * 16 + i, z * 16 + j, this.depthBuffer[j + i * 16]);
-
     }
 
     /**
@@ -226,6 +225,14 @@ public class PontusChunkProvider implements IChunkGenerator
         chunkprimer = event.getPrimer();
         Chunk chunk = new Chunk(this.world, chunkprimer, x, z);
         
+        Biome[] biomes = this.world.getBiomeProvider().getBiomes(null, x * 16, z * 16, 16, 16);
+
+        byte[] abyte = chunk.getBiomeArray();
+
+                for (int i = 0; i < abyte.length; ++i)
+                {
+                    abyte[i] = (byte)Biome.getIdForBiome(biomes[i]);
+                }
         
         chunk.generateSkylightMap();
         return chunk;
