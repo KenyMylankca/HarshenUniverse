@@ -1,0 +1,20 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "harshen_items",
+  "ingredients": [
+    {
+      "item": "minecraft:dirt",
+	  "data": 0
+    },
+	{
+      "item": "minecraft:clay_ball"
+    },
+    {
+      "item": "minecraft:slime_ball"
+    }
+  ],
+  "result": {
+    "item": "harshenuniverse:solidifying_paste",
+	 "count": 8
+  }
+}

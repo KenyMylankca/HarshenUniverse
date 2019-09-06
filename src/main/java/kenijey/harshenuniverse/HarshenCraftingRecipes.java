@@ -279,15 +279,6 @@ public class HarshenCraftingRecipes
 				'f', new ItemStack(HarshenItems.MYSTIC_FEATHER),
 				'l', new ItemStack(Items.LEAD));
 		
-		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "solidifying_paste"), new ResourceLocation(group),
-				new ItemStack(HarshenItems.SOLIDIFYING_PASTE, 16),
-				" d ",
-				"dcd",
-				" d ",
-				
-				'd', "dirt",
-				'c', Items.CLAY_BALL);
-		
 		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "harshen_magic_table"), new ResourceLocation(group),
 				new ItemStack(HarshenBlocks.HARSHEN_MAGIC_TABLE),
 				"wew",
