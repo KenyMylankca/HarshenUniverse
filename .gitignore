@@ -32,3 +32,5 @@ forge*changelog.txt
 !eclipse
 !gradle
 !.gitignore
+!gradlew
+!gradlew.bat
