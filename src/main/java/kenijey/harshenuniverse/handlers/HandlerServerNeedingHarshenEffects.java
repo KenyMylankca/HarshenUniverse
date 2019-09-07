@@ -52,8 +52,8 @@ public class HandlerServerNeedingHarshenEffects
 			
 			if(attackerPlayer.getHeldItemMainhand().isEmpty() && HarshenUtils.hasAccessoryTimes(attackerPlayer, HarshenItems.PUNCHY_RING) > 0)
 			{
-				event.setAmount(event.getAmount() + AccessoryConfig.punchyRingAttackDamage*HarshenUtils.hasAccessoryTimes(attackerPlayer, HarshenItems.PUNCHY_RING));
-				HarshenUtils.damageAllOccuringItems(attackerPlayer, HarshenItems.PUNCHY_RING, 1*HarshenUtils.hasAccessoryTimes(attackerPlayer, HarshenItems.PUNCHY_RING));
+				event.setAmount((float) (event.getAmount() + AccessoryConfig.punchyRingAttackDamage*HarshenUtils.hasAccessoryTimes(attackerPlayer, HarshenItems.PUNCHY_RING)));
+				HarshenUtils.damageAllOccuringItems(attackerPlayer, HarshenItems.PUNCHY_RING, HarshenUtils.hasAccessoryTimes(attackerPlayer, HarshenItems.PUNCHY_RING));
 			}
 				
 			if(HarshenUtils.hasAccessoryTimes(attackerPlayer, HarshenItems.FEARRING) > 0)
