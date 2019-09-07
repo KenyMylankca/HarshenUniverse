@@ -27,8 +27,10 @@ forge*changelog.txt
 /*
 !/src
 !build.gradle
-!GRADLEW_BUILD.bat
-!GRADLEW_ECLIPSE.bat
+!GRADLE_BUILD.bat
+!GRADLE_ECLIPSE.bat
+!GRADLE_SETUP.bat
+!GRADLE_SETUP_REFRESH.bat
 !eclipse
 !gradle
 !.gitignore
