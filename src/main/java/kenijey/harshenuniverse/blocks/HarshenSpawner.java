@@ -31,6 +31,8 @@ public class HarshenSpawner extends BaseBlockHarshenSingleInventory implements I
 		super(Material.ROCK);
 		setRegistryName("harshen_spawner");
 		setUnlocalizedName("harshen_spawner");
+		setHardness(-1);
+		setResistance(-1);
 	}
 	
 	@Override
