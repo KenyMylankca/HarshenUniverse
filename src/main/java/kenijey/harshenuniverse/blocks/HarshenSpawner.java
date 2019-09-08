@@ -69,4 +69,9 @@ public class HarshenSpawner extends BaseBlockHarshenSingleInventory implements I
 			List<AxisAlignedBB> collidingBoxes, Entity entityIn, boolean p_185477_7_) {
 		addCollisionBoxToList(pos, entityBox, collidingBoxes, NULL_AABB);
 	}
+	
+	@Override
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+		return new AxisAlignedBB(0.45f, 0.05f, 0.45f, 0.55f, 0.95f, 0.55f);
+	}
 }

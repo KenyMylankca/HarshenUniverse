@@ -28,7 +28,6 @@ public class RendererHarshenSpawner extends TileEntitySpecialRenderer<TileEntity
 			GlStateManager.scale(i, i, i);
 			GlStateManager.rotate(te.getTimer() % 360 * 10f, 0, 1, 0);
 			Minecraft.getMinecraft().getRenderManager().renderEntity(ENTITY, 0f, 0f, 0f, 0f, 0f, false);
-			
 		}
 		GlStateManager.popMatrix();
 	}
