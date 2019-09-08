@@ -2,8 +2,8 @@ package kenijey.harshenuniverse.tileentity;
 
 import kenijey.harshenuniverse.HarshenSounds;
 import kenijey.harshenuniverse.base.BaseTileEntityHarshenSingleItemInventory;
-import kenijey.harshenuniverse.items.RitualStick;
 import kenijey.harshenuniverse.config.GeneralConfig;
+import kenijey.harshenuniverse.items.RitualStick;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;
@@ -40,9 +40,9 @@ public class TileEntityHarshenSpawner extends BaseTileEntityHarshenSingleItemInv
 	@Override
 	protected void tick() 
 	{
+		EntityPlayer player = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), GeneralConfig.harshenSpawnerDistance, false);
 		if((player != null && getEntity(getItem()) != null) && (!player.capabilities.isCreativeMode || (player.capabilities.isCreativeMode && player.getHeldItemOffhand().getItem() instanceof RitualStick)))
 			activate(player);
-		EntityPlayer player = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), GeneralConfig.harshenSpawnerDistance, false);
 	}
 	
 	private void activate(EntityPlayer player)
