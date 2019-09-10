@@ -36,3 +36,5 @@ forge*changelog.txt
 !.gitignore
 !gradlew
 !gradlew.bat
+!HarshenUniverse_Client.launch
+!HarshenUniverse_Server.launch
