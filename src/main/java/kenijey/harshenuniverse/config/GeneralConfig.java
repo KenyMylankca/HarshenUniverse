@@ -27,6 +27,6 @@ public class GeneralConfig extends BaseConfig
 		structureRuinChance = get("structure_ruin_chance", 0.2D);
 		bloodyTorchDistance = get("bloody_torch_distance", 5);
 		nocturnalDistance = get("nocturnal_distance", 2);
-		harshenSpawnerDistance = get("harshen_spawner_distance", 6);
+		harshenSpawnerDistance = get("harshen_spawner_distance", 7);
 	}
 }
