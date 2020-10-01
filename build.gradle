@@ -23,7 +23,7 @@ compileJava {
 minecraft {
     version = "1.12.2-14.23.5.2847"
     runDir = "run"
-    mappings = "snapshot_20171003"
+    mappings = "snapshot_20180101"
 }
 
 repositories {
@@ -38,10 +38,19 @@ repositories {
     url = "modmaven.k-4u.nl"
   }
 }
+
+repositories {
+	maven {
+		url "http://www.ryanliptak.com/maven/"
+	}
+}
+
 dependencies {
 
-    deobfProvided "mezz.jei:jei_1.12.2:4.15.0.268:api"
-    runtime "mezz.jei:jei_1.12.2:4.15.0.268"
+    deobfProvided "mezz.jei:jei_1.12.2:4.16.1.301:api"
+    runtime "mezz.jei:jei_1.12.2:4.16.1.301"
+	
+	deobfCompile "applecore:AppleCore:1.12.2-3.4.0+356.64453:deobf"
 }
 
 processResources {
@@ -79,27 +88,4 @@ task sourcesJar(type: Jar) {
 artifacts {
         archives apiJar
 	archives sourcesJar
-}
-    
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-            artifact apiJar
-            artifact sourcesJar
-        }
-    }
-}
-publishing {
-    repositories {
-        maven {
-            url "https:maven.wynprice.com"
-        }
-    }
-}
-
-model {
-    tasks.generatePomFileForMavenJavaPublication {
-        destination = file("$buildDir/libs/" + archivesBaseName  + "-" + version + ".pom")
-    }
 }
