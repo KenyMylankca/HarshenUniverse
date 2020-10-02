@@ -20,6 +20,8 @@ public class BaseHarshenBlockBreakableWithSHPickaxe extends Block
 		super(Material.ROCK);
 		setHarvestLevel("pickaxe", 3);
 		blockSoundType = blockSoundType.STONE;
+		setHardness(3000f);
+		setResistance(3000f);
 	}
 	
 	@Override
@@ -28,11 +30,6 @@ public class BaseHarshenBlockBreakableWithSHPickaxe extends Block
 		{
 			setHardness(3f);
 			setResistance(3f);
-		}
-		else
-		{
-			setHardness(3000f);
-			setResistance(3000f);
 		}
 	}
 	

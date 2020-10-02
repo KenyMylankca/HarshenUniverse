@@ -27,10 +27,5 @@ public class BloodyWool extends Block
 			setHardness(0.3f);
 			setResistance(0.3f);
 		}
-		else
-		{
-			setHardness(1f);
-			setResistance(1f);
-		}
 	}
 }

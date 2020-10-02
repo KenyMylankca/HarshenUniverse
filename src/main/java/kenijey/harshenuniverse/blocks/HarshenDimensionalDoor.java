@@ -23,10 +23,12 @@ public class HarshenDimensionalDoor extends BlockDoor
 {
 	public HarshenDimensionalDoor()
 	{
-		super(Material.ROCK);
+		 super(Material.ROCK);
 		setUnlocalizedName("harshen_dimensional_door");
-        setRegistryName("harshen_dimensional_door");
+		setRegistryName("harshen_dimensional_door");
         setHarvestLevel("pickaxe", 3);
+        setHardness(3000f);
+        setResistance(3000f);
 	}
 	
 	@Override
@@ -40,11 +42,6 @@ public class HarshenDimensionalDoor extends BlockDoor
 		{
 			setHardness(3f);
 			setResistance(3f);
-		}
-		else
-		{
-			setHardness(3000f);
-			setResistance(3000f);
 		}
 	}
 	

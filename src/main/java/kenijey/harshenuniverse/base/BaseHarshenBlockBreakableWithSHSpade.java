@@ -15,7 +15,9 @@ public class BaseHarshenBlockBreakableWithSHSpade extends Block
 	public BaseHarshenBlockBreakableWithSHSpade() {
 		super(Material.GROUND);
 		setHarvestLevel("shovel", 3);
-        blockSoundType = blockSoundType.GROUND;
+		blockSoundType = blockSoundType.GROUND;
+        setHardness(3000f);
+        setResistance(3000f);
 	}
 	
 	@Override
@@ -24,11 +26,6 @@ public class BaseHarshenBlockBreakableWithSHSpade extends Block
 		{
 			setHardness(1f);
 			setResistance(1f);
-		}
-		else
-		{
-			setHardness(3000f);
-			setResistance(3000f);
 		}
 	}
 	

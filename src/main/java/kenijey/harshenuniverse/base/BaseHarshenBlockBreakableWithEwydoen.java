@@ -17,6 +17,8 @@ public class BaseHarshenBlockBreakableWithEwydoen extends Block
 		super(Material.WOOD);
 		setHarvestLevel("axe", 3);
 		blockSoundType = blockSoundType.WOOD;
+		setHardness(3000f);
+		setResistance(3000f);
 	}
 	
 	@Override
@@ -25,11 +27,6 @@ public class BaseHarshenBlockBreakableWithEwydoen extends Block
 		{
 			setHardness(3f);
 			setResistance(3f);
-		}
-		else
-		{
-			setHardness(3000f);
-			setResistance(3000f);
 		}
 	}
 	

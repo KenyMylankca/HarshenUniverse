@@ -17,6 +17,8 @@ public class HarshenDimensionalStairs extends BlockStairs
 		setRegistryName("harshen_dimensional_stairs");
 		setHarvestLevel("pickaxe", 3);
 		useNeighborBrightness = true;
+		setHardness(3000f);
+		setResistance(3000f);
 	}
 
 	@Override
@@ -25,11 +27,6 @@ public class HarshenDimensionalStairs extends BlockStairs
 		{
 			setHardness(3f);
 			setResistance(3f);
-		}
-		else
-		{
-			setHardness(3000f);
-			setResistance(3000f);
 		}
 	}
 }
