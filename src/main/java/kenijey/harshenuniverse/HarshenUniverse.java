@@ -23,7 +23,7 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 		version = HarshenUniverse.VERSION, 
 		useMetadata = true, 
 		acceptedMinecraftVersions = "[1.12.2]",
-		dependencies = "required-after:forge@[14.23.5.2838,)")
+		dependencies = "required-after:forge@[14.23.5.2847,)")
 
 public class HarshenUniverse
 {
