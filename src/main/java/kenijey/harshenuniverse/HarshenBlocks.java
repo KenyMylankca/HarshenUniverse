@@ -33,7 +33,7 @@ import kenijey.harshenuniverse.blocks.HarshenDimensionalTimerPlate;
 import kenijey.harshenuniverse.blocks.HarshenDimensionalTimerPlateActive;
 import kenijey.harshenuniverse.blocks.HarshenDimensionalWoodCrate;
 import kenijey.harshenuniverse.blocks.HarshenDisplayBlock;
-import kenijey.harshenuniverse.blocks.HarshenFarRock;
+import kenijey.harshenuniverse.blocks.PontusFarRock;
 import kenijey.harshenuniverse.blocks.HarshenMagicTable;
 import kenijey.harshenuniverse.blocks.HarshenSoulFlower;
 import kenijey.harshenuniverse.blocks.HarshenSoulOre;
@@ -96,7 +96,7 @@ public class HarshenBlocks
 	public static final Block HARSHEN_DESTROYED_PLANT = new HarshenDestroyedPlant();
 	public static final Block HARSHEN_DIMENSIONAL_ROCK = new HarshenDimensionalRock();
 	public static final Block PONTUS_CHAOTIC_ROCK = new PontusChaoticRock();
-	public static final Block HARSHEN_FAR_ROCK = new HarshenFarRock();
+	public static final Block HARSHEN_FAR_ROCK = new PontusFarRock();
 	public static final Block HARSHEN_DIMENSIONAL_PEDESTAL = new HarshenDimensionalPedestal();
 	public static final Block HARSHEN_DIMENSIONAL_GATE = new HarshenDimensionalGate();
 	public static final Block HERETIC_CAULDRON = new HereticCauldron();
