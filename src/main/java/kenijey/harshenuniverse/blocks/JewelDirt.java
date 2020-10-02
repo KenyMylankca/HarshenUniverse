@@ -4,6 +4,7 @@ import java.util.Random;
 
 import kenijey.harshenuniverse.HarshenUtils;
 import kenijey.harshenuniverse.interfaces.IMetaItemBlock;
+import kenijey.harshenuniverse.items.SoulHarsherSpade;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -11,10 +12,14 @@ import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public class JewelDirt extends Block implements IMetaItemBlock
 {
@@ -31,6 +36,15 @@ public class JewelDirt extends Block implements IMetaItemBlock
         this.setDefaultState(this.blockState.getBaseState().withProperty(DIRT_TYPE, 0));
         blockSoundType = blockSoundType.GROUND;
     }
+	
+	@Override
+	public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
+		if(worldIn.getBlockState(pos) == this.blockState.getBaseState().withProperty(DIRT_TYPE, 0))
+			this.blockState.getBaseState().withProperty(DIRT_TYPE, 1).getBlock().setHardness(3f);
+		if(worldIn.getBlockState(pos) == this.blockState.getBaseState().withProperty(DIRT_TYPE, 1))
+			if(!((playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(Blocks.AIR)? playerIn.getHeldItemOffhand() : playerIn.getHeldItemMainhand()).getItem() instanceof SoulHarsherSpade))
+				this.blockState.getBaseState().withProperty(DIRT_TYPE, 1).getBlock().setHardness(3000);
+	}
 	
 	@Override
 	public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items) {
