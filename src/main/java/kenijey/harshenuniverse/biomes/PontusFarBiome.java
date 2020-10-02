@@ -56,7 +56,7 @@ public class PontusFarBiome extends BasePontusResourceBiome {
 
 	@Override
 	public Block[] getGroundBlocks() {
-		return HarshenUtils.listOf(HarshenBlocks.HARSHEN_FAR_ROCK, HarshenBlocks.HARSHEN_CHAOTIC_ROCK);
+		return HarshenUtils.listOf(HarshenBlocks.HARSHEN_FAR_ROCK, HarshenBlocks.PONTUS_CHAOTIC_ROCK);
 	}
 
 
@@ -67,12 +67,11 @@ public class PontusFarBiome extends BasePontusResourceBiome {
 	
 	@Override
 	protected Block getMergerBlockUpLevel() {
-		return HarshenBlocks.HARSHEN_CHAOTIC_ROCK;
+		return HarshenBlocks.PONTUS_CHAOTIC_ROCK;
 	}
 	
 	@Override
 	public Type[] getTypes() {
 		return new Type[]{Type.COLD, Type.MOUNTAIN};
-	}	
-
+	}
 }

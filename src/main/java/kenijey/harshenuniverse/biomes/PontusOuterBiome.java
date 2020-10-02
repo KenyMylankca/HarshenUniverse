@@ -52,13 +52,13 @@ public class PontusOuterBiome extends BasePontusResourceBiome {
 
 	@Override
 	public Block[] getGroundBlocks() {
-		return HarshenUtils.listOf(HarshenBlocks.HARSHEN_DIMENSIONAL_ROCK, HarshenBlocks.HARSHEN_CHAOTIC_ROCK);
+		return HarshenUtils.listOf(HarshenBlocks.HARSHEN_DIMENSIONAL_ROCK, HarshenBlocks.PONTUS_CHAOTIC_ROCK);
 	}
 
 
 	@Override
 	public Block getMergerBlockDownLevel() {
-		return HarshenBlocks.HARSHEN_CHAOTIC_ROCK;
+		return HarshenBlocks.PONTUS_CHAOTIC_ROCK;
 	}
 	
 	@Override
@@ -69,6 +69,5 @@ public class PontusOuterBiome extends BasePontusResourceBiome {
 	@Override
 	public Type[] getTypes() {
 		return new Type[]{Type.DRY, Type.MOUNTAIN};
-	}	
-
+	}
 }
