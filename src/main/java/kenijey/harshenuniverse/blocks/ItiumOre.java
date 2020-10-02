@@ -28,13 +28,12 @@ public class ItiumOre extends Block
         setUnlocalizedName("itium_ore");
         setRegistryName("itium_ore");
         setHarvestLevel("pickaxe", 2);
-		setHardness(31f);
-		setResistance(100f);
+		setHardness(21f);
+		setResistance(31f);
     }
 
 	private BlockPos pos;
 	private World world;
-	
 	
 	@Override
 	public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {

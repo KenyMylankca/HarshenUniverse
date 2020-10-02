@@ -17,17 +17,14 @@ public class BaseHarshenBlockBreakableWithEwydoen extends Block
 		super(Material.WOOD);
 		setHarvestLevel("axe", 3);
 		blockSoundType = blockSoundType.WOOD;
-		setHardness(3000f);
-		setResistance(3000f);
+		setHardness(3000);
+		setResistance(3000);
 	}
 	
 	@Override
 	public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
 		if((playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(Blocks.AIR)? playerIn.getHeldItemOffhand() : playerIn.getHeldItemMainhand()).getItem() instanceof DarkEwydoen)
-		{
-			setHardness(3f);
-			setResistance(3f);
-		}
+			setHardness(3);
 	}
 	
 	@Override

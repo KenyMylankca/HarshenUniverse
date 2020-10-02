@@ -19,8 +19,8 @@ public class HarshenDimensionalGlass extends BlockGlass
 		setRegistryName("harshen_dimensional_glass");
 		setHarvestLevel("pickaxe", 3);
 		blockSoundType = blockSoundType.GLASS;
-        setHardness(3000f);
-        setResistance(3000f);
+        setHardness(3000);
+        setResistance(3000);
 	}
 	
 	@Override
@@ -36,9 +36,8 @@ public class HarshenDimensionalGlass extends BlockGlass
 	@Override
 	public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
 		if((playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(Blocks.AIR)? playerIn.getHeldItemOffhand() : playerIn.getHeldItemMainhand()).getItem() instanceof SoulHarsherPickaxe)
-		{
-			setHardness(3f);
-			setResistance(3f);
-		}
+			setHardness(3);
+		else
+			setHardness(3000);
 	}
 }

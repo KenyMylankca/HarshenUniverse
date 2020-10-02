@@ -16,17 +16,14 @@ public class BaseHarshenBlockBreakableWithSHSpade extends Block
 		super(Material.GROUND);
 		setHarvestLevel("shovel", 3);
 		blockSoundType = blockSoundType.GROUND;
-        setHardness(3000f);
-        setResistance(3000f);
+        setHardness(3000);
+        setResistance(3000);
 	}
 	
 	@Override
 	public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
 		if((playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(Blocks.AIR)? playerIn.getHeldItemOffhand() : playerIn.getHeldItemMainhand()).getItem() instanceof SoulHarsherSpade)
-		{
-			setHardness(1f);
-			setResistance(1f);
-		}
+			setHardness(1);
 	}
 	
 	@Override

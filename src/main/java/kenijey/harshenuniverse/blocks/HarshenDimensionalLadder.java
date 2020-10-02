@@ -16,16 +16,13 @@ public class HarshenDimensionalLadder extends BlockLadder
         setRegistryName("harshen_dimensional_ladder");
         setHarvestLevel("axe", 3);
         blockSoundType = blockSoundType.LADDER;
-        setHardness(3000.0f);
-        setResistance(3000.0f);
+        setHardness(3000);
+        setResistance(3000);
 	}
 	
 	@Override
 	public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
 		if((playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(Blocks.AIR)? playerIn.getHeldItemOffhand() : playerIn.getHeldItemMainhand()).getItem() instanceof SoulHarsherPickaxe)
-		{
-			setHardness(3f);
-			setResistance(3f);
-		}
+			setHardness(3);
 	}
 }

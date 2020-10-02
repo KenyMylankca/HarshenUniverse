@@ -27,8 +27,8 @@ public class HarshenDimensionalDoor extends BlockDoor
 		setUnlocalizedName("harshen_dimensional_door");
 		setRegistryName("harshen_dimensional_door");
         setHarvestLevel("pickaxe", 3);
-        setHardness(3000f);
-        setResistance(3000f);
+        setHardness(3000);
+        setResistance(3000);
 	}
 	
 	@Override
@@ -39,10 +39,7 @@ public class HarshenDimensionalDoor extends BlockDoor
 	@Override
 	public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
 		if((playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(Blocks.AIR)? playerIn.getHeldItemOffhand() : playerIn.getHeldItemMainhand()).getItem() instanceof SoulHarsherPickaxe)
-		{
-			setHardness(3f);
-			setResistance(3f);
-		}
+			setHardness(3);
 	}
 	
 	@Override
