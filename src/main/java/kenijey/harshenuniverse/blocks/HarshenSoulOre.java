@@ -74,13 +74,6 @@ public class HarshenSoulOre extends Block
 	}
 	
 	@Override
-	public boolean isOpaqueCube(IBlockState state)
-	{
-		return false;
-
-	}
-	
-	@Override
 	protected ItemStack getSilkTouchDrop(IBlockState state) {
 		return null;
 	}

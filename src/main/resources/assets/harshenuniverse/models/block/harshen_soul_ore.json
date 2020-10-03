@@ -3,32 +3,32 @@
 	"parent": "block/cube_all",
 	"textures": {
 		"0": "blocks/portal",
-		"all": "harshenuniverse:blocks/harshen_soul_ore",
-		"particle": "harshenuniverse:blocks/harshen_soul_ore"
+		"particle": "harshenuniverse:blocks/harshen_soul_ore",
+		"all": "harshenuniverse:blocks/harshen_soul_ore"
 	},
 	"elements": [
 		{
 			"from": [0, 0, 0],
 			"to": [16, 16, 16],
 			"faces": {
-				"north": {"uv": [0, 0, 16, 16], "texture": "#all"},
-				"east": {"uv": [0, 0, 16, 16], "texture": "#all"},
-				"south": {"uv": [0, 0, 16, 16], "texture": "#all"},
-				"west": {"uv": [0, 0, 16, 16], "texture": "#all"},
-				"up": {"uv": [0, 0, 16, 16], "texture": "#all"},
-				"down": {"uv": [0, 0, 16, 16], "texture": "#all"}
+				"north": {"uv": [0.008, 0.008, 15.992, 15.992], "texture": "#all"},
+				"east": {"uv": [0.008, 0.008, 15.992, 15.992], "texture": "#all"},
+				"south": {"uv": [0.008, 0.008, 15.992, 15.992], "texture": "#all"},
+				"west": {"uv": [0.008, 0.008, 15.992, 15.992], "texture": "#all"},
+				"up": {"uv": [0.008, 0.008, 15.992, 15.992], "texture": "#all"},
+				"down": {"uv": [0.008, 0.008, 15.992, 15.992], "texture": "#all"}
 			}
 		},
 		{
 			"from": [1, 1, 1],
-			"to": [15, 15, 15],
+			"to": [14.9, 14.9, 14.9],
 			"faces": {
-				"north": {"uv": [0, 0, 16, 16], "texture": "#0"},
-				"east": {"uv": [0, 0, 16, 16], "texture": "#0"},
-				"south": {"uv": [0, 0, 16, 16], "texture": "#0"},
-				"west": {"uv": [0, 0, 16, 16], "texture": "#0"},
-				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
-				"down": {"uv": [0, 0, 16, 16], "texture": "#0"}
+				"north": {"uv": [0.032, 0.032, 15.968, 15.968], "texture": "#0"},
+				"east": {"uv": [0.032, 0.032, 15.968, 15.968], "texture": "#0"},
+				"south": {"uv": [0.032, 0.032, 15.968, 15.968], "texture": "#0"},
+				"west": {"uv": [0.032, 0.032, 15.968, 15.968], "texture": "#0"},
+				"up": {"uv": [0.032, 0.032, 15.968, 15.968], "texture": "#0"},
+				"down": {"uv": [0.032, 0.032, 15.968, 15.968], "texture": "#0"}
 			}
 		}
 	]
