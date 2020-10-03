@@ -3,8 +3,8 @@ package kenijey.harshenuniverse.intergration.jei.hereticcauldron;
 import java.util.HashMap;
 import java.util.List;
 
-import kenijey.harshenuniverse.HarshenUniverse;
 import kenijey.harshenuniverse.HarshenItems;
+import kenijey.harshenuniverse.HarshenUniverse;
 import kenijey.harshenuniverse.HarshenUtils;
 import kenijey.harshenuniverse.api.CauldronLiquid;
 import kenijey.harshenuniverse.base.BaseJeiCategory;
