@@ -4,7 +4,6 @@ import java.util.UUID;
 
 import kenijey.harshenuniverse.HarshenSounds;
 import kenijey.harshenuniverse.base.BaseTileEntityHarshenSingleItemInventory;
-import kenijey.harshenuniverse.config.GeneralConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;
@@ -44,7 +43,9 @@ public class TileEntityHarshenSpawner extends BaseTileEntityHarshenSingleItemInv
 	@Override
 	protected void tick() 
 	{
-		EntityPlayer player = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), GeneralConfig.harshenSpawnerDistance, false);
+		EntityPlayer player = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 7, false);
+		EntityPlayer player2 = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 12, false);
+		
 		if(player != null && getEntity(getItem()) != null && !player.isCreative())
 			activate(player);
 		
@@ -54,7 +55,7 @@ public class TileEntityHarshenSpawner extends BaseTileEntityHarshenSingleItemInv
 				{
 					if(entityliving == null && !entity.isEntityAlive())
 						world.setBlockToAir(pos);
-					if(entity.isEntityAlive() && (player == null || player.isCreative()) && entityliving == null)
+					if(entity.isEntityAlive() && (player2 == null || player2.isCreative()) && entityliving == null)
 						deactivate(spawnedEntitysEgg, entity);
 				}
 	}
