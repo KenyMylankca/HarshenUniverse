@@ -13,7 +13,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemMonsterPlacer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
@@ -31,8 +30,8 @@ public class HarshenSpawner extends BaseBlockHarshenSingleInventory implements I
 		super(Material.ROCK);
 		setRegistryName("harshen_spawner");
 		setUnlocalizedName("harshen_spawner");
-		setHardness(-1);
-		setResistance(-1);
+		this.blockHardness=(-1);
+		this.setResistance(Float.MAX_VALUE);
 	}
 	
 	@Override
