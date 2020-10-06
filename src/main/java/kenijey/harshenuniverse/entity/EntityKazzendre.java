@@ -6,6 +6,8 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIMoveTowardsTarget;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
+import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.monster.EntityMob;
@@ -20,27 +22,28 @@ public class EntityKazzendre extends EntityMob
 	public EntityKazzendre(World worldIn) {
 		super(worldIn);
 		
-		this.experienceValue = 500;
+		this.experienceValue = 800;
 		this.isImmuneToFire = true;
 	}
 	
 	@Override
 	protected void initEntityAI() {
-		this.tasks.addTask(0, new EntityAIAttackMelee(this, 1d, true));
-		this.tasks.addTask(0, new EntityAIMoveTowardsTarget(this, 1d, 100));
-		this.tasks.addTask(0, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-		
-		this.targetTasks.addTask(0, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+		this.tasks.addTask(1, new EntityAISwimming(this));
+		this.tasks.addTask(2, new EntityAIAttackMelee(this, 1d, true));
+		this.tasks.addTask(2, new EntityAIMoveTowardsTarget(this, 1d, 100));
+		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 9.0F));
+		this.tasks.addTask(4, new EntityAIWanderAvoidWater(this, 1.0D));
+		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 	}
 	
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(380);
-		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(4d);
-		this.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(4d);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5d);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.4d);
+		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(2d);
+		this.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(2d);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4d);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.5d);
 	}
 	
 	@Override
