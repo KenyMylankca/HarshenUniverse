@@ -11,8 +11,5 @@
 !gradlew.bat
 !HarshenUniverse_Client.launch
 !HarshenUniverse_Server.launch
-!run/
-run/*
-!run/saves
-run/saves/*
+run/**
 !run/saves/New World-
