@@ -103,7 +103,6 @@ public class HarshenStack
 		return dependOnNBT;
 	}
 	
-	
 	/**
 	 * Gets a new instance of a list of all the available stacks.
 	 */

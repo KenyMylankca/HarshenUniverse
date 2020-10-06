@@ -133,5 +133,4 @@ public interface IHarshenRegistry
 	 * @return the helper
 	 */
 	IHarshenHelper getHelper();
-	
 }

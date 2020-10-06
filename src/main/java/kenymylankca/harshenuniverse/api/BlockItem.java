@@ -12,7 +12,6 @@ public class BlockItem
 	/**The Item/Block*/
 	public final Impl impl;
 	
-	
 	public BlockItem(Item item) {
 		impl = item;
 	}
