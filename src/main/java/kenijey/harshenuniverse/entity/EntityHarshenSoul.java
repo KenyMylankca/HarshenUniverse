@@ -12,6 +12,8 @@ import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
@@ -49,4 +51,11 @@ public class EntityHarshenSoul extends EntityMob implements IBurnInDay {
     protected SoundEvent getDeathSound() {
     	return HarshenSounds.HARSHEN_MOB_HURT;
     }
+	
+	@Override
+	public void onDeath(DamageSource cause) {
+		if (cause.getTrueSource() != null && cause.getTrueSource() instanceof EntityPlayer)
+			((EntityPlayer) cause.getTrueSource()).addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 190));
+		super.onDeath(cause);
+	}
 }
