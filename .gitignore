@@ -1,29 +1,3 @@
-# eclipse
-bin
-*.launch
-.settings
-.metadata
-.classpath
-.project
-
-# idea
-out
-*.ipr
-*.iws
-*.iml
-.idea
-
-# gradle
-build
-.gradle
-
-# other
-eclipse
-run
-
-# Files from Forge MDK
-forge*changelog.txt
-
 /*
 !/src
 !build.gradle
@@ -31,10 +5,14 @@ forge*changelog.txt
 !GRADLE_ECLIPSE.bat
 !GRADLE_SETUP.bat
 !GRADLE_SETUP_REFRESH.bat
-!eclipse
-!gradle
+!/gradle
 !.gitignore
 !gradlew
 !gradlew.bat
 !HarshenUniverse_Client.launch
 !HarshenUniverse_Server.launch
+!run/
+run/*
+!run/saves
+run/saves/*
+!run/saves/New World-
