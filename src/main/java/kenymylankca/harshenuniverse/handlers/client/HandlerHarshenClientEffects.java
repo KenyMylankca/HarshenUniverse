@@ -79,17 +79,19 @@ public class HandlerHarshenClientEffects
 	@SubscribeEvent
 	public void onPlayerTick(PlayerTickEvent event)
 	{
-		tick++;
-		
 		if(event.player.world.provider.getDimension() == IdConfig.PontusDimension)
 		{
+			tick++;
 			Random rand = new Random();
-			if(rand.nextInt(100) == tick)
+			if(tick == 130)
 			{
-				event.player.playSound(HarshenSounds.PONTUS_WIND, rand.nextFloat(), 1f);
-				tick=0;
+				if(rand.nextInt(3) > 0)
+					event.player.playSound(HarshenSounds.PONTUS_WIND, rand.nextFloat(), 1f);
+				if(rand.nextInt(13) < 1)
+					event.player.playSound(HarshenSounds.PONTUS_SCARY, rand.nextFloat(), 1f);
 			}
-			if(tick>100) tick=0;
+			if (tick > 130)
+				tick=0;
 		}
 	}
 }

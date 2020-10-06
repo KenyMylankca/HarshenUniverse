@@ -25,5 +25,6 @@
 	"pontus_wind":{"category": "master","sounds": [ { "name": "harshenuniverse:pontus_wind", "stream": false }]},
 	"freezing":{"category": "master","sounds": [ { "name": "harshenuniverse:freezing", "stream": false }]},
 	"ewydoen_hit":{"category": "master","sounds": [ { "name": "harshenuniverse:ewydoen_hit", "stream": false }]},
-	"night_blade_stab":{"category": "master","sounds": [ { "name": "harshenuniverse:night_blade_stab", "stream": false }]}
+	"night_blade_stab":{"category": "master","sounds": [ { "name": "harshenuniverse:night_blade_stab", "stream": false }]},
+	"pontus_scary":{"category": "master","sounds": [ { "name": "harshenuniverse:pontus_scary", "stream": false }]}
 }
