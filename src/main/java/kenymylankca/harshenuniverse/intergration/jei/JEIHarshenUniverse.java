@@ -74,7 +74,7 @@ public class JEIHarshenUniverse implements IModPlugin
 		info(HarshenItems.LIGHT_EMITTED_SEED);
 		info(HarshenItems.LIGHT_EMITTED_ESSENCE);
 		info(HarshenItems.SOUL_HARSHER_PICKAXE);
-		info(HarshenItems.PONTUS_WORLD_GATE_PARTS, new int[] {0,1,2});
+		info(HarshenItems.PONTUS_WORLD_GATE_SPAWNER_PARTS, new int[] {0,1,2});
 		info(HarshenItems.BLOOD_ESSENCE);
 		info(HarshenItems.BLOOD_COLLECTOR);
 		info(HarshenItems.VALOR_BADGE);

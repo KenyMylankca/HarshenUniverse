@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "harshenuniverse:items/pontus_world_gate_spawner_part_2"
+    }
+}

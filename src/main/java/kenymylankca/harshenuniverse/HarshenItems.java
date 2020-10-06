@@ -55,8 +55,8 @@ import kenymylankca.harshenuniverse.items.MysticFeather;
 import kenymylankca.harshenuniverse.items.OneRing;
 import kenymylankca.harshenuniverse.items.PontusCube;
 import kenymylankca.harshenuniverse.items.PontusRing;
-import kenymylankca.harshenuniverse.items.PontusWorldGatePart;
 import kenymylankca.harshenuniverse.items.PontusWorldGateSpawner;
+import kenymylankca.harshenuniverse.items.PontusWorldGateSpawnerPart;
 import kenymylankca.harshenuniverse.items.PowderOfHeretism;
 import kenymylankca.harshenuniverse.items.PunchyRing;
 import kenymylankca.harshenuniverse.items.RaptorScythe;
@@ -100,7 +100,7 @@ public class HarshenItems
 	public static final Item PONTUS_RING = new PontusRing();
 	public static final Item BLOODY_EARRING = new BloodyEarring();
 	public static final Item BLOOD_ESSENCE = new BloodEssence();
-	public static final BaseItemMetaData PONTUS_WORLD_GATE_PARTS = new PontusWorldGatePart();
+	public static final BaseItemMetaData PONTUS_WORLD_GATE_SPAWNER_PARTS = new PontusWorldGateSpawnerPart();
 	public static final BaseItemMetaData PONTUS_WORLD_GATE_SPAWNER = new PontusWorldGateSpawner();
 	public static final Item LIGHT_EMITTED_SEED = new LightEmittedSeed();
 	public static final Item LIGHT_EMITTED_ESSENCE = new LightEmittedEssence();
@@ -229,7 +229,7 @@ public class HarshenItems
 		regMetaItem(GILLETTE, EnumGillette.getNames(), "gillette_");
 		regMetaItem(RITUAL_STICK, emptyList(EnumRitualStick.values().length), "ritual_stick");
 		regMetaItem(PONTUS_WORLD_GATE_SPAWNER, EnumPontusGateSpawner.getNames(), "pontus_world_gate_spawner_");
-		regMetaItem(PONTUS_WORLD_GATE_PARTS, EnumPontusGateSpawnerParts.getNames(), "pontus_world_gate_part_");
+		regMetaItem(PONTUS_WORLD_GATE_SPAWNER_PARTS, EnumPontusGateSpawnerParts.getNames(), "pontus_world_gate_spawner_part_");
 		regMetaItem(PROPS, EnumProp.getNames(), "prop_");
 		regMetaItem(BLOOD_COLLECTOR, EnumBloodCollector.getNames(), "blood_collector_");
 		regMetaItem(RITUAL_CRYSTAL, 12, EnumRitualCrystal.getNames(), "ritual_crystal_");

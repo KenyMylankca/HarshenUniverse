@@ -9,17 +9,17 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 
-public class PontusWorldGatePart extends BaseItemMetaData
+public class PontusWorldGateSpawnerPart extends BaseItemMetaData
 {
-	public PontusWorldGatePart()
+	public PontusWorldGateSpawnerPart()
 	{
-		setUnlocalizedName("pontus_world_gate_part");
-		setRegistryName("pontus_world_gate_part");		
+		setUnlocalizedName("pontus_world_gate_spawner_part");
+		setRegistryName("pontus_world_gate_spawner_part");		
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add("\u00A73" + new TextComponentTranslation("gatepart1").getFormattedText());
+		tooltip.add("\u00A73" + new TextComponentTranslation("gatespawnerpart1").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 
