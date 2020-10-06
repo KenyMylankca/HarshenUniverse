@@ -6,7 +6,7 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "harshenuniverse:pontus_world_gate_part",
+                    "name": "harshenuniverse:pontus_world_gate_spawner_part",
                     "weight": 1,
                     "functions": [
                         {
