@@ -17,6 +17,7 @@ import kenymylankca.harshenuniverse.items.SoulHarsherSword;
 import kenymylankca.harshenuniverse.items.SoulRipperBow;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemAir;
@@ -27,6 +28,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 public class HandlerHarshenClientEffects
 {
 	int tick = 0;
+	int airBlockChecker = 1;
 	@SubscribeEvent
 	public void onLivingHurt(LivingHurtEvent event)
 	{
@@ -83,15 +85,25 @@ public class HandlerHarshenClientEffects
 		{
 			tick++;
 			Random rand = new Random();
-			if(tick == 130)
+			if(tick == 120)
 			{
 				if(rand.nextInt(3) > 0)
-					event.player.playSound(HarshenSounds.PONTUS_WIND, rand.nextFloat(), 1f);
-				if(rand.nextInt(13) < 1)
-					event.player.playSound(HarshenSounds.PONTUS_SCARY, rand.nextFloat(), 1f);
+				{
+					for(int i=1; i<11; i++)
+						if (event.player.world.getBlockState(event.player.getPosition().up(i)).getBlock() != Blocks.AIR)
+						{
+							airBlockChecker=2;
+							break;
+						}
+					if(airBlockChecker == 1)
+						event.player.playSound(HarshenSounds.PONTUS_WIND, rand.nextFloat(), rand.nextFloat()+rand.nextInt(3));
+				}
+				if(rand.nextInt(13*airBlockChecker) < 1)
+					event.player.playSound(HarshenSounds.PONTUS_SCARY, rand.nextFloat(), rand.nextFloat()+rand.nextInt(2));
 			}
 			if (tick > 130)
 				tick=0;
+			airBlockChecker=1;
 		}
 	}
 }
