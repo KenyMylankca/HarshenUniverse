@@ -100,6 +100,7 @@ public class JEIHarshenUniverse implements IModPlugin
 		info(HarshenBlocks.JEWEL_DIRT, 0);
 		info(HarshenBlocks.BLOOD_PLACER);
 		info(HarshenBlocks.AKZENIA_MUSHROOM);
+		info(HarshenBlocks.HARSHEN_DISPLAY_BLOCK);
 	}
 	
 	private void info(String name, Item... items)

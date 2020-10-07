@@ -5,6 +5,7 @@ import java.util.Random;
 
 import kenymylankca.harshenuniverse.base.BaseBlockHarshenSingleInventory;
 import kenymylankca.harshenuniverse.base.BaseTileEntityHarshenSingleItemInventory;
+import kenymylankca.harshenuniverse.items.BloodEssence;
 import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenDisplayBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -35,9 +36,9 @@ public class HarshenDisplayBlock extends BaseBlockHarshenSingleInventory
 	}
 	
 	@Override
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
-			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-		return playerIn.capabilities.isCreativeMode ? super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ) : false;
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+	{
+		return (playerIn.getHeldItemOffhand().getItem() instanceof BloodEssence || playerIn.isCreative()) ? super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ) : false;
 	}
 	
 	@Override

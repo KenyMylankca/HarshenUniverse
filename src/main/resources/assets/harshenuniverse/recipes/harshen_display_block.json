@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "harshen_items",
+  "ingredients": [
+    {
+      "item": "harshenuniverse:harshen_dimensional_stone"
+    },
+	{
+      "item": "harshenuniverse:blood_essence"
+    }
+  ],
+  "result": {
+    "item": "harshenuniverse:harshen_display_block",
+	 "count": 1
+  }
+}
