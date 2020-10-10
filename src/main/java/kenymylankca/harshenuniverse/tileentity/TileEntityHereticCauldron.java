@@ -61,7 +61,8 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 	private HashMap<BlockPos, ItemStack> pedestalMap = new HashMap<>(); 
 	
 	@Override
-	public void tick() {
+	public void tick()
+	{
 		if(level <= 0 && fluid != CauldronLiquid.NONE)
 		{
 			level = 0;
@@ -143,7 +144,6 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 				HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.CAULDRON,
 						new Vec3d(pos).addVector((new Random().nextDouble() / 2) + 0.25D, yPosOfDrains[layersDrained], (new Random().nextDouble() / 2) + 0.25D), new Vec3d(0, 0.01d, 0), 1f, false,
 						workingFluid.getStateOrLoc());
-			
 			reactivate(1);
 		}
 	}
@@ -425,6 +425,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 		deletedBloodPos.clear();
 		bloodPos.clear();
 		pedestals.clear();
+		//TODOMinecraft.getMinecraft().getSoundHandler().stopSound();
 	}
 	
 	private boolean particle = false;

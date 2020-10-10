@@ -29,7 +29,7 @@ public class HarshenUniverse
 {
     public static final String MODID = "harshenuniverse";
     public static final String MODNAME = "Harshen Universe";
-    public static final String VERSION = "0.26.1";
+    public static final String VERSION = "0.26.2";
     
     public static boolean hasLoaded;
 
