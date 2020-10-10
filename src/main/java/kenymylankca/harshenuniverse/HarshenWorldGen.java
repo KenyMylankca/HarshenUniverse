@@ -12,6 +12,7 @@ import kenymylankca.harshenuniverse.worldgenerators.pontus.JewelDirtGenPontus;
 import kenymylankca.harshenuniverse.worldgenerators.pontus.PontusWorldGeneratorItiumOre;
 import kenymylankca.harshenuniverse.worldgenerators.pontus.PontusWorldGeneratorPontusEmeraldOre;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockGrass;
 import net.minecraft.block.BlockStone;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -43,9 +44,9 @@ public class HarshenWorldGen implements IWorldGenerator
 			if(chunkX == 11 && chunkZ == -5)
 				HarshenStructures.GRAVEYARD.generateStucture(world, random, chunkX, chunkZ);
 			runGenerator(this.harshenSoulOreOverworld, world, random, chunkX, chunkZ, 6, 0, 20);
-			plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.1f, 60, 130);
-			plantGenerator(HarshenBlocks.PLANT_OF_GLEAM, world, random, chunkX, chunkZ, 0.1f, 111, 255);
-			plantGenerator(HarshenBlocks.AKZENIA_MUSHROOM, world, random, chunkX, chunkZ, 0.1f, 0, 120);
+			plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.1f, 60, 130, false);
+			plantGenerator(HarshenBlocks.PLANT_OF_GLEAM, world, random, chunkX, chunkZ, 0.1f, 111, 255, true);
+			plantGenerator(HarshenBlocks.AKZENIA_MUSHROOM, world, random, chunkX, chunkZ, 0.1f, 0, 120, true);
 	    	runGenerator(jewelDirtOverworld, world, random, chunkX, chunkZ, 70, 0, 200);
 	    	runGenerator(nocturneBloomOverworld, world, random, chunkX, chunkZ, 50, 0, 60);
 		}
@@ -53,7 +54,7 @@ public class HarshenWorldGen implements IWorldGenerator
 		{
 	    	runGenerator(this.pontusItiumOre, world, random, chunkX, chunkZ, 11, 0, 255);
 	    	runGenerator(this.pontusEmeraldOre, world, random, chunkX, chunkZ, 12, 0, 255);
-	    	plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.5f, 100, 200);
+	    	plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.5f, 100, 200, false);
 	    	runGenerator(pontusJewelDirt, world, random, chunkX, chunkZ, 20, 0, 200);
 		}
 		generateStructure(world, HarshenStructure.get(dim), random, chunkX, chunkZ);
@@ -79,7 +80,7 @@ public class HarshenWorldGen implements IWorldGenerator
 	    	} 
 	}
 	
-	private void plantGenerator(Block plant, World worldIn, Random random, int chunkX, int chunkZ, float chancesToSpawn, int minHeight, int maxHeight)
+	private void plantGenerator(Block plant, World worldIn, Random random, int chunkX, int chunkZ, float chancesToSpawn, int minHeight, int maxHeight, boolean dirtOnly)
 	{
 		int heightDiff = maxHeight - minHeight + 1;
 		if(random.nextFloat() < chancesToSpawn)
@@ -91,9 +92,8 @@ public class HarshenWorldGen implements IWorldGenerator
 			BlockPos blockpos = position.add(random.nextInt(8) - random.nextInt(8), random.nextInt(4) - random.nextInt(4), random.nextInt(8) - random.nextInt(8));
 	
 	        if (worldIn.isAirBlock(blockpos) && (worldIn.provider.isSurfaceWorld() || blockpos.getY() < 255) && worldIn.isSideSolid(blockpos.down(), EnumFacing.UP) && !(worldIn.getBlockState(blockpos.down()).getBlock() instanceof BlockStone))
-	        {
-	            worldIn.setBlockState(blockpos,plant.getDefaultState(), 1);
-	        }
+	        	if(!dirtOnly || (dirtOnly && worldIn.getBlockState(blockpos.down()).getBlock() instanceof BlockGrass))
+	        		worldIn.setBlockState(blockpos,plant.getDefaultState(), 1);
 		}
 	}
 }
