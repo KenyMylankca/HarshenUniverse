@@ -6,7 +6,6 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import kenymylankca.harshenuniverse.HarshenBlocks;
-import kenymylankca.harshenuniverse.HarshenSounds;
 import kenymylankca.harshenuniverse.api.CauldronLiquid;
 import kenymylankca.harshenuniverse.base.BaseBlockHarshenSingleInventory;
 import kenymylankca.harshenuniverse.base.BaseTileEntityHarshenSingleItemInventory;
@@ -18,7 +17,6 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -29,7 +27,6 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -106,8 +103,6 @@ public class HereticCauldron extends BaseBlockHarshenSingleInventory
 	
 	@Override
 	public void onBlockHarvested(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player) {
-		Minecraft.getMinecraft().getSoundHandler().stop(HarshenSounds.HERETIC_RITUAL.getSoundName().toString(), SoundCategory.BLOCKS);
-		Minecraft.getMinecraft().getSoundHandler().stop(HarshenSounds.HERETIC_CAULDRON_BLENDING.getSoundName().toString(), SoundCategory.BLOCKS);
 		if(worldIn.getBlockState(pos.up()).getBlock() instanceof HereticCauldronTop)
 			worldIn.setBlockToAir(pos.up());
 		((TileEntityHereticCauldron)worldIn.getTileEntity(pos)).killRitual();
