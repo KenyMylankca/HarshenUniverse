@@ -94,7 +94,7 @@ public abstract class BaseBlockHarshenSingleInventory extends Block implements I
 		if(tileEntity instanceof BaseTileEntityHarshenSingleItemInventory)
 			if(((BaseTileEntityHarshenSingleItemInventory)tileEntity).canAddItem() && Item.getItemFromBlock(Blocks.AIR) != item.getItem())
 			{
-				int i =  item.getCount() - 1;
+				int i = playerIn.isCreative() ? item.getCount() : item.getCount() - 1;
 				if(((BaseTileEntityHarshenSingleItemInventory)tileEntity).setItem(item))
 				{
 					ItemStack stackToGive=new ItemStack(item.getItem(), i, item.getMetadata());
@@ -106,7 +106,7 @@ public abstract class BaseBlockHarshenSingleInventory extends Block implements I
 			{
 				ItemStack stack = ((BaseTileEntityHarshenSingleItemInventory)tileEntity).getItem();
 				((BaseTileEntityHarshenSingleItemInventory)tileEntity).setItemAir();
-				if(!worldIn.isRemote)
+				if(!worldIn.isRemote && !playerIn.isCreative())
 					InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY() + 0.7f, pos.getZ(), stack);
 			}
 		return true;
