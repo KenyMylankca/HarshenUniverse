@@ -25,6 +25,7 @@ import kenymylankca.harshenuniverse.recipes.CauldronRecipes;
 import kenymylankca.harshenuniverse.recipes.HereticRitualRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -425,7 +426,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 		deletedBloodPos.clear();
 		bloodPos.clear();
 		pedestals.clear();
-		//TODOMinecraft.getMinecraft().getSoundHandler().stopSound();
+		Minecraft.getMinecraft().getSoundHandler().stop(HarshenSounds.HERETIC_RITUAL.getSoundName().toString(), SoundCategory.BLOCKS);
 	}
 	
 	private boolean particle = false;

@@ -180,7 +180,7 @@ public class HarshenUtils
 			list.add(item);
 	}
 	
-	public static void cookAndReplaceStackList(List<ItemStack> drops) 
+	public static void cookAndReplaceStackList(List<ItemStack> drops)
 	{
 		ArrayList<ItemStack> newlist = cookStackList(drops);
 		drops.clear();
