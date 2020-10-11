@@ -13,12 +13,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class HarshenDimensionalPedestal extends BaseBlockHarshenSingleInventory
+public class HarshenRitualPedestal extends BaseBlockHarshenSingleInventory
 {
-	public HarshenDimensionalPedestal() {
+	public HarshenRitualPedestal() {
 		super(Material.ROCK);
-		setRegistryName("harshen_dimensional_pedestal");
-		setUnlocalizedName("harshen_dimensional_pedestal");
+		setRegistryName("harshen_ritual_pedestal");
+		setUnlocalizedName("harshen_ritual_pedestal");
 		setHardness(5.0F);
 		setResistance(5.0F);
 	}

@@ -40,12 +40,12 @@ public class FauxCauldronStructure implements ICommandStructure
 		for(EnumFacing facing : EnumFacing.HORIZONTALS)
 		{
 			world.setBlockState(pos.offset(facing, 2), HarshenBlocks.BLOOD_BLOCK.getDefaultState(), 3);
-			world.setBlockState(pos.offset(facing, 3), HarshenBlocks.HARSHEN_DIMENSIONAL_PEDESTAL.getDefaultState(), 3);
+			world.setBlockState(pos.offset(facing, 3), HarshenBlocks.HARSHEN_RITUAL_PEDESTAL.getDefaultState(), 3);
 		}
 		ArrayList<Integer> pedestalDistanceList = new ArrayList<>(HarshenUtils.toArray(-2, 2));
 		for(int x : pedestalDistanceList)
 			for(int z : pedestalDistanceList)
-				world.setBlockState(pos.add(x, 0, z), HarshenBlocks.HARSHEN_DIMENSIONAL_PEDESTAL.getDefaultState(), 3);
+				world.setBlockState(pos.add(x, 0, z), HarshenBlocks.HARSHEN_RITUAL_PEDESTAL.getDefaultState(), 3);
 		world.setBlockState(pos, HarshenBlocks.HERETIC_CAULDRON.getDefaultState(), 3);
 	}
 }

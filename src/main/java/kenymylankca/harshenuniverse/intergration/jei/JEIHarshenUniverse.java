@@ -63,7 +63,7 @@ public class JEIHarshenUniverse implements IModPlugin
 		registry.addRecipes(HarshenAPIHandler.allPedestalRecipes, JEICategoryUIDs.PENDESTAL_SLAB);
 		registry.addRecipes(HarshenAPIHandler.allHereticCauldronRecipes, JEICategoryUIDs.HERETIC_RITUAL);
 		registry.addRecipes(HarshenAPIHandler.allMagicTableRecipes, JEICategoryUIDs.MAGIC_TABLE);
-		registry.addRecipeCatalyst(new ItemStack(HarshenBlocks.HARSHEN_DIMENSIONAL_PEDESTAL), JEICategoryUIDs.LIGHTNING_RITUAL);
+		registry.addRecipeCatalyst(new ItemStack(HarshenBlocks.HARSHEN_RITUAL_PEDESTAL), JEICategoryUIDs.LIGHTNING_RITUAL);
 		registry.addRecipeCatalyst(new ItemStack(HarshenItems.RITUAL_STICK), JEICategoryUIDs.HERETIC_CAULDRON);
 		registry.addRecipeCatalyst(new ItemStack(HarshenItems.RITUAL_STICK, 1, 1), JEICategoryUIDs.HERETIC_RITUAL);
 		registry.addRecipeCatalyst(new ItemStack(HarshenBlocks.PEDESTAL_SLAB), JEICategoryUIDs.PENDESTAL_SLAB);

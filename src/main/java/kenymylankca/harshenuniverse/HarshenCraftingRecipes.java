@@ -114,8 +114,8 @@ public class HarshenCraftingRecipes
 				'l', new ItemStack(Items.LEATHER),
 				'i', new ItemStack(HarshenBlocks.BLOODY_WOOL));
 		
-		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "harshen_dimensional_pedestal"), new ResourceLocation(group),
-				new ItemStack(HarshenBlocks.HARSHEN_DIMENSIONAL_PEDESTAL),
+		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "harshen_ritual_pedestal"), new ResourceLocation(group),
+				new ItemStack(HarshenBlocks.HARSHEN_RITUAL_PEDESTAL),
 				" i ",
 				" i ",
 				" i ",

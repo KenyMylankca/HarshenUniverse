@@ -355,16 +355,16 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 				setError(pos.offset(facing, 2), HarshenBlocks.BLOOD_BLOCK);
 			else
 				bloodPos.add(pos.offset(facing, 2));
-			if(world.getBlockState(pos.offset(facing, 3)).getBlock() != HarshenBlocks.HARSHEN_DIMENSIONAL_PEDESTAL)
-				setError(pos.offset(facing, 3), HarshenBlocks.HARSHEN_DIMENSIONAL_PEDESTAL);
+			if(world.getBlockState(pos.offset(facing, 3)).getBlock() != HarshenBlocks.HARSHEN_RITUAL_PEDESTAL)
+				setError(pos.offset(facing, 3), HarshenBlocks.HARSHEN_RITUAL_PEDESTAL);
 			else
 				pedestals.add((TileEntityHarshenDimensionalPedestal)world.getTileEntity(pos.offset(facing, 3)));
 		}
 		ArrayList<Integer> pedestalDistanceList = new ArrayList<>(HarshenUtils.toArray(-2, 2));
 		for(int x : pedestalDistanceList)
 			for(int z : pedestalDistanceList)
-				if(world.getBlockState(pos.add(x, 0, z)).getBlock() != HarshenBlocks.HARSHEN_DIMENSIONAL_PEDESTAL)
-					setError(pos.add(x, 0, z), HarshenBlocks.HARSHEN_DIMENSIONAL_PEDESTAL);
+				if(world.getBlockState(pos.add(x, 0, z)).getBlock() != HarshenBlocks.HARSHEN_RITUAL_PEDESTAL)
+					setError(pos.add(x, 0, z), HarshenBlocks.HARSHEN_RITUAL_PEDESTAL);
 				else
 					pedestals.add((TileEntityHarshenDimensionalPedestal)world.getTileEntity(pos.add(x, 0, z)));
 		

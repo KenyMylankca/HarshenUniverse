@@ -36,7 +36,7 @@ public class PontusRitual extends HarshenStructure
 			shuffledFacing.add(facing);
 		Collections.shuffle(shuffledFacing);
 		for(EnumFacing facing : shuffledFacing)
-			if(world.getBlockState(position.offset(facing)).getBlock() == HarshenBlocks.HARSHEN_DIMENSIONAL_PEDESTAL
+			if(world.getBlockState(position.offset(facing)).getBlock() == HarshenBlocks.HARSHEN_RITUAL_PEDESTAL
 			&& facing.getHorizontalIndex() < stacks.size() && random.nextBoolean())
 				((TileEntityHarshenDimensionalPedestal)world.getTileEntity(position.offset(facing))).setItem(stacks.get(facing.getHorizontalIndex()));	
 		world.setBlockToAir(position);
