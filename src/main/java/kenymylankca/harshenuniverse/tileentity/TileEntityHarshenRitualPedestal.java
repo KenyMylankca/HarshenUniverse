@@ -22,7 +22,7 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
-public class TileEntityHarshenDimensionalPedestal extends BaseTileEntityHarshenSingleItemInventoryActive
+public class TileEntityHarshenRitualPedestal extends BaseTileEntityHarshenSingleItemInventoryActive
 {
 	private LightningRitualRecipes workingRecipe;
 	private boolean isActiveNonController;
@@ -43,9 +43,9 @@ public class TileEntityHarshenDimensionalPedestal extends BaseTileEntityHarshenS
 			{
 				BlockPos pos = workingRecipe.getPositionOfRitual();
 				for(EnumFacing facing : EnumFacing.HORIZONTALS)
-					if(!((TileEntityHarshenDimensionalPedestal)world.getTileEntity(pos.offset(facing))).getItem().isEmpty())
+					if(!((TileEntityHarshenRitualPedestal)world.getTileEntity(pos.offset(facing))).getItem().isEmpty())
 						HarshenNetwork.sendToPlayersInWorld(world, new MessagePacketSpawnItemParticles(
-										((TileEntityHarshenDimensionalPedestal)world.getTileEntity(pos.offset(facing))).getItem(),
+										((TileEntityHarshenRitualPedestal)world.getTileEntity(pos.offset(facing))).getItem(),
 										new Vec3d(pos.offset(facing)).addVector(0.5, 0.85, 0.5),
 										HarshenUtils.speedToPos(new Vec3d(pos.offset(facing)).addVector(0.5, 0.85, 0.5),
 										new Vec3d(pos).addVector(0.5, 1, 0.5), 15D), 1f, false, 20, workingRecipe.getTag()));
@@ -69,7 +69,7 @@ public class TileEntityHarshenDimensionalPedestal extends BaseTileEntityHarshenS
 	{
 		isActive = false;
 		for(EnumFacing facing : EnumFacing.HORIZONTALS)
-			((TileEntityHarshenDimensionalPedestal)world.getTileEntity(workingRecipe.getPositionOfRitual().offset(facing))).deactivate();	
+			((TileEntityHarshenRitualPedestal)world.getTileEntity(workingRecipe.getPositionOfRitual().offset(facing))).deactivate();	
 		workingRecipe = null;
 	}
 	
@@ -112,7 +112,7 @@ public class TileEntityHarshenDimensionalPedestal extends BaseTileEntityHarshenS
 				ArrayList<Boolean> isBlockHolding = new ArrayList<Boolean>();
 				for(EnumFacing face : EnumFacing.HORIZONTALS)
 				{
-					boolean flag = world.getTileEntity(position.offset(face)) instanceof TileEntityHarshenDimensionalPedestal
+					boolean flag = world.getTileEntity(position.offset(face)) instanceof TileEntityHarshenRitualPedestal
 							&& world.getBlockState(position.offset(face).down()).getBlock() == Blocks.GOLD_BLOCK;
 					isBlock.add(flag);
 					if(flag)
@@ -122,7 +122,7 @@ public class TileEntityHarshenDimensionalPedestal extends BaseTileEntityHarshenS
 				{
 					for(EnumFacing face : EnumFacing.HORIZONTALS)
 					{
-						TileEntityHarshenDimensionalPedestal pedestal = (TileEntityHarshenDimensionalPedestal) world.getTileEntity(position.offset(face));
+						TileEntityHarshenRitualPedestal pedestal = (TileEntityHarshenRitualPedestal) world.getTileEntity(position.offset(face));
 						HarshenStack removeStack = null;
 						for(HarshenStack hStack : localItems)
 							if(hStack.containsItem(pedestal.getItem()))
@@ -153,7 +153,7 @@ public class TileEntityHarshenDimensionalPedestal extends BaseTileEntityHarshenS
 	private void activateLightningRitual(BlockPos pos, ArrayList<BlockPos> positions)
 	{
 		for(BlockPos position : positions)
-			((TileEntityHarshenDimensionalPedestal) world.getTileEntity(position)).activate();
+			((TileEntityHarshenRitualPedestal) world.getTileEntity(position)).activate();
 	}
 	@Override
 	protected int getTicksUntillDone() {

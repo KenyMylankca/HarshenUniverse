@@ -35,14 +35,14 @@ import kenymylankca.harshenuniverse.particle.ParticleItem;
 import kenymylankca.harshenuniverse.renderers.entity.RenderEntityThrown;
 import kenymylankca.harshenuniverse.renderers.sky.WeatherPontus;
 import kenymylankca.harshenuniverse.renderers.tileentity.RendererBloodFactory;
-import kenymylankca.harshenuniverse.renderers.tileentity.RendererDimensionalPedestal;
+import kenymylankca.harshenuniverse.renderers.tileentity.RendererHarshenRitualPedestal;
 import kenymylankca.harshenuniverse.renderers.tileentity.RendererHarshenDisplayBlock;
 import kenymylankca.harshenuniverse.renderers.tileentity.RendererHarshenSpawner;
 import kenymylankca.harshenuniverse.renderers.tileentity.RendererHereticCauldron;
 import kenymylankca.harshenuniverse.renderers.tileentity.RendererMagicTable;
 import kenymylankca.harshenuniverse.renderers.tileentity.RendererPedestalSlab;
 import kenymylankca.harshenuniverse.tileentity.TileEntityBloodFactory;
-import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenDimensionalPedestal;
+import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenRitualPedestal;
 import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenDisplayBlock;
 import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenMagicTable;
 import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenSpawner;
@@ -85,7 +85,7 @@ public class ClientProxy extends CommonProxy
 		
 		HarshenArmors.regRenders();
 		
-		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityHarshenDimensionalPedestal.class, new RendererDimensionalPedestal());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityHarshenRitualPedestal.class, new RendererHarshenRitualPedestal());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityHereticCauldron.class, new RendererHereticCauldron());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityHarshenDisplayBlock.class, new RendererHarshenDisplayBlock());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityHarshenSpawner.class, new RendererHarshenSpawner());

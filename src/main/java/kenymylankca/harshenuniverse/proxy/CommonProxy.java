@@ -49,7 +49,7 @@ import kenymylankca.harshenuniverse.structures.pontus.FauxCauldronStructure;
 import kenymylankca.harshenuniverse.tileentity.TileEntityBloodFactory;
 import kenymylankca.harshenuniverse.tileentity.TileEntityBloodVessel;
 import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenDimensionalGate;
-import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenDimensionalPedestal;
+import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenRitualPedestal;
 import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenDisplayBlock;
 import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenMagicTable;
 import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenSpawner;
@@ -137,7 +137,7 @@ public class CommonProxy
 		NetworkRegistry.INSTANCE.registerGuiHandler(HarshenUniverse.instance, new GuiHandler());
 
     	Class[] tileEntityClasses = {
-    			TileEntityHarshenDimensionalPedestal.class,
+    			TileEntityHarshenRitualPedestal.class,
     			TileEntityHereticCauldron.class,
     			TileEntityHereticCauldronTop.class,
     			TileEntityHarshenDisplayBlock.class,

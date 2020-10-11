@@ -10,7 +10,7 @@ import kenymylankca.harshenuniverse.base.HarshenStructure;
 import kenymylankca.harshenuniverse.dimensions.DimensionPontus;
 import kenymylankca.harshenuniverse.internal.HarshenAPIHandler;
 import kenymylankca.harshenuniverse.recipes.LightningRitualRecipes;
-import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenDimensionalPedestal;
+import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenRitualPedestal;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -38,7 +38,7 @@ public class PontusRitual extends HarshenStructure
 		for(EnumFacing facing : shuffledFacing)
 			if(world.getBlockState(position.offset(facing)).getBlock() == HarshenBlocks.HARSHEN_RITUAL_PEDESTAL
 			&& facing.getHorizontalIndex() < stacks.size() && random.nextBoolean())
-				((TileEntityHarshenDimensionalPedestal)world.getTileEntity(position.offset(facing))).setItem(stacks.get(facing.getHorizontalIndex()));	
+				((TileEntityHarshenRitualPedestal)world.getTileEntity(position.offset(facing))).setItem(stacks.get(facing.getHorizontalIndex()));	
 		world.setBlockToAir(position);
 	}
 }

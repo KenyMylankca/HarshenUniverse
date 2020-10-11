@@ -3,9 +3,9 @@ package kenymylankca.harshenuniverse.renderers.tileentity;
 import javax.vecmath.Vector3f;
 
 import kenymylankca.harshenuniverse.base.BaseItemRendererActive;
-import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenDimensionalPedestal;
+import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenRitualPedestal;
 
-public class RendererDimensionalPedestal extends BaseItemRendererActive<TileEntityHarshenDimensionalPedestal>
+public class RendererHarshenRitualPedestal extends BaseItemRendererActive<TileEntityHarshenRitualPedestal>
 {
 	@Override
 	protected Vector3f movePos() {

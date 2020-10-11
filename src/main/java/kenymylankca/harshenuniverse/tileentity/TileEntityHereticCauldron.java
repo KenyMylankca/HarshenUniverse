@@ -89,7 +89,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 				killRitual();
 			else if(overstandingTimer-- <= 100)
 			{
-				for(TileEntityHarshenDimensionalPedestal pedestal : pedestals)
+				for(TileEntityHarshenRitualPedestal pedestal : pedestals)
 				{
 					if(pedestal.getItem().getItem() == Items.AIR ||  new Random().nextInt(overstandingTimer / 2) == 0)
 					{
@@ -113,7 +113,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 				for(BlockPos pos : localBloodPos)
 					bloodPos.add(pos);
 				boolean flag = !localBloodPos.isEmpty();
-				for(TileEntityHarshenDimensionalPedestal pedestal : pedestals)
+				for(TileEntityHarshenRitualPedestal pedestal : pedestals)
 					if(!pedestal.getItem().isEmpty())
 						flag = true;
 				if(!flag)
@@ -306,7 +306,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
         return false;
 	}
 	
-	private ArrayList<TileEntityHarshenDimensionalPedestal> pedestals = new ArrayList<>();
+	private ArrayList<TileEntityHarshenRitualPedestal> pedestals = new ArrayList<>();
 	private ArrayList<BlockPos> bloodPos = new ArrayList<>();
 	private ArrayList<BlockPos> deletedBloodPos = new ArrayList<>();
 	private ArrayList<BlockPos> erroredPositions = new ArrayList<>();
@@ -358,7 +358,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 			if(world.getBlockState(pos.offset(facing, 3)).getBlock() != HarshenBlocks.HARSHEN_RITUAL_PEDESTAL)
 				setError(pos.offset(facing, 3), HarshenBlocks.HARSHEN_RITUAL_PEDESTAL);
 			else
-				pedestals.add((TileEntityHarshenDimensionalPedestal)world.getTileEntity(pos.offset(facing, 3)));
+				pedestals.add((TileEntityHarshenRitualPedestal)world.getTileEntity(pos.offset(facing, 3)));
 		}
 		ArrayList<Integer> pedestalDistanceList = new ArrayList<>(HarshenUtils.toArray(-2, 2));
 		for(int x : pedestalDistanceList)
@@ -366,16 +366,16 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 				if(world.getBlockState(pos.add(x, 0, z)).getBlock() != HarshenBlocks.HARSHEN_RITUAL_PEDESTAL)
 					setError(pos.add(x, 0, z), HarshenBlocks.HARSHEN_RITUAL_PEDESTAL);
 				else
-					pedestals.add((TileEntityHarshenDimensionalPedestal)world.getTileEntity(pos.add(x, 0, z)));
+					pedestals.add((TileEntityHarshenRitualPedestal)world.getTileEntity(pos.add(x, 0, z)));
 		
 		ArrayList<ItemStack> stacks = new ArrayList<>();
-		for(TileEntityHarshenDimensionalPedestal pedestal : pedestals)
+		for(TileEntityHarshenRitualPedestal pedestal : pedestals)
 			stacks.add(pedestal.getItem());
 		HereticRitualRecipes recipe = HereticRitualRecipes.getRecipe(getItem(), fluid, stacks);
 		if(erroredPositions.isEmpty() && recipe != null && setRecipe)
 		{	
 			deletedBloodPos = new ArrayList<>(bloodPos);
-			for(TileEntityHarshenDimensionalPedestal pedestal : pedestals)
+			for(TileEntityHarshenRitualPedestal pedestal : pedestals)
 			{
 				pedestalMap.put(pedestal.getPos(), pedestal.getItem());
 				pedestal.setActiveNonController();
@@ -418,7 +418,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 	
 	public void killRitual()
 	{
-		for(TileEntityHarshenDimensionalPedestal pedestal : pedestals)
+		for(TileEntityHarshenRitualPedestal pedestal : pedestals)
 			pedestal.deactiveateNonController();
 		overstandingRecipe = null;
 		workingFluid = CauldronLiquid.NONE;
