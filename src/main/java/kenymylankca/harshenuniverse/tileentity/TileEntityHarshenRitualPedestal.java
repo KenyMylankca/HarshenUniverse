@@ -65,14 +65,13 @@ public class TileEntityHarshenRitualPedestal extends BaseTileEntityHarshenSingle
 		return isActive ? super.getActiveTimer() : activeNonControllerTimer;
 	}
 	
-	private void deactivateAll() 
+	private void deactivateAll()
 	{
 		isActive = false;
 		for(EnumFacing facing : EnumFacing.HORIZONTALS)
 			((TileEntityHarshenRitualPedestal)world.getTileEntity(workingRecipe.getPositionOfRitual().offset(facing))).deactivate();	
 		workingRecipe = null;
 	}
-	
 
 	public void deactiveateNonController()
 	{
@@ -163,8 +162,11 @@ public class TileEntityHarshenRitualPedestal extends BaseTileEntityHarshenSingle
 	@Override
 	protected void finishedTicking() {
 		handler.setStackInSlot(0, new ItemStack(Blocks.AIR));
-		if(world.isRemote || workingRecipe == null)
+		if(world.isRemote)
+		{
+			workingRecipe = null;
 			return;
+		}
 		BlockPos pos = workingRecipe.getPositionOfRitual();
 		world.addWeatherEffect(new EntityLightningBolt(world, pos.getX(), pos.getY(), pos.getZ(), true));
 		InventoryHelper.spawnItemStack(world, pos.getX(), pos.getY(), pos.getZ(), workingRecipe.getOutput().copy());

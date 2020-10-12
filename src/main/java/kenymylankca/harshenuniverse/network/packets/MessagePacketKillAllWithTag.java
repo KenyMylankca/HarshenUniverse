@@ -5,12 +5,14 @@ import kenymylankca.harshenuniverse.base.BaseMessagePacket;
 import kenymylankca.harshenuniverse.particle.ParticleItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
-public class MessagePacketKillAllWithTag extends BaseMessagePacket<MessagePacketKillAllWithTag>{
-
-	public MessagePacketKillAllWithTag() {
-	}
-	
+public class MessagePacketKillAllWithTag extends BaseMessagePacket<MessagePacketKillAllWithTag>
+{
 	private String tag;
+	
+	public MessagePacketKillAllWithTag()
+	{
+		
+	}
 	
 	public MessagePacketKillAllWithTag(String tag)
 	{
@@ -31,6 +33,4 @@ public class MessagePacketKillAllWithTag extends BaseMessagePacket<MessagePacket
 	public void onReceived(MessagePacketKillAllWithTag message, EntityPlayer player) {
 		 ParticleItem.killAllParticlesWithTag(message.tag);
 	}
-
 }
-

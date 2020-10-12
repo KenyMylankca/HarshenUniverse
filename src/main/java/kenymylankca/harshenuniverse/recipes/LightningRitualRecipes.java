@@ -10,8 +10,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class LightningRitualRecipes {
-
+public class LightningRitualRecipes
+{
 	private static ArrayList<LightningRitualRecipes> allRecipes = new ArrayList<LightningRitualRecipes>();
 	private final List<HarshenStack> inputs;
 	private final ItemStack output;
@@ -49,7 +49,8 @@ public class LightningRitualRecipes {
 		return working;
 	}
 	
-	public List<HarshenStack> getInputs() {
+	public List<HarshenStack> getInputs()
+	{
 		return inputs;
 	}
 	
@@ -59,7 +60,8 @@ public class LightningRitualRecipes {
 		return this;
 	}
 	
-	public String getTag() {
+	public String getTag()
+	{
 		return tag;
 	}
 	
