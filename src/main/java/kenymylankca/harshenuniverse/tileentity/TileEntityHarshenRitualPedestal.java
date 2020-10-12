@@ -162,7 +162,7 @@ public class TileEntityHarshenRitualPedestal extends BaseTileEntityHarshenSingle
 	@Override
 	protected void finishedTicking() {
 		handler.setStackInSlot(0, new ItemStack(Blocks.AIR));
-		if(world.isRemote)
+		if(world.isRemote || workingRecipe == null)
 		{
 			workingRecipe = null;
 			return;
