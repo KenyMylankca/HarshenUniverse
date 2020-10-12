@@ -28,8 +28,8 @@ public class HarshenJaguarArmor extends ItemArmor
 	
 	@SideOnly(Side.CLIENT)
 	@Override
-	public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot armorSlot,
-			ModelBiped _default) {
+	public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot armorSlot, ModelBiped _default)
+	{
 		if (itemStack != null) {
 			if (itemStack.getItem() instanceof HarshenJaguarArmor)
 			{
@@ -41,6 +41,7 @@ public class HarshenJaguarArmor extends ItemArmor
 				armorModel.isChild = _default.isChild;
 				armorModel.rightArmPose = _default.rightArmPose;
 				armorModel.leftArmPose = _default.leftArmPose;
+				armorModel.bipedHead = _default.bipedHead;
 				return armorModel;
 			}
 		}

@@ -56,10 +56,9 @@ public abstract class BaseHarshenParticle extends Particle
         rY = rand.nextDouble() * 5d;
     }
     
-	public BaseHarshenParticle(World world, double xCoordIn, double yCoordIn, double zCoordIn, double motionXIn,
-			double motionYIn, double motionZIn, float par14, boolean disableMoving2) 
+	public BaseHarshenParticle(World world, double xCoordIn, double yCoordIn, double zCoordIn, double motionXIn, double motionYIn, double motionZIn, float par14, boolean disableMoving2) 
 	{
-			this(world, xCoordIn, yCoordIn, zCoordIn, motionXIn, motionYIn, motionZIn, par14, disableMoving2, null);
+		this(world, xCoordIn, yCoordIn, zCoordIn, motionXIn, motionYIn, motionZIn, par14, disableMoving2, null);
 	}
 	
 	private boolean isCauldronTop;

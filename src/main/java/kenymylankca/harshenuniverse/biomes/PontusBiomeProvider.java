@@ -15,7 +15,6 @@ import net.minecraft.world.biome.BiomeProvider;
 
 public class PontusBiomeProvider extends BiomeProvider
 {
-		
 	@Override
 	public Biome getBiome(BlockPos pos) {
 		return biomeFromPosition(pos);

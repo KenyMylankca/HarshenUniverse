@@ -65,10 +65,10 @@ public abstract class BaseFluidBlock extends BlockFluidClassic
 				if(entity instanceof EntityPlayer)
 					if(((EntityPlayer)entity).capabilities.isCreativeMode)
 						continue;
+				
 				for(PotionEffect effect : getPotions())
 					((EntityLivingBase)entity).addPotionEffect(effect);
 			}
-				
     }
     
     public boolean checkForMixing(World worldIn, BlockPos pos, IBlockState state)
@@ -103,7 +103,6 @@ public abstract class BaseFluidBlock extends BlockFluidClassic
                 return true;
             }
         }
-
         return false;
     }
     
@@ -119,4 +118,3 @@ public abstract class BaseFluidBlock extends BlockFluidClassic
         return BlockFaceShape.UNDEFINED;
     }
 }
-

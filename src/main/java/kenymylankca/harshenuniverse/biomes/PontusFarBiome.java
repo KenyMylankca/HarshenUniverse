@@ -12,8 +12,8 @@ import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.BiomeDictionary.Type;
 
-public class PontusFarBiome extends BasePontusResourceBiome {
-		
+public class PontusFarBiome extends BasePontusResourceBiome
+{
 	public PontusFarBiome() {
 		super("Pontus_Far");
 		
@@ -23,8 +23,7 @@ public class PontusFarBiome extends BasePontusResourceBiome {
 		this.spawnableCreatureList.clear();
 		this.spawnableCreatureList.add(new SpawnListEntry(EntitySoullessKnight.class, 12, 3, 7));
 
-		this.decorator.extraTreeChance = 0.7f;		
-		
+		this.decorator.extraTreeChance = 0.7f;
 	}
 	
 	@Override

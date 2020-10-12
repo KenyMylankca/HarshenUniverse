@@ -11,8 +11,8 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
-public class HarshenFluids {
-
+public class HarshenFluids
+{
 	private final static HashMap<Block, String> BLOCK_MAP = new HashMap<>();
 	
 	public final static Fluid HARSHEN_DIMENSIONAL_FLUID = registerFluid(new HarshenDimensionalFluid());

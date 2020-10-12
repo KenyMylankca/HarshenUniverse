@@ -10,7 +10,6 @@ public abstract class BaseEnabledConfig<T> extends BaseConfig
 {
 	public ArrayList<T> allComponants = new ArrayList<>();
 	private HashMap<T, Boolean> enabledMap = new HashMap<>();
-	
 
 	@Override
 	public String getName() {
@@ -18,7 +17,6 @@ public abstract class BaseEnabledConfig<T> extends BaseConfig
 	}
 	
 	private final String CATEGORY = getNameType() + " enables";
-
 	
 	public abstract String getNameType();
 	
@@ -50,5 +48,4 @@ public abstract class BaseEnabledConfig<T> extends BaseConfig
 			return true;
 		return enabledMap.get(componant);
 	}
-
 }

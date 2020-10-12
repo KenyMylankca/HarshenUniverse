@@ -22,5 +22,4 @@ public class BaseBlockMeta extends ItemBlock
 	public String getUnlocalizedName(ItemStack stack) {
 		return super.getUnlocalizedName(stack) + "." + ((IMetaItemBlock)this.block).getNames()[stack.getMetadata()];
 	}
-
 }

@@ -14,8 +14,8 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.BiomeDictionary.Type;
 
-public class PontusOuterBiome extends BasePontusResourceBiome {
-		
+public class PontusOuterBiome extends BasePontusResourceBiome
+{
 	public PontusOuterBiome() {
 		super("Pontus_Chaotic");
 		
@@ -25,8 +25,7 @@ public class PontusOuterBiome extends BasePontusResourceBiome {
 		this.spawnableCreatureList.clear();
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityEndermite.class, 100, 5, 17));
 
-		this.decorator.extraTreeChance = 0.5f;		
-		
+		this.decorator.extraTreeChance = 0.5f;
 	}
 	
 	@Override

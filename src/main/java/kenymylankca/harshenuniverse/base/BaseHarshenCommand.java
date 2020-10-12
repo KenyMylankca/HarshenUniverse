@@ -56,7 +56,6 @@ public abstract class BaseHarshenCommand extends CommandBase
                 }
             }
         }
-
         return list;
     }
 }

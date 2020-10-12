@@ -28,7 +28,8 @@ public class HarshenStructure implements ICommandStructure
 	protected final boolean displaceDownwards;
 	protected final int dimension;
 	
-	public HarshenStructure(String parentFolder, String name, float chance, boolean useRuin, int dimension, boolean displaceDownwards) {
+	public HarshenStructure(String parentFolder, String name, float chance, boolean useRuin, int dimension, boolean displaceDownwards)
+	{
 		this.dimension = dimension;
 		this.useRuin = useRuin;
 		this.chance = chance;

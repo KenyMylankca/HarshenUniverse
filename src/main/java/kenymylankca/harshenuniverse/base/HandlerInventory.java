@@ -9,7 +9,6 @@ import net.minecraftforge.items.ItemStackHandler;
 
 public class HandlerInventory implements IInventory
 {
-
 	protected final ItemStackHandler handler;
 	private TileEntity te;
 	
@@ -122,5 +121,4 @@ public class HandlerInventory implements IInventory
 		this.te = te;
 		return this;
 	}
-
 }

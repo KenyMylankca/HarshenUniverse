@@ -8,7 +8,6 @@ package kenymylankca.harshenuniverse.api;
  */
 public interface IHarshenPlugin 
 {
-	
 	/**
 	 * Where all of the registering is done. HarshenUniverse will only call this while registering things.
 	 * @param registry The Registry Used to register things.

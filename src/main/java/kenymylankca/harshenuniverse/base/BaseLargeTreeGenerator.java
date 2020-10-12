@@ -374,18 +374,18 @@ public class BaseLargeTreeGenerator extends WorldGenAbstractTree
     }
 
     static class FoliageCoordinates extends BlockPos
+    {
+        private final int branchBase;
+
+        public FoliageCoordinates(BlockPos pos, int p_i45635_2_)
         {
-            private final int branchBase;
-
-            public FoliageCoordinates(BlockPos pos, int p_i45635_2_)
-            {
-                super(pos.getX(), pos.getY(), pos.getZ());
-                this.branchBase = p_i45635_2_;
-            }
-
-            public int getBranchBase()
-            {
-                return this.branchBase;
-            }
+            super(pos.getX(), pos.getY(), pos.getZ());
+            this.branchBase = p_i45635_2_;
         }
+
+        public int getBranchBase()
+        {
+            return this.branchBase;
+        }
+    }
 }
