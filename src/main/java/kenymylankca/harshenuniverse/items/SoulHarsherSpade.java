@@ -21,7 +21,6 @@ public class SoulHarsherSpade extends ItemSpade
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add("\u00A73" + new TextComponentTranslation("spade1").getFormattedText());
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 

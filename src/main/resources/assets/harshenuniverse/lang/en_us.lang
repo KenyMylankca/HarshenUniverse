@@ -96,7 +96,7 @@ item.reflector_pendant.name=Reflector Pendant
 item.broken_arrow.name=Broken Arrow
 item.akzenia_soup.name=§5Akzenia Soup§r
 item.dark_ewydoen.name=§bDark Ewydoen§r
-item.harshen_night_blade.name=Harshen Night Blade
+item.harshen_night_blade.name=§4Harshen Night Blade§r
 
 #keybindings
 key.telering.description=Telering Teleport Key
@@ -300,7 +300,6 @@ reach_pendant1=Reach more with anything!
 reach_pendant2=(+2 blocks distance, approximately)
 gillette1=Bleed yourself! (to obtain blood)
 cursedbone1=Right click to spawn a skeleton
-spade1=Can be found in Jacob's Graveyard
 reflector_pendant1=It will reflect half of the
 reflector_pendant2=damage you took to the enemy
 bloodytorch1=It will prevent mobs attacking to players in the area it lights up or if
@@ -366,7 +365,7 @@ jei.glass_container_4.info=You can obtain it by right clicking on the related fl
 jei.soul_shield.info=Repairable with Harshen Soul Fragment on anvil.
 jei.harshen_jaguar_armor.info=The full set gives night vision and speed. Also, it will protect you from soul harshing curses.
 jei.jewel_dirt_0.info=Found under water lakes.
-jei.soul_harsher_spade.info=This spade can break all DIRT types of Harshen Universe.
+jei.soul_harsher_spade.info=It can be found in Jacob's Graveyard. This spade can break all DIRT types of Harshen Universe.
 jei.blood_placer.info=Can be easily activated by redstone. And can be filled by placing a blood filled Blood Vessel on it.
 jei.akzenia_mushroom.info=Spawns on overworld. It can be farmed such like vanilla mushrooms.
 jei.dark_ewydoen.info=This axe can break all wood type blocks of Harshen Universe. It can also turn a water block into an ice block, or a lava block into an obsidian block by right clicking.

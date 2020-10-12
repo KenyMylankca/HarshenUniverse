@@ -61,14 +61,14 @@ public class DarkEwydoen extends ItemAxe
 			if(worldIn.getBlockState(blockpos).getBlock() == Blocks.WATER)
 			{
 				worldIn.setBlockState(blockpos, Blocks.ICE.getDefaultState());
-				player.getHeldItem(hand).damageItem(25, player);
+				player.getHeldItem(hand).damageItem(21, player);
 				worldIn.playSound(player, blockpos, HarshenSounds.FREEZING, SoundCategory.BLOCKS, 1f, 1.2f);
 				player.resetCooldown();
 			}
 			if(worldIn.getBlockState(blockpos).getBlock() == Blocks.LAVA)
 			{
 				worldIn.setBlockState(blockpos, Blocks.OBSIDIAN.getDefaultState());
-				player.getHeldItem(hand).damageItem(25, player);
+				player.getHeldItem(hand).damageItem(22, player);
 				worldIn.playSound(player, blockpos, SoundEvents.BLOCK_LAVA_EXTINGUISH, SoundCategory.BLOCKS, 1f, 1.2f);
 			}
 		}
