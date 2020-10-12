@@ -39,9 +39,9 @@ public class HarshenWorldGen implements IWorldGenerator
 		int dim = world.provider.getDimension();
 		if(dim == 0)
 		{
-			if(chunkX == 22 && chunkZ == 22)
+			if(chunkX == 23 && chunkZ == 25)
 				HarshenStructures.CASTLE.generateStucture(world, random, chunkX, chunkZ);
-			if(chunkX == 11 && chunkZ == -5)
+			if(chunkX == 17 && chunkZ == -15)
 				HarshenStructures.GRAVEYARD.generateStucture(world, random, chunkX, chunkZ);
 			runGenerator(this.harshenSoulOreOverworld, world, random, chunkX, chunkZ, 6, 0, 20);
 			plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.1f, 60, 130, false);
