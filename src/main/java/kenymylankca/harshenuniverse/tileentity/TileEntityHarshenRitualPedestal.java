@@ -11,6 +11,7 @@ import kenymylankca.harshenuniverse.network.HarshenNetwork;
 import kenymylankca.harshenuniverse.network.packets.MessagePacketKillAllWithTag;
 import kenymylankca.harshenuniverse.network.packets.MessagePacketSpawnItemParticles;
 import kenymylankca.harshenuniverse.recipes.LightningRitualRecipes;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.InventoryHelper;
@@ -29,7 +30,8 @@ public class TileEntityHarshenRitualPedestal extends BaseTileEntityHarshenSingle
 	private int activeNonControllerTimer = 0;
 	
 	@Override
-	public void tick() {
+	public void tick()
+	{
 		boolean flag = handler.getStackInSlot(0).getItem() == Item.getItemFromBlock(Blocks.AIR);
 		if(flag)
 			timer = 0;
@@ -58,6 +60,8 @@ public class TileEntityHarshenRitualPedestal extends BaseTileEntityHarshenSingle
 				deactivateAll();
 		if(isActiveNonController)
 			activeNonControllerTimer++;
+		if(!isActive && workingRecipe == null)
+			Minecraft.getMinecraft().getSoundHandler().stop(HarshenSounds.LIGHTNING_RITUAL.getSoundName().toString(), SoundCategory.BLOCKS);
 	}
 	
 	@Override
