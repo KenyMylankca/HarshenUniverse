@@ -6,6 +6,7 @@ import kenymylankca.harshenuniverse.HarshenLootTables;
 import kenymylankca.harshenuniverse.HarshenUtils;
 import kenymylankca.harshenuniverse.entity.EntityBloodySheep;
 import kenymylankca.harshenuniverse.entity.EntityHarshenSoul;
+import kenymylankca.harshenuniverse.entity.EntityJacob;
 import kenymylankca.harshenuniverse.entity.EntityKazzendre;
 import kenymylankca.harshenuniverse.entity.EntitySoulPart;
 import kenymylankca.harshenuniverse.entity.EntitySoullessKnight;
@@ -65,6 +66,11 @@ public class HandlerHarshenDrops
 			List<ItemStack> stackList = HarshenUtils.getItemsFromLootTable(event.getEntity().world, HarshenLootTables.bloodySheepDrop);
 			if(!((EntityBloodySheep)event.getEntity()).getSheared())
 				event.getDrops().add(new EntityItem(event.getEntity().world, vec.x, vec.y, vec.z, stackList.get(0)));
+		}
+		if(event.getEntity() instanceof EntityJacob)
+		{
+			List<ItemStack> stackList = HarshenUtils.getItemsFromLootTable(event.getEntity().world, HarshenLootTables.jacobDrop);
+			event.getDrops().add(new EntityItem(event.getEntity().world, vec.x, vec.y, vec.z, stackList.get(0)));
 		}
 	}
 }

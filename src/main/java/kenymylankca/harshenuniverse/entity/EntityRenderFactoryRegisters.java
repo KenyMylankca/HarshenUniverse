@@ -3,6 +3,7 @@ package kenymylankca.harshenuniverse.entity;
 import kenymylankca.harshenuniverse.renderers.entity.RenderBloodySheep;
 import kenymylankca.harshenuniverse.renderers.entity.RenderEntityThrown;
 import kenymylankca.harshenuniverse.renderers.entity.RenderHarshenSoul;
+import kenymylankca.harshenuniverse.renderers.entity.RenderJacob;
 import kenymylankca.harshenuniverse.renderers.entity.RenderKazzendre;
 import kenymylankca.harshenuniverse.renderers.entity.RenderSoulPart;
 import kenymylankca.harshenuniverse.renderers.entity.RenderSoulShooter;
@@ -58,6 +59,14 @@ public class EntityRenderFactoryRegisters
     	@Override
         public Render<? super EntityKazzendre> createRenderFor(RenderManager manager) {
           return new RenderKazzendre(manager);
+        }
+    }
+    
+    public static class FactoryJacob implements IRenderFactory<EntityJacob> 
+    {
+    	@Override
+        public Render<? super EntityJacob> createRenderFor(RenderManager manager) {
+          return new RenderJacob(manager);
         }
     }
     

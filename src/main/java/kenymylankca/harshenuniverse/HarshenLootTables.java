@@ -16,6 +16,7 @@ public class HarshenLootTables
 	public final static ResourceLocation soullessKnightDrops = reg("entities/soulless_knight");
 	public final static ResourceLocation kazzendreDrop = reg("entities/kazzendre");
 	public final static ResourceLocation bloodySheepDrop = reg("entities/bloody_sheep");
+	public final static ResourceLocation jacobDrop = reg("entities/jacob");
 	
 	public static ResourceLocation reg(String name)
 	{

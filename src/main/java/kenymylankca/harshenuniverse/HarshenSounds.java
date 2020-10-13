@@ -36,6 +36,9 @@ public class HarshenSounds {
 	public final static SoundEvent EWYDOEN_HIT = reg("ewydoen_hit");
 	public final static SoundEvent NIGHT_BLADE_STAB = reg("night_blade_stab");
 	public final static SoundEvent PONTUS_SCARY = reg("pontus_scary");
+	public final static SoundEvent JACOB_AMBIENT = reg("jacob_ambient");
+	public final static SoundEvent JACOB_DRAINING = reg("jacob_draining");
+	public final static SoundEvent JACOB_DEATH = reg("jacob_death");
 	
 	public static void register()
 	{
@@ -65,6 +68,9 @@ public class HarshenSounds {
 		loadSound(EWYDOEN_HIT);
 		loadSound(NIGHT_BLADE_STAB);
 		loadSound(PONTUS_SCARY);
+		loadSound(JACOB_AMBIENT);
+		loadSound(JACOB_DRAINING);
+		loadSound(JACOB_DEATH);
 	}
 	
 	private static void loadSound(SoundEvent event)

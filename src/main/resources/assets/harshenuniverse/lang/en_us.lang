@@ -117,13 +117,15 @@ entity.soul_shooter.name=Soul Shooter
 entity.kazzendre.name=Kazzendre
 entity.bloody_sheep.name=Bloody Sheep
 entity.thrown.name=Harshen Custom Entity
+entity.jacob.name=Jacob
 
 #damage sources
-death.attack.entitySoulPart=%1$s's soul was taken away
-death.attack.harshed=%1$s has been Harshed
-death.attack.bleeding=%1$s is died from blood loss
-death.attack.reflected=%1$ has been killed by his reflected damage
-death.attack.soul_ripper_bow=Killed by Soul Shoot
+death.attack.entitySoulPart=%1$s's soul was taken away.
+death.attack.harshed=%1$s has been Harshed.
+death.attack.bleeding=%1$s is died from blood loss.
+death.attack.reflected=%1$ has been killed by his reflected damage.
+death.attack.soul_ripper_bow=Killed by a Soul Shoot.
+death.attack.drained=%1$'s soul is drained by Jacob.
 
 #config
 config.isEnabled=Should %s be enabled

@@ -6,6 +6,7 @@ import kenymylankca.harshenuniverse.biomes.BiomesForHarshenMobsOverworld;
 import kenymylankca.harshenuniverse.config.IdConfig;
 import kenymylankca.harshenuniverse.entity.EntityBloodySheep;
 import kenymylankca.harshenuniverse.entity.EntityHarshenSoul;
+import kenymylankca.harshenuniverse.entity.EntityJacob;
 import kenymylankca.harshenuniverse.entity.EntityKazzendre;
 import kenymylankca.harshenuniverse.entity.EntitySoulPart;
 import kenymylankca.harshenuniverse.entity.EntitySoulShooter;
@@ -29,6 +30,7 @@ public class HarshenEntities
 		registerEntity(EntitySoulShooter.class, IdConfig.EntitySoulShooter, "soul_shooter", 295051, 0xAA00AA);
 		registerEntity(EntityKazzendre.class, IdConfig.Kazzendre, "kazzendre", 0xAA0000, 0xFFFFFF);
 		registerEntity(EntityBloodySheep.class, IdConfig.BloodySheep, "bloody_sheep", 0xFFFFFF, 0xAA0000);
+		registerEntity(EntityJacob.class, IdConfig.Jacob, "jacob", 0x0e6363, 0x63194b);
 		
 		registerEntity(EntityThrown.class, IdConfig.EntityThrown, "entity_thrown");
 		

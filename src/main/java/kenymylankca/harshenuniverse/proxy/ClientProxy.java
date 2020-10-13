@@ -8,6 +8,7 @@ import kenymylankca.harshenuniverse.armor.HarshenArmors;
 import kenymylankca.harshenuniverse.dimensions.pontus.PontusWorldProvider;
 import kenymylankca.harshenuniverse.entity.EntityBloodySheep;
 import kenymylankca.harshenuniverse.entity.EntityHarshenSoul;
+import kenymylankca.harshenuniverse.entity.EntityJacob;
 import kenymylankca.harshenuniverse.entity.EntityKazzendre;
 import kenymylankca.harshenuniverse.entity.EntityRenderFactoryRegisters;
 import kenymylankca.harshenuniverse.entity.EntitySoulPart;
@@ -35,16 +36,16 @@ import kenymylankca.harshenuniverse.particle.ParticleItem;
 import kenymylankca.harshenuniverse.renderers.entity.RenderEntityThrown;
 import kenymylankca.harshenuniverse.renderers.sky.WeatherPontus;
 import kenymylankca.harshenuniverse.renderers.tileentity.RendererBloodFactory;
-import kenymylankca.harshenuniverse.renderers.tileentity.RendererHarshenRitualPedestal;
 import kenymylankca.harshenuniverse.renderers.tileentity.RendererHarshenDisplayBlock;
+import kenymylankca.harshenuniverse.renderers.tileentity.RendererHarshenRitualPedestal;
 import kenymylankca.harshenuniverse.renderers.tileentity.RendererHarshenSpawner;
 import kenymylankca.harshenuniverse.renderers.tileentity.RendererHereticCauldron;
 import kenymylankca.harshenuniverse.renderers.tileentity.RendererMagicTable;
 import kenymylankca.harshenuniverse.renderers.tileentity.RendererPedestalSlab;
 import kenymylankca.harshenuniverse.tileentity.TileEntityBloodFactory;
-import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenRitualPedestal;
 import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenDisplayBlock;
 import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenMagicTable;
+import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenRitualPedestal;
 import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenSpawner;
 import kenymylankca.harshenuniverse.tileentity.TileEntityHereticCauldron;
 import kenymylankca.harshenuniverse.tileentity.TileEntityPedestalSlab;
@@ -100,6 +101,7 @@ public class ClientProxy extends CommonProxy
 		RenderingRegistry.registerEntityRenderingHandler(EntitySoulShooter.class, new EntityRenderFactoryRegisters.FactorySoulShooter());
 		RenderingRegistry.registerEntityRenderingHandler(EntityKazzendre.class, new EntityRenderFactoryRegisters.FactoryKazzendre());
 		RenderingRegistry.registerEntityRenderingHandler(EntityBloodySheep.class, new EntityRenderFactoryRegisters.FactoryBloodySheep());
+		RenderingRegistry.registerEntityRenderingHandler(EntityJacob.class, new EntityRenderFactoryRegisters.FactoryJacob());
 	}
 	
 	 @Override
