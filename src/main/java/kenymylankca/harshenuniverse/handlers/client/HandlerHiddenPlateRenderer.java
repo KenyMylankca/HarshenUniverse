@@ -11,10 +11,12 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
+@SideOnly(Side.CLIENT)
 public class HandlerHiddenPlateRenderer 
 {
-	
 	private static ArrayList<BlockPos> platePositions = new ArrayList<BlockPos>();
 	
 	@SubscribeEvent
