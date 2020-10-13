@@ -22,10 +22,17 @@ import net.minecraft.world.World;
 
 public class BloodCollector extends BaseItemMetaData
 {
-	public static int capacity = 10;
-	public BloodCollector() {
+	private static int capacity = 10;
+	
+	public BloodCollector()
+	{
 		setRegistryName("blood_collector");
 		setUnlocalizedName("blood_collector");
+	}
+	
+	public static int getCapacity()
+	{
+		return capacity;
 	}
 	
 	public int getBloodLevel(EntityPlayer player, EnumHand hand)

@@ -174,7 +174,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
         }
         if(offhanditem instanceof BloodCollector && (fluid == GlassContainerValues.BLOOD.getType()) && !(mainhanditem instanceof BloodCollector))
         {
-        	if(level > 0 && ((BloodCollector) offhanditem).getBloodLevel(playerIn, EnumHand.OFF_HAND) < BloodCollector.capacity)
+        	if(level > 0 && ((BloodCollector) offhanditem).getBloodLevel(playerIn, EnumHand.OFF_HAND) < BloodCollector.getCapacity())
         	{
         		this.world.playSound((EntityPlayer)null, pos, HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 1.0F, 1.0F);
         		((BloodCollector) offhanditem).fill(playerIn, EnumHand.OFF_HAND, 1);
