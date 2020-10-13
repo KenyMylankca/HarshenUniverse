@@ -273,7 +273,7 @@ public class HandlerServerNeedingHarshenEffects
 	@SubscribeEvent
 	public void onPlayerTick(PlayerTickEvent event)
 	{
-		if(event.player.getHeldItemMainhand().getItem() instanceof HarshenNightBlade || event.player.getHeldItemOffhand().getItem() instanceof HarshenNightBlade && !event.player.getEntityWorld().isRemote)
+		if(event.player.getHeldItemMainhand().getItem() instanceof HarshenNightBlade || event.player.getHeldItemOffhand().getItem() instanceof HarshenNightBlade)
 		{
 			EnumHand hand;
 			if(event.player.getHeldItemMainhand().getItem() instanceof HarshenNightBlade)
@@ -281,7 +281,8 @@ public class HandlerServerNeedingHarshenEffects
 			else
 				hand=EnumHand.OFF_HAND;
 			ICooldownHandler cap = event.player.getHeldItem(hand).getCapability(CooldownHandler.COOLDOWN, EnumFacing.DOWN);
-			if(event.player.getEntityWorld().isDaytime() || event.player.world.isRaining())
+			
+			if(event.player.world.getWorldTime() % 24000 > 12000 || event.player.world.isRaining())
 			{
 				cap.addProgress();
 				if(cap.isReady())
