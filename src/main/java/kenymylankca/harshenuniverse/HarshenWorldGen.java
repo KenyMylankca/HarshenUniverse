@@ -33,6 +33,9 @@ public class HarshenWorldGen implements IWorldGenerator
     private final WorldGenerator pontusEmeraldOre = new PontusWorldGeneratorPontusEmeraldOre();
     private final WorldGenerator pontusJewelDirt = new JewelDirtGenPontus();
     
+    public static BlockPos castlePos = null;
+    public static BlockPos graveyardPos = null;
+    
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
 	{
@@ -40,9 +43,11 @@ public class HarshenWorldGen implements IWorldGenerator
 		if(dim == 0)
 		{
 			if(chunkX == 23 && chunkZ == 25)
-				HarshenStructures.CASTLE.generateStucture(world, random, chunkX, chunkZ);
+				castlePos = HarshenStructures.CASTLE.generateStucture(world, random, chunkX, chunkZ);
+				
 			if(chunkX == 17 && chunkZ == -15)
-				HarshenStructures.GRAVEYARD.generateStucture(world, random, chunkX, chunkZ);
+				graveyardPos = HarshenStructures.GRAVEYARD.generateStucture(world, random, chunkX, chunkZ);
+			
 			runGenerator(this.harshenSoulOreOverworld, world, random, chunkX, chunkZ, 6, 0, 20);
 			plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.1f, 60, 130, false);
 			plantGenerator(HarshenBlocks.PLANT_OF_GLEAM, world, random, chunkX, chunkZ, 0.1f, 111, 255, true);
@@ -64,7 +69,7 @@ public class HarshenWorldGen implements IWorldGenerator
 	{
 		Collections.shuffle(structures);
 		for(HarshenStructure struc : structures)
-			if(struc.canLoadAt(world.provider.getDimension(), chunkX, chunkZ) && struc.generateStucture(world, random, chunkX, chunkZ))
+			if(struc.canLoadAt(world.provider.getDimension(), chunkX, chunkZ) && struc.generateStucture(world, random, chunkX, chunkZ) != null)
 				break;
 	}
 	

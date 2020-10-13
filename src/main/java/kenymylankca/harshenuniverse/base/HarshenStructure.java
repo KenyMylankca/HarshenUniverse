@@ -100,7 +100,7 @@ public class HarshenStructure implements ICommandStructure
 		postAddition(world, pos, random);
 	}
 	
-	public boolean generateStucture(World world, Random random, int chunkX, int chunkZ)
+	public BlockPos generateStucture(World world, Random random, int chunkX, int chunkZ)
 	{
 		if(random.nextFloat() < chance)
 		{
@@ -110,16 +110,16 @@ public class HarshenStructure implements ICommandStructure
 	        if(pos.getY() < 0)
 	        	pos = new BlockPos(pos.getX(), 5, pos.getZ());
 	        if(world.getBlockState(pos).getBlock() instanceof BlockLiquid && !canSpawnOnWater())
-	        	return false;
+	        	return null;
 	        loadIntoWorld(world, pos, random, useRuin);
 	        for(int x1 = 0; x1 < size.getX(); x1++) 
 	        	for(int z1 = 0; z1 < size.getZ(); z1++)
 		        	if(world.getBlockState(pos.add(x1, -1, z1)).getBlock().isReplaceable(world, pos.add(x1, -1, z1)) && !world.isAirBlock(pos.add(x1, 0, z1)))
 		        		for(int y1 = 1; world.getBlockState(pos.add(x1, -y1, z1)).getBlock().isReplaceable(world, pos.add(x1, -y1, z1)) && pos.getY() - y1 > -1; y1++)
 		        			world.setBlockState(pos.add(x1, -y1, z1), world.getBlockState(pos.add(x1, 0, z1)));
-	        return true;
+	        return pos.add(size.getX()/2, size.getY()/2, size.getZ()/2);
 		}
-		return false;
+		return null;
 	}
 	
 	public boolean canSpawnOnWater() {
