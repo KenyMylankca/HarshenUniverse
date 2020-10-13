@@ -26,6 +26,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
@@ -272,17 +273,20 @@ public class HandlerServerNeedingHarshenEffects
 	@SubscribeEvent
 	public void onPlayerTick(PlayerTickEvent event)
 	{
-		if(event.player.getHeldItemMainhand().getItem() instanceof HarshenNightBlade)
+		if(event.player.getHeldItemMainhand().getItem() instanceof HarshenNightBlade || event.player.getHeldItemOffhand().getItem() instanceof HarshenNightBlade && !event.player.getEntityWorld().isRemote)
 		{
-			ICooldownHandler cap = event.player.getHeldItemMainhand().getCapability(CooldownHandler.COOLDOWN, EnumFacing.DOWN);
-			if(event.player.world.getWorldTime() % 24000 > 12000 || event.player.world.isRaining())
+			EnumHand hand;
+			if(event.player.getHeldItemMainhand().getItem() instanceof HarshenNightBlade)
+				hand=EnumHand.MAIN_HAND;
+			else
+				hand=EnumHand.OFF_HAND;
+			ICooldownHandler cap = event.player.getHeldItem(hand).getCapability(CooldownHandler.COOLDOWN, EnumFacing.DOWN);
+			if(event.player.getEntityWorld().isDaytime() || event.player.world.isRaining())
+			{
 				cap.addProgress();
-		}
-		if(event.player.getHeldItemOffhand().getItem() instanceof HarshenNightBlade)
-		{
-			ICooldownHandler cap = event.player.getHeldItemOffhand().getCapability(CooldownHandler.COOLDOWN, EnumFacing.DOWN);
-			if(event.player.world.getWorldTime() % 24000 > 12000 || event.player.world.isRaining())
-				cap.addProgress();
+				if(cap.isReady())
+					event.player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 40, 0));
+			}
 		}
 	}
 }

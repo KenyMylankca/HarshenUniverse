@@ -90,7 +90,6 @@ public class HarshenNightBlade extends ItemSword
 				entity.attackEntityFrom(DamageSource.causePlayerDamage(player), 19.4f);
 			
 			player.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 90));
-			player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 100));
 		}
 		return super.onLeftClickEntity(stack, player, entity);
 	}
