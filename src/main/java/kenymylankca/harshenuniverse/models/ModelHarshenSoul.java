@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import kenymylankca.harshenuniverse.base.BaseHarshenBiped;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
+@SideOnly(Side.CLIENT)
 public class ModelHarshenSoul extends BaseHarshenBiped
 {
 	public ArrayList<ModelRenderer> headParts = new ArrayList<>();
