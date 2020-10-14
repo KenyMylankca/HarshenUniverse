@@ -31,6 +31,7 @@ import kenymylankca.harshenuniverse.blocks.HarshenDimensionalStone;
 import kenymylankca.harshenuniverse.blocks.HarshenDimensionalTimerPlate;
 import kenymylankca.harshenuniverse.blocks.HarshenDimensionalTimerPlateActive;
 import kenymylankca.harshenuniverse.blocks.HarshenDimensionalWoodCrate;
+import kenymylankca.harshenuniverse.blocks.HarshenDimensionalWoodStairs;
 import kenymylankca.harshenuniverse.blocks.HarshenDisplayBlock;
 import kenymylankca.harshenuniverse.blocks.HarshenMagicTable;
 import kenymylankca.harshenuniverse.blocks.HarshenRitualPedestal;
@@ -123,6 +124,7 @@ public class HarshenBlocks
 	public static final Block BLOODY_BED_HEAD = new BloodyBedHead();
 	public static final Block AKZENIA_MUSHROOM = new AkzeniaMushroom();
 	public static final Block NOCTURNE_BLOOM = new NocturneBloom();
+	public static final Block HARSHEN_DIMENSIONAL_WOOD_STAIRS = new HarshenDimensionalWoodStairs();
 	
 	public static final BlockCrops CROP_OF_GLEAM = new CropOfGleam();
 	
@@ -181,6 +183,7 @@ public class HarshenBlocks
 		regBlock(BLOODY_BED, 1);
 		regBlock(AKZENIA_MUSHROOM, 64);
 		regBlock(NOCTURNE_BLOOM, 64);
+		regBlock(HARSHEN_DIMENSIONAL_WOOD_STAIRS, 64);
 		
 		regSingleBlock(HERETIC_CAULDRON_TOP);
 		regSingleBlock(CROP_OF_GLEAM);

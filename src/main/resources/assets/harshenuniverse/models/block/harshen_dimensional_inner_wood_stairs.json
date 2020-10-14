@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "harshenuniverse:blocks/harshen_dimensional_wood_crate",
+        "top": "harshenuniverse:blocks/harshen_dimensional_wood_crate",
+        "side": "harshenuniverse:blocks/harshen_dimensional_wood_crate"
+    }
+}
