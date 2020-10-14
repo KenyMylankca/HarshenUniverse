@@ -9,8 +9,8 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public interface IHudDisplay {
-	
+public interface IHudDisplay
+{
 	@SideOnly(Side.CLIENT)
 	default void displayHud(Minecraft minecraft, EntityPlayer player, RayTraceResult posHit,
 			ScaledResolution resolution)
@@ -19,5 +19,4 @@ public interface IHudDisplay {
 	}
 	
 	String getText();
-	
 }
