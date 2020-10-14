@@ -3,8 +3,6 @@ package kenymylankca.harshenuniverse.handlers;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.UUID;
 
 import kenymylankca.harshenuniverse.HarshenUtils;
 import kenymylankca.harshenuniverse.api.BlockItem;
@@ -17,6 +15,7 @@ import net.minecraft.client.entity.EntityOtherPlayerMP;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextComponentTranslation;
@@ -26,7 +25,6 @@ import net.minecraftforge.event.entity.player.PlayerPickupXpEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerRespawnEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -61,27 +59,14 @@ public class HandlerHarshenInventory
 		prevInv.addAll(handler.getStacks());
 	}
 	
-	private static HashMap<UUID, HarshenItemStackHandler> stackMap = new HashMap<>();
-	
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public void onPlayerDeath(LivingDeathEvent event)
 	{
 		if(event.getEntityLiving() instanceof EntityPlayer)
 		{
 			HarshenItemStackHandler handler = HarshenUtils.getHandler(event.getEntity().getEntityData());
-			stackMap.put(event.getEntity().getUniqueID(), handler);
-		}
-	}
-	
-	@SubscribeEvent(priority = EventPriority.HIGHEST)
-	public void onPlayerRespawn(PlayerRespawnEvent event)
-	{
-		if(stackMap.containsKey(event.player.getUniqueID()))
-		{
-			event.player.getEntityData().setTag("harshenInventory", stackMap.get(event.player.getUniqueID()).serializeNBT());
-			for(int i = 0; i < stackMap.get(event.player.getUniqueID()).getSlots(); i++)
-				if(stackMap.get(event.player.getUniqueID()).getStackInSlot(i).getItem() instanceof IHarshenProvider)
-					((IHarshenProvider)stackMap.get(event.player.getUniqueID()).getStackInSlot(i).getItem()).onAdd(event.player, i);
+			for(int i = 0; i<handler.getStacks().size(); i++)
+				InventoryHelper.spawnItemStack(event.getEntityLiving().getEntityWorld(), event.getEntityLiving().lastTickPosX, event.getEntityLiving().lastTickPosY, event.getEntityLiving().lastTickPosZ, handler.getStackInSlot(i));
 		}
 	}
 	
