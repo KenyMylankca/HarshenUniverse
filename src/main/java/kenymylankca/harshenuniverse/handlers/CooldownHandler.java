@@ -36,8 +36,8 @@ public class CooldownHandler
     	}
     }
     
-    public static ICooldownHandler getHandler(Entity entity) {
-
+    public static ICooldownHandler getHandler(Entity entity)
+    {
         if (entity.hasCapability(COOLDOWN, EnumFacing.DOWN))
             return entity.getCapability(COOLDOWN, EnumFacing.DOWN);
         
@@ -100,8 +100,8 @@ public class CooldownHandler
 		}
     }
     
-    public static class Storage implements Capability.IStorage<ICooldownHandler> {
-
+    public static class Storage implements Capability.IStorage<ICooldownHandler>
+    {
         @Override
         public NBTBase writeNBT (Capability<ICooldownHandler> capability, ICooldownHandler instance, EnumFacing side)
         {

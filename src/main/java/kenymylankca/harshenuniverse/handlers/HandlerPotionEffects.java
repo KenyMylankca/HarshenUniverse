@@ -21,8 +21,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class HandlerPotionEffects {
-	
+public class HandlerPotionEffects
+{
 	private ArrayList<EntityLivingBase> arrayLivingWithHarshedEffect = new ArrayList<EntityLivingBase>();
 	private ArrayList<EntityLivingBase> arrayLivingWithBleedingEffect = new ArrayList<EntityLivingBase>();
 	private ArrayList<HandlerHarshedEffect> arrayHarshedEffectManager = new ArrayList<HandlerHarshedEffect>();
