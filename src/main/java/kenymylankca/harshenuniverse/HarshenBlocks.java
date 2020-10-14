@@ -80,6 +80,9 @@ public class HarshenBlocks
 	private static ArrayList<IProperty<?>[]> propertiesToIgnoreCustomStateMap = new ArrayList<IProperty<?>[]>();
 	
 	public static final Block HARSHEN_SOUL_ORE = new HarshenSoulOre();
+	public static final Block ITIUM_ORE = new ItiumOre();
+	public static final Block PONTUS_EMERALD_ORE = new PontusEmeraldOre();
+	public static final Block JEWEL_DIRT = new JewelDirt();
 	public static final Block HARSHEN_DIMENSIONAL_STONE = new HarshenDimensionalStone();
 	public static final Block HARSHEN_DISPLAY_BLOCK = new HarshenDisplayBlock();
 	public static final Block HARSHEN_DIMENSIONAL_DOOR = new HarshenDimensionalDoor();
@@ -92,8 +95,8 @@ public class HarshenBlocks
 	public static final Block HARSHEN_DIMENSIONAL_HIDDEN_PLATE = new HarshenDimensionalHiddenPlate();
 	public static final Block SOUL_REMINDER = new SoulReminder();
 	public static final Block HARSHEN_DIMENSIONAL_WOOD_CRATE = new HarshenDimensionalWoodCrate();
+	public static final Block HARSHEN_DIMENSIONAL_WOOD_STAIRS = new HarshenDimensionalWoodStairs();
 	public static final Block HARSHEN_DIMENSIONAL_DIRT = new HarshenDimensionalDirt();
-	public static final Block ITIUM_ORE = new ItiumOre();
 	public static final Block HARSHEN_DESTROYED_PLANT = new HarshenDestroyedPlant();
 	public static final Block HARSHEN_DIMENSIONAL_ROCK = new HarshenDimensionalRock();
 	public static final Block PONTUS_CHAOTIC_ROCK = new PontusChaoticRock();
@@ -104,19 +107,17 @@ public class HarshenBlocks
 	public static final Block HERETIC_CAULDRON_TOP = new HereticCauldronTop();
 	public static final Block BLOOD_BLOCK = new BloodBlock();
 	public static final Block PONTUS_DEAD_LEAVES = new PontusDeadLeaves();
+	public static final Block PONTUS_CHAOTIC_LEAVES = new PontusChaoticLeaves();
+	public static final Block PONTUS_FAR_LEAVES = new PontusFarLeaves();
 	public static final Block HARSHEN_SPAWNER = new HarshenSpawner();
 	public static final Block PEDESTAL_SLAB = new PedestalSlab();
-	public static final Block PONTUS_CHAOTIC_LEAVES = new PontusChaoticLeaves();
 	public static final Block BLOOD_PLACER = new BloodPlacer();
 	public static final Block BLOOD_VESSEL = new BloodVessel();
 	public static final Block BLOOD_FACTORY = new BloodFactory();
-	public static final Block PONTUS_EMERALD_ORE = new PontusEmeraldOre();
 	public static final Block ARCHIVE = new Archive();
 	public static final Block BLOCK_OF_HEADS = new BlockOfHeads();
 	public static final Block HARSHEN_MAGIC_TABLE = new HarshenMagicTable();
-	public static final Block PONTUS_FAR_LEAVES = new PontusFarLeaves();
 	public static final Block GILDED_OBSIDIAN = new GildedObsidian();
-	public static final Block JEWEL_DIRT = new JewelDirt();
 	public static final Block BLOODY_TORCH = new BloodyTorch();
 	public static final Block NOCTURNAL_TORCH = new NocturnalTorch();
 	public static final Block BLOODY_WOOL = new BloodyWool();
@@ -124,7 +125,6 @@ public class HarshenBlocks
 	public static final Block BLOODY_BED_HEAD = new BloodyBedHead();
 	public static final Block AKZENIA_MUSHROOM = new AkzeniaMushroom();
 	public static final Block NOCTURNE_BLOOM = new NocturneBloom();
-	public static final Block HARSHEN_DIMENSIONAL_WOOD_STAIRS = new HarshenDimensionalWoodStairs();
 	
 	public static final BlockCrops CROP_OF_GLEAM = new CropOfGleam();
 	
