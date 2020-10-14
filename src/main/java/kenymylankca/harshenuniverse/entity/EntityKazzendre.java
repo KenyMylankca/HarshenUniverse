@@ -13,6 +13,7 @@ import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -51,6 +52,18 @@ public class EntityKazzendre extends EntityMob
 	{
         this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).applyModifier(new AttributeModifier("Random spawn bonus", this.rand.nextGaussian() * 0.05D, 1));
 		return livingdata;
+	}
+	
+	@Override
+	public void onCollideWithPlayer(EntityPlayer entityIn)
+	{
+		if(this.rand.nextFloat() < 0.01 && this.isSwingInProgress && !entityIn.isCreative())
+		{
+			entityIn.attackEntityFrom(new DamageSource("kazzendre"), 8);
+			this.heal(12);
+			this.world.playSound(null, this.getPosition(), HarshenSounds.SOUL_HARSHER_SWORD_HIT, SoundCategory.MASTER, 1, (this.rand.nextFloat() + 1F)/2);
+		}
+		super.onCollideWithPlayer(entityIn);
 	}
     
     @Override
