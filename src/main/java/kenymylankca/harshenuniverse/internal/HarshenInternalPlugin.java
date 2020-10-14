@@ -70,6 +70,9 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 		registry.registerMagicTableRecipe(new ItemStack(HarshenBlocks.NOCTURNAL_TORCH),
 				new HarshenStack(new ItemStack(Items.EMERALD)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_STICK)), new HarshenStack(new ItemStack(HarshenItems.ZOMBIE_EYE)), GlassContainerValues.VOID.getHarshenStack());
 		
+		registry.registerMagicTableRecipe(new ItemStack(HarshenBlocks.HARSHEN_DIMENSIONAL_WOOD_CRATE),
+				new HarshenStack(new ItemStack(HarshenBlocks.PONTUS_CHAOTIC_WOOD)), new HarshenStack(new ItemStack(HarshenBlocks.PONTUS_DEAD_WOOD)), new HarshenStack(new ItemStack(Blocks.SNOW)), new HarshenStack(new ItemStack(Blocks.SNOW)));
+		
 		//pedestal slab recipes
 		registry.registerPedestalSlabRecipe(new HarshenStack("cobblestone"), new ItemStack(Blocks.NETHERRACK));
 		registry.registerPedestalSlabRecipe(new HarshenStack(new ItemStack(Items.ENDER_EYE)), new ItemStack(HarshenItems.BLOOD_INFUSED_ENDER_EYE));
