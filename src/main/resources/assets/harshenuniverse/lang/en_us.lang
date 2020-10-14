@@ -104,7 +104,7 @@ key.minering.description=Minering Teleport Key
 key.open_inventory.description=Accessory Inventory
 
 #ritual
-ritual.fail.position=Ritual built wrong at %s, %s, %s. Expected %s, got %s
+ritual.fail.position=Ritual built wrong at %s, %s, %s. Expected %s, got %s.
 ritual.fail.recipe=Ritual Recipe not found.
 ritual.fail.fluidlevel=Fluid level is not enough to ritual.
 ritual.not=not
@@ -143,7 +143,7 @@ config.xray.distance.x=The distance from the player that the xray pendant should
 config.xray.distance.y=The distance from the player that the xray pendant should be able to find, along the y axis(The higher this is the more lag it makes)
 config.xray.distance.z=The distance from the player that the xray pendant should be able to find, along the z axis(The higher this is the more lag it makes)
 config.xray.listsize=The maximum amount of blocks the xray pendant can pick up
-config.structure_ruin_chance=If a structure has the ruin tag, what is the chance that a block is changed to air. If you dont understand dont worry, its not very important
+config.structure_ruin_chance=If a structure has the ruin tag, what is the chance that a block is changed to air. If you don't understand don't worry, it's not very important
 config.endernecklace.distance=The distance for Ender Necklace in blocks
 config.reach.length=Reach Pendant length range
 
@@ -213,9 +213,9 @@ fluid.magic=Magic Fluid
 enchantment.mixup=Mixed Slots
 
 #commands
-commands.harshenuniverse.pontuslevel.success=%s's access level was set to %s
-commands.harshenuniverse.pontuslevel.errored=/harshencaste pontuslevel <level> OR /harshencaste pontuslevel <Player> <Level>
-commands.harshenuniverse.reload.success=Harshen Universe was reloaded
+commands.harshenuniverse.pontuslevel.success=%s's access level was set to %s.
+commands.harshenuniverse.pontuslevel.errored=/harshenuniverse pontuslevel <level> OR /harshenuniverse pontuslevel <Player> <Level>
+commands.harshenuniverse.reload.success=Harshen Universe was reloaded.
 
 #update Checker
 update.version=[%s] The Mod is out of date. Your version %s, target version: %s. Click here to go to page

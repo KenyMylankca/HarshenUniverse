@@ -29,7 +29,7 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 /**
- * The Inner plugin for HarshenCaste. 
+ * The Inner plugin for HarshenUniverse. 
  * This registers all the different recipes and all the inventory items.
  * @author Wyn Price
  *
