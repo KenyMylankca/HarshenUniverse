@@ -1,6 +1,6 @@
 package kenymylankca.harshenuniverse.blocks;
 
-import kenymylankca.harshenuniverse.items.SoulHarsherPickaxe;
+import kenymylankca.harshenuniverse.items.DarkEwydoen;
 import net.minecraft.block.BlockLadder;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -10,8 +10,8 @@ import net.minecraft.world.World;
 
 public class HarshenDimensionalLadder extends BlockLadder
 {
-	public HarshenDimensionalLadder() {
-		setTickRandomly(true);
+	public HarshenDimensionalLadder()
+	{
         setUnlocalizedName("harshen_dimensional_ladder");
         setRegistryName("harshen_dimensional_ladder");
         setHarvestLevel("axe", 3);
@@ -22,7 +22,9 @@ public class HarshenDimensionalLadder extends BlockLadder
 	
 	@Override
 	public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
-		if((playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(Blocks.AIR)? playerIn.getHeldItemOffhand() : playerIn.getHeldItemMainhand()).getItem() instanceof SoulHarsherPickaxe)
+		if((playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(Blocks.AIR)? playerIn.getHeldItemOffhand() : playerIn.getHeldItemMainhand()).getItem() instanceof DarkEwydoen)
 			setHardness(3);
+		else
+			setHardness(3000);
 	}
 }

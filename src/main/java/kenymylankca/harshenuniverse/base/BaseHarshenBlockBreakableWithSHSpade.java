@@ -12,7 +12,8 @@ import net.minecraft.world.World;
 
 public class BaseHarshenBlockBreakableWithSHSpade extends Block
 {
-	public BaseHarshenBlockBreakableWithSHSpade() {
+	public BaseHarshenBlockBreakableWithSHSpade()
+	{
 		super(Material.GROUND);
 		setHarvestLevel("shovel", 3);
 		blockSoundType = blockSoundType.GROUND;
@@ -22,8 +23,10 @@ public class BaseHarshenBlockBreakableWithSHSpade extends Block
 	
 	@Override
 	public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
-		if((playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(Blocks.AIR)? playerIn.getHeldItemOffhand() : playerIn.getHeldItemMainhand()).getItem() instanceof SoulHarsherSpade)
+		if((playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(Blocks.AIR) ? playerIn.getHeldItemOffhand() : playerIn.getHeldItemMainhand()).getItem() instanceof SoulHarsherSpade)
 			setHardness(1);
+		else
+			setHardness(3000);
 	}
 	
 	@Override

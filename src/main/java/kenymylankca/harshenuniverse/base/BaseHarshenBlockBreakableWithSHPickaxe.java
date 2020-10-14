@@ -30,7 +30,6 @@ public class BaseHarshenBlockBreakableWithSHPickaxe extends Block
 			setHardness(3);
 		else
 			setHardness(3000);
-			
 	}
 	
 	@Override

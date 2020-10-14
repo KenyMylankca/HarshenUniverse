@@ -14,13 +14,13 @@ import net.minecraft.world.World;
 
 public class HarshenDimensionalHiddenPlate extends BlockPressurePlate implements ITileEntityProvider
 {
-	public HarshenDimensionalHiddenPlate() {
+	public HarshenDimensionalHiddenPlate()
+	{
 		super(Material.ROCK, BlockPressurePlate.Sensitivity.MOBS);
 		setUnlocalizedName("harshen_dimensional_hidden_plate");
 		setRegistryName("harshen_dimensional_hidden_plate");
 		setHarvestLevel("pickaxe", 3);
-        setHardness(3000.0f);
-        setResistance(3000.0f);
+        setResistance(Float.MAX_VALUE);
 	}
 	
 	@Override

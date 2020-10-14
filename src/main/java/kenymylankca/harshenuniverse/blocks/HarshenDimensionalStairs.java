@@ -25,5 +25,7 @@ public class HarshenDimensionalStairs extends BlockStairs
 	public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
 		if((playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(Blocks.AIR)? playerIn.getHeldItemOffhand() : playerIn.getHeldItemMainhand()).getItem() instanceof SoulHarsherPickaxe)
 			setHardness(3);
+		else
+			setHardness(3000);
 	}
 }

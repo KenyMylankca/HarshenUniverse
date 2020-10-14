@@ -4,12 +4,13 @@ import java.util.List;
 import java.util.Random;
 
 import kenymylankca.harshenuniverse.HarshenItems;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
+import kenymylankca.harshenuniverse.base.BaseHarshenBlockBreakableWithSHPickaxe;
+import kenymylankca.harshenuniverse.items.SoulHarsherPickaxe;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.particle.ParticleManager;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumParticleTypes;
@@ -20,23 +21,25 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 
-public class ItiumOre extends Block
+public class ItiumOre extends BaseHarshenBlockBreakableWithSHPickaxe
 {
-	public ItiumOre() 
-	{
-        super(Material.ROCK);
-        setUnlocalizedName("itium_ore");
-        setRegistryName("itium_ore");
-        setHarvestLevel("pickaxe", 2);
-		setHardness(21f);
-		setResistance(31f);
-    }
-
 	private BlockPos pos;
 	private World world;
 	
+	public ItiumOre() 
+	{
+        setUnlocalizedName("itium_ore");
+        setRegistryName("itium_ore");
+    }
+	
 	@Override
-	public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
+	public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn)
+	{
+		if((playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(Blocks.AIR)? playerIn.getHeldItemOffhand() : playerIn.getHeldItemMainhand()).getItem() instanceof SoulHarsherPickaxe)
+			setHardness(3);
+		else
+			setHardness(3000);
+		
 		this.pos = pos;
 		this.world = worldIn;
 		super.onBlockClicked(worldIn, pos, playerIn);

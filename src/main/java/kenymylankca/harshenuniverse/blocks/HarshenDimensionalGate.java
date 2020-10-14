@@ -32,19 +32,18 @@ import net.minecraft.world.World;
 
 public class HarshenDimensionalGate extends Block implements ITileEntityProvider
 {
-
 	public static final PropertyBool ACTIVE = PropertyBool.create("active");
 	public static final PropertyBool FOREVER = PropertyBool.create("ignore_countdown");
 	public static final PropertyInteger TIMER = PropertyInteger.create("seconds_left", 0, TileEntityHarshenDimensionalGate.TOTAL_TICKS / 20);
-
 	
-	public HarshenDimensionalGate() {
+	public HarshenDimensionalGate()
+	{
 		super(Material.ROCK);
 		setRegistryName("harshen_dimensional_gate");
 		setUnlocalizedName("harshen_dimensional_gate");
 		setDefaultState(this.blockState.getBaseState().withProperty(ACTIVE, false).withProperty(FOREVER, false).withProperty(TIMER, 0));
-		setHardness(10f);
-		setResistance(50f);
+		setHardness(20f);
+		setResistance(55f);
 		this.setSoundType(SoundType.GLASS);
 	}
 	
@@ -60,8 +59,8 @@ public class HarshenDimensionalGate extends Block implements ITileEntityProvider
 	}
 	
 	@Override
-	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox,
-			List<AxisAlignedBB> collidingBoxes, Entity entityIn, boolean p_185477_7_) {
+	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, Entity entityIn, boolean p_185477_7_)
+	{
 		if(entityIn instanceof EntityLivingBase)
 			addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.0625f, 0.0625f, 0.0625f, 0.9375f, 0.9375f, 0.9375f));
 		addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0f, 0f, 0f, 1, 0.0625, 0.0625));
@@ -73,7 +72,6 @@ public class HarshenDimensionalGate extends Block implements ITileEntityProvider
 		addCollisionBoxToList(pos, entityBox, collidingBoxes,  new AxisAlignedBB(0f, 1f, 0f, 0.0625, 0.9375f, 1));
 		addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0f, 1f, 0.9375f, 1f, 0.9375f, 1f));
 		addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.9375f, 1f, 0f, 1f, 0.9375f, 1f));
-								
 	}
 		
 	@Override
@@ -119,7 +117,6 @@ public class HarshenDimensionalGate extends Block implements ITileEntityProvider
     {
         return (((Boolean)state.getValue(FOREVER)).booleanValue() ? 1 : 0) + (((Boolean)state.getValue(ACTIVE)).booleanValue() ? 0 : 2);
     }
-    
 
     protected BlockStateContainer createBlockState()
     {

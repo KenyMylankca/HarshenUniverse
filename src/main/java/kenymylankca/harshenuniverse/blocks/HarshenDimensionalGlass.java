@@ -13,7 +13,8 @@ import net.minecraft.world.World;
 
 public class HarshenDimensionalGlass extends BlockGlass
 {
-	public HarshenDimensionalGlass() {
+	public HarshenDimensionalGlass()
+	{
 		super(Material.GLASS, false);
 		setUnlocalizedName("harshen_dimensional_glass");
 		setRegistryName("harshen_dimensional_glass");

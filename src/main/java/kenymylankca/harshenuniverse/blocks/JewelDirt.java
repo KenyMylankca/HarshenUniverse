@@ -38,12 +38,16 @@ public class JewelDirt extends Block implements IMetaItemBlock
     }
 	
 	@Override
-	public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
+	public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn)
+	{
 		if(worldIn.getBlockState(pos) == this.blockState.getBaseState().withProperty(DIRT_TYPE, 0))
-			this.blockState.getBaseState().withProperty(DIRT_TYPE, 1).getBlock().setHardness(3);
+			this.blockState.getBaseState().withProperty(DIRT_TYPE, 0).getBlock().setHardness(3);
+		
 		if(worldIn.getBlockState(pos) == this.blockState.getBaseState().withProperty(DIRT_TYPE, 1))
 			if(!((playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(Blocks.AIR)? playerIn.getHeldItemOffhand() : playerIn.getHeldItemMainhand()).getItem() instanceof SoulHarsherSpade))
 				this.blockState.getBaseState().withProperty(DIRT_TYPE, 1).getBlock().setHardness(3000);
+			else
+				this.blockState.getBaseState().withProperty(DIRT_TYPE, 1).getBlock().setHardness(3);
 	}
 	
 	@Override
