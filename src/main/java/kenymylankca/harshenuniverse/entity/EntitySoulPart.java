@@ -2,11 +2,11 @@ package kenymylankca.harshenuniverse.entity;
 
 import com.google.common.base.Predicate;
 
+import kenymylankca.harshenuniverse.HarshenPotions;
 import kenymylankca.harshenuniverse.damagesource.DamageSourceSoulPart;
 import kenymylankca.harshenuniverse.entity.AI.AIEntityFlyingTowardsPlayer;
 import kenymylankca.harshenuniverse.entity.movehelper.MoveHelperSoulPart;
 import kenymylankca.harshenuniverse.interfaces.IBurnInDay;
-import kenymylankca.harshenuniverse.potions.HarshenPotions;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;

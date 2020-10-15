@@ -5,7 +5,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 
 public class PotionHarshed extends BaseHarshenPotion
 {
-	protected PotionHarshed() {
+	public PotionHarshed() {
 		super(true, 0xAA00AA);
 		setRegistryName("harshed");
 		setPotionName("Harshed");

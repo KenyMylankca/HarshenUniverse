@@ -2,7 +2,7 @@ package kenymylankca.harshenuniverse.entity.AI;
 
 import com.google.common.base.Predicate;
 
-import kenymylankca.harshenuniverse.potions.HarshenPotions;
+import kenymylankca.harshenuniverse.HarshenPotions;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 

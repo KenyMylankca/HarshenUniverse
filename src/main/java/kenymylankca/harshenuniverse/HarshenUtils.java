@@ -45,7 +45,6 @@ import kenymylankca.harshenuniverse.network.HarshenNetwork;
 import kenymylankca.harshenuniverse.network.packets.MessagePacketSetItemInSlot;
 import kenymylankca.harshenuniverse.objecthandlers.HarshenItemStackHandler;
 import kenymylankca.harshenuniverse.objecthandlers.HarshenMap;
-import kenymylankca.harshenuniverse.potions.HarshenPotions;
 import kenymylankca.harshenuniverse.tileentity.TileEntityBloodVessel;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;

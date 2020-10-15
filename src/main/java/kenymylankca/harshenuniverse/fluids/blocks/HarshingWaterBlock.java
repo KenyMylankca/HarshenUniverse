@@ -3,10 +3,10 @@ package kenymylankca.harshenuniverse.fluids.blocks;
 import java.util.ArrayList;
 
 import kenymylankca.harshenuniverse.HarshenBlocks;
+import kenymylankca.harshenuniverse.HarshenPotions;
 import kenymylankca.harshenuniverse.HarshenUtils;
 import kenymylankca.harshenuniverse.base.BaseFluidBlock;
 import kenymylankca.harshenuniverse.fluids.HarshenFluids;
-import kenymylankca.harshenuniverse.potions.HarshenPotions;
 import net.minecraft.block.Block;
 import net.minecraft.potion.PotionEffect;
 

@@ -3,11 +3,11 @@ package kenymylankca.harshenuniverse.handlers;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import kenymylankca.harshenuniverse.HarshenPotions;
 import kenymylankca.harshenuniverse.HarshenUniverse;
 import kenymylankca.harshenuniverse.damagesource.DamageSourceBleeding;
 import kenymylankca.harshenuniverse.damagesource.DamageSourceHarshed;
 import kenymylankca.harshenuniverse.entity.EntitySoulPart;
-import kenymylankca.harshenuniverse.potions.HarshenPotions;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
@@ -69,61 +69,64 @@ public class HandlerPotionEffects
 			event.getEntityLiving().setHealth(event.getEntityLiving().getHealth());
 		}
 		
-		if(event.getEntityLiving().isPotionActive(HarshenPotions.potionBleeding) && !event.getEntityLiving().world.isRemote)
+		if(!event.getEntityLiving().world.isRemote)
 		{
-			if(!arrayLivingWithBleedingEffect.contains(event.getEntityLiving()))
+			if(event.getEntityLiving().isPotionActive(HarshenPotions.potionBleeding))
 			{
-				arrayLivingWithBleedingEffect.add(event.getEntityLiving());
-				for(PotionEffect effect : event.getEntityLiving().getActivePotionEffects())
+				if(!arrayLivingWithBleedingEffect.contains(event.getEntityLiving()))
 				{
-					if(effect.getPotion().equals(HarshenPotions.potionBleeding))
-						arrayBleedingEffectManager.add(new HandlerBleedingEffect(event.getEntityLiving(), effect.getAmplifier()));
+					arrayLivingWithBleedingEffect.add(event.getEntityLiving());
+					for(PotionEffect effect : event.getEntityLiving().getActivePotionEffects())
+					{
+						if(effect.getPotion().equals(HarshenPotions.potionBleeding))
+							arrayBleedingEffectManager.add(new HandlerBleedingEffect(event.getEntityLiving(), effect.getAmplifier()));
+					}
 				}
+				arrayBleedingEffectManager.get(arrayLivingWithBleedingEffect.indexOf(event.getEntityLiving())).add();
 			}
-			arrayBleedingEffectManager.get(arrayLivingWithBleedingEffect.indexOf(event.getEntityLiving())).add();
-		}
-		else if(arrayLivingWithBleedingEffect.contains(event.getEntityLiving()) && !event.getEntityLiving().world.isRemote)
-		{
-			arrayBleedingEffectManager.remove(arrayLivingWithBleedingEffect.indexOf(event.getEntityLiving()));
-			arrayLivingWithBleedingEffect.remove(event.getEntityLiving());
-		}
-		
-		if(event.getEntityLiving().isPotionActive(HarshenPotions.potionCureal) && !event.getEntityLiving().world.isRemote)
-		{
-			if(!arrayLivingWithCurealEffect.contains(event.getEntityLiving()))
+			else if(arrayLivingWithBleedingEffect.contains(event.getEntityLiving()))
 			{
-				arrayLivingWithCurealEffect.add(event.getEntityLiving());
-				for(PotionEffect effect : event.getEntityLiving().getActivePotionEffects())
-				{
-					if(effect.getPotion().equals(HarshenPotions.potionCureal))
-						arrayCurealEffectManager.add(new HandlerCurealEffect(event.getEntityLiving(), effect.getAmplifier()));
-				}
+				arrayBleedingEffectManager.remove(arrayLivingWithBleedingEffect.indexOf(event.getEntityLiving()));
+				arrayLivingWithBleedingEffect.remove(event.getEntityLiving());
 			}
-			arrayCurealEffectManager.get(arrayLivingWithCurealEffect.indexOf(event.getEntityLiving())).add();
-		}
-		else if(arrayLivingWithCurealEffect.contains(event.getEntityLiving()) && !event.getEntityLiving().world.isRemote)
-		{
-			arrayCurealEffectManager.remove(arrayLivingWithCurealEffect.indexOf(event.getEntityLiving()));
-			arrayLivingWithCurealEffect.remove(event.getEntityLiving());
-		}
-		
-		if(event.getEntityLiving().isPotionActive(HarshenPotions.potionHarshed) && !event.getEntityLiving().world.isRemote)
-		{
-			if(!arrayLivingWithHarshedEffect.contains(event.getEntityLiving()))
+			
+			if(event.getEntityLiving().isPotionActive(HarshenPotions.potionCureal))
 			{
-				arrayLivingWithHarshedEffect.add(event.getEntityLiving());
-				for(PotionEffect effect : event.getEntityLiving().getActivePotionEffects())
+				if(!arrayLivingWithCurealEffect.contains(event.getEntityLiving()))
 				{
-					if(effect.getPotion().equals(HarshenPotions.potionHarshed))
-						arrayHarshedEffectManager.add(new HandlerHarshedEffect(event.getEntityLiving(), effect.getAmplifier()));
+					arrayLivingWithCurealEffect.add(event.getEntityLiving());
+					for(PotionEffect effect : event.getEntityLiving().getActivePotionEffects())
+					{
+						if(effect.getPotion().equals(HarshenPotions.potionCureal))
+							arrayCurealEffectManager.add(new HandlerCurealEffect(event.getEntityLiving(), effect.getAmplifier()));
+					}
 				}
+				arrayCurealEffectManager.get(arrayLivingWithCurealEffect.indexOf(event.getEntityLiving())).add();
 			}
-			arrayHarshedEffectManager.get(arrayLivingWithHarshedEffect.indexOf(event.getEntityLiving())).add();
-		}
-		else if(arrayLivingWithHarshedEffect.contains(event.getEntityLiving()) && !event.getEntityLiving().world.isRemote)
-		{
-			arrayHarshedEffectManager.remove(arrayLivingWithHarshedEffect.indexOf(event.getEntityLiving()));
-			arrayLivingWithHarshedEffect.remove(event.getEntityLiving());
+			else if(arrayLivingWithCurealEffect.contains(event.getEntityLiving()))
+			{
+				arrayCurealEffectManager.remove(arrayLivingWithCurealEffect.indexOf(event.getEntityLiving()));
+				arrayLivingWithCurealEffect.remove(event.getEntityLiving());
+			}
+			
+			if(event.getEntityLiving().isPotionActive(HarshenPotions.potionHarshed))
+			{
+				if(!arrayLivingWithHarshedEffect.contains(event.getEntityLiving()))
+				{
+					arrayLivingWithHarshedEffect.add(event.getEntityLiving());
+					for(PotionEffect effect : event.getEntityLiving().getActivePotionEffects())
+					{
+						if(effect.getPotion().equals(HarshenPotions.potionHarshed))
+							arrayHarshedEffectManager.add(new HandlerHarshedEffect(event.getEntityLiving(), effect.getAmplifier()));
+					}
+				}
+				arrayHarshedEffectManager.get(arrayLivingWithHarshedEffect.indexOf(event.getEntityLiving())).add();
+			}
+			else if(arrayLivingWithHarshedEffect.contains(event.getEntityLiving()))
+			{
+				arrayHarshedEffectManager.remove(arrayLivingWithHarshedEffect.indexOf(event.getEntityLiving()));
+				arrayLivingWithHarshedEffect.remove(event.getEntityLiving());
+			}
 		}
 	}
 }
@@ -164,10 +167,7 @@ class HandlerCurealEffect
 		ArrayList<Potion> potionsToRemove = new ArrayList<>();
 		for(PotionEffect effect : entity.getActivePotionEffects())
 			if(effect.getPotion().isBadEffect())
-			{
 				potionsToRemove.add(effect.getPotion());
-				System.out.println(effect.getPotion().isBadEffect());
-			}
 		
 		for(Potion potion : potionsToRemove)
 			entity.removePotionEffect(potion);

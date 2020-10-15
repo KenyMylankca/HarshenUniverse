@@ -2,6 +2,7 @@ package kenymylankca.harshenuniverse.internal;
 
 import kenymylankca.harshenuniverse.HarshenBlocks;
 import kenymylankca.harshenuniverse.HarshenItems;
+import kenymylankca.harshenuniverse.HarshenPotions;
 import kenymylankca.harshenuniverse.HarshenUniverse;
 import kenymylankca.harshenuniverse.HarshenUtils;
 import kenymylankca.harshenuniverse.api.BlockItem;
@@ -16,7 +17,6 @@ import kenymylankca.harshenuniverse.enums.items.GlassContainerValue;
 import kenymylankca.harshenuniverse.enums.items.GlassContainerValues;
 import kenymylankca.harshenuniverse.fluids.HarshenFluids;
 import kenymylankca.harshenuniverse.handlers.vanillaInventory.HandlerTotemOfUndying;
-import kenymylankca.harshenuniverse.potions.HarshenPotions;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
