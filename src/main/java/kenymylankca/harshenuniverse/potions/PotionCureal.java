@@ -4,8 +4,7 @@ import kenymylankca.harshenuniverse.base.BaseHarshenPotion;
 
 public class PotionCureal extends BaseHarshenPotion
 {
-	protected PotionCureal()
-	{
+	protected PotionCureal() {
 		super(false, 0xFFFFFF);
 		setRegistryName("cureal");
 		setPotionName("Cureal");

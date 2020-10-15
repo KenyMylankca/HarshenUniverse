@@ -12,10 +12,10 @@ public class HarshenPotions
 
 	public static void preInit()
 	{
-		potionSoulless = new PotionSoulless();
-		potionHarshed = new PotionHarshed();
-		potionCureal = new PotionCureal();
 		potionBleeding = new PotionBleeding();
+		potionCureal = new PotionCureal();
+		potionHarshed = new PotionHarshed();
+		potionSoulless = new PotionSoulless();
 	}
 	
 	public static void register()

@@ -17,10 +17,4 @@ public class BaseHarshenPotion extends Potion
 		Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation(HarshenUniverse.MODID, "textures/gui/inventory.png"));
 		return super.getStatusIconIndex();
 	}
-	
-	@Override
-	public boolean isBadEffect()
-    {
-        return true;
-    }
 }
