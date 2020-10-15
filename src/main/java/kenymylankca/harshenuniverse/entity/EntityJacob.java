@@ -70,7 +70,7 @@ public class EntityJacob extends EntityMob
 		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(3d);
 		this.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(3d);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4d);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.45d);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3d);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8d);
 		this.isImmuneToFire = false;
 	}
@@ -114,6 +114,8 @@ public class EntityJacob extends EntityMob
 				if(drainingCounter % 10 == 0)
 				{
 					player.attackEntityFrom(new DamageSourceJacobDraining(), 1);
+					if(rand.nextFloat() < 0.2)
+						player.getFoodStats().setFoodLevel(player.getFoodStats().getFoodLevel() - 1);
 					this.heal(1);
 				}
 			}
