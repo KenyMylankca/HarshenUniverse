@@ -281,13 +281,14 @@ public class HarshenCraftingRecipes
 		
 		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "harshen_magic_table"), new ResourceLocation(group),
 				new ItemStack(HarshenBlocks.HARSHEN_MAGIC_TABLE),
-				"wew",
-				" c ",
-				"w w",
+				"olo",
+				" w ",
+				"oco",
 				
-				'e', new ItemStack(HarshenItems.LIGHT_EMITTED_SEED),
-				'w', new ItemStack(Blocks.OBSIDIAN),
-				'c', new ItemStack(HarshenBlocks.HARSHEN_DIMENSIONAL_WOOD_CRATE));
+				'l', new ItemStack(HarshenItems.LIGHT_EMITTED_SEED),
+				'c', new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 0),
+				'o', new ItemStack(Blocks.OBSIDIAN),
+				'w', new ItemStack(HarshenBlocks.HARSHEN_DIMENSIONAL_WOOD_CRATE));
 		
 		
 		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "elytra_pendant"), new ResourceLocation(group),
