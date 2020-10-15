@@ -5,12 +5,13 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
 
-public class PotionCure extends Potion
+public class PotionCureal extends Potion
 {
-	protected PotionCure() {
+	protected PotionCureal()
+	{
 		super(false, 0xFFFFFF);
-		setRegistryName("cure");
-		setPotionName("Cure");
+		setRegistryName("cureal");
+		setPotionName("Cureal");
 		setIconIndex(2, 0);
 		setBeneficial();
 	}

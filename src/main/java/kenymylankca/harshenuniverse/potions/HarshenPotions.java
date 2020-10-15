@@ -7,14 +7,14 @@ public class HarshenPotions
 {
 	public static Potion potionSoulless;
 	public static Potion potionHarshed;
-	public static Potion potionCure;
+	public static Potion potionCureal;
 	public static Potion potionBleeding;
 
 	public static void preInit()
 	{
 		potionSoulless = new PotionSoulless();
 		potionHarshed = new PotionHarshed();
-		potionCure = new PotionCure();
+		potionCureal = new PotionCureal();
 		potionBleeding = new PotionBleeding();
 	}
 	
@@ -22,7 +22,7 @@ public class HarshenPotions
 	{
 		reg(potionSoulless);
 		reg(potionHarshed);
-		reg(potionCure);
+		reg(potionCureal);
 		reg(potionBleeding);
 	}
 	

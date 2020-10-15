@@ -100,7 +100,7 @@ public class HandlerPotionEffects
 			arrayBleedingEffectManager.remove(arrayLivingWithBleedingEffect.indexOf(event.getEntityLiving()));
 			arrayLivingWithBleedingEffect.remove(event.getEntityLiving());
 		}
-		if(event.getEntityLiving().isPotionActive(HarshenPotions.potionCure) && !arrayNeedingToBeCured.contains(event.getEntityLiving()))
+		if(event.getEntityLiving().isPotionActive(HarshenPotions.potionCureal) && !arrayNeedingToBeCured.contains(event.getEntityLiving()))
 		{
 			arrayNeedingToBeCured.add(event.getEntityLiving());
 			ArrayList<Potion> potionsToRemove = new ArrayList<>();
@@ -110,7 +110,7 @@ public class HandlerPotionEffects
 			for(Potion potion : potionsToRemove)
 				event.getEntityLiving().removePotionEffect(potion);
 		}
-		else if(!event.getEntityLiving().isPotionActive(HarshenPotions.potionCure) && arrayNeedingToBeCured.contains(event.getEntityLiving()))
+		else if(!event.getEntityLiving().isPotionActive(HarshenPotions.potionCureal) && arrayNeedingToBeCured.contains(event.getEntityLiving()))
 			arrayNeedingToBeCured.remove(event.getEntityLiving());
 	}
 }

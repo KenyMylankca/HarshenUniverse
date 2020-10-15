@@ -8,7 +8,7 @@ public class GlassContainerValues
 	public static GlassContainerValue EMPTY;
 	public static GlassContainerValue VOID;
 	public static GlassContainerValue REGEN;
-	public static GlassContainerValue CURE;
+	public static GlassContainerValue CUREAL;
 	
 	public static GlassContainerValue HARSHING_WATER;
 	public static GlassContainerValue HARSHEN_DIMENSIONAL_FLUID;

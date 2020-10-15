@@ -44,7 +44,7 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 		registry.registerGlassContainer("empty", -1, (PotionEffect)null);
 		registry.registerGlassContainer("void", 0, new PotionEffect(HarshenPotions.potionSoulless, 600));
 		registry.registerGlassContainer("regen", 0xF40D09, new PotionEffect(MobEffects.REGENERATION, 100, 200));
-		registry.registerGlassContainer("cure", 0xEFEDA2, new PotionEffect(HarshenPotions.potionCure, 1));
+		registry.registerGlassContainer("cureal", 0xEFEDA2, new PotionEffect(HarshenPotions.potionCureal, 250));
 		registry.registerGlassContainer("harshing_water", new CauldronLiquid("harshing_water", HarshenFluids.HARSHING_WATER_BLOCK.getDefaultState()), 0x613A63);
 		registry.registerGlassContainer("harshen_dimensional_fluid", new CauldronLiquid("harshen_dimensional_fluid", HarshenFluids.HARSHEN_DIMENSIONAL_FLUID_BLOCK.getDefaultState()) , 0x324B64);
 		registry.registerGlassContainer("blood", new CauldronLiquid("blood", new ResourceLocation(HarshenUniverse.MODID, "textures/blocks/blood_still.png")), 0x870705);
@@ -88,7 +88,7 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 		registry.registerCauldronRecipe(new HarshenStack("sand"), new ItemStack(Blocks.SOUL_SAND), GlassContainerValues.HARSHEN_DIMENSIONAL_FLUID.getType());
 		registry.registerCauldronRecipe(new HarshenStack("cobblestone"), new ItemStack(Blocks.NETHERRACK), GlassContainerValues.BLOOD.getType());
 		registry.registerCauldronRecipe(new HarshenStack("cobblestone"), new ItemStack(Blocks.OBSIDIAN, 2), GlassContainerValues.LAVA.getType());
-		registry.registerCauldronRecipe(GlassContainerValues.EMPTY.getHarshenStack(), GlassContainerValues.CURE.getStack(), GlassContainerValues.MILK.getType());
+		registry.registerCauldronRecipe(GlassContainerValues.EMPTY.getHarshenStack(), GlassContainerValues.CUREAL.getStack(), GlassContainerValues.MILK.getType());
 		registry.registerCauldronRecipe(GlassContainerValues.EMPTY.getHarshenStack(), GlassContainerValues.REGEN.getStack(), GlassContainerValues.BLOOD.getType());
 		registry.registerCauldronRecipe(new HarshenStack(new ItemStack(HarshenItems.EMPTY_RING)), new ItemStack(HarshenItems.RING_OF_BLOOD), GlassContainerValues.BLOOD.getType());
 		registry.registerCauldronRecipe(new HarshenStack(new ItemStack(HarshenItems.IRON_HEART)), new ItemStack(HarshenItems.SOUL_BINDING_PENDANT), GlassContainerValues.MAGIC.getType());
