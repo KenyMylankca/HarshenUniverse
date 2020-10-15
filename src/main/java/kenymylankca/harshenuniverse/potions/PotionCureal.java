@@ -1,11 +1,8 @@
 package kenymylankca.harshenuniverse.potions;
 
-import kenymylankca.harshenuniverse.HarshenUniverse;
-import net.minecraft.client.Minecraft;
-import net.minecraft.potion.Potion;
-import net.minecraft.util.ResourceLocation;
+import kenymylankca.harshenuniverse.base.BaseHarshenPotion;
 
-public class PotionCureal extends Potion
+public class PotionCureal extends BaseHarshenPotion
 {
 	protected PotionCureal()
 	{
@@ -14,11 +11,5 @@ public class PotionCureal extends Potion
 		setPotionName("Cureal");
 		setIconIndex(2, 0);
 		setBeneficial();
-	}
-	
-	@Override
-	public int getStatusIconIndex() {
-		Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation(HarshenUniverse.MODID, "textures/gui/inventory.png"));
-		return super.getStatusIconIndex();
 	}
 }
