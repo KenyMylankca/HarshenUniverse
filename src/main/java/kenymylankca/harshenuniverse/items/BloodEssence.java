@@ -18,6 +18,6 @@ public class BloodEssence extends Item implements IBloodSupply
 
 	@Override
 	public int ticksUntillUsed() {
-		return 2000;
+		return 5110;
 	}
 }
