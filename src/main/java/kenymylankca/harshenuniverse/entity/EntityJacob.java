@@ -67,7 +67,7 @@ public class EntityJacob extends EntityMob
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(111);
-		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(3d);
+		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(4d);
 		this.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(3d);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4d);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3d);

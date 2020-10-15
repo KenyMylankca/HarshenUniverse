@@ -40,11 +40,12 @@ public class EntityKazzendre extends EntityMob
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(380);
-		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(2d);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(340);
+		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(3d);
 		this.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(2d);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4d);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.5d);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.4d);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.2d);
 	}
 	
 	@Override
