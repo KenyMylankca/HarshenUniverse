@@ -1034,7 +1034,7 @@ public class HarshenUtils
     	BlockPos pos = entityIn.getPosition();
     	IBlockState state = world.getBlockState(pos);
 		
-    	if(GeneralConfig.bloodDrops && new Random().nextDouble() < GeneralConfig.bloodChance && HarshenUtils.toArray(AllowedEntities).contains(entityIn.getClass()) && world.isAirBlock(pos))
+    	if(GeneralConfig.bloodSplash && new Random().nextDouble() < GeneralConfig.bloodChance && HarshenUtils.toArray(AllowedEntities).contains(entityIn.getClass()) && world.isAirBlock(pos))
 			for(int i=0; i<GeneralConfig.bloodHeightRange; i++)
 			{
 				if(world.isAirBlock(pos.down(i)) && !(world.isAirBlock(pos.down(i+1))))
