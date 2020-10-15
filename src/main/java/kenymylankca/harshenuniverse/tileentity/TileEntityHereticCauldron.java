@@ -64,24 +64,11 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 	@Override
 	public void tick()
 	{
-		if(level <= 0 && fluid != CauldronLiquid.NONE)
+		if(isActive && activeTimer++ > 175)
 		{
-			level = 0;
-			fluid = CauldronLiquid.NONE;
-		}
-		else if(fluid == CauldronLiquid.NONE && level > 0)
-		{
-			level = 0;
-			fluid = CauldronLiquid.NONE;
-		}
-		if(isActive)
-		{
-			if(activeTimer++ > 175)
-			{
-				deactivate();
-				setItem(switchedItem);
-				layersDrained = 0;
-			}
+			deactivate();
+			setItem(switchedItem);
+			layersDrained = 0;
 		}
 		if(overstandingRecipe != null)
 		{
@@ -140,7 +127,8 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 			if(world.isRemote)
 				return;
 			double[] yPosOfDrains = {0.7D, 0.8D, 0.9D};
-			level--;
+			if(level > 0)
+				level --;
 			for(int i = 0; i < 35; i++)
 				HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.CAULDRON,
 						new Vec3d(pos).addVector((new Random().nextDouble() / 2) + 0.25D, yPosOfDrains[layersDrained], (new Random().nextDouble() / 2) + 0.25D), new Vec3d(0, 0.01d, 0), 1f, false,
@@ -254,7 +242,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
         }
         
         CauldronLiquid potentionalLiquid = HarshenRegistry.getLiquidFromStack(mainhandstack);
-        if(potentionalLiquid != null && (level == 0 || (fluid == potentionalLiquid && level + HarshenRegistry.getFill(mainhandstack) < 4)))
+        if(potentionalLiquid != null && (level == 0 || (fluid == potentionalLiquid && level + HarshenRegistry.getFill(mainhandstack) <= 3)))
         {
         	if(mainhandstack.getItem() instanceof UniversalBucket) this.world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BUCKET_EMPTY, SoundCategory.BLOCKS, 1.0F, 1.0F);
         	if(mainhandstack.getItem() instanceof GlassContainer) this.world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BOTTLE_EMPTY, SoundCategory.BLOCKS, 1.0F, 1.0F);

@@ -25,7 +25,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class HereticCauldronTop extends Block implements ITileEntityProvider	
+public class HereticCauldronTop extends Block implements ITileEntityProvider
 {
 	public HereticCauldronTop() {
 		super(Material.IRON);
@@ -69,8 +69,7 @@ public class HereticCauldronTop extends Block implements ITileEntityProvider
 	}
 
 	@Override
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
-			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		if(worldIn.getTileEntity(pos.down()) instanceof TileEntityHereticCauldron)
 			return ((HereticCauldron)worldIn.getBlockState(pos.down()).getBlock()).onBlockActivated(worldIn, pos.down(), worldIn.getBlockState(pos.down()), playerIn, hand, facing, hitX, hitY, hitZ);
 		return false;

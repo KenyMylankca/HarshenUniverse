@@ -84,8 +84,7 @@ public class HereticCauldron extends BaseBlockHarshenSingleInventory
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
 		boolean flag = getTile(worldIn, pos).onActivated(playerIn);
-		boolean flag2 =  flag ? flag : super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitZ, hitZ, hitZ);
-		return flag2;
+		return flag ? flag : super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitZ, hitZ, hitZ);
     }
 	
 	@Override
