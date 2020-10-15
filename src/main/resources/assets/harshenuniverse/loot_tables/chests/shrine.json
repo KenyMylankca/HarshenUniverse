@@ -65,6 +65,20 @@
                             }
                         }
                     ]
+                },
+				{
+                    "type": "item",
+                    "name": "harshenuniverse:harshen_crystal",
+                    "weight": 1,
+					"functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 0,
+                                "max": 4
+                            }
+                        }
+                    ]
                 }
             ]
         }

@@ -50,12 +50,17 @@
         },
 		{
 			"name":"rewards",
-            "rolls": 1,
+            "rolls": 2,
             "entries": [
                 {
                     "type": "item",
                     "name": "harshenuniverse:harshen_soul_fragment",
                     "weight": 40
+                },
+				{
+                    "type": "item",
+                    "name": "harshenuniverse:harshen_crystal",
+                    "weight": 45
                 },
 				{
                     "type": "empty",
