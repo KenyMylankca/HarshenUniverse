@@ -249,8 +249,11 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
         	fluid = HarshenRegistry.getRelativeFluid(potentionalLiquid);
         	level += HarshenRegistry.getFill(mainhandstack);
         	ItemStack oldStack = mainhandstack.copy();
-        	mainhandstack.shrink(1);
-        	HarshenUtils.give(playerIn, EnumHand.MAIN_HAND, HarshenRegistry.getOutPutItem(oldStack, potentionalLiquid));
+        	if(!isCreative)
+        	{
+        		mainhandstack.shrink(1);
+            	HarshenUtils.give(playerIn, EnumHand.MAIN_HAND, HarshenRegistry.getOutPutItem(oldStack, potentionalLiquid));
+        	}
         	return true;
         }
         ItemStack potentionalItem = HarshenRegistry.getInputFromOutput(mainhandstack, fluid);
@@ -260,8 +263,11 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
         	if(mainhandstack.getItem() instanceof GlassContainer) this.world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
         	level -= HarshenRegistry.getRemoveFill(mainhandstack, fluid);
         	ItemStack oldStack = mainhandstack.copy();
-        	mainhandstack.shrink(1);
-        	HarshenUtils.give(playerIn, EnumHand.MAIN_HAND, HarshenRegistry.getInputFromOutput(oldStack, fluid));
+        	if(!isCreative)
+        	{
+        		mainhandstack.shrink(1);
+            	HarshenUtils.give(playerIn, EnumHand.MAIN_HAND, HarshenRegistry.getInputFromOutput(oldStack, fluid));
+        	}
         	return true;
         }
         else if(mainhanditem == HarshenItems.RITUAL_STICK)
