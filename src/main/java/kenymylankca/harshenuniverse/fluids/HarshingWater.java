@@ -3,8 +3,8 @@ package kenymylankca.harshenuniverse.fluids;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
 
-public class HarshingWater extends Fluid {
-    
+public class HarshingWater extends Fluid
+{
     public static final String NAME = "harshing_water";
 
     public HarshingWater()

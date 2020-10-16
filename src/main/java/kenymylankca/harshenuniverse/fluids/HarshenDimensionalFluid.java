@@ -3,7 +3,8 @@ package kenymylankca.harshenuniverse.fluids;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
 
-public class HarshenDimensionalFluid extends Fluid {
+public class HarshenDimensionalFluid extends Fluid
+{
     public static final String NAME = "harshen_dimensional_fluid";
 
     public HarshenDimensionalFluid()

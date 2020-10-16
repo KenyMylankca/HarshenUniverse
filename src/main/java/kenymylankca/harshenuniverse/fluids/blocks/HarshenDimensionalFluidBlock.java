@@ -10,6 +10,7 @@ import net.minecraft.block.BlockDirt;
 import net.minecraft.block.BlockGrass;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.MobEffects;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumFacing;
@@ -46,8 +47,8 @@ public class HarshenDimensionalFluidBlock extends BaseFluidBlock
 	@Override
 	protected ArrayList<PotionEffect> getPotions() {
 		ArrayList<PotionEffect> effects = new ArrayList<PotionEffect>();
-		effects.add(new PotionEffect(Potion.getPotionById(9), 250));
-		effects.add(new PotionEffect(Potion.getPotionById(2), 250));
+		effects.add(new PotionEffect(MobEffects.SLOWNESS, 250));
+		effects.add(new PotionEffect(MobEffects.NAUSEA, 250));
 		return effects;
 	}
 
