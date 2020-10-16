@@ -45,7 +45,9 @@ public class BloodCollector extends BaseItemMetaData
 	
 	public boolean fill(EntityPlayer player, EnumHand hand, int amount)
 	{
-		boolean flag = false; 
+		if(player.isCreative())
+			return true;
+		boolean flag = false;
 		ItemStack stack = player.getHeldItem(hand);
 		NBTTagCompound nbt = getNBT(stack);
 
