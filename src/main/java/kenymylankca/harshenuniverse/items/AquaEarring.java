@@ -4,11 +4,11 @@ import kenymylankca.harshenuniverse.api.EnumAccessoryInventorySlots;
 import kenymylankca.harshenuniverse.api.IHarshenProvider;
 import net.minecraft.item.Item;
 
-public class WaterEarring extends Item implements IHarshenProvider
+public class AquaEarring extends Item implements IHarshenProvider
 {
-	public WaterEarring() {
-		setRegistryName("water_earring");
-		setUnlocalizedName("water_earring");
+	public AquaEarring() {
+		setRegistryName("aqua_earring");
+		setUnlocalizedName("aqua_earring");
 	}
 	
 	@Override

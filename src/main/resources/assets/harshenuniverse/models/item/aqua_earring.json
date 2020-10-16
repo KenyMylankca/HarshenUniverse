@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "harshenuniverse:items/water_earring"
+        "layer0": "harshenuniverse:items/aqua_earring"
     }
 }
