@@ -159,7 +159,8 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
         			((BloodCollector)mainhanditem).remove(playerIn, EnumHand.MAIN_HAND, bloodCollectorBloodPerLevel);
         		this.world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BOTTLE_EMPTY, SoundCategory.BLOCKS, 1.0F, 1.0F);
         		level ++;
-        		if (fluid == CauldronLiquid.NONE) fluid = GlassContainerValues.BLOOD.getType();
+        		if (fluid == CauldronLiquid.NONE)
+        			fluid = GlassContainerValues.BLOOD.getType();
         		return true;
         	}
         }
@@ -176,10 +177,11 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
         }
         if(mainhanditem instanceof ItemBucket && level == 3)
         {
-        	if(fluid ==  GlassContainerValues.WATER.getType())
+        	if(fluid == GlassContainerValues.WATER.getType())
         	{
         		this.world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BUCKET_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
         		level -=3;
+        		fluid = CauldronLiquid.NONE;
         		if(!isCreative)
         		{
         			playerIn.getHeldItemMainhand().setCount(playerIn.getHeldItemMainhand().getCount()-1);
@@ -195,6 +197,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
         		{
         			this.world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BUCKET_FILL_LAVA, SoundCategory.BLOCKS, 1.0F, 1.0F);
         			level -=3;
+        			fluid = CauldronLiquid.NONE;
         			if(!isCreative)
         			{
         				playerIn.getHeldItemMainhand().setCount(playerIn.getHeldItemMainhand().getCount()-1);
@@ -211,6 +214,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
         		{
         			this.world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BUCKET_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
         			level -=3;
+        			fluid = CauldronLiquid.NONE;
         			if(!isCreative)
         			{
         				playerIn.getHeldItemMainhand().setCount(playerIn.getHeldItemMainhand().getCount()-1);
@@ -284,6 +288,8 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
         	if(mainhandstack.getItem() instanceof ItemBucket) this.world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BUCKET_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
         	if(mainhandstack.getItem() instanceof GlassContainer) this.world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
         	level -= HarshenRegistry.getRemoveFill(mainhandstack, fluid);
+        	if(level == 0)
+        		fluid = CauldronLiquid.NONE;
         	ItemStack oldStack = mainhandstack.copy();
         	if(!isCreative)
         	{
