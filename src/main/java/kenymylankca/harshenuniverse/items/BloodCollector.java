@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 
 public class BloodCollector extends BaseItemMetaData
 {
-	private static int capacity = 30;
+	private static final int capacity = 30;
 	
 	public BloodCollector()
 	{
@@ -43,38 +43,40 @@ public class BloodCollector extends BaseItemMetaData
 		return nbt.getInteger("Blood");
 	}
 	
-	public boolean fill(EntityPlayer player, EnumHand hand, int amount)
+	public void fill(EntityPlayer player, EnumHand hand, int amount)
 	{
+		player.world.playSound(player.posX, player.posY, player.posZ, HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 1f, 0.6f, false);
 		if(player.isCreative())
-			return true;
-		boolean flag = false;
+			return;
 		ItemStack stack = player.getHeldItem(hand);
 		NBTTagCompound nbt = getNBT(stack);
-
-		if(nbt.getInteger("Blood") + amount <= capacity)
-		{
+		
+		if(nbt.getInteger("Blood") + amount > capacity)
+			nbt.setInteger("Blood", capacity);
+		else
 			nbt.setInteger("Blood", nbt.getInteger("Blood") + amount);
-			flag = true;
-		}
-		else if(player.capabilities.isCreativeMode)	flag = true;
-			
+		
 		stack.setItemDamage(metaChange(nbt));
         stack.setTagCompound(nbt);
         player.setHeldItem(hand, stack);
-		return flag;
 	}
 	
-	public boolean remove(EntityPlayer player, EnumHand hand, int amount)
+	public void remove(EntityPlayer player, EnumHand hand, int amount)
 	{
-		if(player.capabilities.isCreativeMode)
-			return true;
+		player.world.playSound(player.posX, player.posY, player.posZ, HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 0.8f, 1f, false);
+		if(player.isCreative())
+			return;
 		ItemStack stack = player.getHeldItem(hand);
 		NBTTagCompound nbt = getNBT(stack);
+		
 		if(nbt.getInteger("Blood") - amount < 0)
-			return false;
-		nbt.setInteger("Blood", nbt.getInteger("Blood") - amount);
+			nbt.setInteger("Blood", 0);
+		else
+			nbt.setInteger("Blood", nbt.getInteger("Blood") - amount);
+		
 		stack.setItemDamage(metaChange(nbt));
-		return true;
+		stack.setTagCompound(nbt);
+		player.setHeldItem(hand, stack);
 	}
 	
 	private NBTTagCompound getNBT(ItemStack stack)
@@ -115,31 +117,31 @@ public class BloodCollector extends BaseItemMetaData
 			switch (hand) {
 			case MAIN_HAND:
 				int tileEntityRemove = player.isSneaking() ? getNBT(player.getHeldItem(hand)).getInteger("Blood") : 1;
-				if(!vessel.isFull() && remove(player, hand, tileEntityRemove))
+				if(!vessel.isFull() && (getBloodLevel(player, hand) > 0 || player.isCreative()))
 				{
+					remove(player, hand, 1);
 					vessel.addBlood(tileEntityRemove);
-					worldIn.playSound(pos.getX(), pos.getY(), pos.getZ(), HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 0.8f, 1f, false);
 				}
 				break;
 			default:
 				int tileEntityRemoveOffHand = player.isSneaking() ? Math.min(vessel.getBloodLevel(), capacity - getNBT(player.getHeldItem(hand)).getInteger("Blood")) : 1;
-				if(vessel.getBloodLevel() >= tileEntityRemoveOffHand && fill(player, hand, tileEntityRemoveOffHand))
+				if(vessel.getBloodLevel() >= tileEntityRemoveOffHand && (getBloodLevel(player, hand) < capacity || player.isCreative()))
 				{
 					vessel.drainBlood(tileEntityRemoveOffHand);
-					worldIn.playSound(pos.getX(), pos.getY(), pos.getZ(), HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 1f, 0.6f, false);
+					fill(player, hand, 1);
 				}
 				break;
 			}
 		}
-		else if(player.isSneaking() && worldIn.getBlockState(pos.offset(facing).down()).isSideSolid(worldIn, pos, EnumFacing.UP) && remove(player, hand, 1))
+		else if(player.isSneaking() && worldIn.getBlockState(pos.offset(facing).down()).isSideSolid(worldIn, pos, EnumFacing.UP) && (getBloodLevel(player, hand) > 0 || player.isCreative()))
 		{	
+			remove(player, hand, 1);
 			worldIn.setBlockState(pos.offset(facing), HarshenBlocks.BLOOD_BLOCK.getDefaultState(), 3);
 			worldIn.getBlockState(pos.offset(facing)).getBlock().onBlockAdded(worldIn, pos.offset(facing), worldIn.getBlockState(pos.offset(facing))); 
-			worldIn.playSound(pos.getX(), pos.getY(), pos.getZ(), HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 1f, 1f, false);
 		}
-		else if(worldIn.getBlockState(pos).getBlock() == HarshenBlocks.BLOOD_BLOCK && fill(player, hand, 1) && !player.isSneaking())
+		else if(worldIn.getBlockState(pos).getBlock() == HarshenBlocks.BLOOD_BLOCK && (getBloodLevel(player, hand) < capacity || player.isCreative()) && !player.isSneaking())
 		{
-			worldIn.playSound(pos.getX(), pos.getY(), pos.getZ(), HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 1f, 0.7f, false);
+			fill(player, hand, 1);
 			worldIn.setBlockToAir(pos);
 		}
 		return super.onItemUse(player, worldIn, pos, hand, facing, hitX, hitY, hitZ);
