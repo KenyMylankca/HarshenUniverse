@@ -16,4 +16,10 @@ public class ElementalPendant extends Item implements IHarshenProvider
 	public EnumAccessoryInventorySlots getSlot() {
 		return EnumAccessoryInventorySlots.NECK;
 	}
+	
+	@Override
+	public int toolTipLines() {
+		return 1;
+	}
+	
 }
