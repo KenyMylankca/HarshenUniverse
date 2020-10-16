@@ -146,26 +146,30 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 		ItemStack offhandstack = playerIn.getHeldItemOffhand();
         Item mainhanditem = mainhandstack.getItem();
 		Item offhanditem = offhandstack.getItem();
+		int bloodCollectorBloodPerLevel = 5;
 		int slot = playerIn.inventory.getSlotFor(mainhandstack);
         boolean flag;
-        if(mainhanditem instanceof BloodCollector && (fluid ==  GlassContainerValues.BLOOD.getType() || fluid == CauldronLiquid.NONE) && !(offhanditem instanceof BloodCollector))
+        if(mainhanditem instanceof BloodCollector && (fluid == GlassContainerValues.BLOOD.getType() || fluid == CauldronLiquid.NONE) && offhandstack.isEmpty())
         {
-        	if(level != 3)
+        	if(level < 3)
         	{
-        		if(!isCreative && ((BloodCollector)mainhanditem).getBloodLevel(playerIn, EnumHand.MAIN_HAND) < 1) return false;
-        		if (!isCreative) ((BloodCollector)mainhanditem).remove(playerIn, EnumHand.MAIN_HAND, 1);
+        		if(((BloodCollector)mainhanditem).getBloodLevel(playerIn, EnumHand.MAIN_HAND) < bloodCollectorBloodPerLevel && !isCreative)
+    				return false;
+        		if(!isCreative)
+        			((BloodCollector)mainhanditem).remove(playerIn, EnumHand.MAIN_HAND, bloodCollectorBloodPerLevel);
         		this.world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BOTTLE_EMPTY, SoundCategory.BLOCKS, 1.0F, 1.0F);
         		level ++;
         		if (fluid == CauldronLiquid.NONE) fluid = GlassContainerValues.BLOOD.getType();
         		return true;
         	}
         }
-        if(offhanditem instanceof BloodCollector && (fluid == GlassContainerValues.BLOOD.getType()) && !(mainhanditem instanceof BloodCollector))
+        if(offhanditem instanceof BloodCollector && (fluid == GlassContainerValues.BLOOD.getType()) && mainhandstack.isEmpty())
         {
-        	if(level > 0 && ((BloodCollector) offhanditem).getBloodLevel(playerIn, EnumHand.OFF_HAND) < BloodCollector.getCapacity())
+        	if(level > 0 && ((((BloodCollector) offhanditem).getBloodLevel(playerIn, EnumHand.OFF_HAND) <= BloodCollector.getCapacity() - bloodCollectorBloodPerLevel) || isCreative))
         	{
         		this.world.playSound((EntityPlayer)null, pos, HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 1.0F, 1.0F);
-        		((BloodCollector) offhanditem).fill(playerIn, EnumHand.OFF_HAND, 1);
+        		if(!isCreative)
+        			((BloodCollector) offhanditem).fill(playerIn, EnumHand.OFF_HAND, bloodCollectorBloodPerLevel);
         		level --;
         		return true;
         	}

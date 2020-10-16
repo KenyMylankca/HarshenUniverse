@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 
 public class BloodCollector extends BaseItemMetaData
 {
-	private static int capacity = 10;
+	private static int capacity = 30;
 	
 	public BloodCollector()
 	{

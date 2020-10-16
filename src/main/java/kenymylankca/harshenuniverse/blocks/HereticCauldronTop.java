@@ -69,7 +69,8 @@ public class HereticCauldronTop extends Block implements ITileEntityProvider
 	}
 
 	@Override
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+	{
 		if(worldIn.getTileEntity(pos.down()) instanceof TileEntityHereticCauldron)
 			return ((HereticCauldron)worldIn.getBlockState(pos.down()).getBlock()).onBlockActivated(worldIn, pos.down(), worldIn.getBlockState(pos.down()), playerIn, hand, facing, hitX, hitY, hitZ);
 		return false;
