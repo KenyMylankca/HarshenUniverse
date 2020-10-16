@@ -180,11 +180,14 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
         	{
         		this.world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BUCKET_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
         		level -=3;
-        		playerIn.getHeldItemMainhand().setCount(playerIn.getHeldItemMainhand().getCount()-1);
-        		if(mainhandstack.getCount() < 1)
-        			playerIn.inventory.setInventorySlotContents(slot, new ItemStack(Items.WATER_BUCKET));
-        		else
-        			playerIn.addItemStackToInventory(new ItemStack(Items.WATER_BUCKET));
+        		if(!isCreative)
+        		{
+        			playerIn.getHeldItemMainhand().setCount(playerIn.getHeldItemMainhand().getCount()-1);
+            		if(mainhandstack.getCount() < 1)
+            			playerIn.inventory.setInventorySlotContents(slot, new ItemStack(Items.WATER_BUCKET));
+            		else
+            			playerIn.addItemStackToInventory(new ItemStack(Items.WATER_BUCKET));
+        		}
         		return true;
         	}
         	if(fluid ==  GlassContainerValues.LAVA.getType())
@@ -192,11 +195,14 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
         		{
         			this.world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BUCKET_FILL_LAVA, SoundCategory.BLOCKS, 1.0F, 1.0F);
         			level -=3;
-        			playerIn.getHeldItemMainhand().setCount(playerIn.getHeldItemMainhand().getCount()-1);
-        			if(mainhandstack.getCount() < 1)
-        				playerIn.inventory.setInventorySlotContents(slot, new ItemStack(Items.LAVA_BUCKET));
-        			else
-        				playerIn.addItemStackToInventory(new ItemStack(Items.LAVA_BUCKET));
+        			if(!isCreative)
+        			{
+        				playerIn.getHeldItemMainhand().setCount(playerIn.getHeldItemMainhand().getCount()-1);
+            			if(mainhandstack.getCount() < 1)
+            				playerIn.inventory.setInventorySlotContents(slot, new ItemStack(Items.LAVA_BUCKET));
+            			else
+            				playerIn.addItemStackToInventory(new ItemStack(Items.LAVA_BUCKET));
+        			}
         			return true;
         		}
         	}
@@ -205,11 +211,14 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
         		{
         			this.world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BUCKET_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
         			level -=3;
-        			playerIn.getHeldItemMainhand().setCount(playerIn.getHeldItemMainhand().getCount()-1);
-        			if(mainhandstack.getCount() < 1)
-        				playerIn.inventory.setInventorySlotContents(slot, new ItemStack(Items.MILK_BUCKET));
-        			else
-        				playerIn.addItemStackToInventory(new ItemStack(Items.MILK_BUCKET));
+        			if(!isCreative)
+        			{
+        				playerIn.getHeldItemMainhand().setCount(playerIn.getHeldItemMainhand().getCount()-1);
+            			if(mainhandstack.getCount() < 1)
+            				playerIn.inventory.setInventorySlotContents(slot, new ItemStack(Items.MILK_BUCKET));
+            			else
+            				playerIn.addItemStackToInventory(new ItemStack(Items.MILK_BUCKET));
+        			}
         			return true;
         		}
         	}
@@ -221,8 +230,11 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
         		this.world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BUCKET_EMPTY, SoundCategory.BLOCKS, 1.0F, 1.0F);
         		fluid = GlassContainerValues.WATER.getType();
         		level +=3;
-        		playerIn.getHeldItemMainhand().setCount(playerIn.getHeldItemMainhand().getCount()-1);
-        		playerIn.inventory.setInventorySlotContents(slot, new ItemStack(Items.BUCKET));
+        		if(!isCreative)
+        		{
+        			playerIn.getHeldItemMainhand().setCount(playerIn.getHeldItemMainhand().getCount()-1);
+            		playerIn.inventory.setInventorySlotContents(slot, new ItemStack(Items.BUCKET));
+        		}
         		return true;
         	}
         	if(mainhanditem == Items.LAVA_BUCKET)
@@ -230,8 +242,11 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
         		this.world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BUCKET_EMPTY_LAVA, SoundCategory.BLOCKS, 1.0F, 1.0F);
         		fluid = GlassContainerValues.LAVA.getType();
         		level +=3;
-        		playerIn.getHeldItemMainhand().setCount(playerIn.getHeldItemMainhand().getCount()-1);
-        		playerIn.inventory.setInventorySlotContents(slot, new ItemStack(Items.BUCKET));
+        		if(!isCreative)
+        		{
+        			playerIn.getHeldItemMainhand().setCount(playerIn.getHeldItemMainhand().getCount()-1);
+            		playerIn.inventory.setInventorySlotContents(slot, new ItemStack(Items.BUCKET));
+        		}
         		return true;
         	}
         	if(mainhanditem == Items.MILK_BUCKET)
@@ -239,8 +254,11 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
         		this.world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BUCKET_EMPTY, SoundCategory.BLOCKS, 1.0F, 1.0F);
         		fluid = GlassContainerValues.MILK.getType();
         		level +=3;
-        		playerIn.getHeldItemMainhand().setCount(playerIn.getHeldItemMainhand().getCount()-1);
-        		playerIn.inventory.setInventorySlotContents(slot, new ItemStack(Items.BUCKET));
+        		if(!isCreative)
+        		{
+        			playerIn.getHeldItemMainhand().setCount(playerIn.getHeldItemMainhand().getCount()-1);
+            		playerIn.inventory.setInventorySlotContents(slot, new ItemStack(Items.BUCKET));
+        		}
         		return true;
         	}
         }
