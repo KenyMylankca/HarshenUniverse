@@ -146,7 +146,7 @@ class HandlerBleedingEffect
 
 	public void add()
 	{
-		if(timer++ >= 30)
+		if(timer++ >= entity.world.rand.nextInt(15) + 20)
 		{
 			timer = 0;
 			this.entity.attackEntityFrom(new DamageSourceBleeding(), (float)this.level + 1f);
