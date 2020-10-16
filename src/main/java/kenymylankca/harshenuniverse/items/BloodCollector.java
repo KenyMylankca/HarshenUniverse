@@ -138,7 +138,7 @@ public class BloodCollector extends BaseItemMetaData
 			worldIn.getBlockState(pos.offset(facing)).getBlock().onBlockAdded(worldIn, pos.offset(facing), worldIn.getBlockState(pos.offset(facing))); 
 			worldIn.playSound(pos.getX(), pos.getY(), pos.getZ(), HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 1f, 1f, false);
 		}
-		else if(worldIn.getBlockState(pos).getBlock() == HarshenBlocks.BLOOD_BLOCK && fill(player, hand, 1))
+		else if(worldIn.getBlockState(pos).getBlock() == HarshenBlocks.BLOOD_BLOCK && fill(player, hand, 1) && !player.isSneaking())
 		{
 			worldIn.playSound(pos.getX(), pos.getY(), pos.getZ(), HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 1f, 0.7f, false);
 			worldIn.setBlockToAir(pos);
