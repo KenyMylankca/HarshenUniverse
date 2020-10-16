@@ -156,7 +156,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
         		if(((BloodCollector)mainhanditem).getBloodLevel(playerIn, EnumHand.MAIN_HAND) < bloodCollectorBloodPerLevel && !isCreative)
     				return false;
         		if(!isCreative)
-        			((BloodCollector)mainhanditem).remove(playerIn, EnumHand.MAIN_HAND, bloodCollectorBloodPerLevel);
+        			((BloodCollector)mainhanditem).drain(playerIn, EnumHand.MAIN_HAND, bloodCollectorBloodPerLevel);
         		this.world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BOTTLE_EMPTY, SoundCategory.BLOCKS, 1.0F, 1.0F);
         		level ++;
         		if (fluid == CauldronLiquid.NONE)

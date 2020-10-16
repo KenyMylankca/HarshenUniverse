@@ -111,7 +111,7 @@ public class BloodVessel extends Block implements ITileEntityProvider
 	public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
 		TileEntityBloodVessel te = (TileEntityBloodVessel) worldIn.getTileEntity(pos);
 		int amount = te.getBloodLevel();
-		int max = te.capacity;
+		int max = te.getCapacity();
 		worldIn.removeTileEntity(pos);
 		ItemStack stack = new ItemStack(this);
 		if(amount != 0)

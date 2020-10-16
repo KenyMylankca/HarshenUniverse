@@ -15,7 +15,7 @@ import net.minecraft.util.math.Vec3d;
 public class TileEntityBloodVessel extends BaseHarshenTileEntity implements IHudDisplay, ITickable
 {
 	private int bloodLevel = 0;
-	public static final int capacity = 100;
+	private static final int capacity = 100;
 		
 	@Override
 	public String getText() {
@@ -45,6 +45,11 @@ public class TileEntityBloodVessel extends BaseHarshenTileEntity implements IHud
 	public int getBloodLevel()
 	{
 		return bloodLevel;
+	}
+	
+	public int getCapacity()
+	{
+		return capacity;
 	}
 	
 	public void setBloodLevel(int level)

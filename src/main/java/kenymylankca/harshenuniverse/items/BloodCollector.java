@@ -61,7 +61,7 @@ public class BloodCollector extends BaseItemMetaData
         player.setHeldItem(hand, stack);
 	}
 	
-	public void remove(EntityPlayer player, EnumHand hand, int amount)
+	public void drain(EntityPlayer player, EnumHand hand, int amount)
 	{
 		player.world.playSound(player.posX, player.posY, player.posZ, HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 0.8f, 1f, false);
 		if(player.isCreative())
@@ -116,26 +116,26 @@ public class BloodCollector extends BaseItemMetaData
 			TileEntityBloodVessel vessel = ((TileEntityBloodVessel)worldIn.getTileEntity(pos));
 			switch (hand) {
 			case MAIN_HAND:
-				int tileEntityRemove = player.isSneaking() ? getNBT(player.getHeldItem(hand)).getInteger("Blood") : 1;
+				int tileEntityFill = player.isSneaking() ? Math.min(vessel.getCapacity() - vessel.getBloodLevel(), getNBT(player.getHeldItem(hand)).getInteger("Blood")) : 1;
 				if(!vessel.isFull() && (getBloodLevel(player, hand) > 0 || player.isCreative()))
 				{
-					remove(player, hand, 1);
-					vessel.addBlood(tileEntityRemove);
+					drain(player, hand, tileEntityFill);
+					vessel.addBlood(tileEntityFill);
 				}
 				break;
 			default:
-				int tileEntityRemoveOffHand = player.isSneaking() ? Math.min(vessel.getBloodLevel(), capacity - getNBT(player.getHeldItem(hand)).getInteger("Blood")) : 1;
-				if(vessel.getBloodLevel() >= tileEntityRemoveOffHand && (getBloodLevel(player, hand) < capacity || player.isCreative()))
+				int tileEntityRemove = player.isSneaking() ? Math.min(vessel.getBloodLevel(), capacity - getNBT(player.getHeldItem(hand)).getInteger("Blood")) : 1;
+				if(vessel.getBloodLevel() >= tileEntityRemove && (getBloodLevel(player, hand) < capacity || player.isCreative()))
 				{
-					vessel.drainBlood(tileEntityRemoveOffHand);
-					fill(player, hand, 1);
+					vessel.drainBlood(tileEntityRemove);
+					fill(player, hand, tileEntityRemove);
 				}
 				break;
 			}
 		}
 		else if(player.isSneaking() && worldIn.getBlockState(pos.offset(facing).down()).isSideSolid(worldIn, pos, EnumFacing.UP) && (getBloodLevel(player, hand) > 0 || player.isCreative()))
 		{	
-			remove(player, hand, 1);
+			drain(player, hand, 1);
 			worldIn.setBlockState(pos.offset(facing), HarshenBlocks.BLOOD_BLOCK.getDefaultState(), 3);
 			worldIn.getBlockState(pos.offset(facing)).getBlock().onBlockAdded(worldIn, pos.offset(facing), worldIn.getBlockState(pos.offset(facing))); 
 		}
