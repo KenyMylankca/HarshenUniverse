@@ -18,9 +18,9 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class HarshenArmors 
 {
-	public static ArmorMaterial JAGUAR_MATERIAL = EnumHelper.addArmorMaterial("harshen", HarshenUniverse.MODID + ":Harshen", 100, new int[] {3,6,8,3}, 9, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 2.0F)
+	public static ArmorMaterial JAGUAR_MATERIAL = EnumHelper.addArmorMaterial("harshen", HarshenUniverse.MODID + ":Harshen", 90, new int[] {3,6,7,3}, 9, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 2.5F)
 			.setRepairItem(new ItemStack(HarshenItems.HARSHEN_SOUL_INGOT));
-	public static ArmorMaterial BLOODY_MATERIAL = EnumHelper.addArmorMaterial("bloody", HarshenUniverse.MODID + ":Bloody", 40, new int[] {1,2,3,1}, 2, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0F)
+	public static ArmorMaterial BLOODY_MATERIAL = EnumHelper.addArmorMaterial("bloody", HarshenUniverse.MODID + ":Bloody", 30, new int[] {1,2,3,1}, 2, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 1F)
 			.setRepairItem(new ItemStack(HarshenBlocks.BLOODY_WOOL));
 
 	public static ItemArmor HARSHEN_JAGUAR_ARMOR_HELMET;
