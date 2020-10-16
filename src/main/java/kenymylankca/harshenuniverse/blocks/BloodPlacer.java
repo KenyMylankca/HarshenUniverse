@@ -41,7 +41,7 @@ public class BloodPlacer extends BlockHorizontal
 		
 		if(worldIn.isBlockPowered(pos) && worldIn.isAirBlock(frontPos) &&
 				worldIn.getBlockState(pos.up()).getBlock() instanceof BloodVessel &&
-					((TileEntityBloodVessel)worldIn.getTileEntity(pos.up())).canRemove(1))
+					((TileEntityBloodVessel)worldIn.getTileEntity(pos.up())).getBloodLevel() >= 1)
 		{
 			for(int i=0; i<GeneralConfig.bloodHeightRange; i++)
 			{
@@ -52,8 +52,8 @@ public class BloodPlacer extends BlockHorizontal
 					if(worldIn.getBlockState(bloodpos).getBlock().canPlaceBlockAt(worldIn, bloodpos) )
 					{
 						blocksOnMap.put(bloodpos, true);
-						((TileEntityBloodVessel)worldIn.getTileEntity(pos.up())).change(-1);
-						HarshenNetwork.sendToAll(new MessagePacketTileEntityBloodPlacerUpdated(pos.up(), ((TileEntityBloodVessel)worldIn.getTileEntity(pos.up())).getPossibleRemove()));
+						((TileEntityBloodVessel)worldIn.getTileEntity(pos.up())).drainBlood(1);
+						HarshenNetwork.sendToAll(new MessagePacketTileEntityBloodPlacerUpdated(pos.up(), ((TileEntityBloodVessel)worldIn.getTileEntity(pos.up())).getBloodLevel()));
 						worldIn.setBlockState(bloodpos, HarshenBlocks.BLOOD_BLOCK.getDefaultState(), 3);
 						break;
 					}

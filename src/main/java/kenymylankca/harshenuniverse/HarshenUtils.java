@@ -1042,12 +1042,9 @@ public class HarshenUtils
 					if(world.getBlockState(bloodpos.down()).getBlock() instanceof BloodVessel)
 					{
 						TileEntityBloodVessel vessel = ((TileEntityBloodVessel)world.getTileEntity(bloodpos.down()));
-						if(vessel.canAdd(1))
-						{
-							vessel.change(1);
-							world.playSound(bloodpos.getX(), bloodpos.getY(), bloodpos.getZ(), HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 0.8f, 1f, false);
-							break;
-						}
+						vessel.addBlood(1);
+						world.playSound(bloodpos.getX(), bloodpos.getY(), bloodpos.getZ(), HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 0.8f, 1f, false);
+						break;
 					}
 					else if(world.isSideSolid(pos.down(i+1), EnumFacing.UP))
 					{
@@ -1059,6 +1056,42 @@ public class HarshenUtils
 					}
 				}
 			}
+    }
+    
+    public static void splashBlood(BlockPos pos, World worldIn)
+    {
+    	IBlockState state = worldIn.getBlockState(pos);
+		
+    	if(GeneralConfig.bloodSplash && new Random().nextDouble() < GeneralConfig.bloodChance)
+    	{
+    		BlockPos bloodPos = null;
+			for(int i=1; i<GeneralConfig.bloodHeightRange; i++)
+			{
+				if(worldIn.isAirBlock(pos.north()) && worldIn.isSideSolid(pos.north().down(i), EnumFacing.UP) && worldIn.rand.nextBoolean())
+					bloodPos = pos.north().down(i).up();
+					
+				if(worldIn.isAirBlock(pos.south()) && worldIn.isSideSolid(pos.south().down(i), EnumFacing.UP) && worldIn.rand.nextBoolean())
+					bloodPos = pos.south().down(i).up();
+				
+				if(worldIn.isAirBlock(pos.west()) && worldIn.isSideSolid(pos.west().down(i), EnumFacing.UP) && worldIn.rand.nextBoolean())
+					bloodPos = pos.west().down(i).up();
+				
+				if(worldIn.isAirBlock(pos.east()) && worldIn.isSideSolid(pos.east().down(i), EnumFacing.UP) && worldIn.rand.nextBoolean())
+					bloodPos = pos.east().down(i).up();
+				
+				if(bloodPos != null)
+					if(worldIn.getBlockState(bloodPos.down()).getBlock() instanceof BloodVessel)
+					{
+						TileEntityBloodVessel vessel = ((TileEntityBloodVessel)worldIn.getTileEntity(bloodPos.down()));
+						
+						vessel.addBlood(1);
+						worldIn.playSound(bloodPos.getX(), bloodPos.getY(), bloodPos.getZ(), HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 0.7f, 1f, false);
+						break;
+					}
+					else if(worldIn.getBlockState(bloodPos).getBlock().canPlaceBlockAt(worldIn, bloodPos))
+						worldIn.setBlockState(bloodPos, HarshenBlocks.BLOOD_BLOCK.getDefaultState(), 3);
+			}
+    	}
     }
     
     public static int hasAccessoryTimes(EntityPlayer player, Item accessory)

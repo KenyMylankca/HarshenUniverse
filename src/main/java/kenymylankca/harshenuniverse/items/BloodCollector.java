@@ -114,17 +114,17 @@ public class BloodCollector extends BaseItemMetaData
 			switch (hand) {
 			case MAIN_HAND:
 				int tileEntityRemove = player.isSneaking() ? getNBT(player.getHeldItem(hand)).getInteger("Blood") : 1;
-				if(vessel.canAdd(tileEntityRemove) && remove(player, hand, tileEntityRemove))
+				if(!vessel.isFull() && remove(player, hand, tileEntityRemove))
 				{
-					vessel.change(tileEntityRemove);
+					vessel.addBlood(tileEntityRemove);
 					worldIn.playSound(pos.getX(), pos.getY(), pos.getZ(), HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 0.8f, 1f, false);
 				}
 				break;
 			default:
-				int tileEntityRemoveOffHand = player.isSneaking() ? Math.min(vessel.getPossibleRemove(), capacity - getNBT(player.getHeldItem(hand)).getInteger("Blood")) : 1;
-				if(vessel.canRemove(tileEntityRemoveOffHand) && fill(player, hand, tileEntityRemoveOffHand))
+				int tileEntityRemoveOffHand = player.isSneaking() ? Math.min(vessel.getBloodLevel(), capacity - getNBT(player.getHeldItem(hand)).getInteger("Blood")) : 1;
+				if(vessel.getBloodLevel() >= tileEntityRemoveOffHand && fill(player, hand, tileEntityRemoveOffHand))
 				{
-					vessel.change(-tileEntityRemoveOffHand);
+					vessel.drainBlood(tileEntityRemoveOffHand);
 					worldIn.playSound(pos.getX(), pos.getY(), pos.getZ(), HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 1f, 0.6f, false);
 				}
 				break;

@@ -16,19 +16,19 @@ public class TileEntityBloodFactory extends BaseTileEntityHarshenSingleItemInven
 	private int tickRate = 0;
 	
 	@Override
-	protected void finishedTicking() 
+	protected void finishedTicking()
 	{
-		setItem(ItemStack.EMPTY);	
+		setItem(ItemStack.EMPTY);
 	}
 	
 	@Override
 	protected boolean checkForCompletion(boolean checkingUp) {
-		if(getItem().getItem() instanceof IBloodSupply && !checkingUp && world.getTileEntity(pos.down()) instanceof TileEntityBloodVessel
-				&& ((TileEntityBloodVessel)world.getTileEntity(pos.down())).canAdd(((IBloodSupply) getItem().getItem()).getAmountPerSecond()))
-		{
-			itemSupply = (IBloodSupply) getItem().getItem();
-			activate();
-		}
+		if(getItem().getItem() instanceof IBloodSupply && !checkingUp && world.getTileEntity(pos.down()) instanceof TileEntityBloodVessel)
+			if(!((TileEntityBloodVessel)world.getTileEntity(pos.down())).isFull())
+			{
+				itemSupply = (IBloodSupply) getItem().getItem();
+				activate();
+			}
 		return getItem().getItem() instanceof IBloodSupply;
 	}
 	
@@ -42,10 +42,10 @@ public class TileEntityBloodFactory extends BaseTileEntityHarshenSingleItemInven
 		}
 		if(isActive() && itemSupply != null && world.getTileEntity(pos.down()) instanceof TileEntityBloodVessel && tickRate++ % 50 == 0 )
 		{
-			if(!((TileEntityBloodVessel)world.getTileEntity(pos.down())).canAdd(itemSupply.getAmountPerSecond()))
+			if(((TileEntityBloodVessel)world.getTileEntity(pos.down())).isFull())
 				deactivate();
 			else
-				((TileEntityBloodVessel)world.getTileEntity(pos.down())).change(itemSupply.getAmountPerSecond());
+				((TileEntityBloodVessel)world.getTileEntity(pos.down())).addBlood(itemSupply.getAmountPerSecond());
 		}
 	}
 }
