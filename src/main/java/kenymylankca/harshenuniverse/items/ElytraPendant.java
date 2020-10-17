@@ -3,7 +3,7 @@ package kenymylankca.harshenuniverse.items;
 import kenymylankca.harshenuniverse.HarshenUtils;
 import kenymylankca.harshenuniverse.api.EnumAccessoryInventorySlots;
 import kenymylankca.harshenuniverse.api.HarshenEvent;
-import kenymylankca.harshenuniverse.api.IHarshenProvider;
+import kenymylankca.harshenuniverse.api.IHarshenAccessoryProvider;
 import kenymylankca.harshenuniverse.network.HarshenNetwork;
 import kenymylankca.harshenuniverse.network.packets.MessagePacketSummonFirework;
 import net.minecraft.item.Item;
@@ -13,7 +13,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickEmpty;
 
-public class ElytraPendant extends Item implements IHarshenProvider
+public class ElytraPendant extends Item implements IHarshenAccessoryProvider
 {
 
 	public ElytraPendant() {

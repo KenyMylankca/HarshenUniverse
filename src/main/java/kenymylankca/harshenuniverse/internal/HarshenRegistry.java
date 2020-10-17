@@ -9,7 +9,7 @@ import kenymylankca.harshenuniverse.api.CauldronLiquid;
 import kenymylankca.harshenuniverse.api.EnumAccessoryInventorySlots;
 import kenymylankca.harshenuniverse.api.HarshenStack;
 import kenymylankca.harshenuniverse.api.IHarshenHelper;
-import kenymylankca.harshenuniverse.api.IHarshenProvider;
+import kenymylankca.harshenuniverse.api.IHarshenAccessoryProvider;
 import kenymylankca.harshenuniverse.api.IHarshenRegistry;
 import kenymylankca.harshenuniverse.enums.items.GlassContainerValue;
 import kenymylankca.harshenuniverse.objecthandlers.VanillaProviderToInterface;
@@ -177,7 +177,7 @@ public class HarshenRegistry implements IHarshenRegistry
 	}
 
 	@Override
-	public void registerInventoryItem(BlockItem item, IHarshenProvider provider) {
+	public void registerInventoryItem(BlockItem item, IHarshenAccessoryProvider provider) {
 		HarshenUtils.registerInventoryItem(item, provider);
 	}
 

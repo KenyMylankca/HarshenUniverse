@@ -10,7 +10,7 @@ import kenymylankca.harshenuniverse.HarshenItems;
 import kenymylankca.harshenuniverse.HarshenUtils;
 import kenymylankca.harshenuniverse.api.BlockItem;
 import kenymylankca.harshenuniverse.api.HarshenEvent;
-import kenymylankca.harshenuniverse.api.IHarshenProvider;
+import kenymylankca.harshenuniverse.api.IHarshenAccessoryProvider;
 import kenymylankca.harshenuniverse.network.HarshenNetwork;
 import kenymylankca.harshenuniverse.network.packets.MessagePacketRequestHarshenInv;
 import kenymylankca.harshenuniverse.objecthandlers.HarshenItemStackHandler;
@@ -33,32 +33,37 @@ import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class HandlerHarshenInventory 
+public class HandlerHarshenAccessoryInventory 
 {
 	private static ArrayList<ItemStack> prevInvClient = new ArrayList<>();
 	private static ArrayList<ItemStack> prevInvServer = new ArrayList<>();
 	
 	@SubscribeEvent
-	public void playerTick(PlayerTickEvent event)
+	public void onPlayerTick(PlayerTickEvent event)
 	{
-		if(event.player.world.isRemote)
-		{
-			if(event.player instanceof EntityOtherPlayerMP) return;
-			if(!event.player.getEntityData().hasKey("harshenInventory"))
-				HarshenNetwork.sendToServer(new MessagePacketRequestHarshenInv());
-		}
-		ArrayList<ItemStack> prevInv = event.side.isServer() ? prevInvServer : prevInvClient;
+		if(event.player instanceof EntityOtherPlayerMP)
+			return;
+		if(event.player.world.isRemote && !event.player.getEntityData().hasKey("harshenInventory"))
+			HarshenNetwork.sendToServer(new MessagePacketRequestHarshenInv());
 		
+		ArrayList<ItemStack> prevInv = event.side.isServer() ? prevInvServer : prevInvClient;
 		HarshenItemStackHandler handler = HarshenUtils.getHandler(event.player);
+		
 		if(prevInv.size() > 0)
-			for(int slot = 0; slot < handler.getSlots(); slot++)
-				if(!(prevInv.get(slot).getItem() == handler.getStackInSlot(slot).getItem()) && (handler.getStackInSlot(slot).getItem() instanceof IHarshenProvider || prevInv.get(slot).getItem() instanceof IHarshenProvider))
+			for(int i = 0; i < handler.getSlots(); i++)
+			{
+				if(event.side.isServer())
+					if(handler.getStackInSlot(i).getItem() instanceof IHarshenAccessoryProvider)
+						((IHarshenAccessoryProvider)handler.getStackInSlot(i).getItem()).onTick(event.player, i);
+				
+				if(!(prevInv.get(i).getItem() == handler.getStackInSlot(i).getItem()) && (handler.getStackInSlot(i).getItem() instanceof IHarshenAccessoryProvider || prevInv.get(i).getItem() instanceof IHarshenAccessoryProvider))
 				{
-					if(handler.getStackInSlot(slot).getItem() instanceof IHarshenProvider)
-						((IHarshenProvider)handler.getStackInSlot(slot).getItem()).onAdd(event.player, slot);
-					if(prevInv.get(slot).getItem() instanceof IHarshenProvider)
-						((IHarshenProvider)prevInv.get(slot).getItem()).onRemove(event.player, slot);
+					if(handler.getStackInSlot(i).getItem() instanceof IHarshenAccessoryProvider)
+						((IHarshenAccessoryProvider)handler.getStackInSlot(i).getItem()).onAdd(event.player, i);
+					if(prevInv.get(i).getItem() instanceof IHarshenAccessoryProvider)
+						((IHarshenAccessoryProvider)prevInv.get(i).getItem()).onRemove(event.player, i);
 				}
+			}
 		prevInv.clear();
 		prevInv.addAll(handler.getStacks());
 	}
@@ -89,8 +94,8 @@ public class HandlerHarshenInventory
 		{
 			event.player.getEntityData().setTag("harshenInventory", stackMap.get(event.player.getUniqueID()).serializeNBT());
 			for(int i = 0; i < stackMap.get(event.player.getUniqueID()).getSlots(); i++)
-				if(stackMap.get(event.player.getUniqueID()).getStackInSlot(i).getItem() instanceof IHarshenProvider)
-					((IHarshenProvider)stackMap.get(event.player.getUniqueID()).getStackInSlot(i).getItem()).onAdd(event.player, i);
+				if(stackMap.get(event.player.getUniqueID()).getStackInSlot(i).getItem() instanceof IHarshenAccessoryProvider)
+					((IHarshenAccessoryProvider)stackMap.get(event.player.getUniqueID()).getStackInSlot(i).getItem()).onAdd(event.player, i);
 		}
 	}
 	
@@ -116,7 +121,7 @@ public class HandlerHarshenInventory
 	{
 		if(HarshenUtils.hasProvider(new BlockItem(event.getItemStack().getItem())))
 		{
-			IHarshenProvider provider = HarshenUtils.getProvider(new BlockItem(event.getItemStack().getItem()));
+			IHarshenAccessoryProvider provider = HarshenUtils.getProvider(new BlockItem(event.getItemStack().getItem()));
 			event.getToolTip().add("\u00A75" + new TextComponentTranslation("accessoryitem", "\u00A77" + new TextComponentTranslation(provider.getSlot().getName()).getFormattedText()).getFormattedText());
 			if(provider.toolTipLines() > 0)
 				event.getToolTip().add(" ");
@@ -137,7 +142,7 @@ public class HandlerHarshenInventory
 				ItemStack stack = HarshenUtils.getHandler(player).getStackInSlot(i);
 				if(!HarshenUtils.hasProvider(stack))
 					continue; //practically impossible
-				IHarshenProvider provider = HarshenUtils.getProvider(stack);
+				IHarshenAccessoryProvider provider = HarshenUtils.getProvider(stack);
 				Object object = provider.getProvider(stack);
 				if(object != null && !(loadedItems.contains(stack.getItem()) && !provider.isMultiplyEvent(stack)))
 					try {

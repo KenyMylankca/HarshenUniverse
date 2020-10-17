@@ -2,7 +2,7 @@ package kenymylankca.harshenuniverse.items;
 
 import kenymylankca.harshenuniverse.api.EnumAccessoryInventorySlots;
 import kenymylankca.harshenuniverse.api.HarshenEvent;
-import kenymylankca.harshenuniverse.api.IHarshenProvider;
+import kenymylankca.harshenuniverse.api.IHarshenAccessoryProvider;
 import kenymylankca.harshenuniverse.config.AccessoryConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -12,7 +12,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 
-public class EnderNecklace extends Item implements IHarshenProvider
+public class EnderNecklace extends Item implements IHarshenAccessoryProvider
 {
 	public EnderNecklace() {
 		setRegistryName("ender_necklace");
@@ -39,7 +39,7 @@ public class EnderNecklace extends Item implements IHarshenProvider
 	@Override
 	public void onAdd(EntityPlayer player, int slot) {
 		player.playSound(SoundEvents.ENTITY_ENDERMEN_AMBIENT, 1f, 1f);
-		IHarshenProvider.super.onAdd(player, slot);
+		IHarshenAccessoryProvider.super.onAdd(player, slot);
 	}
 	
 	public class EnderNecklaceHandler

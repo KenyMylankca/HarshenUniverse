@@ -1,10 +1,10 @@
 package kenymylankca.harshenuniverse.items;
 
 import kenymylankca.harshenuniverse.api.EnumAccessoryInventorySlots;
-import kenymylankca.harshenuniverse.api.IHarshenProvider;
+import kenymylankca.harshenuniverse.api.IHarshenAccessoryProvider;
 import net.minecraft.item.Item;
 
-public class FieryRing extends Item implements IHarshenProvider
+public class FieryRing extends Item implements IHarshenAccessoryProvider
 {
 	public FieryRing() {
 		setUnlocalizedName("fiery_ring");

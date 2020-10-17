@@ -11,7 +11,7 @@ import kenymylankca.harshenuniverse.HarshenUniverse;
 import kenymylankca.harshenuniverse.HarshenUtils;
 import kenymylankca.harshenuniverse.api.EnumAccessoryInventorySlots;
 import kenymylankca.harshenuniverse.api.HarshenEvent;
-import kenymylankca.harshenuniverse.api.IHarshenProvider;
+import kenymylankca.harshenuniverse.api.IHarshenAccessoryProvider;
 import kenymylankca.harshenuniverse.config.AccessoryConfig;
 import kenymylankca.harshenuniverse.handlers.GuiHandler;
 import net.minecraft.block.Block;
@@ -34,7 +34,7 @@ import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.ClientTickEvent;
 
-public class XrayPendant extends Item implements IHarshenProvider
+public class XrayPendant extends Item implements IHarshenAccessoryProvider
 {
 	public XrayPendant() {
 		setRegistryName("xray_pendant");
@@ -50,7 +50,7 @@ public class XrayPendant extends Item implements IHarshenProvider
 	@Override
 	public void onAdd(EntityPlayer player, int slot) {
 		player.playSound(SoundEvents.AMBIENT_CAVE, 1f, 1f);
-		IHarshenProvider.super.onAdd(player, slot);
+		IHarshenAccessoryProvider.super.onAdd(player, slot);
 	}
 	
 	@Override

@@ -1,10 +1,10 @@
 package kenymylankca.harshenuniverse.objecthandlers;
 
 import kenymylankca.harshenuniverse.api.EnumAccessoryInventorySlots;
-import kenymylankca.harshenuniverse.api.IHarshenProvider;
+import kenymylankca.harshenuniverse.api.IHarshenAccessoryProvider;
 import net.minecraft.item.ItemStack;
 
-public class VanillaProviderToInterface implements IHarshenProvider
+public class VanillaProviderToInterface implements IHarshenAccessoryProvider
 {
 	private final EnumAccessoryInventorySlots slot;
 	private final Object provider;

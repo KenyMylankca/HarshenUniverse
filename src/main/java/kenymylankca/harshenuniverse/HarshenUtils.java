@@ -30,7 +30,7 @@ import kenymylankca.harshenuniverse.api.BlockItem;
 import kenymylankca.harshenuniverse.api.CauldronLiquid;
 import kenymylankca.harshenuniverse.api.EnumAccessoryInventorySlots;
 import kenymylankca.harshenuniverse.api.HarshenStack;
-import kenymylankca.harshenuniverse.api.IHarshenProvider;
+import kenymylankca.harshenuniverse.api.IHarshenAccessoryProvider;
 import kenymylankca.harshenuniverse.armor.HarshenArmors;
 import kenymylankca.harshenuniverse.base.BasePontusResourceBiome;
 import kenymylankca.harshenuniverse.biomes.HarshenBiomes;
@@ -124,7 +124,6 @@ public class HarshenUtils
 		return !(world.getBiome(pos) instanceof BasePontusResourceBiome) || 
 				((BasePontusResourceBiome) world.getBiome(pos)).getLevel() <= 0 ||
 				((BasePontusResourceBiome)world.getBiome(pos)).getLevel() <= HandlerPontusAllowed.getAllowed(player);
-		
 	}
 	
 	public static ArrayList<EntityItem> cookList(List<EntityItem> list)
@@ -295,7 +294,7 @@ public class HarshenUtils
 	{
 		HarshenItemStackHandler handler = HarshenUtils.getHandler(player);
         for(int i =0; i < handler.getSlots(); i++)
-        	if(handler.getStackInSlot(i).getItem() == item && handler.getStackInSlot(i).getItem() instanceof IHarshenProvider)
+        	if(handler.getStackInSlot(i).getItem() == item && handler.getStackInSlot(i).getItem() instanceof IHarshenAccessoryProvider)
         	{
         		if(amount > (handler.getStackInSlot(i).getMaxDamage() - handler.getStackInSlot(i).getItemDamage()))
         			handler.setStackInSlot(i, new ItemStack(Items.AIR));
@@ -310,7 +309,7 @@ public class HarshenUtils
 	{
 		HarshenItemStackHandler handler = HarshenUtils.getHandler(player);
         for(int i =0; i < handler.getSlots(); i++)
-        	if(handler.getStackInSlot(i).getItem() == item && handler.getStackInSlot(i).getItem() instanceof IHarshenProvider)
+        	if(handler.getStackInSlot(i).getItem() == item && handler.getStackInSlot(i).getItem() instanceof IHarshenAccessoryProvider)
         	{
         		if(amount > (handler.getStackInSlot(i).getMaxDamage() - handler.getStackInSlot(i).getItemDamage()))
         			handler.setStackInSlot(i, new ItemStack(Items.AIR));
@@ -611,15 +610,15 @@ public class HarshenUtils
 		return entityToAttack;
 	}
 	
-	private static final HashMap<BlockItem, IHarshenProvider> INVENTORY_ITEMS = new HashMap<>();
+	private static final HashMap<BlockItem, IHarshenAccessoryProvider> INVENTORY_ITEMS = new HashMap<>();
 
-	public static void registerInventoryItem(BlockItem impl, IHarshenProvider provider)
+	public static void registerInventoryItem(BlockItem impl, IHarshenAccessoryProvider provider)
 	{
 		INVENTORY_ITEMS.put(impl, provider);
 	}
 	
 	@Nullable
-	public static IHarshenProvider getProvider(BlockItem impl)
+	public static IHarshenAccessoryProvider getProvider(BlockItem impl)
 	{
 		for(BlockItem item : INVENTORY_ITEMS.keySet())
 			if(item.impl == impl.impl)
@@ -628,7 +627,7 @@ public class HarshenUtils
 	}
 	
 	@Nullable
-	public static IHarshenProvider getProvider(ItemStack stack)
+	public static IHarshenAccessoryProvider getProvider(ItemStack stack)
 	{
 		return getProvider(getBlockItem(stack));
 	}
@@ -893,7 +892,6 @@ public class HarshenUtils
     		ItemStack stack = FluidUtil.getFilledBucket(new FluidStack(fluid, 1000));
     		return stack.isEmpty() ? new ItemStack(block) : stack; 
     	}
-    	
     	return new ItemStack(block);
     }
     
@@ -978,7 +976,7 @@ public class HarshenUtils
     	return c==4;
     }
     
-    public static boolean hasBloodyTorch(EntityPlayer player)
+    public static boolean isBloodyTorched(EntityPlayer player)
     {
     	int px = MathHelper.floor(player.posX);
 		int py = MathHelper.floor(player.posY);
@@ -1098,10 +1096,8 @@ public class HarshenUtils
     {
     	int c=0;
     	HarshenItemStackHandler handler = getHandler(player);
-    	
     	for(int i=0; i<5; i++)
     		if(handler.getStackInSlot(i).getItem() == accessory) c++;
-    	
     	return c;
     }
     
@@ -1121,4 +1117,12 @@ public class HarshenUtils
 			modifiers.add(new AttributeModifier(modifier.getID(), modifier.getName(), modifier.getAmount() * multiplier, modifier.getOperation()));
 		}
 	}
+    
+    public static boolean isStacklistEmpty(List<ItemStack> stackList)
+    {
+    	for(ItemStack stack : stackList)
+    		if(!stack.isEmpty())
+    			return false;
+    	return true;
+    }
 }

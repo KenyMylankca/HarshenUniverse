@@ -1,7 +1,7 @@
 package kenymylankca.harshenuniverse.handlers;
 
 import java.util.ArrayList;
-import java.util.UUID;
+import java.util.List;
 
 import kenymylankca.harshenuniverse.HarshenBlocks;
 import kenymylankca.harshenuniverse.HarshenItems;
@@ -12,17 +12,16 @@ import kenymylankca.harshenuniverse.config.GeneralConfig;
 import kenymylankca.harshenuniverse.damagesource.DamageSourceReflectorPendant;
 import kenymylankca.harshenuniverse.handlers.CooldownHandler.ICooldownHandler;
 import kenymylankca.harshenuniverse.items.HarshenNightBlade;
+import net.minecraft.client.entity.EntityOtherPlayerMP;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
-import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -34,13 +33,12 @@ import net.minecraftforge.event.entity.player.PlayerWakeUpEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent;
 
 public class HandlerServerNeedingHarshenEffects
 {
 	int tick=0;
-	int trusttimer=666;
-	int nocturnetimer=0;
+	int trustTimer=666;
+	int nocturnalTimer=0;
 	
 	@SubscribeEvent
 	public void onLivingHurt(LivingHurtEvent event)
@@ -62,8 +60,8 @@ public class HandlerServerNeedingHarshenEffects
 			
 			if(!(event.getEntityLiving() instanceof EntityPlayer))
 			{
-				if(HarshenUtils.hasBloodyTorch(attackerPlayer))
-					trusttimer=0;
+				if(HarshenUtils.isBloodyTorched(attackerPlayer))
+					trustTimer=0;
 			}
 		}
 		if(event.getEntityLiving() instanceof EntityPlayer)
@@ -100,128 +98,8 @@ public class HandlerServerNeedingHarshenEffects
 	{
 		if(event.getTarget() instanceof EntityPlayer && !(event.getEntityLiving() instanceof EntityPlayer))
 		{
-			if(HarshenUtils.hasBloodyTorch((EntityPlayer) event.getTarget()) && trusttimer > 666)
+			if((HarshenUtils.isBloodyTorched((EntityPlayer) event.getTarget()) && trustTimer > 666) || (event.getTarget().isInvisible() && GeneralConfig.trueInvisibility && HarshenUtils.isStacklistEmpty((List<ItemStack>) event.getTarget().getArmorInventoryList())))
 				((EntityLiving) event.getEntityLiving()).setAttackTarget(null);
-		}
-	}
-	
-	@SubscribeEvent
-	public void onWorldTick(WorldTickEvent event)
-	{
-		if(trusttimer < 700) trusttimer++;
-		if(tick>600) tick =1; else tick++;
-		for(EntityPlayer player : event.world.playerEntities)
-		{
-			if(HarshenUtils.isInBlocksDistanceOrHolding(player, HarshenBlocks.NOCTURNAL_TORCH, GeneralConfig.nocturnalDistance))
-			{
-				nocturnetimer++;
-				if(nocturnetimer > 180)
-					player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 205));
-				if(nocturnetimer > 500)
-					player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 402));
-				if(nocturnetimer > 800)
-					player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 702));
-				if(nocturnetimer > 1300)
-					player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 1202));
-				if(nocturnetimer > 2000)
-					player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 2002));
-			}
-			else if(HarshenUtils.isInBlocksDistanceOrHolding(player, HarshenBlocks.NOCTURNE_BLOOM, GeneralConfig.nocturnalDistance))
-			{
-				nocturnetimer++;
-				if(nocturnetimer > 200)
-					player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 90));
-				if(nocturnetimer > 500)
-					player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 230));
-			}
-			else
-				nocturnetimer=0;
-			
-			if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.FEATHER_EARRING) > 0)
-			{
-				player.addPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST, 50, HarshenUtils.hasAccessoryTimes(player, HarshenItems.FEATHER_EARRING)-1, false, false));
-			}
-			
-			if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.WATER_EARRING) > 0)
-				player.addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 105));
-		
-			if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.ONE_RING) > 0)
-				player.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 7, 0, false, false));
-		
-			if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.TELERING) > 0)
-				player.addPotionEffect(new PotionEffect(MobEffects.LUCK, 105, HarshenUtils.hasAccessoryTimes(player, HarshenItems.TELERING)-1, false, false));
-		
-			if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.PONTUS_RING) > 0)
-			{
-				player.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 110, HarshenUtils.hasAccessoryTimes(player, HarshenItems.PONTUS_RING)-1, false, false));
-			}
-		
-			if(tick % 200 == 0)
-			{
-				if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.BLOODY_EARRING) > 0)
-					player.heal(2f*HarshenUtils.hasAccessoryTimes(player, HarshenItems.BLOODY_EARRING));
-			}
-			
-			if(tick % 500 == 0 && player.getFoodStats().getFoodLevel() < 20)
-			{
-				if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.FEEDING_EARRING) > 0)
-					player.getFoodStats().setFoodLevel(player.getFoodStats().getFoodLevel() + HarshenUtils.hasAccessoryTimes(player, HarshenItems.FEEDING_EARRING));
-			}
-		
-			if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.ELEMENTAL_PENDANT) > 0)
-			{
-				IAttributeInstance attributeHealth = player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH);
-				AttributeModifier modifierHealth = new AttributeModifier(UUID.fromString("04d5b650-d8a8-45a9-88f1-01992a4f5785"), "elementalPendantHealth", 6, 0).setSaved(true);
-				if(!attributeHealth.hasModifier(modifierHealth))	
-					attributeHealth.applyModifier(modifierHealth);
-				
-				IAttributeInstance attributeArmor = player.getEntityAttribute(SharedMonsterAttributes.ARMOR);
-				AttributeModifier modifierArmor = new AttributeModifier(UUID.fromString("6c0d606c-b4ae-468d-a259-bcd5638055cb"), "elementalPendantArmor", 4, 0).setSaved(true);
-				if(!attributeArmor.hasModifier(modifierArmor))	
-					attributeArmor.applyModifier(modifierArmor);
-			}else
-			{
-				player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).removeModifier(UUID.fromString("04d5b650-d8a8-45a9-88f1-01992a4f5785"));
-				player.getEntityAttribute(SharedMonsterAttributes.ARMOR).removeModifier(UUID.fromString("6c0d606c-b4ae-468d-a259-bcd5638055cb"));
-				if(player.getMaxHealth() < player.getHealth()) player.setHealth(player.getMaxHealth());
-			}
-			
-			if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.CRIMINAL_PENDANT) > 0)
-			{
-				IAttributeInstance attributeHealth = player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH);
-				AttributeModifier modifierHealth = new AttributeModifier(UUID.fromString("72eb8438-8f2b-11e7-bb31-be2e44b06b34"), "criminalPendantHealth6", 8, 0).setSaved(true);
-				if(!attributeHealth.hasModifier(modifierHealth))	
-					attributeHealth.applyModifier(modifierHealth);
-				player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 19, 0, false, false));
-			}else
-			{
-				player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).removeModifier(UUID.fromString("72eb8438-8f2b-11e7-bb31-be2e44b06b34"));
-				if(player.getMaxHealth() < player.getHealth()) player.setHealth(player.getMaxHealth());
-			}
-			
-			if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.RING_OF_BLOOD) == 1)
-			{
-				IAttributeInstance attributeHealth = player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH);
-				AttributeModifier modifierHealth = new AttributeModifier(UUID.fromString("83cd6b7e-a838-11e7-abc4-cec278b6b50"), "ringOfBloodHealth", 6, 0).setSaved(true);
-				if(!attributeHealth.hasModifier(modifierHealth))	
-					attributeHealth.applyModifier(modifierHealth);
-			}else
-			{
-				player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).removeModifier(UUID.fromString("83cd6b7e-a838-11e7-abc4-cec278b6b50"));
-				if(player.getMaxHealth() < player.getHealth()) player.setHealth(player.getMaxHealth());
-			}
-			
-			if(HarshenUtils.hasAccessoryTimes(player, HarshenItems.RING_OF_BLOOD) == 2)
-			{
-				IAttributeInstance attributeHealth = player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH);
-				AttributeModifier modifierHealth = new AttributeModifier(UUID.fromString("c37d585a-5a65-4fb1-b604-3f5a8a42d392"), "doubleRingOfBloodHealth", 12, 0).setSaved(true);
-				if(!attributeHealth.hasModifier(modifierHealth))	
-					attributeHealth.applyModifier(modifierHealth);
-			}else
-			{
-				player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).removeModifier(UUID.fromString("c37d585a-5a65-4fb1-b604-3f5a8a42d392"));
-				if(player.getMaxHealth() < player.getHealth()) player.setHealth(player.getMaxHealth());
-			}
 		}
 	}
 	
@@ -273,6 +151,37 @@ public class HandlerServerNeedingHarshenEffects
 	@SubscribeEvent
 	public void onPlayerTick(PlayerTickEvent event)
 	{
+		if(event.player instanceof EntityOtherPlayerMP)
+			return;
+		System.out.println("nocturnal timer:" + nocturnalTimer + "  trust timer:" + trustTimer);
+		if(trustTimer < 669)
+			trustTimer++;
+		
+		if(tick>600)
+			tick =1;
+		else
+			tick++;
+		
+		if(HarshenUtils.isInBlocksDistanceOrHolding(event.player, HarshenBlocks.NOCTURNAL_TORCH, GeneralConfig.nocturnalDistance))
+		{
+			nocturnalTimer++;
+			if(nocturnalTimer % 400 == 0 && nocturnalTimer < 4001)
+				event.player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, nocturnalTimer/2));
+			if(nocturnalTimer > 4000)
+				nocturnalTimer=0;
+			
+		}
+		else if(HarshenUtils.isInBlocksDistanceOrHolding(event.player, HarshenBlocks.NOCTURNE_BLOOM, GeneralConfig.nocturnalDistance))
+		{
+			nocturnalTimer++;
+			if(nocturnalTimer % 400 == 0 && nocturnalTimer < 1201)
+				event.player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, nocturnalTimer/4));
+			if(nocturnalTimer > 1200)
+				nocturnalTimer=0;
+		}
+		else
+			nocturnalTimer=0;
+		
 		if(event.player.getHeldItemMainhand().getItem() instanceof HarshenNightBlade || event.player.getHeldItemOffhand().getItem() instanceof HarshenNightBlade)
 		{
 			EnumHand hand;

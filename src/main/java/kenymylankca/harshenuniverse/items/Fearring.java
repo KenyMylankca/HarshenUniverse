@@ -1,10 +1,10 @@
 package kenymylankca.harshenuniverse.items;
 
 import kenymylankca.harshenuniverse.api.EnumAccessoryInventorySlots;
-import kenymylankca.harshenuniverse.api.IHarshenProvider;
+import kenymylankca.harshenuniverse.api.IHarshenAccessoryProvider;
 import net.minecraft.item.Item;
 
-public class Fearring extends Item implements IHarshenProvider
+public class Fearring extends Item implements IHarshenAccessoryProvider
 {
 	public Fearring()
 	{

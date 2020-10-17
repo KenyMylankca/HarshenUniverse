@@ -11,7 +11,7 @@ import kenymylankca.harshenuniverse.api.EnumAccessoryInventorySlots;
 import kenymylankca.harshenuniverse.api.HarshenPlugin;
 import kenymylankca.harshenuniverse.api.HarshenStack;
 import kenymylankca.harshenuniverse.api.IHarshenPlugin;
-import kenymylankca.harshenuniverse.api.IHarshenProvider;
+import kenymylankca.harshenuniverse.api.IHarshenAccessoryProvider;
 import kenymylankca.harshenuniverse.api.IHarshenRegistry;
 import kenymylankca.harshenuniverse.enums.items.GlassContainerValue;
 import kenymylankca.harshenuniverse.enums.items.GlassContainerValues;
@@ -184,11 +184,11 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 		//inventory items
     	registry.registerInventoryItem(new BlockItem(Items.TOTEM_OF_UNDYING), EnumAccessoryInventorySlots.NECK, new HandlerTotemOfUndying(), false, 0);
     	for(Item item : ForgeRegistries.ITEMS.getValues())
-    		if(item instanceof IHarshenProvider)
-    			registry.registerInventoryItem(new BlockItem(item), (IHarshenProvider)item);
+    		if(item instanceof IHarshenAccessoryProvider)
+    			registry.registerInventoryItem(new BlockItem(item), (IHarshenAccessoryProvider)item);
     	for(Block block : ForgeRegistries.BLOCKS.getValues())
-    		if(block instanceof IHarshenProvider)
-    			registry.registerInventoryItem(new BlockItem(block), (IHarshenProvider)block);
+    		if(block instanceof IHarshenAccessoryProvider)
+    			registry.registerInventoryItem(new BlockItem(block), (IHarshenAccessoryProvider)block);
 	}
 
 	@Override

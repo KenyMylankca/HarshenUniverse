@@ -98,7 +98,7 @@ public interface IHarshenRegistry
 	 * 		(as default is 2, it would look for the domain path, + 1 and then 2)
 	 * 
 	 * @see HarshenEvent
-	 * @see IHarshenProvider
+	 * @see IHarshenAccessoryProvider
 	 */
 	void registerInventoryItem(BlockItem item, EnumAccessoryInventorySlots slot, Object provider, boolean multiplyEvent, int toolTipLines);
 		
@@ -107,7 +107,7 @@ public interface IHarshenRegistry
 	 * @param item The item/block being registered
 	 * @param provider The provider for that item.
 	 */
-	void registerInventoryItem(BlockItem item, IHarshenProvider provider);
+	void registerInventoryItem(BlockItem item, IHarshenAccessoryProvider provider);
 	
 	/**
 	 * Used to register a glass container into the game. This will register the glass container with a cauldron liquid.

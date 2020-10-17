@@ -36,7 +36,7 @@ import kenymylankca.harshenuniverse.handlers.HandlerExtraRange;
 import kenymylankca.harshenuniverse.handlers.HandlerGlassContainer;
 import kenymylankca.harshenuniverse.handlers.HandlerHarshenArmourEffects;
 import kenymylankca.harshenuniverse.handlers.HandlerHarshenDrops;
-import kenymylankca.harshenuniverse.handlers.HandlerHarshenInventory;
+import kenymylankca.harshenuniverse.handlers.HandlerHarshenAccessoryInventory;
 import kenymylankca.harshenuniverse.handlers.HandlerPontusAllowed;
 import kenymylankca.harshenuniverse.handlers.HandlerPotionEffects;
 import kenymylankca.harshenuniverse.handlers.HandlerServerNeedingHarshenEffects;
@@ -153,7 +153,7 @@ public class CommonProxy
     		GameRegistry.registerTileEntity(clas, HarshenUniverse.MODID + clas.getSimpleName());	
     	
     	HarshenUtils.registerHandlers(
-    		new HandlerHarshenInventory(),
+    		new HandlerHarshenAccessoryInventory(),
     		new HandlerBloodOnHurt(),
     		new HandlerPotionEffects(),
     		new HandlerHarshenArmourEffects(),

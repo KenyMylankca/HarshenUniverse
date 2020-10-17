@@ -5,10 +5,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 /**
  * The Interface used to interact with everything harshenuniverse related.
- * @author Wyn Price
+ * @authors Wyn Price, KenyMylankca
  *
  */
-public interface IHarshenProvider 
+public interface IHarshenAccessoryProvider 
 {
 	/**
 	 * The Slot that the item can go into. Slots with the same "type" can go into each-other. For Example:
@@ -50,4 +50,10 @@ public interface IHarshenProvider
 	 * @param player The player who just added the item to their own inventory
 	 */
 	public default void onAdd(EntityPlayer player, int slot){};
+	
+	/**
+	 * Called every tick while the item is in the players inventory. Called ServerSide and ClientSide. 40 ticks = 1 second.
+	 * @param player The player who has the item in their own inventory
+	 */
+	public default void onTick(EntityPlayer player, int slot){};
 }

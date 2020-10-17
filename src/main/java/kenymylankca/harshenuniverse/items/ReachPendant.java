@@ -1,10 +1,10 @@
 package kenymylankca.harshenuniverse.items;
 
 import kenymylankca.harshenuniverse.api.EnumAccessoryInventorySlots;
-import kenymylankca.harshenuniverse.api.IHarshenProvider;
+import kenymylankca.harshenuniverse.api.IHarshenAccessoryProvider;
 import net.minecraft.item.Item;
 
-public class ReachPendant extends Item implements IHarshenProvider
+public class ReachPendant extends Item implements IHarshenAccessoryProvider
 {
 	public ReachPendant() {
 		setRegistryName("reach_pendant");
