@@ -37,6 +37,7 @@ public class HandlerHarshenAccessoryInventory
 {
 	private static ArrayList<ItemStack> prevInvClient = new ArrayList<>();
 	private static ArrayList<ItemStack> prevInvServer = new ArrayList<>();
+	private static HashMap<UUID, HarshenItemStackHandler> stackMap = new HashMap<>();
 	
 	@SubscribeEvent
 	public void onPlayerTick(PlayerTickEvent event)
@@ -68,17 +69,15 @@ public class HandlerHarshenAccessoryInventory
 		prevInv.addAll(handler.getStacks());
 	}
 	
-	private static HashMap<UUID, HarshenItemStackHandler> stackMap = new HashMap<>();
-	
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public void onPlayerDeath(LivingDeathEvent event)
 	{
 		if(event.getEntityLiving() instanceof EntityPlayer)
-		{
+		{ 
 			if(event.getEntityLiving().getEntityData().hasKey("harshenInventory"))
 			{
 				HarshenItemStackHandler handler = HarshenUtils.getHandler(event.getEntity().getEntityData());
-				if(HarshenUtils.hasAccessoryTimes((EntityPlayer) event.getEntityLiving(), HarshenItems.SOUL_BINDING_PENDANT) > 0)
+				if(HarshenUtils.hasAccessoryTimes((EntityPlayer) event.getEntityLiving(), HarshenItems.SOUL_BINDING_PENDANT) > 0 || event.getEntityLiving().world.getGameRules().getBoolean("keepInventory"))
 					stackMap.put(event.getEntity().getUniqueID(), handler);
 				else
 					for(int i = 0; i<handler.getStacks().size(); i++)
