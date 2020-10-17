@@ -36,7 +36,8 @@ public class GlassContainer extends BaseItemMetaData
 	}
 	
 	@Override
-	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+	{
 		RayTraceResult raytraceresult = this.rayTrace(worldIn, player, true);
 		BlockPos blockpos = raytraceresult.getBlockPos();
 		IBlockState iblockstate = worldIn.getBlockState(blockpos);
@@ -105,7 +106,8 @@ public class GlassContainer extends BaseItemMetaData
 	}
 	
 	@Override
-	public String getUnlocalizedName(ItemStack stack) {
+	public String getUnlocalizedName(ItemStack stack)
+	{
 		if(!HarshenUniverse.hasLoaded) return "item.glasscontainer"; //Used to prevent the game from crashing during startup
 			String args = getGlassContaining(GlassContainerValue.getContainerFromMeta(stack.getMetadata()).getType());
 		if(args != null)
@@ -156,11 +158,15 @@ public class GlassContainer extends BaseItemMetaData
 	}
 	
 	@Override
-	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
+	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving)
+	{
 		GlassContainerValue enu = GlassContainerValue.getContainerFromMeta(stack.getMetadata());
 		if(enu.getEffects() != null)
 			for(PotionEffect effect : enu.getEffects())
 				entityLiving.addPotionEffect(effect);
+		if(entityLiving instanceof EntityPlayer)
+			if(((EntityPlayer)entityLiving).isCreative())
+				return stack;
 		return new ItemStack(this);
 	}
 	
