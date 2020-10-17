@@ -976,30 +976,6 @@ public class HarshenUtils
     	return c==4;
     }
     
-    public static boolean isBloodyTorched(EntityPlayer player)
-    {
-    	int px = MathHelper.floor(player.posX);
-		int py = MathHelper.floor(player.posY);
-		int pz = MathHelper.floor(player.posZ);
-		int distance = GeneralConfig.bloodyTorchDistance;
-		
-		ArrayList<BlockPos> allBlockPos = new ArrayList<>();
-		HashMap<Double, BlockPos> distanceMap = new HashMap<>();
-		
-		for(int x = px - distance; x < px + distance; x++)
-			for(int z = pz - distance; z < pz + distance; z++)
-				for(int y = py - distance; y < py + distance; y++)
-				{
-					if((player.world.getBlockState(new BlockPos(x, y, z)).getBlock() == HarshenBlocks.BLOODY_TORCH ||
-							player.getHeldItemMainhand().getItem() == Item.getItemFromBlock(HarshenBlocks.BLOODY_TORCH) ||
-								player.getHeldItemOffhand().getItem() == Item.getItemFromBlock(HarshenBlocks.BLOODY_TORCH)))
-					{
-						return true;
-					}
-				}
-		return false;
-    }
-    
     public static boolean isInBlocksDistanceOrHolding(EntityPlayer player, Block block, int distance)
     {
     	int px = MathHelper.floor(player.posX);

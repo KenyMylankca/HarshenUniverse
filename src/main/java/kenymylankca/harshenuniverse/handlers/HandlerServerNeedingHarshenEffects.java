@@ -60,7 +60,7 @@ public class HandlerServerNeedingHarshenEffects
 			
 			if(!(event.getEntityLiving() instanceof EntityPlayer))
 			{
-				if(HarshenUtils.isBloodyTorched(attackerPlayer))
+				if(HarshenUtils.isInBlocksDistanceOrHolding(attackerPlayer, HarshenBlocks.BLOODY_TORCH, GeneralConfig.bloodyTorchDistance))
 					trustTimer=0;
 			}
 		}
@@ -98,7 +98,7 @@ public class HandlerServerNeedingHarshenEffects
 	{
 		if(event.getTarget() instanceof EntityPlayer && !(event.getEntityLiving() instanceof EntityPlayer))
 		{
-			if((HarshenUtils.isBloodyTorched((EntityPlayer) event.getTarget()) && trustTimer > 666) || (event.getTarget().isInvisible() && GeneralConfig.trueInvisibility && HarshenUtils.isStacklistEmpty((List<ItemStack>) event.getTarget().getArmorInventoryList())))
+			if((HarshenUtils.isInBlocksDistanceOrHolding((EntityPlayer) event.getTarget(), HarshenBlocks.BLOODY_TORCH, GeneralConfig.bloodyTorchDistance) && trustTimer > 666) || (event.getTarget().isInvisible() && GeneralConfig.trueInvisibility && HarshenUtils.isStacklistEmpty((List<ItemStack>) event.getTarget().getArmorInventoryList())))
 				((EntityLiving) event.getEntityLiving()).setAttackTarget(null);
 		}
 	}
@@ -153,7 +153,6 @@ public class HandlerServerNeedingHarshenEffects
 	{
 		if(event.player instanceof EntityOtherPlayerMP)
 			return;
-		System.out.println("nocturnal timer:" + nocturnalTimer + "  trust timer:" + trustTimer);
 		if(trustTimer < 669)
 			trustTimer++;
 		
