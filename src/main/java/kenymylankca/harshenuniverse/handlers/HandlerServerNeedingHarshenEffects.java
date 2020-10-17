@@ -39,6 +39,57 @@ public class HandlerServerNeedingHarshenEffects
 	int tick=0;
 	int trustTimer=666;
 	int nocturnalTimer=0;
+	@SubscribeEvent
+	public void onPlayerTick(PlayerTickEvent event)
+	{
+		if(event.player instanceof EntityOtherPlayerMP)
+			return;
+		
+		if(trustTimer < 669)
+			trustTimer++;
+		
+		if(tick>600)
+			tick =1;
+		else
+			tick++;
+		
+		if(HarshenUtils.isInBlocksDistanceOrHolding(event.player, HarshenBlocks.NOCTURNAL_TORCH, GeneralConfig.nocturnalDistance))
+		{
+			nocturnalTimer++;
+			if(nocturnalTimer % 400 == 0 && nocturnalTimer < 4001)
+				event.player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, nocturnalTimer/2));
+			if(nocturnalTimer > 4000)
+				nocturnalTimer=0;
+			
+		}
+		else if(HarshenUtils.isInBlocksDistanceOrHolding(event.player, HarshenBlocks.NOCTURNE_BLOOM, GeneralConfig.nocturnalDistance))
+		{
+			nocturnalTimer++;
+			if(nocturnalTimer % 400 == 0 && nocturnalTimer < 1201)
+				event.player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, nocturnalTimer/4));
+			if(nocturnalTimer > 1200)
+				nocturnalTimer=0;
+		}
+		else
+			nocturnalTimer=0;
+		
+		if(event.player.getHeldItemMainhand().getItem() instanceof HarshenNightBlade || event.player.getHeldItemOffhand().getItem() instanceof HarshenNightBlade)
+		{
+			EnumHand hand;
+			if(event.player.getHeldItemMainhand().getItem() instanceof HarshenNightBlade)
+				hand=EnumHand.MAIN_HAND;
+			else
+				hand=EnumHand.OFF_HAND;
+			ICooldownHandler cap = event.player.getHeldItem(hand).getCapability(CooldownHandler.COOLDOWN, EnumFacing.DOWN);
+			
+			if(event.player.world.getSunBrightness(0) < 0.76)
+			{
+				cap.addProgress();
+				if(cap.isReady())
+					event.player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 40, 0));
+			}
+		}
+	}
 	
 	@SubscribeEvent
 	public void onLivingHurt(LivingHurtEvent event)
@@ -148,57 +199,6 @@ public class HandlerServerNeedingHarshenEffects
 			if(player.world.getBlockState(player.bedLocation).getBlock() instanceof BaseBloodyBed)
 				if(player.isPotionActive(MobEffects.REGENERATION))
 					player.removePotionEffect(MobEffects.REGENERATION);
-		}
-	}
-	
-	@SubscribeEvent
-	public void onPlayerTick(PlayerTickEvent event)
-	{
-		if(event.player instanceof EntityOtherPlayerMP)
-			return;
-		if(trustTimer < 669)
-			trustTimer++;
-		
-		if(tick>600)
-			tick =1;
-		else
-			tick++;
-		
-		if(HarshenUtils.isInBlocksDistanceOrHolding(event.player, HarshenBlocks.NOCTURNAL_TORCH, GeneralConfig.nocturnalDistance))
-		{
-			nocturnalTimer++;
-			if(nocturnalTimer % 400 == 0 && nocturnalTimer < 4001)
-				event.player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, nocturnalTimer/2));
-			if(nocturnalTimer > 4000)
-				nocturnalTimer=0;
-			
-		}
-		else if(HarshenUtils.isInBlocksDistanceOrHolding(event.player, HarshenBlocks.NOCTURNE_BLOOM, GeneralConfig.nocturnalDistance))
-		{
-			nocturnalTimer++;
-			if(nocturnalTimer % 400 == 0 && nocturnalTimer < 1201)
-				event.player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, nocturnalTimer/4));
-			if(nocturnalTimer > 1200)
-				nocturnalTimer=0;
-		}
-		else
-			nocturnalTimer=0;
-		
-		if(event.player.getHeldItemMainhand().getItem() instanceof HarshenNightBlade || event.player.getHeldItemOffhand().getItem() instanceof HarshenNightBlade)
-		{
-			EnumHand hand;
-			if(event.player.getHeldItemMainhand().getItem() instanceof HarshenNightBlade)
-				hand=EnumHand.MAIN_HAND;
-			else
-				hand=EnumHand.OFF_HAND;
-			ICooldownHandler cap = event.player.getHeldItem(hand).getCapability(CooldownHandler.COOLDOWN, EnumFacing.DOWN);
-			
-			if(event.player.world.getWorldTime() % 24000 > 12000 || event.player.world.isRaining())
-			{
-				cap.addProgress();
-				if(cap.isReady())
-					event.player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 40, 0));
-			}
 		}
 	}
 }
