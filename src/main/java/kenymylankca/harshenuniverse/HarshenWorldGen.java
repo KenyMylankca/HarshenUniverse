@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Random;
 
 import kenymylankca.harshenuniverse.base.HarshenStructure;
+import kenymylankca.harshenuniverse.config.GeneralConfig;
 import kenymylankca.harshenuniverse.dimensions.DimensionPontus;
 import kenymylankca.harshenuniverse.worldgenerators.overworld.JewelDirtGenOverworld;
 import kenymylankca.harshenuniverse.worldgenerators.overworld.NocturneBloomGenerator;
@@ -35,18 +36,34 @@ public class HarshenWorldGen implements IWorldGenerator
     
     public static BlockPos castlePos = null;
     public static BlockPos graveyardPos = null;
+    public static BlockPos housePos = null;
+    private int castleDelay = 0;
+    private int graveyardDelay = 0;
     
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
 	{
+		if(castleDelay > 0)
+			castleDelay++;
+		System.out.println(castleDelay);
 		int dim = world.provider.getDimension();
 		if(dim == 0)
 		{
 			if(chunkX == 23 && chunkZ == 25)
-				castlePos = HarshenStructures.CASTLE.generateStucture(world, random, chunkX, chunkZ);
-				
+				castleDelay++;
+			if(castleDelay >= GeneralConfig.structureProtectorDelay)
+			{
+				castlePos = HarshenStructures.CASTLE.generateStucture(world, random, 23, 25);
+				castleDelay = 0;
+			}
+			
 			if(chunkX == 17 && chunkZ == -15)
+				graveyardDelay++;
+			if(graveyardDelay >= GeneralConfig.structureProtectorDelay)
+			{
 				graveyardPos = HarshenStructures.GRAVEYARD.generateStucture(world, random, chunkX, chunkZ);
+				graveyardDelay = 0;
+			}
 			
 			runGenerator(this.harshenSoulOreOverworld, world, random, chunkX, chunkZ, 6, 0, 20);
 			plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.1f, 60, 130, false);
