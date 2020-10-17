@@ -10,8 +10,8 @@ import kenymylankca.harshenuniverse.api.CauldronLiquid;
 import kenymylankca.harshenuniverse.api.EnumAccessoryInventorySlots;
 import kenymylankca.harshenuniverse.api.HarshenPlugin;
 import kenymylankca.harshenuniverse.api.HarshenStack;
-import kenymylankca.harshenuniverse.api.IHarshenPlugin;
 import kenymylankca.harshenuniverse.api.IHarshenAccessoryProvider;
+import kenymylankca.harshenuniverse.api.IHarshenPlugin;
 import kenymylankca.harshenuniverse.api.IHarshenRegistry;
 import kenymylankca.harshenuniverse.enums.items.GlassContainerValue;
 import kenymylankca.harshenuniverse.enums.items.GlassContainerValues;
@@ -166,6 +166,8 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 				new HarshenStack(new ItemStack(HarshenItems.IRON_HEART)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)));
 		registry.registerLightningRecipe(new ItemStack(HarshenItems.HARSHEN_NIGHT_BLADE), new HarshenStack(new ItemStack(HarshenBlocks.NOCTURNAL_TORCH)),new HarshenStack(new ItemStack(HarshenItems.BLOOD_INFUSED_ENDER_EYE)),
 				new HarshenStack(new ItemStack(HarshenItems.VALOR_BADGE)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)));
+		registry.registerLightningRecipe(new ItemStack(Items.TOTEM_OF_UNDYING), new HarshenStack(new ItemStack(Items.SPECKLED_MELON)),new HarshenStack(new ItemStack(HarshenItems.IRON_HEART)),
+				new HarshenStack(new ItemStack(HarshenItems.ZOMBIE_EYE)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)));
 		
 		//cauldron recipes
 		registry.registerCauldronLiquid(GlassContainerValues.LAVA.getStack(), GlassContainerValues.EMPTY.getStack(), GlassContainerValues.LAVA.getType(), 1);
