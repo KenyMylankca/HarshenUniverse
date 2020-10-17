@@ -5,18 +5,21 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import kenymylankca.harshenuniverse.HarshenItems;
+import kenymylankca.harshenuniverse.HarshenPotions;
 import kenymylankca.harshenuniverse.HarshenSounds;
 import kenymylankca.harshenuniverse.HarshenUtils;
 import kenymylankca.harshenuniverse.base.BaseHarshenStaff;
 import kenymylankca.harshenuniverse.entity.EntityThrown;
 import kenymylankca.harshenuniverse.objecthandlers.EntityThrowSpawnData;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EntityDamageSourceIndirect;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
@@ -94,16 +97,20 @@ public class SoulRipperBow extends BaseHarshenStaff
 		}
 
 		@Override
-		public void onHit(EntityThrown entity, RayTraceResult result, boolean isServer) {
-			if(result.entityHit != null && result.entityHit != entity.getThrower())
+		public void onHit(EntityThrown orb, RayTraceResult result, boolean isServer)
+		{
+			if(result.entityHit instanceof EntityLivingBase && result.entityHit != orb.getThrower())
 			{
-				entity.setDead();
-				if(result.entityHit instanceof EntityLivingBase)
-					if(HarshenUtils.hasJaguarArmorSet((EntityLivingBase)result.entityHit))
-						result.entityHit.playSound(HarshenSounds.JAGUAR_DEFENSE, 1f, 1f);
+				EntityLiving entityLiving = (EntityLiving) result.entityHit;
+				orb.setDead();
+				if(HarshenUtils.hasJaguarArmorSet(entityLiving))
+					entityLiving.playSound(HarshenSounds.JAGUAR_DEFENSE, 1f, 1f);
 
-				else if(result.entityHit.attackEntityFrom(new EntityDamageSourceIndirect("soul_ripper_bow", entity, entity.getThrower() == null ? entity : entity.getThrower()).setProjectile(), power * 13f))
-					entity.playSound(SoundEvents.ENTITY_ENDERMITE_HURT, 0F, 1.2F / (itemRand.nextFloat() * 0.2F + 0.9F));
+				else if(entityLiving.attackEntityFrom(new EntityDamageSourceIndirect("soul_ripper_bow", orb, orb.getThrower() == null ? orb : orb.getThrower()).setProjectile(), power * 13f))
+				{
+					orb.playSound(SoundEvents.ENTITY_ENDERMITE_HURT, 0F, 1.2F / (itemRand.nextFloat() * 0.2F + 0.9F));
+					entityLiving.addPotionEffect(new PotionEffect(HarshenPotions.potionHarshed, 100));
+				}
 			}
 		}
 	}
