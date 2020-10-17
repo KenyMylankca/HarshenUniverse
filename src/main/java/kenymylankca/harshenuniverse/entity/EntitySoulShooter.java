@@ -53,7 +53,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class EntitySoulShooter extends EntityMob implements IRangedAttackMob
 {
     private static final DataParameter<Boolean> SWINGING_ARMS = EntityDataManager.<Boolean>createKey(EntitySoulShooter.class, DataSerializers.BOOLEAN);
-    private final AIEntityAttackRipperBow<EntitySoulShooter> aiArrowAttack = new AIEntityAttackRipperBow<EntitySoulShooter>(this, 1.0D, 20, 15.0F);
+    private final AIEntityAttackRipperBow<EntitySoulShooter> aiArrowAttack = new AIEntityAttackRipperBow<EntitySoulShooter>(this, 0.8D, 75, 15.0F);
     private final EntityAIAttackMelee aiAttackOnCollide = new EntityAIAttackMelee(this, 1.2D, false)
     {
         /**
@@ -87,7 +87,7 @@ public class EntitySoulShooter extends EntityMob implements IRangedAttackMob
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(32);
 		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(2d);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5d);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2D);
 	}
 
     protected void initEntityAI()
