@@ -9,7 +9,7 @@ import net.minecraft.item.Item;
 
 public class AccessoryConfig extends BaseConfig
 {
-	public static String[] blackListedXrays;
+	public static String[] xrayBlacklist;
 	public static int xrayAreaX, xrayAreaY, xrayAreaZ, xrayListSize;
 	public static int enderNecklaceDistance;
 	public static double reachPendantLength;
@@ -23,14 +23,14 @@ public class AccessoryConfig extends BaseConfig
 	@Override
 	public void read() 
 	{
-		blackListedXrays = get("xray.blacklist", HarshenItems.XRAY_PENDANT, HarshenUtils.listOf("minecraft:stone"));
-		xrayAreaX = get("xray.distance.x", HarshenItems.XRAY_PENDANT, 35);
-		xrayAreaY = get("xray.distance.y", HarshenItems.XRAY_PENDANT, 35);
-		xrayAreaZ = get("xray.distance.z", HarshenItems.XRAY_PENDANT, 35);
-		xrayListSize = get("xray.listsize", HarshenItems.XRAY_PENDANT, 20); 
-		enderNecklaceDistance = get("endernecklace.distance", HarshenItems.ENDER_NECKLACE, 66);
-		reachPendantLength = get("reach.length", HarshenItems.REACH_PENDANT, 7d);
-		punchyRingAttackDamage = get("punchy.ring.attack.damage", HarshenItems.PUNCHY_RING, 2.5);
+		xrayBlacklist = get("xray_blacklist", HarshenItems.XRAY_PENDANT, HarshenUtils.listOf("minecraft:stone"));
+		xrayAreaX = get("xray_distance_x", HarshenItems.XRAY_PENDANT, 35);
+		xrayAreaY = get("xray_distance_y", HarshenItems.XRAY_PENDANT, 35);
+		xrayAreaZ = get("xray_distance_z", HarshenItems.XRAY_PENDANT, 35);
+		xrayListSize = get("xray_listsize", HarshenItems.XRAY_PENDANT, 20); 
+		enderNecklaceDistance = get("ender_necklace_distance", HarshenItems.ENDER_NECKLACE, 66);
+		reachPendantLength = get("reach_pendant_length", HarshenItems.REACH_PENDANT, 7d);
+		punchyRingAttackDamage = get("punchy_ring_attack.damage", HarshenItems.PUNCHY_RING, 2.5);
 	}
 	
 	private HashMap<String, String> keyMap = new HashMap<>();

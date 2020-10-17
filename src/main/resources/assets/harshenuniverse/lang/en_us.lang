@@ -131,21 +131,25 @@ death.attack.drained=%1$'s soul is drained by Jacob.
 config.isEnabled=Should %s be enabled
 config.structure.name=the structure %s
 config.id=What should the ID for %s be
-config.blood_chance=The chance for blood to occur when a mob is hit.
+
 config.blood_splash=If blood occurs, should it be splashed on the ground?
-config.blood_offhand=If the blood cant be placed on the ground, should the player be able to get it if they have a blood collector in their offhand
-config.blood_height_range=The blood height distance that blood can splash from
-config.render_hidden_plates=Should the hidden plate renderer be run for all players in creative mode
-config.bloody_torch_distance=Bloody Torch range in blocks
-config.nocturnal_torch_distance=Nocturnal Torch range in blocks
-config.xray.blacklist=What blocks shouldnt work with the xray pendant
-config.xray.distance.x=The distance from the player that the xray pendant should be able to find, along the x axis(The higher this is the more lag it makes)
-config.xray.distance.y=The distance from the player that the xray pendant should be able to find, along the y axis(The higher this is the more lag it makes)
-config.xray.distance.z=The distance from the player that the xray pendant should be able to find, along the z axis(The higher this is the more lag it makes)
-config.xray.listsize=The maximum amount of blocks the xray pendant can pick up
+config.blood_chance=The chance for blood to occur when a mob is hit.
+config.blood_height_range=The blood height distance that blood can splash from.
+config.render_hidden_plates=Should the hidden plate renderer be run for all players in creative mode.
 config.structure_ruin_chance=If a structure has the ruin tag, what is the chance that a block is changed to air. If you don't understand don't worry, it's not very important
-config.endernecklace.distance=The distance for Ender Necklace in blocks
-config.reach.length=Reach Pendant length range
+config.bloody_torch_distance=Bloody Torch range in blocks.
+config.nocturnal_distance=Nocturnal Torch range in blocks.
+config.true_invisibility=The feature that makes the player untargetable by hostiles if the player is invisible and has no any armor.
+config.structure_protector_delay=The delay in ticks that Harshen Universe uses to protect its structures being demolished by other structures/ruins. Lower values may cause demolition, higher values may cause Harshen Universe structures doesn't get generated.
+
+config.xray_blacklist=What blocks shouldnt work with the xray pendant.
+config.xray_distance_x=The distance from the player that the xray pendant should be able to find, along the x axis(The higher this is the more lag it makes)
+config.xray_distance_y=The distance from the player that the xray pendant should be able to find, along the y axis(The higher this is the more lag it makes)
+config.xray_distance_z=The distance from the player that the xray pendant should be able to find, along the z axis(The higher this is the more lag it makes)
+config.xray_list_size=The maximum amount of blocks the xray pendant can pick up.
+config.ender_necklace_distance=The distance for Ender Necklace in blocks.
+config.reach_pendant_length=Reach Pendant length range.
+config.punchy_ring_attack_damage=The attack damage of each Punch Ring adds to players punch.
 
 #blocks
 tile.harshen_soul_ore.name=Harshen Soul Ore

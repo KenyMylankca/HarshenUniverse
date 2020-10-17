@@ -142,7 +142,7 @@ public class XrayPendant extends Item implements IHarshenAccessoryProvider
 						if(!stack.hasTagCompound())
 							stack.setTagCompound(new NBTTagCompound());
 						String blockName = stack.getTagCompound().getString("BlockToSearch");
-						boolean flag = HarshenUtils.toArray(AccessoryConfig.blackListedXrays).contains(blockName);
+						boolean flag = HarshenUtils.toArray(AccessoryConfig.xrayBlacklist).contains(blockName);
 						if(!flag)
 						{
 							ArrayList<Block> blocks = HarshenUtils.getBlocksFromString(blockName);
