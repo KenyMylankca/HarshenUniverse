@@ -16,4 +16,9 @@ public class ZombiPendant extends Item implements IHarshenAccessoryProvider
 	public EnumAccessoryInventorySlots getSlot() {
 		return EnumAccessoryInventorySlots.NECK;
 	}
+	
+	@Override
+	public int toolTipLines() {
+		return 1;
+	}
 }

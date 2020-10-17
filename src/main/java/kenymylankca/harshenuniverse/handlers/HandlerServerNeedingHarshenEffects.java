@@ -69,7 +69,10 @@ public class HandlerServerNeedingHarshenEffects
 			EntityPlayer attackedPlayer = (EntityPlayer) event.getEntityLiving();
 			
 			if(HarshenUtils.hasAccessoryTimes(attackedPlayer, HarshenItems.ZOMBI_PENDANT) > 0 && event.getSource().getTrueSource() instanceof EntityZombie)
-				event.setAmount(1);
+			{
+				event.getSource().getTrueSource().attackEntityFrom(DamageSource.GENERIC, 1);
+				event.setAmount(0);
+			}
 			
 			if(HarshenUtils.hasAccessoryTimes(attackedPlayer, HarshenItems.FEARRING) > 0)
 				attackedPlayer.addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 20));
