@@ -19,12 +19,12 @@ public class AIEntityAttackRipperBow<T extends EntityMob & IRangedAttackMob> ext
     private boolean strafingBackwards;
     private int strafingTime = -1;
 
-    public AIEntityAttackRipperBow(T p_i47515_1_, double p_i47515_2_, int p_i47515_4_, float p_i47515_5_)
+    public AIEntityAttackRipperBow(T entity, double moveSpeedAmp, int attackCooldown, float maxAttackDistance)
     {
-        this.entity = p_i47515_1_;
-        this.moveSpeedAmp = p_i47515_2_;
-        this.attackCooldown = p_i47515_4_;
-        this.maxAttackDistance = p_i47515_5_ * p_i47515_5_;
+        this.entity = entity;
+        this.moveSpeedAmp = moveSpeedAmp;
+        this.attackCooldown = attackCooldown;
+        this.maxAttackDistance = maxAttackDistance * maxAttackDistance;
         this.setMutexBits(3);
     }
 

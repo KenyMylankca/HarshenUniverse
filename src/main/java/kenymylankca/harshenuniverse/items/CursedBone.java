@@ -44,9 +44,7 @@ public class CursedBone extends Item
         List<AxisAlignedBB> list = p_190909_1_.getCollisionBoxes((Entity)null, axisalignedbb);
 
         if (list.isEmpty())
-        {
             return 0.0D;
-        }
         else
         {
             double d0 = axisalignedbb.minY;
@@ -55,7 +53,6 @@ public class CursedBone extends Item
             {
                 d0 = Math.max(axisalignedbb1.maxY, d0);
             }
-
             return d0 - (double)p_190909_2_.getY();
         }
     }
@@ -103,7 +100,6 @@ public class CursedBone extends Item
                     entityliving.playLivingSound();
                 }
             }
-
             return entity;
         }
         else
