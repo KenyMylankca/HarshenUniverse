@@ -23,9 +23,9 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class HandlerPotionEffects
 {
-	private ArrayList<EntityLivingBase> arrayLivingWithBleedingEffect = new ArrayList<EntityLivingBase>();
-	private ArrayList<EntityLivingBase> arrayLivingWithHarshedEffect = new ArrayList<EntityLivingBase>();
-	private ArrayList<EntityLivingBase> arrayLivingWithCurealEffect = new ArrayList<EntityLivingBase>();
+	private ArrayList<EntityLivingBase> livingsWithBleedingEffect = new ArrayList<EntityLivingBase>();
+	private ArrayList<EntityLivingBase> livingsWithHarshedEffect = new ArrayList<EntityLivingBase>();
+	private ArrayList<EntityLivingBase> livingsWithCurealEffect = new ArrayList<EntityLivingBase>();
 	
 	private ArrayList<HandlerBleedingEffect> arrayBleedingEffectManager = new ArrayList<HandlerBleedingEffect>();
 	private ArrayList<HandlerCurealEffect> arrayCurealEffectManager = new ArrayList<HandlerCurealEffect>();
@@ -73,59 +73,59 @@ public class HandlerPotionEffects
 		{
 			if(event.getEntityLiving().isPotionActive(HarshenPotions.potionBleeding))
 			{
-				if(!arrayLivingWithBleedingEffect.contains(event.getEntityLiving()))
+				if(!livingsWithBleedingEffect.contains(event.getEntityLiving()))
 				{
-					arrayLivingWithBleedingEffect.add(event.getEntityLiving());
+					livingsWithBleedingEffect.add(event.getEntityLiving());
 					for(PotionEffect effect : event.getEntityLiving().getActivePotionEffects())
 					{
 						if(effect.getPotion().equals(HarshenPotions.potionBleeding))
 							arrayBleedingEffectManager.add(new HandlerBleedingEffect(event.getEntityLiving(), effect.getAmplifier()));
 					}
 				}
-				arrayBleedingEffectManager.get(arrayLivingWithBleedingEffect.indexOf(event.getEntityLiving())).add();
+				arrayBleedingEffectManager.get(livingsWithBleedingEffect.indexOf(event.getEntityLiving())).addEffect();
 			}
-			else if(arrayLivingWithBleedingEffect.contains(event.getEntityLiving()))
+			else if(livingsWithBleedingEffect.contains(event.getEntityLiving()))
 			{
-				arrayBleedingEffectManager.remove(arrayLivingWithBleedingEffect.indexOf(event.getEntityLiving()));
-				arrayLivingWithBleedingEffect.remove(event.getEntityLiving());
+				arrayBleedingEffectManager.remove(livingsWithBleedingEffect.indexOf(event.getEntityLiving()));
+				livingsWithBleedingEffect.remove(event.getEntityLiving());
 			}
 			
 			if(event.getEntityLiving().isPotionActive(HarshenPotions.potionCureal))
 			{
-				if(!arrayLivingWithCurealEffect.contains(event.getEntityLiving()))
+				if(!livingsWithCurealEffect.contains(event.getEntityLiving()))
 				{
-					arrayLivingWithCurealEffect.add(event.getEntityLiving());
+					livingsWithCurealEffect.add(event.getEntityLiving());
 					for(PotionEffect effect : event.getEntityLiving().getActivePotionEffects())
 					{
 						if(effect.getPotion().equals(HarshenPotions.potionCureal))
 							arrayCurealEffectManager.add(new HandlerCurealEffect(event.getEntityLiving(), effect.getAmplifier()));
 					}
 				}
-				arrayCurealEffectManager.get(arrayLivingWithCurealEffect.indexOf(event.getEntityLiving())).add();
+				arrayCurealEffectManager.get(livingsWithCurealEffect.indexOf(event.getEntityLiving())).addEffect();
 			}
-			else if(arrayLivingWithCurealEffect.contains(event.getEntityLiving()))
+			else if(livingsWithCurealEffect.contains(event.getEntityLiving()))
 			{
-				arrayCurealEffectManager.remove(arrayLivingWithCurealEffect.indexOf(event.getEntityLiving()));
-				arrayLivingWithCurealEffect.remove(event.getEntityLiving());
+				arrayCurealEffectManager.remove(livingsWithCurealEffect.indexOf(event.getEntityLiving()));
+				livingsWithCurealEffect.remove(event.getEntityLiving());
 			}
 			
 			if(event.getEntityLiving().isPotionActive(HarshenPotions.potionHarshed))
 			{
-				if(!arrayLivingWithHarshedEffect.contains(event.getEntityLiving()))
+				if(!livingsWithHarshedEffect.contains(event.getEntityLiving()))
 				{
-					arrayLivingWithHarshedEffect.add(event.getEntityLiving());
+					livingsWithHarshedEffect.add(event.getEntityLiving());
 					for(PotionEffect effect : event.getEntityLiving().getActivePotionEffects())
 					{
 						if(effect.getPotion().equals(HarshenPotions.potionHarshed))
 							arrayHarshedEffectManager.add(new HandlerHarshedEffect(event.getEntityLiving(), effect.getAmplifier()));
 					}
 				}
-				arrayHarshedEffectManager.get(arrayLivingWithHarshedEffect.indexOf(event.getEntityLiving())).add();
+				arrayHarshedEffectManager.get(livingsWithHarshedEffect.indexOf(event.getEntityLiving())).addEffect();
 			}
-			else if(arrayLivingWithHarshedEffect.contains(event.getEntityLiving()))
+			else if(livingsWithHarshedEffect.contains(event.getEntityLiving()))
 			{
-				arrayHarshedEffectManager.remove(arrayLivingWithHarshedEffect.indexOf(event.getEntityLiving()));
-				arrayLivingWithHarshedEffect.remove(event.getEntityLiving());
+				arrayHarshedEffectManager.remove(livingsWithHarshedEffect.indexOf(event.getEntityLiving()));
+				livingsWithHarshedEffect.remove(event.getEntityLiving());
 			}
 		}
 	}
@@ -144,7 +144,7 @@ class HandlerBleedingEffect
 		this.level = level;
 	}
 
-	public void add()
+	public void addEffect()
 	{
 		if(timer++ >= entity.world.rand.nextInt(15) + 20)
 		{
@@ -162,7 +162,7 @@ class HandlerCurealEffect
 		this.entity = entity;
 	}
 
-	public void add()
+	public void addEffect()
 	{
 		ArrayList<Potion> potionsToRemove = new ArrayList<>();
 		for(PotionEffect effect : entity.getActivePotionEffects())
@@ -171,6 +171,8 @@ class HandlerCurealEffect
 		
 		for(Potion potion : potionsToRemove)
 			entity.removePotionEffect(potion);
+		
+		entity.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).removeModifier(UUID.fromString("81c41407-0bb1-435d-91ca-449b8c8a0eec"));
 	}
 }
 
@@ -185,14 +187,27 @@ class HandlerHarshedEffect
 		this.entity = entity;
 		this.position = this.entity.getPosition();
 		this.level = level;
+		this.timer = (int) ((entity.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getBaseValue() - entity.getMaxHealth() + 1) * 20);
 	}
 
-	public void add()
+	public void addEffect()
 	{
-		if(timer++ >= 20)
+		if(timer++ % 20 == 0)
 		{
-			timer = 0;
-			this.entity.attackEntityFrom(new DamageSourceHarshed(), (float) Math.floor(this.level * 2.5f) + 1);
+			entity.attackEntityFrom(new DamageSourceHarshed(), 1);
+			if(entity.getMaxHealth() > 2)
+			{
+				IAttributeInstance attribute = entity.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH);
+				AttributeModifier modifier = new AttributeModifier(UUID.fromString("81c41407-0bb1-435d-91ca-449b8c8a0eec"), "drainHealth", -timer/20, 0).setSaved(true);
+				
+				if(attribute.hasModifier(modifier))
+				{
+					attribute.removeAllModifiers();
+					attribute.applyModifier(modifier);
+				}
+				else
+					attribute.applyModifier(modifier);
+			}
 		}
 	}
 }
