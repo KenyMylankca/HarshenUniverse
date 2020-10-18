@@ -186,7 +186,6 @@ public abstract class BaseHarshenParticle extends Particle
         Tessellator.getInstance().draw();
         GlStateManager.enableLighting();
         GlStateManager.disableBlend();
-
     }
     
     protected boolean isFullTexture() 

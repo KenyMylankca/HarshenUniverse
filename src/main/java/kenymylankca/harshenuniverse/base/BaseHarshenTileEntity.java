@@ -44,7 +44,7 @@ public abstract class BaseHarshenTileEntity extends TileEntity
 		super.readFromNBT(compound);
 	}
 	
-	public  NBTTagCompound writeToNBT(NBTTagCompound nbt)
+	public NBTTagCompound writeToNBT(NBTTagCompound nbt)
 	{
 		return super.writeToNBT(nbt);
 	}
