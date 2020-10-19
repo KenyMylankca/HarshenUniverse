@@ -69,7 +69,7 @@ public class TileEntityHarshenSpawner extends BaseTileEntityHarshenSingleItemInv
 		if(!world.isRemote)
 			world.spawnEntity(this.entityliving);
 		spawnedEntityUUID = entityliving.getUniqueID();
-		world.playSound(pos.getX(), pos.getY(), pos.getZ(), HarshenSounds.SPAWNER_SUMMON, SoundCategory.BLOCKS, 1f, 1f, false);
+		world.playSound(pos.getX(), pos.getY(), pos.getZ(), HarshenSounds.SPAWNER_SUMMON, SoundCategory.BLOCKS, 0.8f, player.world.rand.nextFloat() + 0.1F, false);
 	}
 	
 	private void deactivate(ItemStack stack, Entity entity)
