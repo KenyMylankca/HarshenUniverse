@@ -327,9 +327,8 @@ top.inventory.containing=Item:
 
 #misc
 itemGroup.harshenTab=Harshen Universe
-message.failed=Kazzendre: Don't touch any particle of me.. (you should use Soul Harsher Pickaxe)
-message.success=Kazzendre: You hurt my soul...
-message.broken=Don't touch any particle of me.
+message.failed=Don't touch any particle of me..
+message.success=You hurt my soul...
 button.harsheninventory=Harshen Accessories
 button.normal=Inventory
 entity.Villager.badge=Valor Badge Trader

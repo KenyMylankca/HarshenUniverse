@@ -45,7 +45,7 @@ public class BaseHarshenBlockBreakableWithSHPickaxe extends Block
 			player.attackEntityFrom(DamageSource.MAGIC, 21);
 			if(!worldIn.isRemote)
 			{
-				player.sendMessage((ITextComponent) new TextComponentTranslation("message.broken"));
+				player.sendMessage((ITextComponent) new TextComponentTranslation("message.failed"));
 			}
 		}
 	}

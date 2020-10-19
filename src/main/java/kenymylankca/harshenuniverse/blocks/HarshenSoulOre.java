@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import kenymylankca.harshenuniverse.HarshenItems;
+import kenymylankca.harshenuniverse.HarshenSounds;
 import kenymylankca.harshenuniverse.items.SoulHarsherPickaxe;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -61,15 +62,15 @@ public class HarshenSoulOre extends Block
 				InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(HarshenItems.HARSHEN_SOUL_FRAGMENT));
 				super.onBlockHarvested(worldIn, pos, state, player);
 				player.sendMessage((ITextComponent) new TextComponentTranslation("message.success"));
-			}	
+			}
+			else
+				player.playSound(HarshenSounds.SOUL_HARSHER_SWORD_HIT, 0.35F, 0.3F);
 		}
 		else
 		{
 			player.attackEntityFrom(DamageSource.MAGIC, 21);
 			if(!worldIn.isRemote)
-			{
 				player.sendMessage((ITextComponent) new TextComponentTranslation("message.failed"));
-			}
 		}
 	}
 	
