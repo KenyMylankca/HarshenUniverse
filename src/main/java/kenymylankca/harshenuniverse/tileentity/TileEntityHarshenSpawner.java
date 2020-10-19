@@ -18,26 +18,28 @@ import net.minecraft.util.math.BlockPos;
 
 public class TileEntityHarshenSpawner extends BaseTileEntityHarshenSingleItemInventory
 {
-	private EntityLiving entityliving = null;
+	private EntityLiving entityTurning = null;
 	private UUID spawnedEntityUUID = null;
 	private ItemStack spawnedEntitysEgg = null;
+	private boolean isActive = false;
 	
-	public Entity getEntity(ItemStack stack)
+	public Entity getEntity()
 	{
-		if(stack.getItem() == Item.getItemFromBlock(Blocks.AIR) || stack.equals(ItemStack.EMPTY))
+		if(getItemStack().getItem() == Item.getItemFromBlock(Blocks.AIR) || getItemStack().equals(ItemStack.EMPTY))
 		{
-			this.entityliving = null;
+			this.entityTurning = null;
 			return null;
 		}
 		try
 		{
-			entityliving = (EntityLiving) EntityList.createEntityByIDFromName(ItemMonsterPlacer.getNamedIdFrom(stack), world);
-            entityliving.onInitialSpawn(world.getDifficultyForLocation(new BlockPos(entityliving)), (IEntityLivingData)null);
-            spawnedEntitysEgg = stack;
+			entityTurning = (EntityLiving) EntityList.createEntityByIDFromName(ItemMonsterPlacer.getNamedIdFrom(getItemStack()), world);
+            entityTurning.onInitialSpawn(world.getDifficultyForLocation(new BlockPos(entityTurning)), (IEntityLivingData)null);
+            spawnedEntitysEgg = getItemStack();
 		}
 		catch (NullPointerException e) {
+			e.printStackTrace();
 		}
-		return this.entityliving;
+		return this.entityTurning;
 	}
 	
 	@Override
@@ -46,35 +48,41 @@ public class TileEntityHarshenSpawner extends BaseTileEntityHarshenSingleItemInv
 		EntityPlayer playerToActivate = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 7, false);
 		EntityPlayer playerToDeactivate = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 9, false);
 		
-		if(playerToActivate != null && getEntity(getItem()) != null && !playerToActivate.isCreative() && !playerToActivate.isDead)
+		if(playerToActivate != null && getEntity() != null && !playerToActivate.isCreative() && !playerToActivate.isDead)
 			activate(playerToActivate);
 		
-		if(entityliving==null)
+		boolean isInWorld = false;
+		if(isActive)
 			for(Entity entity : world.loadedEntityList)
 				if(entity.getUniqueID() == spawnedEntityUUID)
 				{
-					if(entityliving == null && !entity.isEntityAlive())
-						world.setBlockToAir(pos);
-					if(entity.isEntityAlive() && (playerToDeactivate == null || playerToDeactivate.isCreative() || playerToDeactivate.isDead) && entityliving == null)
+					isInWorld = true;
+					if(entity.isEntityAlive() && (playerToDeactivate == null || playerToDeactivate.isCreative() || playerToDeactivate.isDead))
 						deactivate(spawnedEntitysEgg, entity);
 				}
+		if(isActive && !isInWorld && !world.isRemote)
+			world.setBlockToAir(pos);
 	}
 	
 	private void activate(EntityPlayer player)
 	{
+		isActive = true;
 		setItemAir();
-		this.entityliving.setPosition(pos.getX()+0.5, pos.getY(), pos.getZ()+0.5);
-		this.entityliving.setRotationYawHead(player.getPosition().subtract(pos).getY());
-		entityliving.onInitialSpawn(world.getDifficultyForLocation(new BlockPos(entityliving)), (IEntityLivingData)null);
+		this.entityTurning.setPosition(pos.getX()+0.5, pos.getY(), pos.getZ()+0.5);
+		this.entityTurning.setRotationYawHead(player.getPosition().subtract(pos).getY());
+		entityTurning.onInitialSpawn(world.getDifficultyForLocation(new BlockPos(entityTurning)), (IEntityLivingData)null);
 		if(!world.isRemote)
-			world.spawnEntity(this.entityliving);
-		spawnedEntityUUID = entityliving.getUniqueID();
+			world.spawnEntity(this.entityTurning);
+		spawnedEntityUUID = entityTurning.getUniqueID();
+		entityTurning = null;
 		world.playSound(pos.getX(), pos.getY(), pos.getZ(), HarshenSounds.SPAWNER_SUMMON, SoundCategory.BLOCKS, 0.8f, player.world.rand.nextFloat() + 0.1F, false);
 	}
 	
 	private void deactivate(ItemStack stack, Entity entity)
 	{
+		isActive = false;
 		setItem(stack);
+		entityTurning = (EntityLiving) EntityList.createEntityByIDFromName(ItemMonsterPlacer.getNamedIdFrom(stack), world);
 		entity.setDead();
 	}
 }

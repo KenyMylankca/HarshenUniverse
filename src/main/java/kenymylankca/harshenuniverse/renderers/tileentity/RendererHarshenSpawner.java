@@ -17,7 +17,7 @@ public class RendererHarshenSpawner extends TileEntitySpecialRenderer<TileEntity
 	public void render(TileEntityHarshenSpawner te, double x, double y, double z, float partialTicks,
 			int destroyStage, float alpha) {
 		super.render(te, x, y, z, partialTicks, destroyStage, alpha);
-		ENTITY = te.getEntity(te.getItem());
+		ENTITY = te.getEntity();
 		if(ENTITY == null)
 			return;
 		GlStateManager.pushMatrix();
