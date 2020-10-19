@@ -29,7 +29,7 @@ public class BiomesForHarshenMobsOverworld
 		biomesList.add(Biomes.TAIGA);
 		biomesList.add(Biomes.TAIGA_HILLS);
 		if(pontus)
-			biomesList.add(HarshenBiomes.pontus_dimensional_biome);
+			biomesList.add(HarshenBiomes.pontus_biome);
 		
 		Biome[] biomes = new Biome[biomesList.size()];
 		biomes = biomesList.toArray(biomes);

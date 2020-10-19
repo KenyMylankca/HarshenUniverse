@@ -64,7 +64,7 @@ public class PontusBiomeProvider extends BiomeProvider
 				return biomeList.get(biomeList.size() - 1);
 		}
 	
-		return HarshenBiomes.pontus_dimensional_biome;
+		return HarshenBiomes.pontus_biome;
 	}
 	
 	public static double getDistance(BlockPos pos)
