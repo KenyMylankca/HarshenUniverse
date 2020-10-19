@@ -21,7 +21,7 @@ public class HarshenDataFileManager
 	{
 		int dim = world.provider.getDimension();
 		
-		file = new File(world.getSaveHandler().getWorldDirectory(), HarshenUniverse.MODID + "structures.nbt");
+		file = new File(world.getSaveHandler().getWorldDirectory(), HarshenUniverse.MODID + "data.nbt");
 		
 		if(!file.exists())
 			try {
