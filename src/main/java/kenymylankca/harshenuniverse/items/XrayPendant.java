@@ -123,7 +123,7 @@ public class XrayPendant extends Item implements IHarshenAccessoryProvider
 		{
 			try
 			{
-				while( !this.thread.isInterrupted())
+				while(!this.thread.isInterrupted())
 				{
 					Minecraft mc = Minecraft.getMinecraft();
 					boolean interupt = false;
@@ -148,9 +148,9 @@ public class XrayPendant extends Item implements IHarshenAccessoryProvider
 							ArrayList<Block> blocks = HarshenUtils.getBlocksFromString(blockName);
 							ArrayList<BlockPos> allBlockPos = new ArrayList<>();
 							HashMap<Double, BlockPos> distanceMap = new HashMap<>();
-							for(int x = px - AccessoryConfig.xrayAreaX; x < px + AccessoryConfig.xrayAreaX; x++)
-								for(int z = pz - AccessoryConfig.xrayAreaZ; z < pz + AccessoryConfig.xrayAreaZ; z++)
-									for(int y = py - AccessoryConfig.xrayAreaY; y < py + AccessoryConfig.xrayAreaY; y++)
+							for(int x = px - AccessoryConfig.xrayDistance; x < px + AccessoryConfig.xrayDistance; x++)
+								for(int z = pz - AccessoryConfig.xrayDistance; z < pz + AccessoryConfig.xrayDistance; z++)
+									for(int y = py - AccessoryConfig.xrayDistance; y < py + AccessoryConfig.xrayDistance; y++)
 									{
 										if(blocks.contains(net.minecraft.client.Minecraft.getMinecraft().world.getBlockState(new BlockPos(x, y, z)).getBlock())
 												&& net.minecraft.client.Minecraft.getMinecraft().world.getBlockState(new BlockPos(x, y, z)).getBlock() != Blocks.AIR)
