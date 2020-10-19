@@ -34,6 +34,9 @@ public class HarshenWorldGen implements IWorldGenerator
     private final WorldGenerator pontusEmeraldOre = new PontusWorldGeneratorPontusEmeraldOre();
     private final WorldGenerator pontusJewelDirt = new JewelDirtGenPontus();
     
+    public static final int [] castleChunks = {23, 25};
+    public static final int [] graveyardChunks = {17, -15};
+    
     public static int castleDelay = 0;
     public static int graveyardDelay = 0;
     
@@ -47,21 +50,21 @@ public class HarshenWorldGen implements IWorldGenerator
 		int dim = world.provider.getDimension();
 		if(dim == 0)
 		{
-			if(chunkX == GeneralConfig.castleChunks[0] && chunkZ == GeneralConfig.castleChunks[1])
+			if(chunkX == castleChunks[0] && chunkZ == castleChunks[1])
 				castleDelay++;
 			if(castleDelay >= GeneralConfig.structureProtectorDelay)
 			{
 				HarshenDataFileManager manager = new HarshenDataFileManager(world);
-				manager.writeStructurePosToFile(world, HarshenStructures.CASTLE.generateStucture(world, random, GeneralConfig.castleChunks[0], GeneralConfig.castleChunks[1]), "castle");
+				manager.writeStructurePosToFile(world, HarshenStructures.CASTLE.generateStucture(world, random, castleChunks[0], castleChunks[1]), "castle");
 				castleDelay = 0;
 			}
 			
-			if(chunkX == GeneralConfig.graveyardChunks[0] && chunkZ == GeneralConfig.graveyardChunks[1])
+			if(chunkX == graveyardChunks[0] && chunkZ == graveyardChunks[1])
 				graveyardDelay++;
 			if(graveyardDelay >= GeneralConfig.structureProtectorDelay)
 			{
 				HarshenDataFileManager manager = new HarshenDataFileManager(world);
-				manager.writeStructurePosToFile(world, HarshenStructures.GRAVEYARD.generateStucture(world, random, GeneralConfig.graveyardChunks[0], GeneralConfig.graveyardChunks[1]), "graveyard");
+				manager.writeStructurePosToFile(world, HarshenStructures.GRAVEYARD.generateStucture(world, random, graveyardChunks[0], graveyardChunks[1]), "graveyard");
 				graveyardDelay = 0;
 			}
 			
