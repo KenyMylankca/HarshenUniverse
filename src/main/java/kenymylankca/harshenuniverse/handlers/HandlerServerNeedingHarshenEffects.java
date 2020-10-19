@@ -44,7 +44,7 @@ public class HandlerServerNeedingHarshenEffects
 	int tick=0;
 	int trustTimer=666;
 	int nocturnalTimer=0;
-	int castleSoundTimer=0;
+	int castleSoundTimer=3000;
 	
 	@SubscribeEvent
 	public void onPlayerTick(PlayerTickEvent event)
@@ -60,10 +60,10 @@ public class HandlerServerNeedingHarshenEffects
 					if(manager.readStructurePosFromFile("castle") != null)
 					{
 						BlockPos castlePos = manager.readStructurePosFromFile("castle");
-						if(event.player.getDistanceSq(castlePos) < 500)
+						if(event.player.getDistanceSq(castlePos) < 1000)
 							if(castleSoundTimer++ > 3320)
 							{
-								HarshenNetwork.sendToPlayer(event.player, new MessagePacketPlaySound(HarshenSounds.CASTLE_AMBIENT, 0.7f, 1f));
+								HarshenNetwork.sendToPlayer(event.player, new MessagePacketPlaySound(HarshenSounds.CASTLE_AMBIENT, 1f, 1f, castlePos));
 								castleSoundTimer=0;
 							}
 					}
