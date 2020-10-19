@@ -5,8 +5,8 @@ import kenymylankca.harshenuniverse.base.BaseMessagePacket;
 import kenymylankca.harshenuniverse.handlers.HandlerPontusAllowed;
 import net.minecraft.entity.player.EntityPlayer;
 
-public class MessagePacketPlayerHasAccess extends BaseMessagePacket<MessagePacketPlayerHasAccess>{
-
+public class MessagePacketPlayerHasAccess extends BaseMessagePacket<MessagePacketPlayerHasAccess>
+{
 	public MessagePacketPlayerHasAccess() {
 	}
 	
@@ -31,5 +31,4 @@ public class MessagePacketPlayerHasAccess extends BaseMessagePacket<MessagePacke
 	public void onReceived(MessagePacketPlayerHasAccess message, EntityPlayer player) {	
 		HandlerPontusAllowed.setAllowed(player, message.level);
 	}
-
 }

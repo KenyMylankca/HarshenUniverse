@@ -17,8 +17,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-public class MessagePacketRingUpdate extends BaseMessagePacket<MessagePacketRingUpdate>{
-
+public class MessagePacketRingUpdate extends BaseMessagePacket<MessagePacketRingUpdate>
+{
 	public MessagePacketRingUpdate() {
 	}
 	

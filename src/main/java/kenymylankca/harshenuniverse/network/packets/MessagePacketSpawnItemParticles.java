@@ -10,8 +10,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
 
-public class MessagePacketSpawnItemParticles extends BaseMessagePacket<MessagePacketSpawnItemParticles>{
-
+public class MessagePacketSpawnItemParticles extends BaseMessagePacket<MessagePacketSpawnItemParticles>
+{
 	public MessagePacketSpawnItemParticles() {
 	}
 	

@@ -5,8 +5,8 @@ import kenymylankca.harshenuniverse.base.BaseMessagePacket;
 import kenymylankca.harshenuniverse.network.HarshenNetwork;
 import net.minecraft.entity.player.EntityPlayer;
 
-public class MessagePacketRequestHarshenInv extends BaseMessagePacket<MessagePacketRequestHarshenInv>{
-
+public class MessagePacketRequestHarshenInv extends BaseMessagePacket<MessagePacketRequestHarshenInv>
+{
 	@Override
 	public void fromBytes(ByteBuf buf) {		
 		

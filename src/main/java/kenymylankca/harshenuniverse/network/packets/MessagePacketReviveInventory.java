@@ -8,7 +8,6 @@ import net.minecraftforge.fml.common.network.ByteBufUtils;
 
 public class MessagePacketReviveInventory extends BaseMessagePacket<MessagePacketReviveInventory>
 {
-	
 	public MessagePacketReviveInventory() {
 	}
 	
@@ -38,5 +37,4 @@ public class MessagePacketReviveInventory extends BaseMessagePacket<MessagePacke
 	public void onReceived(MessagePacketReviveInventory message, EntityPlayer player) {
 		player.inventory.readFromNBT(message.nbtList);
 	}
-
 }

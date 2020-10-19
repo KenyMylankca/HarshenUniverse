@@ -7,8 +7,8 @@ import kenymylankca.harshenuniverse.enums.particle.EnumHarshenParticle;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.Vec3d;
 
-public class MessagePacketSpawnBloodParticle extends BaseMessagePacket<MessagePacketSpawnBloodParticle>{
-
+public class MessagePacketSpawnBloodParticle extends BaseMessagePacket<MessagePacketSpawnBloodParticle>
+{
 	public MessagePacketSpawnBloodParticle() {
 	}
 	

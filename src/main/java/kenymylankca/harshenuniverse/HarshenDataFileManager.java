@@ -41,10 +41,10 @@ public class HarshenDataFileManager
 				nbt = readNBTFromFile(file);
 		
 		nbt.setIntArray(structureName + "Pos", posArray);
-		writeNBTCompoundToFile(nbt, file);
+		writeNBTToFile(nbt, file);
 	}
 	
-	public void writeNBTCompoundToFile(NBTTagCompound nbt, File file)
+	public void writeNBTToFile(NBTTagCompound nbt, File file)
 	{
 		try {
 			OutputStream outStream = null;
@@ -80,11 +80,16 @@ public class HarshenDataFileManager
 		return null;
 	}
 	
-	public NBTTagCompound readStructureNBTFromFile(String structureName)
+	public BlockPos readStructurePosFromFile(String structureName)
 	{
 		if(readNBTFromFile(file) != null)
-			if(readNBTFromFile(file).hasKey("structureName" + "Pos"))
-				return readNBTFromFile(file);
+			if(readNBTFromFile(file).hasKey(structureName + "Pos"))
+			{
+				BlockPos pos = new BlockPos(readNBTFromFile(file).getIntArray(structureName + "Pos")[0],
+						readNBTFromFile(file).getIntArray(structureName + "Pos")[1],
+						readNBTFromFile(file).getIntArray(structureName + "Pos")[2]);
+				return pos;
+			}
 		return null;
 	}
 }
