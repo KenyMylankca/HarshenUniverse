@@ -43,11 +43,11 @@ public class TileEntityHarshenSpawner extends BaseTileEntityHarshenSingleItemInv
 	@Override
 	protected void tick() 
 	{
-		EntityPlayer player = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 7, false);
-		EntityPlayer player2 = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 12, false);
+		EntityPlayer playerToActivate = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 7, false);
+		EntityPlayer playerToDeactivate = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 9, false);
 		
-		if(player != null && getEntity(getItem()) != null && !player.isCreative())
-			activate(player);
+		if(playerToActivate != null && getEntity(getItem()) != null && !playerToActivate.isCreative() && !playerToActivate.isDead)
+			activate(playerToActivate);
 		
 		if(entityliving==null)
 			for(Entity entity : world.loadedEntityList)
@@ -55,7 +55,7 @@ public class TileEntityHarshenSpawner extends BaseTileEntityHarshenSingleItemInv
 				{
 					if(entityliving == null && !entity.isEntityAlive())
 						world.setBlockToAir(pos);
-					if(entity.isEntityAlive() && (player2 == null || player2.isCreative()) && entityliving == null)
+					if(entity.isEntityAlive() && (playerToDeactivate == null || playerToDeactivate.isCreative() || playerToDeactivate.isDead) && entityliving == null)
 						deactivate(spawnedEntitysEgg, entity);
 				}
 	}
