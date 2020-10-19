@@ -56,36 +56,36 @@ public abstract class BaseConfig
 	
 	public static HashMap<String, Property> propertyMap = new HashMap<>();
 		
-	protected <T> T get(String name, String category, T normal)
+	protected <T> T get(String name, String category, T defaultValue)
 	{
-		return get(name, category, new TextComponentTranslation("config." + name).getUnformattedText(), normal);
+		return get(name, category, new TextComponentTranslation("config." + name).getUnformattedText(), defaultValue);
 	}
 	
-	protected <T> T get(String name, String category, String comment, T normal)
+	protected <T> T get(String name, String category, String comment, T defaultValue)
 	{
 		try
 		{
-			Object returned = HarshenUtils.getMethod("get", config.getClass(), String.class, String.class, normal.getClass()).invoke(config, category, name, normal);
-			if(normal.getClass().isArray())
+			Object returned = HarshenUtils.getMethod("get", config.getClass(), String.class, String.class, defaultValue.getClass()).invoke(config, category, name, defaultValue);
+			if(defaultValue.getClass().isArray())
 				for(Method method : config.getClass().getMethods())
 					if(method.getParameterTypes().length == 3 && method.getParameterTypes()[0] == String.class && method.getParameterTypes()[1] == String.class
-					&& method.getParameterTypes()[2] == normal.getClass() && method.getParameterTypes()[2].isArray())
-						returned = method.invoke(config, category, name, normal);
+					&& method.getParameterTypes()[2] == defaultValue.getClass() && method.getParameterTypes()[2].isArray())
+						returned = method.invoke(config, category, name, defaultValue);
 			if(!(returned instanceof Property))	throw new IllegalArgumentException("Returned Type was not a property. This is practically impossible");
 			Property property = (Property) returned;
 			property.setComment(comment);
 			propertyMap.put(category + "*" + name, property);
-			return (T) property.getClass().getMethod("get" + normal.getClass().getSimpleName().replace("Integer", "Int").replace("[]", "List")).invoke(property);
+			return (T) property.getClass().getMethod("get" + defaultValue.getClass().getSimpleName().replace("Integer", "Int").replace("[]", "List")).invoke(property);
 		}
 		catch (NullPointerException | SecurityException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
-			HarshenUniverse.LOGGER.error("Forge Config has no such getter for " + normal.getClass() + ". ErrorClass: " + e.getClass().getSimpleName());
+			HarshenUniverse.LOGGER.error("Forge Config has no such getter for " + defaultValue.getClass() + ". ErrorClass: " + e.getClass().getSimpleName());
 			e.printStackTrace();
 		}
-		return normal;
+		return defaultValue;
 	}
 	
-	protected <T> T get(String name, T normal)
+	protected <T> T get(String name, T defaultValue)
 	{
-		return this.get(name, getName(), normal);
+		return this.get(name, getName(), defaultValue);
 	}
 }

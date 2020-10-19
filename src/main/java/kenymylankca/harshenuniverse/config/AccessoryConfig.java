@@ -35,8 +35,8 @@ public class AccessoryConfig extends BaseConfig
 	
 	private HashMap<String, String> keyMap = new HashMap<>();
 	
-	private <T> T get(String name, Item item, T normal) 
+	private <T> T get(String name, Item item, T defaultValue) 
 	{
-		return super.get(name, item.getRegistryName().getResourcePath(), normal);
+		return super.get(name, item.getRegistryName().getResourcePath(), defaultValue);
 	}
 }
