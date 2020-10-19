@@ -13,6 +13,8 @@ public class GeneralConfig extends BaseConfig
 	public static int nocturnalDistance;
 	public static boolean trueInvisibility;
 	public static int structureProtectorDelay;
+	public static int [] castleChunks;
+	public static int [] graveyardChunks;
 	
 	@Override
 	public String getName() {
@@ -30,5 +32,7 @@ public class GeneralConfig extends BaseConfig
 		nocturnalDistance = get("nocturnal_distance", 2);
 		trueInvisibility = get("true_invisibility", true);
 		structureProtectorDelay = get("structure_protector_delay", 75);
+		castleChunks = get("castle_chunks", new int [] {23, 25});
+		graveyardChunks = get("graveyard_chunks", new int [] {17, -15});
 	}
 }

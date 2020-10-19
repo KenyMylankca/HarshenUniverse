@@ -8,7 +8,6 @@ import kenymylankca.harshenuniverse.HarshenDataFileManager;
 import kenymylankca.harshenuniverse.HarshenItems;
 import kenymylankca.harshenuniverse.HarshenSounds;
 import kenymylankca.harshenuniverse.HarshenUtils;
-import kenymylankca.harshenuniverse.HarshenWorldGen;
 import kenymylankca.harshenuniverse.base.BaseBloodyBed;
 import kenymylankca.harshenuniverse.config.AccessoryConfig;
 import kenymylankca.harshenuniverse.config.GeneralConfig;
@@ -55,7 +54,7 @@ public class HandlerServerNeedingHarshenEffects
 		
 		if(event.side.isServer())
 			if(event.player.world.getSunBrightness(0) < 0.76)
-				if(event.player.world.isChunkGeneratedAt(HarshenWorldGen.castleChunks[0], HarshenWorldGen.castleChunks[1]))
+				if(event.player.world.isChunkGeneratedAt(GeneralConfig.castleChunks[0], GeneralConfig.castleChunks[1]))
 				{
 					HarshenDataFileManager manager = new HarshenDataFileManager(event.player.world);
 					if(manager.readStructurePosFromFile("castle") != null)
