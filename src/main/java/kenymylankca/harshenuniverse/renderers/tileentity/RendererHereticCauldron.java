@@ -33,7 +33,7 @@ public class RendererHereticCauldron extends TileEntitySpecialRenderer<TileEntit
 	public void render(TileEntityHereticCauldron te, double x, double y, double z, float partialTicks, int destroyStage, float alpha)
 	{
 		super.render(te, x, y, z, partialTicks, destroyStage, alpha);
-		ITEM = new EntityItem(Minecraft.getMinecraft().world, 0, 0, 0, te.getItem());
+		ITEM = new EntityItem(Minecraft.getMinecraft().world, 0, 0, 0, te.getItemStack());
 		ITEM.hoverStart = 0.0f;
 		GlStateManager.pushMatrix();
 		{
@@ -66,8 +66,8 @@ public class RendererHereticCauldron extends TileEntitySpecialRenderer<TileEntit
 					else if(te.getActiveTimer() >= 50)
 					{
 						ItemStack stack = null;
-						if(new Random().nextInt(MathHelper.floor(MathHelper.clamp(130 - te.getActiveTimer(), 1, 130))) <= 2 && !te.getItem().isEmpty())
-							stack = te.getItem();
+						if(new Random().nextInt(MathHelper.floor(MathHelper.clamp(130 - te.getActiveTimer(), 1, 130))) <= 2 && !te.getItemStack().isEmpty())
+							stack = te.getItemStack();
 						else if(!te.getSwitchedItem().isEmpty())
 							stack = te.getSwitchedItem();
 						flag = false;

@@ -45,9 +45,9 @@ public class TileEntityHarshenRitualPedestal extends BaseTileEntityHarshenSingle
 			{
 				BlockPos pos = workingRecipe.getPositionOfRitual();
 				for(EnumFacing facing : EnumFacing.HORIZONTALS)
-					if(!((TileEntityHarshenRitualPedestal)world.getTileEntity(pos.offset(facing))).getItem().isEmpty())
+					if(!((TileEntityHarshenRitualPedestal)world.getTileEntity(pos.offset(facing))).getItemStack().isEmpty())
 						HarshenNetwork.sendToPlayersInWorld(world, new MessagePacketSpawnItemParticles(
-										((TileEntityHarshenRitualPedestal)world.getTileEntity(pos.offset(facing))).getItem(),
+										((TileEntityHarshenRitualPedestal)world.getTileEntity(pos.offset(facing))).getItemStack(),
 										new Vec3d(pos.offset(facing)).addVector(0.5, 0.85, 0.5),
 										HarshenUtils.speedToPos(new Vec3d(pos.offset(facing)).addVector(0.5, 0.85, 0.5),
 										new Vec3d(pos).addVector(0.5, 1, 0.5), 15D), 1f, false, 20, workingRecipe.getTag()));
@@ -102,7 +102,7 @@ public class TileEntityHarshenRitualPedestal extends BaseTileEntityHarshenSingle
 	protected boolean checkForCompletion(boolean checkingUp)
 	{
 		boolean found = false;
-		for(LightningRitualRecipes recipe : LightningRitualRecipes.getRecipes(getItem()))
+		for(LightningRitualRecipes recipe : LightningRitualRecipes.getRecipes(getItemStack()))
 		{
 			if(found)
 				break;
@@ -128,7 +128,7 @@ public class TileEntityHarshenRitualPedestal extends BaseTileEntityHarshenSingle
 						TileEntityHarshenRitualPedestal pedestal = (TileEntityHarshenRitualPedestal) world.getTileEntity(position.offset(face));
 						HarshenStack removeStack = null;
 						for(HarshenStack hStack : localItems)
-							if(hStack.containsItem(pedestal.getItem()))
+							if(hStack.containsItem(pedestal.getItemStack()))
 							{
 								removeStack = hStack;
 								break;

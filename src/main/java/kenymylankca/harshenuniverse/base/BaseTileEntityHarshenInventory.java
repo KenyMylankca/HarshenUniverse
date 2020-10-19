@@ -83,7 +83,7 @@ public abstract class BaseTileEntityHarshenInventory extends BaseHarshenTileEnti
 		dirty();
 	}
 	
-	public ItemStack getItem(int slot)
+	public ItemStack getItemStack(int slot)
 	{
 		return handler.getStackInSlot(slot);
 	}

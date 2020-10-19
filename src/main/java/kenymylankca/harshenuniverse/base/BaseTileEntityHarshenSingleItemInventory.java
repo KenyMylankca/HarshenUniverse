@@ -39,9 +39,9 @@ public abstract class BaseTileEntityHarshenSingleItemInventory extends BaseTileE
 		super.setItemAir(0);
 	}
 	
-	public ItemStack getItem()
+	public ItemStack getItemStack()
 	{
-		return super.getItem(0);
+		return super.getItemStack(0);
 	}
 
 	public boolean canAddItem() {

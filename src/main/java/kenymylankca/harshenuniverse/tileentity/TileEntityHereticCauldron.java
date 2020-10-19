@@ -78,7 +78,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 			{
 				for(TileEntityHarshenRitualPedestal pedestal : pedestals)
 				{
-					if(pedestal.getItem().getItem() == Items.AIR ||  new Random().nextInt(overstandingTimer / 2) == 0)
+					if(pedestal.getItemStack().getItem() == Items.AIR ||  new Random().nextInt(overstandingTimer / 2) == 0)
 					{
 						Vec3d vec = new Vec3d(pedestal.getPos()).addVector(0.5d, 0.9d, 0.5d);
 						HarshenNetwork.sendToPlayersInWorld(world, new MessagePacketSpawnItemParticles(pedestalMap.get(pedestal.getPos()), vec, 
@@ -101,7 +101,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 					bloodPos.add(pos);
 				boolean flag = !localBloodPos.isEmpty();
 				for(TileEntityHarshenRitualPedestal pedestal : pedestals)
-					if(!pedestal.getItem().isEmpty())
+					if(!pedestal.getItemStack().isEmpty())
 						flag = true;
 				if(!flag)
 				{
@@ -299,7 +299,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
         }
         else if(mainhanditem == HarshenItems.RITUAL_STICK)
         {
-        	ItemStack stack = getItem();
+        	ItemStack stack = getItemStack();
         	switch (mainhandstack.getMetadata()) {
 			case 0:
 				if(CauldronRecipes.getRecipe(stack, fluid) != null && level == 3)
@@ -391,14 +391,14 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 		
 		ArrayList<ItemStack> stacks = new ArrayList<>();
 		for(TileEntityHarshenRitualPedestal pedestal : pedestals)
-			stacks.add(pedestal.getItem());
-		HereticRitualRecipes recipe = HereticRitualRecipes.getRecipe(getItem(), fluid, stacks);
+			stacks.add(pedestal.getItemStack());
+		HereticRitualRecipes recipe = HereticRitualRecipes.getRecipe(getItemStack(), fluid, stacks);
 		if(erroredPositions.isEmpty() && recipe != null && setRecipe)
 		{	
 			deletedBloodPos = new ArrayList<>(bloodPos);
 			for(TileEntityHarshenRitualPedestal pedestal : pedestals)
 			{
-				pedestalMap.put(pedestal.getPos(), pedestal.getItem());
+				pedestalMap.put(pedestal.getPos(), pedestal.getItemStack());
 				pedestal.setActiveNonController();
 			}
 			for(BlockPos pos : bloodPos)
@@ -557,7 +557,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 	
 	public void reactivate(int layerAddition) {
 		((TileEntityHereticCauldron)world.getTileEntity(pos)).setActiveTimer(activeTimer).setTimer(this.timer).setActive(isActive)
-		.setHoldingItem(getItem()).setlayersDrained(layersDrained + layerAddition).setSwitchedItem(switchedItem).setFluid(fluid).setLevel(level);
+		.setHoldingItem(getItemStack()).setlayersDrained(layersDrained + layerAddition).setSwitchedItem(switchedItem).setFluid(fluid).setLevel(level);
 	}
 	
 	@Override

@@ -18,11 +18,11 @@ public class RendererMagicTable extends TileEntitySpecialRenderer<TileEntityHars
 	{
 		super.render(te, x, y, z, partialTicks, destroyStage, alpha);
 		int rotateAngle2 = te.getTimer() * 6;
-		RESULT_ITEM = new EntityItem(Minecraft.getMinecraft().world, 0, 0, 0, te.getItem(4));
+		RESULT_ITEM = new EntityItem(Minecraft.getMinecraft().world, 0, 0, 0, te.getItemStack(4));
 		RESULT_ITEM.hoverStart = 1.55f;
 		GlStateManager.pushMatrix();
 		{
-			if (!te.getItem(4).isEmpty()) Minecraft.getMinecraft().getRenderManager().renderEntity(RESULT_ITEM, x+0.5, y+0.52, z+0.5, 0, 0, false);
+			if (!te.getItemStack(4).isEmpty()) Minecraft.getMinecraft().getRenderManager().renderEntity(RESULT_ITEM, x+0.5, y+0.52, z+0.5, 0, 0, false);
 		} GlStateManager.popMatrix();
 		
 		if(te.getWorld().getBlockState(te.getPos().up()).isOpaqueCube())

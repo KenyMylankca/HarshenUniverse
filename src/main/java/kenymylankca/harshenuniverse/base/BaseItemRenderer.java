@@ -12,7 +12,7 @@ public abstract class BaseItemRenderer<T extends BaseTileEntityHarshenSingleItem
 	@Override
 	public void render(T te, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
 		super.render(te, x, y, z, partialTicks, destroyStage, alpha);
-		EntityItem item = new EntityItem(Minecraft.getMinecraft().world, 0, 0, 0, te.getItem());
+		EntityItem item = new EntityItem(Minecraft.getMinecraft().world, 0, 0, 0, te.getItemStack());
 		item.hoverStart = 0.0f;
 		int rotateAngle = te.getTimer() * 6;
 		GlStateManager.pushMatrix();

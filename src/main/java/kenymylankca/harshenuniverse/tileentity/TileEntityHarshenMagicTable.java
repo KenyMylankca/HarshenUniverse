@@ -28,7 +28,7 @@ public class TileEntityHarshenMagicTable extends BaseTileEntityHarshenInventory
 	@Override
 	protected void tick() 
 	{
-		if(hasRecipe() && overstandingRecipe == null && getItem(4).getMaxStackSize() > getItem(4).getCount())
+		if(hasRecipe() && overstandingRecipe == null && getItemStack(4).getMaxStackSize() > getItemStack(4).getCount())
 			overstandingRecipe = getRecipe();
 		if(overstandingRecipe != null)
 			if(!world.isRemote)
@@ -40,10 +40,10 @@ public class TileEntityHarshenMagicTable extends BaseTileEntityHarshenInventory
 					if(isSlotEmpty(4))
 						setItem(4, overstandingRecipe.getOutput().copy());
 					else
-						getItem(4).grow(1);
+						getItemStack(4).grow(1);
 					deactivate();
 					for(int i = 0; i < 4; i++)
-						getItem(i).shrink(1);
+						getItemStack(i).shrink(1);
 				}
 				else if(!hasRecipe())
 					deactivate();
@@ -68,7 +68,7 @@ public class TileEntityHarshenMagicTable extends BaseTileEntityHarshenInventory
 	{
 		ArrayList<ItemStack> tempStacks = new ArrayList<>();
 		for(int i = 0; i < 4; i++)
-				tempStacks.add(getItem(i));
+				tempStacks.add(getItemStack(i));
 		return MagicTableRecipe.getRecipeFromStacks(tempStacks);
 	}
 	
