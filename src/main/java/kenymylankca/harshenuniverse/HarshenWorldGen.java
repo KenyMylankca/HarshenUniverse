@@ -34,34 +34,37 @@ public class HarshenWorldGen implements IWorldGenerator
     private final WorldGenerator pontusEmeraldOre = new PontusWorldGeneratorPontusEmeraldOre();
     private final WorldGenerator pontusJewelDirt = new JewelDirtGenPontus();
     
-    public static BlockPos castlePos = null;
-    public static BlockPos graveyardPos = null;
-    public static BlockPos housePos = null;
-    private int castleDelay = 0;
-    private int graveyardDelay = 0;
+    public static final int[] castleChunks = new int[] {23, 25};
+    public static final int[] graveyardChunks = new int[] {17, -15};
+    
+    public static int castleDelay = 0;
+    public static int graveyardDelay = 0;
     
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
 	{
 		if(castleDelay > 0)
 			castleDelay++;
-		System.out.println(castleDelay);
+		if(graveyardDelay > 0)
+			graveyardDelay++;
 		int dim = world.provider.getDimension();
 		if(dim == 0)
 		{
-			if(chunkX == 23 && chunkZ == 25)
+			if(chunkX == castleChunks[0] && chunkZ == castleChunks[1])
 				castleDelay++;
 			if(castleDelay >= GeneralConfig.structureProtectorDelay)
 			{
-				castlePos = HarshenStructures.CASTLE.generateStucture(world, random, 23, 25);
+				HarshenDataFileManager manager = new HarshenDataFileManager(world);
+				manager.writeStructurePosToFile(world, HarshenStructures.CASTLE.generateStucture(world, random, castleChunks[0], castleChunks[1]), "castle");
 				castleDelay = 0;
 			}
 			
-			if(chunkX == 17 && chunkZ == -15)
+			if(chunkX == graveyardChunks[0] && chunkZ == graveyardChunks[1])
 				graveyardDelay++;
 			if(graveyardDelay >= GeneralConfig.structureProtectorDelay)
 			{
-				graveyardPos = HarshenStructures.GRAVEYARD.generateStucture(world, random, chunkX, chunkZ);
+				HarshenDataFileManager manager = new HarshenDataFileManager(world);
+				manager.writeStructurePosToFile(world, HarshenStructures.GRAVEYARD.generateStucture(world, random, graveyardChunks[0], graveyardChunks[1]), "graveyard");
 				graveyardDelay = 0;
 			}
 			

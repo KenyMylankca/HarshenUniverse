@@ -29,6 +29,6 @@ public class GeneralConfig extends BaseConfig
 		bloodyTorchDistance = get("bloody_torch_distance", 5);
 		nocturnalDistance = get("nocturnal_distance", 2);
 		trueInvisibility = get("true_invisibility", true);
-		structureProtectorDelay = get("structure_protector_delay", 80);
+		structureProtectorDelay = get("structure_protector_delay", 75);
 	}
 }
