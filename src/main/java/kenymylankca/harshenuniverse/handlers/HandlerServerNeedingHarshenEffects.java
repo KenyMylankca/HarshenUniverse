@@ -4,14 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kenymylankca.harshenuniverse.HarshenBlocks;
+import kenymylankca.harshenuniverse.HarshenDataFileManager;
 import kenymylankca.harshenuniverse.HarshenItems;
+import kenymylankca.harshenuniverse.HarshenSounds;
 import kenymylankca.harshenuniverse.HarshenUtils;
+import kenymylankca.harshenuniverse.HarshenWorldGen;
 import kenymylankca.harshenuniverse.base.BaseBloodyBed;
 import kenymylankca.harshenuniverse.config.AccessoryConfig;
 import kenymylankca.harshenuniverse.config.GeneralConfig;
 import kenymylankca.harshenuniverse.damagesource.DamageSourceReflectorPendant;
 import kenymylankca.harshenuniverse.handlers.CooldownHandler.ICooldownHandler;
 import kenymylankca.harshenuniverse.items.HarshenNightBlade;
+import kenymylankca.harshenuniverse.network.HarshenNetwork;
+import kenymylankca.harshenuniverse.network.packets.MessagePacketPlaySound;
 import net.minecraft.client.entity.EntityOtherPlayerMP;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
@@ -26,6 +31,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
@@ -39,11 +45,30 @@ public class HandlerServerNeedingHarshenEffects
 	int tick=0;
 	int trustTimer=666;
 	int nocturnalTimer=0;
+	int castleSoundTimer=0;
+	
 	@SubscribeEvent
 	public void onPlayerTick(PlayerTickEvent event)
 	{
 		if(event.player instanceof EntityOtherPlayerMP)
 			return;
+		
+		if(event.side.isServer())
+			if(event.player.world.getSunBrightness(0) < 0.76)
+				if(event.player.world.isChunkGeneratedAt(HarshenWorldGen.castleChunks[0], HarshenWorldGen.castleChunks[1]))
+				{
+					HarshenDataFileManager manager = new HarshenDataFileManager(event.player.world);
+					if(manager.readStructurePosFromFile("castle") != null)
+					{
+						BlockPos castlePos = manager.readStructurePosFromFile("castle");
+						if(event.player.getDistanceSq(castlePos) < 500)
+							if(castleSoundTimer++ > 3320)
+							{
+								HarshenNetwork.sendToPlayer(event.player, new MessagePacketPlaySound(HarshenSounds.CASTLE_AMBIENT, 0.7f, 1f));
+								castleSoundTimer=0;
+							}
+					}
+				}
 		
 		if(trustTimer < 669)
 			trustTimer++;

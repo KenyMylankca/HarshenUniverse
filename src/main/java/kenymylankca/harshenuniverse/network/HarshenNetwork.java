@@ -4,6 +4,7 @@ import kenymylankca.harshenuniverse.HarshenUniverse;
 import kenymylankca.harshenuniverse.network.packets.MessagePacketHitWithRange;
 import kenymylankca.harshenuniverse.network.packets.MessagePacketKillAllWithTag;
 import kenymylankca.harshenuniverse.network.packets.MessagePacketOpenInv;
+import kenymylankca.harshenuniverse.network.packets.MessagePacketPlaySound;
 import kenymylankca.harshenuniverse.network.packets.MessagePacketPlayerHasAccess;
 import kenymylankca.harshenuniverse.network.packets.MessagePacketPlayerTeleportEffects;
 import kenymylankca.harshenuniverse.network.packets.MessagePacketRequestHarshenInv;
@@ -42,6 +43,7 @@ public class HarshenNetwork
 		registerMessage(MessagePacketReviveInventory.class, Side.CLIENT);
 		registerMessage(MessagePacketUpdateComplexEntity.class, Side.CLIENT);
 		registerMessage(MessagePacketKillAllWithTag.class, Side.CLIENT);
+		registerMessage(MessagePacketPlaySound.class, Side.CLIENT);
 		
 		registerMessage(MessagePacketSetItemInSlot.class);
 		
