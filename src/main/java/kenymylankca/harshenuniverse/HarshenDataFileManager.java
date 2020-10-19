@@ -40,7 +40,6 @@ public class HarshenDataFileManager
 			if(readNBTFromFile(file) != null)
 				nbt = readNBTFromFile(file);
 		
-		
 		nbt.setIntArray(structureName + "Pos", posArray);
 		writeNBTCompoundToFile(nbt, file);
 	}
