@@ -22,7 +22,7 @@
         },
 		{
 			"name":"extras",
-            "rolls": 4,
+            "rolls": 5,
             "entries": [
                 {
                     "type": "item",
@@ -75,7 +75,7 @@
                             "function": "set_count",
                             "count": {
                                 "min": 0,
-                                "max": 4
+                                "max": 5
                             }
                         }
                     ]
