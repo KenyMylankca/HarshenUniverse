@@ -1077,9 +1077,9 @@ public class HarshenUtils
     	return c;
     }
     
-    public static void bleedTarget(EntityLivingBase entity, int duration, int tier)
+    public static void bleedTarget(EntityLivingBase entity, int duration, int level)
     {
-    	entity.addPotionEffect(new PotionEffect(HarshenPotions.potionBleeding, duration, tier));
+    	entity.addPotionEffect(new PotionEffect(HarshenPotions.potionBleeding, duration, level));
     }
     
     public static void replaceModifier(Multimap<String, AttributeModifier> modifierMultimap, IAttribute attribute, UUID id, double multiplier) {
