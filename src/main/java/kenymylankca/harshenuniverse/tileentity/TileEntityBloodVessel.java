@@ -27,7 +27,7 @@ public class TileEntityBloodVessel extends BaseHarshenTileEntity implements IHud
 		if(capacity - bloodLevel < blood)
 		{
 			bloodLevel = capacity;
-			HarshenUtils.splashBlood(this.getPos(), this.getWorld());
+			HarshenUtils.splashBloodAround(pos, world, 1, 1f);
 		}
 		else
 			bloodLevel += blood;
