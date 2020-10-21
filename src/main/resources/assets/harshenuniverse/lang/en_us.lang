@@ -140,8 +140,6 @@ config.bloody_torch_distance=Bloody Torch range in blocks.
 config.nocturnal_distance=Nocturnal Torch range in blocks.
 config.true_invisibility=The feature that makes the player untargetable by hostiles if the player is invisible and has no any armor.
 config.structure_protector_delay=The delay in ticks that Harshen Universe uses to protect its structures being demolished by other structures/ruins. Lower values may cause demolition, higher values may cause Harshen Universe structures doesn't get generated.
-config.castle_chunks=The chunks of Kazzendre's Castle in X and Y. Every chunk means 16 blocks, so setting 10, 10 means it will spawn at x:160 and y:160.
-config.graveyard_chunks=The chunks of Jacob's Graveyard in X and Y. Every chunk means 16 blocks, so setting 10, 10 means it will spawn at x:160 and y:160.
 
 config.xray_blacklist=What blocks shouldnt work with the xray pendant.
 config.xray_distance_x=The distance from the player that the xray pendant should be able to find, along the x axis(The higher this is the more lag it makes)
