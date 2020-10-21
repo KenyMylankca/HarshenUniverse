@@ -27,7 +27,7 @@ public class Gillette extends BaseItemMetaData
     {
 		if(!playerIn.isCreative())
 		{
-			HarshenUtils.bleedTarget(playerIn, 80, 0);
+			HarshenUtils.bleedTarget(playerIn, 60, 0);
 			playerIn.attackEntityFrom(new DamageSourceBleeding(), 1f);
 			playerIn.getHeldItemMainhand().setItemDamage(1);
 		}
