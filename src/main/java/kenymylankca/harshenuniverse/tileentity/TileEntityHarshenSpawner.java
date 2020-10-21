@@ -45,8 +45,8 @@ public class TileEntityHarshenSpawner extends BaseTileEntityHarshenSingleItemInv
 	@Override
 	protected void tick() 
 	{
-		EntityPlayer playerToActivate = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 7, false);
-		EntityPlayer playerToDeactivate = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 9, false);
+		EntityPlayer playerToActivate = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 8, false);
+		EntityPlayer playerToDeactivate = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 15, false);
 		
 		if(playerToActivate != null && getEntity() != null && !playerToActivate.isCreative() && !playerToActivate.isDead)
 			activate(playerToActivate);
