@@ -30,5 +30,6 @@
 	"jacob_ambient":{"category": "master","sounds": [ { "name": "harshenuniverse:jacob_ambient", "stream": false }]},
 	"jacob_draining":{"category": "master","sounds": [ { "name": "harshenuniverse:jacob_draining", "stream": false }]},
 	"jacob_death":{"category": "master","sounds": [ { "name": "harshenuniverse:jacob_death", "stream": false }]},
-	"castle_ambient":{"category": "master","sounds": [ { "name": "harshenuniverse:castle_ambient", "stream": false }]}
+	"castle_ambient":{"category": "master","sounds": [ { "name": "harshenuniverse:castle_ambient", "stream": false }]},
+	"blood_splash":{"category": "master","sounds": [ { "name": "harshenuniverse:blood_splash", "stream": false }]}
 }
