@@ -15,33 +15,32 @@ import net.minecraft.world.World;
 
 public class HarshenDataFileManager
 {
-	private static File file;
+	private static File dataFile;
 	
-	public HarshenDataFileManager(World world)
+	public HarshenDataFileManager()
 	{
-		int dim = world.provider.getDimension();
-		
-		file = new File(world.getSaveHandler().getWorldDirectory(), HarshenUniverse.MODID + "data.nbt");
-		
-		if(!file.exists())
-			try {
-				file.createNewFile();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 	}
 	
 	public void writeStructurePosToFile(World world, BlockPos pos, String structureName)
 	{
+		dataFile = new File(world.getSaveHandler().getWorldDirectory(), HarshenUniverse.MODID + "data.nbt");
+		
+		if(!dataFile.exists())
+			try {
+				dataFile.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		
 		NBTTagCompound nbt = new NBTTagCompound();
 		int posArray [] = {pos.getX(), pos.getY(), pos.getZ()};
 		
-		if(file.exists())
-			if(readNBTFromFile(file) != null)
-				nbt = readNBTFromFile(file);
+		if(dataFile.exists())
+			if(readNBTFromFile(dataFile) != null)
+				nbt = readNBTFromFile(dataFile);
 		
 		nbt.setIntArray(structureName + "Pos", posArray);
-		writeNBTToFile(nbt, file);
+		writeNBTToFile(nbt, dataFile);
 	}
 	
 	public void writeNBTToFile(NBTTagCompound nbt, File file)
@@ -82,12 +81,12 @@ public class HarshenDataFileManager
 	
 	public BlockPos readStructurePosFromFile(String structureName)
 	{
-		if(readNBTFromFile(file) != null)
-			if(readNBTFromFile(file).hasKey(structureName + "Pos"))
+		if(readNBTFromFile(dataFile) != null)
+			if(readNBTFromFile(dataFile).hasKey(structureName + "Pos"))
 			{
-				BlockPos pos = new BlockPos(readNBTFromFile(file).getIntArray(structureName + "Pos")[0],
-						readNBTFromFile(file).getIntArray(structureName + "Pos")[1],
-						readNBTFromFile(file).getIntArray(structureName + "Pos")[2]);
+				BlockPos pos = new BlockPos(readNBTFromFile(dataFile).getIntArray(structureName + "Pos")[0],
+						readNBTFromFile(dataFile).getIntArray(structureName + "Pos")[1],
+						readNBTFromFile(dataFile).getIntArray(structureName + "Pos")[2]);
 				return pos;
 			}
 		return null;
