@@ -35,7 +35,6 @@ import kenymylankca.harshenuniverse.armor.HarshenArmors;
 import kenymylankca.harshenuniverse.base.BasePontusResourceBiome;
 import kenymylankca.harshenuniverse.biomes.HarshenBiomes;
 import kenymylankca.harshenuniverse.biomes.PontusBiomeProvider;
-import kenymylankca.harshenuniverse.blocks.BloodVessel;
 import kenymylankca.harshenuniverse.config.GeneralConfig;
 import kenymylankca.harshenuniverse.config.HarshenConfigs;
 import kenymylankca.harshenuniverse.enchantment.HarshenEnchantmetns;
@@ -45,7 +44,6 @@ import kenymylankca.harshenuniverse.network.HarshenNetwork;
 import kenymylankca.harshenuniverse.network.packets.MessagePacketSetItemInSlot;
 import kenymylankca.harshenuniverse.objecthandlers.HarshenItemStackHandler;
 import kenymylankca.harshenuniverse.objecthandlers.HarshenMap;
-import kenymylankca.harshenuniverse.tileentity.TileEntityBloodVessel;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.state.IBlockState;
@@ -83,7 +81,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -996,63 +993,50 @@ public class HarshenUtils
 		return false;
     }
     
-    public static void splashBloodAround(BlockPos pos, World world, int range, float chance)
+    public static void splashBlood(BlockPos pos, World world, int range, int amount)
     {
     	IBlockState state = world.getBlockState(pos);
+    	
+    	if (amount > Math.pow(2 * range + 1, 2))
+    		amount = (int) Math.pow(2 * range + 1, 2);
     	
     	pos=pos.north(range).west(range);
     	
-    	for(int r=0; r<range; r++)
+    	for (int a=0; a<amount; a++)
     		for(int i=0; i<=range*2; i++)
+        	{
     			for(int j=0; j<=range*2; j++)
     			{
-    				pos=pos.south(i).east(j);
-    				for(int h=0; h<GeneralConfig.bloodHeightRange; h++)
-    					if(world.isAirBlock(pos.down(h)) && !(world.isAirBlock(pos.down(h+1))))
-    					{
-    						BlockPos bloodpos = pos.down(h);
-    						if(world.getBlockState(bloodpos.down()).getBlock() instanceof BloodVessel)
-    						{
-    							TileEntityBloodVessel vessel = ((TileEntityBloodVessel)world.getTileEntity(bloodpos.down()));
-    							vessel.addBlood(1);
-    							world.playSound(bloodpos.getX(), bloodpos.getY(), bloodpos.getZ(), HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 0.8f, 1f, false);
-    						}
-    						else if(world.isSideSolid(pos.down(h+1), EnumFacing.UP))
-    						{
-    							if(world.getBlockState(bloodpos).getBlock().canPlaceBlockAt(world, bloodpos) && world.rand.nextFloat() < chance)
-    								world.setBlockState(bloodpos, HarshenBlocks.BLOOD_BLOCK.getDefaultState(), 3);
-    						}
-    					}
+    				if(world.rand.nextFloat() < 0.2)
+    					for(int h=0; h<GeneralConfig.bloodHeightRange; h++)
+        					if(world.isAirBlock(pos.south(i).east(j).down(h)) && !(world.isAirBlock(pos.south(i).east(j).down(h+1))))
+        					{
+        						BlockPos bloodpos = pos.south(i).east(j).down(h);
+        						if(world.isSideSolid(bloodpos.down(), EnumFacing.UP) && world.getBlockState(bloodpos).getBlock().canPlaceBlockAt(world, bloodpos) && amount > 0)
+        						{
+        							world.setBlockState(bloodpos, HarshenBlocks.BLOOD_BLOCK.getDefaultState(), 3);
+        							amount--;
+        							break;
+        						}
+        					}
+    				if(amount == 0)
+    					break;
+    				if(i == range*2 && j == i && amount > 0)
+    				{
+    					i = 0;
+    					j = 0;
+    				}
     			}
+    			if(amount == 0)
+    				break;
+        	}
     }
     
-    public static void splashBloodOnHurt(EntityLivingBase entityIn)
+    public static boolean isPosBloodSplashable(BlockPos pos, World world)
     {
-    	World world = entityIn.getEntityWorld();
-    	BlockPos pos = entityIn.getPosition();
-    	IBlockState state = world.getBlockState(pos);
-    	
-    	if(new Random().nextFloat() < GeneralConfig.bloodChance && world.isAirBlock(pos))
-    		for(int i=0; i<GeneralConfig.bloodHeightRange; i++)
-    			if(world.isAirBlock(pos.down(i)) && !(world.isAirBlock(pos.down(i+1))))
-				{
-					BlockPos bloodpos = pos.down(i);
-					if(world.getBlockState(bloodpos.down()).getBlock() instanceof BloodVessel)
-					{
-						TileEntityBloodVessel vessel = ((TileEntityBloodVessel)world.getTileEntity(bloodpos.down()));
-						vessel.addBlood(1);
-						world.playSound(bloodpos.getX(), bloodpos.getY(), bloodpos.getZ(), HarshenSounds.BLOOD_COLLECTOR_USE, SoundCategory.BLOCKS, 0.8f, 1f, false);
-						break;
-					}
-					else if(world.isSideSolid(pos.down(i+1), EnumFacing.UP))
-					{
-						if(world.getBlockState(bloodpos).getBlock().canPlaceBlockAt(world, bloodpos))
-						{
-							world.setBlockState(bloodpos, HarshenBlocks.BLOOD_BLOCK.getDefaultState(), 3);
-							break;
-						}
-					}
-				}
+    	if(world.isAirBlock(pos) || world.isAirBlock(pos.down()) || world.isAirBlock(pos.north()) || world.isAirBlock(pos.west()) || world.isAirBlock(pos.south()) || world.isAirBlock(pos.east()))
+    		return true;
+    	return false;
     }
     
     public static int hasAccessoryTimes(EntityPlayer player, Item accessory)
@@ -1087,5 +1071,11 @@ public class HarshenUtils
     		if(!stack.isEmpty())
     			return false;
     	return true;
+    }
+    
+    public static List<EntityPlayer> getPlayersInDistance(World worldIn, int distance, BlockPos pos, boolean spectators)
+    {
+    	AxisAlignedBB t = new AxisAlignedBB(pos).grow(distance);
+    	return worldIn.getEntitiesWithinAABB(EntityPlayer.class, t);
     }
 }
