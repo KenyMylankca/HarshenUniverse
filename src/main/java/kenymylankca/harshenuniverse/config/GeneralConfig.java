@@ -21,7 +21,7 @@ public class GeneralConfig extends BaseConfig
 	@Override
 	public void read() {
 		bloodChance = get("blood_chance", 0.35F);
-		bloodHeightRange = get("blood_height_range", 15);
+		bloodHeightRange = get("blood_height_range", 10);
 		renderHiddenPlates = get("render_hidden_plates", true);
 		structureRuinChance = get("structure_ruin_chance", 0.2D);
 		bloodyTorchDistance = get("bloody_torch_distance", 5);
