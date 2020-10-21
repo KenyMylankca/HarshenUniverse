@@ -317,7 +317,6 @@ public class HarshenItems
 		for(int i = 0; i < allMetaItems.size(); i++)
 			for(int j = 0; j < allMetaNames.get(i).length; j++)
 				regRender(allMetaItems.get(i), j, allMetaPrefix.get(i) + allMetaNames.get(i)[j]);
-			
 	}
 	
 	public static void regRender(Item item, int meta, String fileName)

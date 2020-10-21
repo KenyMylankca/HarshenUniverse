@@ -6,7 +6,6 @@ import net.minecraftforge.items.SlotItemHandler;
 
 public class OutputSlot extends SlotItemHandler
 {
-
 	public OutputSlot(IItemHandler itemHandler, int index, int xPosition, int yPosition) {
 		super(itemHandler, index, xPosition, yPosition);
 	}
@@ -15,5 +14,4 @@ public class OutputSlot extends SlotItemHandler
 	public boolean isItemValid(ItemStack stack) {
 		return false;
 	}
-
 }

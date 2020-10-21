@@ -11,7 +11,6 @@ import net.minecraft.world.gen.structure.template.Template;
 
 public class HarshenTemplateRenderer extends HarshenTemplate
 {
-	
 	public HarshenTemplateRenderer(ResourceLocation location) {
 		super(location);
 	}
@@ -29,7 +28,6 @@ public class HarshenTemplateRenderer extends HarshenTemplate
     }
     
     protected static HashMap<ResourceLocation, HarshenTemplateRenderer> templateMap = new HashMap<>();
-
     
     public static HarshenTemplateRenderer getTemplate(ResourceLocation location)
     {
@@ -39,5 +37,4 @@ public class HarshenTemplateRenderer extends HarshenTemplate
     	templateMap.put(location, renderer);
     	return renderer;
     }
-   
 }

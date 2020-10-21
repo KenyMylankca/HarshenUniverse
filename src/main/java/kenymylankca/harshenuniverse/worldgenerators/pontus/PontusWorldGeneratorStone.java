@@ -14,7 +14,6 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class PontusWorldGeneratorStone extends WorldGenerator
 {
-	
 	private final int numberOfBlocks = 7;
     private final IBlockState state;
     private ChunkPrimer primer;
@@ -97,8 +96,6 @@ public class PontusWorldGeneratorStone extends WorldGenerator
                 }
             }
         }
-
         return true;
 	}
-
 }

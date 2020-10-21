@@ -290,7 +290,6 @@ public class HarshenTemplate
                 }
             }
         }
-
         return map;
     }
 
@@ -556,7 +555,6 @@ public class HarshenTemplate
             case NONE:
                 blockpos = p_191157_0_.add(i, 0, j);
         }
-
         return blockpos;
     }
 
@@ -595,7 +593,6 @@ public class HarshenTemplate
                         }
                     }
                 }
-
                 return compound;
             }
         });

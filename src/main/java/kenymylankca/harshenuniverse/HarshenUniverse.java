@@ -38,8 +38,7 @@ public class HarshenUniverse
     
     public static final CreativeTabs harshenTab = new HarshenTab();
     
-    public static final Logger LOGGER = LogManager.getLogger(MODID); 
-
+    public static final Logger LOGGER = LogManager.getLogger(MODID);
     
     @Instance(MODID)
     public static HarshenUniverse instance;

@@ -9,7 +9,6 @@ import net.minecraft.util.ResourceLocation;
 
 public class GuiMagicTable extends GuiContainer
 {
-
 	public GuiMagicTable(TileEntityHarshenMagicTable te, EntityPlayer player) {
 		super(new ContainerMagicTable(te, player));
 		ySize = 210;
@@ -26,7 +25,5 @@ public class GuiMagicTable extends GuiContainer
 		this.drawDefaultBackground();
 		this.mc.getTextureManager().bindTexture(new ResourceLocation(HarshenUniverse.MODID, "textures/gui/container/magic_table.png"));
 		this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
-
 	}
-
 }

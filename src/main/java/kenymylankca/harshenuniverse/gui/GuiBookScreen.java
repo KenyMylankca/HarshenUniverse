@@ -25,7 +25,6 @@ public class GuiBookScreen extends GuiScreen
 	private ArrayList<Gui> allComponants = new ArrayList<Gui>();
 	private EnumGuiPage mode = EnumGuiPage.values()[0];
 	private int scroll;
-    
 	
 	@Override
 	public void initGui() {
@@ -70,7 +69,6 @@ public class GuiBookScreen extends GuiScreen
 		if(button.id >= 8800)
 			this.mode = EnumGuiPage.buttonPages()[button.id - 8800];
 	}
-	
 	
 	private void categorybuttons()
 	{

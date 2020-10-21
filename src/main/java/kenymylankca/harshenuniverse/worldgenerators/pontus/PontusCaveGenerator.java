@@ -8,7 +8,6 @@ public class PontusCaveGenerator extends MapGenCaves
 {
     protected static final IBlockState BLK_LAVA = HarshenFluids.HARSHING_WATER_BLOCK.getDefaultState();
 	
-	
 	@Override
 	protected void digBlock(ChunkPrimer data, int x, int y, int z, int chunkX, int chunkZ, boolean foundTop,
 			IBlockState state, IBlockState up) {
