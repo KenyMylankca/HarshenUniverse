@@ -134,7 +134,7 @@ config.id=What should the ID for %s be
 
 config.blood_splash=If blood occurs, should it be splashed on the ground?
 config.blood_chance=The chance for blood to occur when a mob is hit.
-config.blood_height_range=The blood height distance that blood can splash from.
+config.blood_height_range=The height range that blood can splash from.
 config.render_hidden_plates=Should the hidden plate renderer be run for all players in creative mode.
 config.structure_ruin_chance=If a structure has the ruin tag, what is the chance that a block is changed to air. If you don't understand don't worry, it's not very important
 config.bloody_torch_distance=Bloody Torch range in blocks.
