@@ -4,8 +4,7 @@ import kenymylankca.harshenuniverse.base.BaseConfig;
 
 public class GeneralConfig extends BaseConfig
 {
-	public static boolean bloodSplash;
-	public static double bloodChance;
+	public static float bloodChance;
 	public static int bloodHeightRange;
 	public static boolean renderHiddenPlates;
 	public static double structureRuinChance;
@@ -21,8 +20,7 @@ public class GeneralConfig extends BaseConfig
 
 	@Override
 	public void read() {
-		bloodSplash = get("blood_splash", true);
-		bloodChance = get("blood_chance", 0.35D);
+		bloodChance = get("blood_chance", 0.35F);
 		bloodHeightRange = get("blood_height_range", 15);
 		renderHiddenPlates = get("render_hidden_plates", true);
 		structureRuinChance = get("structure_ruin_chance", 0.2D);

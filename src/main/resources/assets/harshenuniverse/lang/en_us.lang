@@ -132,7 +132,6 @@ config.isEnabled=Should %s be enabled
 config.structure.name=the structure %s
 config.id=What should the ID for %s be
 
-config.blood_splash=If blood occurs, should it be splashed on the ground?
 config.blood_chance=The chance for blood to occur when a mob is hit.
 config.blood_height_range=The height range that blood can splash from.
 config.render_hidden_plates=Should the hidden plate renderer be run for all players in creative mode.
