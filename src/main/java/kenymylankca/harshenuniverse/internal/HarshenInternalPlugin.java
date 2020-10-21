@@ -7,7 +7,6 @@ import kenymylankca.harshenuniverse.HarshenUniverse;
 import kenymylankca.harshenuniverse.HarshenUtils;
 import kenymylankca.harshenuniverse.api.BlockItem;
 import kenymylankca.harshenuniverse.api.CauldronLiquid;
-import kenymylankca.harshenuniverse.api.EnumAccessoryInventorySlots;
 import kenymylankca.harshenuniverse.api.HarshenPlugin;
 import kenymylankca.harshenuniverse.api.HarshenStack;
 import kenymylankca.harshenuniverse.api.IHarshenAccessoryProvider;
@@ -16,7 +15,6 @@ import kenymylankca.harshenuniverse.api.IHarshenRegistry;
 import kenymylankca.harshenuniverse.enums.items.GlassContainerValue;
 import kenymylankca.harshenuniverse.enums.items.GlassContainerValues;
 import kenymylankca.harshenuniverse.fluids.HarshenFluids;
-import kenymylankca.harshenuniverse.handlers.vanillaInventory.HandlerTotemOfUndying;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -184,7 +182,6 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 		registry.registerCauldronLiquid(new FluidStack(HarshenFluids.HARSHING_WATER, 1000), GlassContainerValues.HARSHING_WATER.getType(), 3);
 				
 		//inventory items
-    	registry.registerInventoryItem(new BlockItem(Items.TOTEM_OF_UNDYING), EnumAccessoryInventorySlots.NECK, new HandlerTotemOfUndying(), false, 0);
     	for(Item item : ForgeRegistries.ITEMS.getValues())
     		if(item instanceof IHarshenAccessoryProvider)
     			registry.registerInventoryItem(new BlockItem(item), (IHarshenAccessoryProvider)item);
