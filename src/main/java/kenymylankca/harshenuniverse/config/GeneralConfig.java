@@ -6,7 +6,7 @@ import kenymylankca.harshenuniverse.base.BaseConfig;
 public class GeneralConfig extends BaseConfig
 {
 	public static String[] bleedableEntities;
-	public static float bloodChance;
+	public static double bloodChance;
 	public static int bloodHeightRange;
 	public static boolean renderHiddenPlates;
 	public static double structureRuinChance;
@@ -23,7 +23,7 @@ public class GeneralConfig extends BaseConfig
 	@Override
 	public void read() {
 		bleedableEntities = get("bleedable_entities", HarshenUtils.listOf("witch", "villager", "cow", "horse", "sheep", "polar bear", "pig", "chicken", "vindicator", "mule", "llama", "wolf", "bloody sheep"));
-		bloodChance = get("blood_chance", 0.35f);
+		bloodChance = get("blood_chance", 0.35d);
 		bloodHeightRange = get("blood_height_range", 10);
 		renderHiddenPlates = get("render_hidden_plates", true);
 		structureRuinChance = get("structure_ruin_chance", 0.2D);
