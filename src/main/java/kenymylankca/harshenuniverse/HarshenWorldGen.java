@@ -54,7 +54,7 @@ public class HarshenWorldGen implements IWorldGenerator
 				castleDelay++;
 			if(castleDelay >= GeneralConfig.structureProtectorDelay)
 			{
-				HarshenDataFileManager manager = new HarshenDataFileManager(world);
+				HarshenDataFileManager manager = new HarshenDataFileManager();
 				manager.writeStructurePosToFile(world, HarshenStructures.CASTLE.generateStucture(world, random, castleChunks[0], castleChunks[1]), "castle");
 				castleDelay = 0;
 			}
@@ -63,7 +63,7 @@ public class HarshenWorldGen implements IWorldGenerator
 				graveyardDelay++;
 			if(graveyardDelay >= GeneralConfig.structureProtectorDelay)
 			{
-				HarshenDataFileManager manager = new HarshenDataFileManager(world);
+				HarshenDataFileManager manager = new HarshenDataFileManager();
 				manager.writeStructurePosToFile(world, HarshenStructures.GRAVEYARD.generateStucture(world, random, graveyardChunks[0], graveyardChunks[1]), "graveyard");
 				graveyardDelay = 0;
 			}

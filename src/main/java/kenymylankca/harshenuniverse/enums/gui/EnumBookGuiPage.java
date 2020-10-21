@@ -2,7 +2,7 @@ package kenymylankca.harshenuniverse.enums.gui;
 
 import java.util.ArrayList;
 
-public enum EnumGuiPage
+public enum EnumBookGuiPage
 {
 	MAIN("Main", -1),
 	MOBS("Mobs", 0),
@@ -15,25 +15,25 @@ public enum EnumGuiPage
 	private final int id;
 	private final String tag;
 	
-	private EnumGuiPage(String name, int id)
+	private EnumBookGuiPage(String name, int id)
 	{
 		this(name, id, name);
 	}
 	
-	private EnumGuiPage(String name, int id, String tag)
+	private EnumBookGuiPage(String name, int id, String tag)
 	{
 		this.name = name;
 		this.id = id;
 		this.tag = tag;
 	}
 	
-	public static EnumGuiPage[] buttonPages()
+	public static EnumBookGuiPage[] buttonPages()
 	{
-		ArrayList<EnumGuiPage> editedPages = new ArrayList<EnumGuiPage>();
-		for(EnumGuiPage page : EnumGuiPage.values())
+		ArrayList<EnumBookGuiPage> editedPages = new ArrayList<EnumBookGuiPage>();
+		for(EnumBookGuiPage page : EnumBookGuiPage.values())
 			if(page.getId() >= 0)
 				editedPages.add(page);
-		EnumGuiPage[] type = new EnumGuiPage[editedPages.size()];
+		EnumBookGuiPage[] type = new EnumBookGuiPage[editedPages.size()];
 		return editedPages.toArray(type);
 	}
 	

@@ -9,5 +9,4 @@ public class BloodyPontusCube extends Item
 		setRegistryName("bloody_pontus_cube");
 		setUnlocalizedName("bloody_pontus_cube");
 	}
-
 }

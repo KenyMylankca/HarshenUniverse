@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.lwjgl.input.Mouse;
 
 import kenymylankca.harshenuniverse.HarshenUniverse;
-import kenymylankca.harshenuniverse.enums.gui.EnumGuiPage;
+import kenymylankca.harshenuniverse.enums.gui.EnumBookGuiPage;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiButton;
@@ -23,7 +23,7 @@ public class GuiBookScreen extends GuiScreen
 	private GuiTextField mainText;
 	private ArrayList<GuiButton> categoryButtons = new ArrayList<GuiButton>();
 	private ArrayList<Gui> allComponants = new ArrayList<Gui>();
-	private EnumGuiPage mode = EnumGuiPage.values()[0];
+	private EnumBookGuiPage mode = EnumBookGuiPage.values()[0];
 	private int scroll;
 	
 	@Override
@@ -37,7 +37,7 @@ public class GuiBookScreen extends GuiScreen
 		this.drawDefaultBackground();
 		this.drawCenteredString(this.fontRenderer, "Harshen Universe " + mode.getTag(), this.width / 2, 4, 16777215);
 		super.drawScreen(mouseX, mouseY, partialTicks);
-	}	
+	}
 	
 	@Override
 	public void handleMouseInput() throws IOException {
@@ -63,21 +63,22 @@ public class GuiBookScreen extends GuiScreen
 	}
 	
 	@Override
-	protected void actionPerformed(GuiButton button){
+	protected void actionPerformed(GuiButton button) {
 		if(button.id == 0)
 			this.mc.displayGuiScreen((GuiScreen)null);
 		if(button.id >= 8800)
-			this.mode = EnumGuiPage.buttonPages()[button.id - 8800];
+			this.mode = EnumBookGuiPage.buttonPages()[button.id - 8800];
 	}
 	
 	private void categorybuttons()
 	{
-		for(EnumGuiPage page : EnumGuiPage.buttonPages())
+		for(EnumBookGuiPage page : EnumBookGuiPage.buttonPages())
 			categoryButtons.add(button(page.getId() + 8800, (page.getId() * (75 + 10)) + this.width / 2 - (((75 + 10)
-					* EnumGuiPage.buttonPages().length - 10) / 2), 15, 75, 20, "gui.category." + page.getName().toLowerCase()));
+					* EnumBookGuiPage.buttonPages().length - 10) / 2), 15, 75, 20, "gui.category." + page.getName().toLowerCase()));
 		for(GuiButton b : categoryButtons)
 			allComponants.add(b);
 	}
+	
 	private GuiButton button(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
 	{
 		allComponants.add(addButton(new GuiButton(buttonId, x, y, widthIn, heightIn, I18n.format(buttonText))));
