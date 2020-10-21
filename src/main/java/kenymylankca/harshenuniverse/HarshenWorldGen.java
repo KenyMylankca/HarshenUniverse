@@ -68,19 +68,19 @@ public class HarshenWorldGen implements IWorldGenerator
 				graveyardDelay = 0;
 			}
 			
-			runGenerator(this.harshenSoulOreOverworld, world, random, chunkX, chunkZ, 6, 0, 20);
+			blockGenerator(this.harshenSoulOreOverworld, world, random, chunkX, chunkZ, 6, 0, 20);
 			plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.1f, 60, 130, false);
 			plantGenerator(HarshenBlocks.PLANT_OF_GLEAM, world, random, chunkX, chunkZ, 0.1f, 111, 255, true);
 			plantGenerator(HarshenBlocks.AKZENIA_MUSHROOM, world, random, chunkX, chunkZ, 0.1f, 0, 120, true);
-	    	runGenerator(jewelDirtOverworld, world, random, chunkX, chunkZ, 70, 0, 200);
-	    	runGenerator(nocturneBloomOverworld, world, random, chunkX, chunkZ, 50, 0, 60);
+	    	blockGenerator(jewelDirtOverworld, world, random, chunkX, chunkZ, 70, 0, 200);
+	    	blockGenerator(nocturneBloomOverworld, world, random, chunkX, chunkZ, 50, 0, 60);
 		}
 		else if(dim == DimensionPontus.DIMENSION_ID)
 		{
-	    	runGenerator(this.pontusItiumOre, world, random, chunkX, chunkZ, 11, 0, 255);
-	    	runGenerator(this.pontusEmeraldOre, world, random, chunkX, chunkZ, 12, 0, 255);
+	    	blockGenerator(this.pontusItiumOre, world, random, chunkX, chunkZ, 11, 0, 255);
+	    	blockGenerator(this.pontusEmeraldOre, world, random, chunkX, chunkZ, 12, 0, 255);
 	    	plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.5f, 100, 200, false);
-	    	runGenerator(pontusJewelDirt, world, random, chunkX, chunkZ, 20, 0, 200);
+	    	blockGenerator(pontusJewelDirt, world, random, chunkX, chunkZ, 20, 0, 200);
 		}
 		generateStructure(world, HarshenStructure.get(dim), random, chunkX, chunkZ);
 	}
@@ -93,7 +93,7 @@ public class HarshenWorldGen implements IWorldGenerator
 				break;
 	}
 	
-	private void runGenerator(WorldGenerator generator, World world, Random random, int chunkX, int chunkZ, int chancesPerChunk, int minHeight, int maxHeight) 
+	private void blockGenerator(WorldGenerator generator, World world, Random random, int chunkX, int chunkZ, int chancesPerChunk, int minHeight, int maxHeight) 
 	{
 		int heightDiff = maxHeight - minHeight + 1;
 	    for (int i = 0; i < chancesPerChunk; i ++) 
