@@ -993,9 +993,17 @@ public class HarshenUtils
 		return false;
     }
     
+    /**
+     * If the range be bigger than 3, the blood placement may not work properly.
+     * @param pos
+     * @param world
+     * @param range
+     * @param amount
+     */
     public static void splashBlood(BlockPos pos, World world, int range, int amount)
     {
     	IBlockState state = world.getBlockState(pos);
+    	int rolls = (range+1)*2;
     	
     	if (amount > Math.pow(2 * range + 1, 2))
     		amount = (int) Math.pow(2 * range + 1, 2);
@@ -1012,6 +1020,7 @@ public class HarshenUtils
         					if(world.isAirBlock(pos.south(i).east(j).down(h)) && !(world.isAirBlock(pos.south(i).east(j).down(h+1))))
         					{
         						BlockPos bloodpos = pos.south(i).east(j).down(h);
+        						
         						if(world.isSideSolid(bloodpos.down(), EnumFacing.UP) && world.getBlockState(bloodpos).getBlock().canPlaceBlockAt(world, bloodpos) && amount > 0)
         						{
         							world.setBlockState(bloodpos, HarshenBlocks.BLOOD_BLOCK.getDefaultState(), 3);
@@ -1021,10 +1030,11 @@ public class HarshenUtils
         					}
     				if(amount == 0)
     					break;
-    				if(i == range*2 && j == i && amount > 0)
+    				if(i == range*2 && j == i && amount > 0 && rolls > 0)
     				{
     					i = 0;
     					j = 0;
+    					rolls--;
     				}
     			}
     			if(amount == 0)
