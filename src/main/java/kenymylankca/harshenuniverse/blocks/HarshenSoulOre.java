@@ -59,7 +59,7 @@ public class HarshenSoulOre extends Block
 		{
 			if(!worldIn.isRemote)
 			{
-				InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(HarshenItems.HARSHEN_SOUL_FRAGMENT));
+				InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(HarshenItems.HARSHEN_SOUL_FRAGMENT, worldIn.rand.nextInt(3) + 1));
 				super.onBlockHarvested(worldIn, pos, state, player);
 				player.sendMessage((ITextComponent) new TextComponentTranslation("message.success"));
 			}
