@@ -16,7 +16,7 @@ import net.minecraft.util.math.RayTraceResult;
 public class HarshenEntityArrow extends EntityTippedArrow
 {
 	SoundEvent hitSound;
-	private float chanceThatArrowBreaks = 0.3f;
+	private float arrowBreakChance = 0.4f;
 	
 	public HarshenEntityArrow(EntityArrow arrow, SoundEvent hitSoundIn) {
 		super(arrow.world, (EntityLivingBase) arrow.shootingEntity);
@@ -46,9 +46,11 @@ public class HarshenEntityArrow extends EntityTippedArrow
     {
 		ItemStack stack;
 		Random rand = new Random();
-		if(rand.nextFloat() < 0.5f)
+		
+		if(rand.nextFloat() < arrowBreakChance)
 			stack = new ItemStack(HarshenItems.BROKEN_ARROW);
-		else stack = this.getArrowStack();
+		else
+			stack = this.getArrowStack();
 		
         if (!this.world.isRemote && this.inGround && this.arrowShake <= 0)
         {
