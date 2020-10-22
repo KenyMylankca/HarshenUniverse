@@ -5,8 +5,6 @@ import java.util.UUID;
 
 import kenymylankca.harshenuniverse.HarshenPotions;
 import kenymylankca.harshenuniverse.HarshenUniverse;
-import kenymylankca.harshenuniverse.HarshenUtils;
-import kenymylankca.harshenuniverse.config.GeneralConfig;
 import kenymylankca.harshenuniverse.damagesource.DamageSourceBleeding;
 import kenymylankca.harshenuniverse.damagesource.DamageSourceHarshed;
 import kenymylankca.harshenuniverse.entity.EntitySoulPart;
@@ -16,7 +14,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ResourceLocation;
@@ -74,28 +71,23 @@ public class HandlerPotionEffects
 		
 		if(!event.getEntityLiving().world.isRemote)
 		{
-			String[] AllowedEntities = GeneralConfig.bleedableEntities;
-			
-			if(HarshenUtils.toArray(AllowedEntities).contains(event.getEntityLiving().getName().toLowerCase()) || event.getEntityLiving() instanceof EntityPlayer)
+			if(event.getEntityLiving().isPotionActive(HarshenPotions.potionBleeding))
 			{
-				if(event.getEntityLiving().isPotionActive(HarshenPotions.potionBleeding))
+				if(!livingsWithBleedingEffect.contains(event.getEntityLiving()))
 				{
-					if(!livingsWithBleedingEffect.contains(event.getEntityLiving()))
+					livingsWithBleedingEffect.add(event.getEntityLiving());
+					for(PotionEffect effect : event.getEntityLiving().getActivePotionEffects())
 					{
-						livingsWithBleedingEffect.add(event.getEntityLiving());
-						for(PotionEffect effect : event.getEntityLiving().getActivePotionEffects())
-						{
-							if(effect.getPotion().equals(HarshenPotions.potionBleeding))
-								arrayBleedingEffectManager.add(new HandlerBleedingEffect(event.getEntityLiving(), effect.getAmplifier()));
-						}
+						if(effect.getPotion().equals(HarshenPotions.potionBleeding))
+							arrayBleedingEffectManager.add(new HandlerBleedingEffect(event.getEntityLiving(), effect.getAmplifier()));
 					}
-					arrayBleedingEffectManager.get(livingsWithBleedingEffect.indexOf(event.getEntityLiving())).addEffect();
 				}
-				else if(livingsWithBleedingEffect.contains(event.getEntityLiving()))
-				{
-					arrayBleedingEffectManager.remove(livingsWithBleedingEffect.indexOf(event.getEntityLiving()));
-					livingsWithBleedingEffect.remove(event.getEntityLiving());
-				}
+				arrayBleedingEffectManager.get(livingsWithBleedingEffect.indexOf(event.getEntityLiving())).addEffect();
+			}
+			else if(livingsWithBleedingEffect.contains(event.getEntityLiving()))
+			{
+				arrayBleedingEffectManager.remove(livingsWithBleedingEffect.indexOf(event.getEntityLiving()));
+				livingsWithBleedingEffect.remove(event.getEntityLiving());
 			}
 			
 			if(event.getEntityLiving().isPotionActive(HarshenPotions.potionCureal))

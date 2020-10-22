@@ -1050,7 +1050,10 @@ public class HarshenUtils
     
     public static void bleedTarget(EntityLivingBase entity, int duration, int level)
     {
-    	entity.addPotionEffect(new PotionEffect(HarshenPotions.potionBleeding, duration, level));
+    	String[] AllowedEntities = GeneralConfig.bleedableEntities;
+		
+		if(HarshenUtils.toArray(AllowedEntities).contains(entity.getName().toLowerCase()) || entity instanceof EntityPlayer)
+			entity.addPotionEffect(new PotionEffect(HarshenPotions.potionBleeding, duration, level));
     }
     
     public static void replaceModifier(Multimap<String, AttributeModifier> modifierMultimap, IAttribute attribute, UUID id, double multiplier) {
