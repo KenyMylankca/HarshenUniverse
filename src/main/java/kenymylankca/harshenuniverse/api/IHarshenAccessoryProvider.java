@@ -40,13 +40,13 @@ public interface IHarshenAccessoryProvider
 	public default boolean isMultiplyEvent(ItemStack stack){return true;};
 	
 	/**
-	 * Called when the items removed from the players inventory. Called ServerSide and ClientSide
+	 * Called when the accessory item removed from the players accessory inventory. Called ServerSide and ClientSide
 	 * @param player The Player who just removed the item out of their inventory
 	 */
 	public default void onRemove(EntityPlayer player, int slot){};
 	
 	/**
-	 * Called when the items added to the players inventory. Called ServerSide and ClientSide.
+	 * Called when the accessory item worn by player. Called ServerSide and ClientSide.
 	 * @param player The player who just added the item to their own inventory
 	 */
 	public default void onAdd(EntityPlayer player, int slot){};
