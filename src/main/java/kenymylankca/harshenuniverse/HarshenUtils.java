@@ -1008,10 +1008,8 @@ public class HarshenUtils
     	if (amount > Math.pow(2 * range + 1, 2))
     		amount = (int) Math.pow(2 * range + 1, 2);
     	
-    	pos=pos.north(range).west(range);
-    	
-    	for (int a=0; a<amount; a++)
-    		for(int i=0; i<=range*2; i++)
+    	for (int a=-range; a<amount; a++)
+    		for(int i=-range; i<=range*2; i++)
         	{
     			for(int j=0; j<=range*2; j++)
     			{
