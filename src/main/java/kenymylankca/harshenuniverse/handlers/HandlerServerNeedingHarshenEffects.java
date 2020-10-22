@@ -58,7 +58,7 @@ public class HandlerServerNeedingHarshenEffects
 			if(event.player.world.getSunBrightness(0) < 0.76)
 				if(event.player.world.isChunkGeneratedAt(HarshenWorldGen.castleChunks[0], HarshenWorldGen.castleChunks[1]))
 				{
-					HarshenDataFileManager manager = new HarshenDataFileManager();
+					HarshenDataFileManager manager = new HarshenDataFileManager(event.player.world);
 					if(manager.readStructurePosFromFile("castle") != null)
 					{
 						BlockPos castlePos = manager.readStructurePosFromFile("castle");

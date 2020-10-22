@@ -17,14 +17,13 @@ public class HarshenDataFileManager
 {
 	private static File dataFile;
 	
-	public HarshenDataFileManager()
+	public HarshenDataFileManager(World world)
 	{
+		dataFile = new File(world.getSaveHandler().getWorldDirectory(), HarshenUniverse.MODID + "data.nbt");
 	}
 	
 	public void writeStructurePosToFile(World world, BlockPos pos, String structureName)
 	{
-		dataFile = new File(world.getSaveHandler().getWorldDirectory(), HarshenUniverse.MODID + "data.nbt");
-		
 		if(!dataFile.exists())
 			try {
 				dataFile.createNewFile();
