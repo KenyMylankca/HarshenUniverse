@@ -10,6 +10,8 @@ import net.minecraft.item.ItemStack;
 
 public class SoulShield extends Item implements IHarshenAccessoryProvider
 {
+	public static final float chance = 0.90F;
+	
 	public SoulShield() {
 		setRegistryName("soul_shield");
 		setUnlocalizedName("soul_shield");

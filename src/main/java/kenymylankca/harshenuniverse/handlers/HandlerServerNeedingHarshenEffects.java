@@ -15,6 +15,7 @@ import kenymylankca.harshenuniverse.config.GeneralConfig;
 import kenymylankca.harshenuniverse.damagesource.DamageSourceReflectorPendant;
 import kenymylankca.harshenuniverse.handlers.CooldownHandler.ICooldownHandler;
 import kenymylankca.harshenuniverse.items.HarshenNightBlade;
+import kenymylankca.harshenuniverse.items.SoulShield;
 import kenymylankca.harshenuniverse.network.HarshenNetwork;
 import kenymylankca.harshenuniverse.network.packets.MessagePacketPlaySound;
 import net.minecraft.client.entity.EntityOtherPlayerMP;
@@ -164,7 +165,7 @@ public class HandlerServerNeedingHarshenEffects
 				HarshenUtils.damageFirstOccuringItem(attackedPlayer, HarshenItems.REFLECTOR_PENDANT);
 			}
 			
-			if(HarshenUtils.hasAccessoryTimes(attackedPlayer, HarshenItems.SOUL_SHIELD) > 0 && !attackedPlayer.isCreative())
+			if(HarshenUtils.hasAccessoryTimes(attackedPlayer, HarshenItems.SOUL_SHIELD) > 0 && !attackedPlayer.isCreative() && event.getEntityLiving().world.rand.nextFloat() < SoulShield.chance)
 			{
 				HarshenUtils.damageFirstOccuringItem(attackedPlayer, HarshenItems.SOUL_SHIELD, (int) event.getAmount());
 				event.setAmount(0);
