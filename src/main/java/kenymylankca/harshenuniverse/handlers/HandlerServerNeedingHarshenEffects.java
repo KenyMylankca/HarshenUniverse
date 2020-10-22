@@ -167,7 +167,7 @@ public class HandlerServerNeedingHarshenEffects
 			
 			if(HarshenUtils.hasAccessoryTimes(attackedPlayer, HarshenItems.SOUL_SHIELD) > 0 && !attackedPlayer.isCreative() && event.getEntityLiving().world.rand.nextFloat() < SoulShield.chance)
 			{
-				HarshenUtils.damageFirstOccuringItem(attackedPlayer, HarshenItems.SOUL_SHIELD, (int) event.getAmount());
+				HarshenUtils.damageFirstOccuringItem(attackedPlayer, HarshenItems.SOUL_SHIELD, (int) event.getAmount() + 1);
 				event.setAmount(0);
 			}
 		}

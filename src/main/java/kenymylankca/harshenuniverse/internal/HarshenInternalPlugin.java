@@ -143,7 +143,7 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 		registry.registerLightningRecipe(new ItemStack(HarshenItems.RAPTOR_SCYTHE), new HarshenStack(new ItemStack(HarshenItems.IRON_SCYTHE)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)),
 				new HarshenStack(new ItemStack(HarshenItems.SOUL_INFUSED_INGOT)), new HarshenStack(new ItemStack(HarshenItems.VALOR_BADGE)));
 		registry.registerLightningRecipe(new ItemStack(HarshenItems.SOUL_SHIELD), new HarshenStack(new ItemStack(HarshenItems.HARSHEN_SOUL_FRAGMENT)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)),
-				new HarshenStack("slimeball"), new HarshenStack("blockIron"));
+				new HarshenStack("slimeball"), new HarshenStack(new ItemStack(HarshenItems.IRON_HEART)));
 		registry.registerLightningRecipe(new ItemStack(HarshenItems.MYSTIC_FEATHER), new HarshenStack(new ItemStack(HarshenBlocks.AKZENIA_MUSHROOM)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)),
 				new HarshenStack("feather"), new HarshenStack(new ItemStack(Items.CHORUS_FRUIT_POPPED)));
 		registry.registerLightningRecipe(new ItemStack(HarshenBlocks.GILDED_OBSIDIAN), new HarshenStack(), new HarshenStack(),
