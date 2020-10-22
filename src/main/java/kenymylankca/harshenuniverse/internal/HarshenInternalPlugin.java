@@ -118,7 +118,7 @@ public class HarshenInternalPlugin implements IHarshenPlugin
 				new HarshenStack(new ItemStack(HarshenBlocks.BLOCK_OF_HEADS)), new HarshenStack(new ItemStack(HarshenItems.BLOOD_ESSENCE)));
 		registry.registerLightningRecipe(new ItemStack(HarshenItems.PONTUS_WORLD_GATE_SPAWNER, 1, 1), new HarshenStack(new ItemStack(HarshenItems.PONTUS_WORLD_GATE_SPAWNER)), new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1, 1)),
 				new HarshenStack(new ItemStack(Items.EMERALD)), new HarshenStack(new ItemStack(HarshenItems.IRON_HEART)));
-		registry.registerLightningRecipe(new ItemStack(Items.NETHER_STAR), new HarshenStack(new ItemStack(HarshenItems.ITIUM)), new HarshenStack(new ItemStack(HarshenItems.LIGHT_EMITTED_ESSENCE)),
+		registry.registerLightningRecipe(new ItemStack(Items.NETHER_STAR), new HarshenStack(new ItemStack(HarshenItems.ITIUM)), new HarshenStack(new ItemStack(HarshenItems.POWDER_OF_HERETISM)),
 				new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1 , 1)), new HarshenStack(new ItemStack(HarshenItems.MYSTIC_FEATHER)));
 		registry.registerLightningRecipe(new ItemStack(HarshenItems.SOUL_HARSHER_SWORD, 1, 0), new HarshenStack(new ItemStack(HarshenItems.HARSHEN_SOUL_INGOT, 1, 0)), new HarshenStack(new ItemStack(HarshenBlocks.BLOCK_OF_HEADS)),
 				new HarshenStack(new ItemStack(HarshenItems.RITUAL_CRYSTAL, 1 ,1)), new HarshenStack(new ItemStack(Items.IRON_SWORD)));
