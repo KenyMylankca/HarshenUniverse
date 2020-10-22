@@ -37,10 +37,7 @@ repositories {
     name = "ModMaven"
     url = "modmaven.k-4u.nl"
   }
-}
-
-repositories {
-	maven {
+  maven {
 		url "http://www.ryanliptak.com/maven/"
 	}
 }
