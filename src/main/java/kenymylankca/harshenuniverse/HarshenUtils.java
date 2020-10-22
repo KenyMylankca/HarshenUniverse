@@ -1003,7 +1003,7 @@ public class HarshenUtils
     public static void splashBlood(BlockPos pos, World world, int range, int amount)
     {
     	IBlockState state = world.getBlockState(pos);
-    	int rolls = (range+1)*2;
+    	int rolls = (range + 1) * 3;
     	
     	if (amount > Math.pow(2 * range + 1, 2))
     		amount = (int) Math.pow(2 * range + 1, 2);
@@ -1015,7 +1015,7 @@ public class HarshenUtils
         	{
     			for(int j=0; j<=range*2; j++)
     			{
-    				if(world.rand.nextFloat() < 0.2)
+    				if(world.rand.nextFloat() < 0.15)
     					for(int h=0; h<GeneralConfig.bloodHeightRange; h++)
         					if(world.isAirBlock(pos.south(i).east(j).down(h)) && !(world.isAirBlock(pos.south(i).east(j).down(h+1))))
         					{
