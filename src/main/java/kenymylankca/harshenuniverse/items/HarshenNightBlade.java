@@ -2,20 +2,14 @@ package kenymylankca.harshenuniverse.items;
 
 import java.util.List;
 
-import com.google.common.collect.Multimap;
-
 import kenymylankca.harshenuniverse.HarshenSounds;
-import kenymylankca.harshenuniverse.HarshenUtils;
 import kenymylankca.harshenuniverse.handlers.CooldownHandler;
 import kenymylankca.harshenuniverse.handlers.CooldownHandler.ICooldownHandler;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
-import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.potion.PotionEffect;
@@ -37,16 +31,6 @@ public class HarshenNightBlade extends ItemSword
 		super(nightBlade);
 		setUnlocalizedName("harshen_night_blade");
 		setRegistryName("harshen_night_blade");
-	}
-	
-	@Override
-	public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot slot, ItemStack stack) {
-		final Multimap<String, AttributeModifier> modifiers = super.getAttributeModifiers(slot, stack);
-
-		if (slot == EntityEquipmentSlot.MAINHAND)
-			HarshenUtils.replaceModifier(modifiers, SharedMonsterAttributes.ATTACK_SPEED, ATTACK_SPEED_MODIFIER, 0.4);
-
-		return modifiers;
 	}
 	
 	@Override
@@ -82,7 +66,7 @@ public class HarshenNightBlade extends ItemSword
 		ICooldownHandler cap = stack.getCapability(CooldownHandler.COOLDOWN, EnumFacing.DOWN);
 		if(entity instanceof EntityLivingBase && cap.isReady())
 		{
-			cap.setCooldown(0);
+			cap.setCooldown(1);
 			entity.playSound(HarshenSounds.NIGHT_BLADE_STAB, 1f, 1f);
 			if(player.isPotionActive(MobEffects.INVISIBILITY))
 				entity.attackEntityFrom(DamageSource.causePlayerDamage(player), 27f);
