@@ -163,11 +163,13 @@ public class HandlerServerNeedingHarshenEffects
 			{
 				event.getSource().getTrueSource().attackEntityFrom(new DamageSourceReflectorPendant(), event.getAmount()/2f);
 				HarshenUtils.damageFirstOccuringItem(attackedPlayer, HarshenItems.REFLECTOR_PENDANT);
+				HarshenNetwork.sendToPlayer(attackedPlayer, new MessagePacketPlaySound(HarshenSounds.JAGUAR_DEFENSE, 0.6f, event.getEntityLiving().world.rand.nextFloat() / 2 + 2f, attackedPlayer.getPosition()));
 			}
 			
 			if(HarshenUtils.hasAccessoryTimes(attackedPlayer, HarshenItems.SOUL_SHIELD) > 0 && !attackedPlayer.isCreative() && event.getEntityLiving().world.rand.nextFloat() < SoulShield.chance)
 			{
 				HarshenUtils.damageFirstOccuringItem(attackedPlayer, HarshenItems.SOUL_SHIELD, (int) event.getAmount() + 1);
+				HarshenNetwork.sendToPlayer(attackedPlayer, new MessagePacketPlaySound(HarshenSounds.JAGUAR_DEFENSE, 0.6f, event.getEntityLiving().world.rand.nextFloat() / 2 + 0.1f, attackedPlayer.getPosition()));
 				event.setAmount(0);
 			}
 		}
