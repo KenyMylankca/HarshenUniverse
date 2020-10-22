@@ -1,5 +1,6 @@
 package kenymylankca.harshenuniverse.handlers;
 
+import kenymylankca.harshenuniverse.HarshenItems;
 import kenymylankca.harshenuniverse.HarshenSounds;
 import kenymylankca.harshenuniverse.HarshenUtils;
 import kenymylankca.harshenuniverse.config.GeneralConfig;
@@ -18,6 +19,10 @@ public class HandlerBloodOnHurt
 	public void onLivingHurt(LivingHurtEvent event)
 	{
 		String[] AllowedEntities = GeneralConfig.bleedableEntities;
+		
+		if(event.getEntityLiving() instanceof EntityPlayer)
+			if(HarshenUtils.hasAccessoryTimes((EntityPlayer) event.getEntityLiving(), HarshenItems.SOUL_SHIELD) > 0)
+				return;
 		
 		if(HarshenUtils.toArray(AllowedEntities).contains(event.getEntityLiving().getName().toLowerCase()) || event.getEntityLiving() instanceof EntityPlayer)
 			if((event.getSource() instanceof EntityDamageSource && event.getAmount() > 3) || event.getSource() instanceof DamageSourceBleeding)
