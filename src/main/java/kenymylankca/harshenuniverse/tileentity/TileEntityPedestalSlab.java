@@ -55,10 +55,16 @@ public class TileEntityPedestalSlab extends BaseTileEntityHarshenSingleItemInven
 						}
 		}
 		else if(checkForCompletion(false))
-		{
-			world.playSound(null, this.pos, HarshenSounds.BLOOD_RITUAL, SoundCategory.BLOCKS, 1f, 1f);
 			activate();
-		}
+	}
+	
+	@Override
+	public void activate() {
+		world.playSound(null, this.pos, HarshenSounds.BLOOD_RITUAL, SoundCategory.BLOCKS, 1f, 1f);
+		this.activeTimer = 0;
+		this.isActive = true;
+		super.activate();
+	}
 	
 	@Override
 	public void deactivate()
