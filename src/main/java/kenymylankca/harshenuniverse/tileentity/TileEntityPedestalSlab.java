@@ -59,6 +59,13 @@ public class TileEntityPedestalSlab extends BaseTileEntityHarshenSingleItemInven
 			world.playSound(null, this.pos, HarshenSounds.BLOOD_RITUAL, SoundCategory.BLOCKS, 1f, 1f);
 			activate();
 		}
+	
+	@Override
+	public void deactivate()
+	{
+		Minecraft.getMinecraft().getSoundHandler().stop(HarshenSounds.BLOOD_RITUAL.getSoundName().toString(), SoundCategory.BLOCKS);
+		this.isActive = false;
+		this.activeTimer = 0;
 	}
 	
 	@Override
