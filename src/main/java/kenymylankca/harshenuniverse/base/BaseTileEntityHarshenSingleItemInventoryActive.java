@@ -10,7 +10,9 @@ public abstract class BaseTileEntityHarshenSingleItemInventoryActive extends Bas
 	@Override
 	public void update() {
 		if(isActive)
-			if(activeTimer++ == getTicksUntillDone())
+		{
+			activeTimer++;
+			if(activeTimer > getTicksUntillDone())
 			{
 				finishedTicking();
 				deactivate();
@@ -18,6 +20,7 @@ public abstract class BaseTileEntityHarshenSingleItemInventoryActive extends Bas
 			else if(!checkForCompletion(true))
 				deactivate();
 			else;
+		}
 		else activeTimer = 0;
 		super.update();
 	}
