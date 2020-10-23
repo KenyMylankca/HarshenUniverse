@@ -5,7 +5,7 @@ import net.minecraft.nbt.NBTTagCompound;
 public abstract class BaseTileEntityHarshenSingleItemInventoryActive extends BaseTileEntityHarshenSingleItemInventory 
 {
 	protected boolean isActive;
-	protected int activeTimer;
+	protected int activeTimer = 0;
 	
 	@Override
 	public void update() {
