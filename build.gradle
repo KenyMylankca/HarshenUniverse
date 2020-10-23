@@ -38,8 +38,8 @@ repositories {
     url = "modmaven.k-4u.nl"
   }
   
-  maven {
-  // location of apple core maven
+	maven {
+	// location of apple core maven
 		url "http://www.ryanliptak.com/maven/"
 	}
 	
@@ -47,6 +47,11 @@ repositories {
     // location of local files
     name = "LocalMaven"
     url = "libs"
+  }
+  
+	maven {
+    // cursemaven
+    url = "https://www.cursemaven.com"
   }
 }
 
@@ -56,7 +61,8 @@ dependencies {
     runtime "mezz.jei:jei_1.12.2:4.16.1.301"
 	
 	deobfCompile "applecore:AppleCore:1.12.2-3.4.0+356.64453:deobf"
-	deobfProvided "kenymylankca.enhancedarmaments:enhancedarmaments:1.3.20:sources"
+	
+	compile "curse.maven:enhancedarmaments:3090601"
 }
 
 processResources {
