@@ -2,16 +2,22 @@ package kenymylankca.harshenuniverse.tileentity;
 
 import java.util.Random;
 
+import com.kenymylankca.enhancedarmaments.util.EAUtils;
+
 import kenymylankca.harshenuniverse.HarshenBlocks;
 import kenymylankca.harshenuniverse.HarshenSounds;
 import kenymylankca.harshenuniverse.HarshenUniverse;
+import kenymylankca.harshenuniverse.api.HarshenStack;
 import kenymylankca.harshenuniverse.base.BaseTileEntityHarshenSingleItemInventoryActive;
 import kenymylankca.harshenuniverse.enums.particle.EnumHarshenParticle;
 import kenymylankca.harshenuniverse.internal.HarshenAPIHandler;
 import kenymylankca.harshenuniverse.recipes.PedestalSlabRecipes;
+import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.Vec3d;
+import net.minecraftforge.fml.common.Loader;
 
 public class TileEntityPedestalSlab extends BaseTileEntityHarshenSingleItemInventoryActive
 {
@@ -27,8 +33,23 @@ public class TileEntityPedestalSlab extends BaseTileEntityHarshenSingleItemInven
 					workingRecipe = recipe;
 				flag = true;
 			}
+		
+		if(Loader.isModLoaded("enhancedarmaments"))
+			if(EAUtils.canEnhance(getItemStack().getItem()))
+				if(getItemStack().getTagCompound().getInteger("RARITY") < 6)
+				{
+					ItemStack outputStack = getItemStack().copy();
+					outputStack.getTagCompound().setInteger("RARITY", outputStack.getTagCompound().getInteger("RARITY") + 1);
+					
+					PedestalSlabRecipes EARecipe = new PedestalSlabRecipes(new HarshenStack(getItemStack()), outputStack);
+					if(!checkingUp)
+						workingRecipe = EARecipe;
+					flag = true;
+				}
+		
 		if(!flag)
 			return false;
+		
 		for(int x = -1; x < 2; x++)
 			for(int z = -1; z < 2; z++){
 				if((world.getBlockState(pos.add(x, -1, z)).getBlock() != Blocks.SOUL_SAND || 

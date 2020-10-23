@@ -15,7 +15,7 @@ public class PedestalSlabRecipes
 	private final ItemStack output;
 	private boolean isFalse;
 	
-	private PedestalSlabRecipes(HarshenStack input, ItemStack output)
+	public PedestalSlabRecipes(HarshenStack input, ItemStack output)
 	{
 		isFalse =HarshenUtils.isItemFalse(input) || !HarshenUtils.isItemAvalible(output);
 		this.input = input;
