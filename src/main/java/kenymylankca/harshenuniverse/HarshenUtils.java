@@ -1009,23 +1009,25 @@ public class HarshenUtils
     		amount = (int) Math.pow(2 * range + 1, 2);
     	
     	for (int a=-range; a<amount; a++)
-    		for(int i=-range; i<=range*2; i++)
+    		for(int i=-range; i<=range; i++)
         	{
-    			for(int j=0; j<=range*2; j++)
+    			for(int j=0; j<=range; j++)
     			{
-    				if(world.rand.nextFloat() < 0.15)
-    					for(int h=0; h<GeneralConfig.bloodHeightRange; h++)
-        					if(world.isAirBlock(pos.south(i).east(j).down(h)) && !(world.isAirBlock(pos.south(i).east(j).down(h+1))))
-        					{
-        						BlockPos bloodpos = pos.south(i).east(j).down(h);
-        						
-        						if(world.isSideSolid(bloodpos.down(), EnumFacing.UP) && world.getBlockState(bloodpos).getBlock().canPlaceBlockAt(world, bloodpos) && amount > 0)
-        						{
-        							world.setBlockState(bloodpos, HarshenBlocks.BLOOD_BLOCK.getDefaultState(), 3);
+    				for(int h=0; h<GeneralConfig.bloodHeightRange; h++)
+    					if(world.isAirBlock(pos.south(i).east(j).down(h)) && !(world.isAirBlock(pos.south(i).east(j).down(h+1))))
+    					{
+    						BlockPos bloodpos = pos.south(i).east(j).down(h);
+    						
+    						if(world.isSideSolid(bloodpos.down(), EnumFacing.UP) && world.getBlockState(bloodpos).getBlock().canPlaceBlockAt(world, bloodpos) && amount > 0)
+    						{
+    							if(world.rand.nextFloat() < 0.15)
+    							{
+    								world.setBlockState(bloodpos, HarshenBlocks.BLOOD_BLOCK.getDefaultState(), 3);
         							amount--;
         							break;
-        						}
-        					}
+    							}
+    						}
+    					}
     				if(amount == 0)
     					break;
     				if(i == range*2 && j == i && amount > 0 && rolls > 0)
