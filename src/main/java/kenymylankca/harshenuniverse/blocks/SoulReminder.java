@@ -55,7 +55,6 @@ public class SoulReminder extends Block
 	@Override
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
 	{
-		System.out.println(disappearCounter);
         entityIn.motionX *= 0.8D;
         entityIn.motionY *= 0.8D;
         entityIn.motionZ *= 0.8D;
