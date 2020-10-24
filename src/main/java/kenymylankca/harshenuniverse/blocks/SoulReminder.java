@@ -22,6 +22,7 @@ public class SoulReminder extends Block
 	private World world;
 	private BlockPos pos;
 	private boolean isTicking;
+	private int disappearCounter;
 	
 	public SoulReminder()
 	{
@@ -51,26 +52,41 @@ public class SoulReminder extends Block
 		addCollisionBoxToList(pos, entityBox, collidingBoxes, NULL_AABB);
 	}
 	
-	@Override	//slows down while the entity in the block
-    public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
+	@Override
+    public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
+	{
+		System.out.println(disappearCounter);
         entityIn.motionX *= 0.8D;
         entityIn.motionY *= 0.8D;
         entityIn.motionZ *= 0.8D;
         entityIn.fallDistance = 0f;
+        
         if(entityIn instanceof EntityPlayer)
         {
-        	if(!((EntityPlayer) entityIn).isCreative())
+        	EntityPlayer player = (EntityPlayer) entityIn;
+        	if(!player.isCreative())
         	{
-        		((EntityPlayer) entityIn).addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 200));
-        		worldIn.spawnParticle(EnumParticleTypes.CLOUD, true, pos.getX() + 1, pos.getY() + 1, pos.getZ() + 1, 0.5, 0.5, 0.5);
-        		worldIn.setBlockToAir(pos);
-        	}
+        		player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 200));
+        		if (worldIn instanceof WorldServer)
+    				((WorldServer)world).spawnParticle(EnumParticleTypes.CLOUD, false, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 7,  0.3, 0.2, 0.3, 0, new int[EnumParticleTypes.CLOUD.getArgumentCount()]);
+            	
+            	if(disappearCounter > 0)
+            		disappearCounter--;
+            	
+    			if(disappearCounter == 0)
+    			{
+    				for(int i=0; i<10; i++)
+    					worldIn.spawnParticle(EnumParticleTypes.CLOUD, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 0.7, 0.7, 0.6, 0);
+    				worldIn.setBlockToAir(pos);
+    			}
+    		}
         }
     }
 
 	@Override
 	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
 		worldIn.scheduleBlockUpdate(pos, this, 10, 3);
+		this.disappearCounter = 180;
 		super.onBlockAdded(worldIn, pos, state);
 	}
 	
