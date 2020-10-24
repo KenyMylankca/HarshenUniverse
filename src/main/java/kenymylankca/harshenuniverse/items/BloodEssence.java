@@ -24,7 +24,8 @@ public class BloodEssence extends Item implements IBloodSupply
 
 	@Override
 	public int ticksUntillUsed() {
-		return 5110;
+		return -1;
+	}
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {

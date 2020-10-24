@@ -2,7 +2,6 @@ package kenymylankca.harshenuniverse.tileentity;
 
 import kenymylankca.harshenuniverse.base.BaseTileEntityHarshenSingleItemInventoryActive;
 import kenymylankca.harshenuniverse.interfaces.IBloodSupply;
-import net.minecraft.item.ItemStack;
 
 public class TileEntityBloodFactory extends BaseTileEntityHarshenSingleItemInventoryActive
 {	
@@ -18,7 +17,8 @@ public class TileEntityBloodFactory extends BaseTileEntityHarshenSingleItemInven
 	@Override
 	protected void finishedTicking()
 	{
-		setItem(ItemStack.EMPTY);
+		if(getTicksUntillDone() != -1)
+			setItemAir();
 	}
 	
 	@Override
@@ -34,13 +34,16 @@ public class TileEntityBloodFactory extends BaseTileEntityHarshenSingleItemInven
 	
 	@Override
 	protected void tick() {	
-		if(!isActive()) checkForCompletion(false);
+		if(!isActive())
+			checkForCompletion(false);
+		
 		if(isActive() && !(getItemStack().getItem() instanceof IBloodSupply))
 		{
 			itemSupply = null;
 			deactivate();
 		}
-		if(isActive() && itemSupply != null && world.getTileEntity(pos.down()) instanceof TileEntityBloodVessel && tickRate++ % 50 == 0 )
+		
+		if(isActive() && itemSupply != null && world.getTileEntity(pos.down()) instanceof TileEntityBloodVessel && tickRate++ % 40 == 0 )
 		{
 			if(((TileEntityBloodVessel)world.getTileEntity(pos.down())).isFull())
 				deactivate();

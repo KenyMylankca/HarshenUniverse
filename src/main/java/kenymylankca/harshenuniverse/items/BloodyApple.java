@@ -38,7 +38,7 @@ public class BloodyApple extends ItemFood implements IBloodSupply
 
 	@Override
 	public int getAmountPerSecond() {
-		return 2;
+		return 3;
 	}
 
 	@Override
