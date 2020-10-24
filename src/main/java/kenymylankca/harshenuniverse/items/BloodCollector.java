@@ -18,6 +18,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 
 public class BloodCollector extends BaseItemMetaData
@@ -104,7 +105,7 @@ public class BloodCollector extends BaseItemMetaData
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add("\u00A74" + "Blood: " + Integer.toString(getNBT(stack).getInteger("Blood")) + " / " + capacity);
+		tooltip.add(new TextComponentTranslation("tile.blood_block.name").getFormattedText() + "\u00A74" + ": " + "\u00A73" + Integer.toString(getNBT(stack).getInteger("Blood")) + " / " + capacity);
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 
