@@ -14,7 +14,7 @@ public class BloodyApple extends ItemFood implements IBloodSupply
 {
 	public BloodyApple()
 	{
-		super(1, 1, true);
+		super(3, 3, true);
 		setUnlocalizedName("bloody_apple");
 		setRegistryName("bloody_apple");
 		this.setAlwaysEdible();
