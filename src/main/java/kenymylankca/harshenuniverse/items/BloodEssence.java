@@ -1,7 +1,13 @@
 package kenymylankca.harshenuniverse.items;
 
+import java.util.List;
+
 import kenymylankca.harshenuniverse.interfaces.IBloodSupply;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.world.World;
 
 public class BloodEssence extends Item implements IBloodSupply
 {
@@ -19,5 +25,10 @@ public class BloodEssence extends Item implements IBloodSupply
 	@Override
 	public int ticksUntillUsed() {
 		return 5110;
+	
+	@Override
+	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+		tooltip.add("\u00a73" + new TextComponentTranslation("bloodessence1").getFormattedText());
+		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 }
