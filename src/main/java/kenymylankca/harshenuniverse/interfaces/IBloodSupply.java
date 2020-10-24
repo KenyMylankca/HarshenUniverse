@@ -2,6 +2,9 @@ package kenymylankca.harshenuniverse.interfaces;
 
 public interface IBloodSupply 
 {
+	/**
+	 * The amount of blood that will be generated from this per second.
+	 */
 	public int getAmountPerSecond();
 	
 	/**

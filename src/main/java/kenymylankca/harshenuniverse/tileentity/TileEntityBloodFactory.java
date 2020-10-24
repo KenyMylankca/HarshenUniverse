@@ -43,7 +43,7 @@ public class TileEntityBloodFactory extends BaseTileEntityHarshenSingleItemInven
 			deactivate();
 		}
 		
-		if(isActive() && itemSupply != null && world.getTileEntity(pos.down()) instanceof TileEntityBloodVessel && tickRate++ % 40 == 0 )
+		if(isActive() && itemSupply != null && world.getTileEntity(pos.down()) instanceof TileEntityBloodVessel && tickRate++ % 45 == 0 )
 		{
 			if(((TileEntityBloodVessel)world.getTileEntity(pos.down())).isFull())
 				deactivate();
