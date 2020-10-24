@@ -1008,10 +1008,10 @@ public class HarshenUtils
     	if (amount > Math.pow(2 * range + 1, 2))
     		amount = (int) Math.pow(2 * range + 1, 2);
     	
-    	for (int a=-range; a<amount; a++)
+    	for (int a=0; a<amount; a++)
     		for(int i=-range; i<=range; i++)
         	{
-    			for(int j=0; j<=range; j++)
+    			for(int j=-range; j<=range; j++)
     			{
     				for(int h=0; h<GeneralConfig.bloodHeightRange; h++)
     					if(world.isAirBlock(pos.south(i).east(j).down(h)) && !(world.isAirBlock(pos.south(i).east(j).down(h+1))))
