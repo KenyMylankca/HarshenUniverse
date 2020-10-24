@@ -19,9 +19,9 @@ public abstract class BaseTileEntityHarshenSingleItemInventoryActive extends Bas
 			}
 			else if(!checkForCompletion(true))
 				deactivate();
-			else;
 		}
-		else activeTimer = 0;
+		else
+			activeTimer = 0;
 		super.update();
 	}
 	
