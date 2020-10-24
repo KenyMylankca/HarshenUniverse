@@ -132,7 +132,7 @@ config.isEnabled=Should %s be enabled
 config.structure.name=the structure %s
 config.id=What should the ID for %s be
 
-config.blood_chance=The chance for blood to occur when a mob is hit.
+config.blood_chance=The chance for blood to be splashed on ground when it occurs. You can disable blood splash by setting this to zero, but keep in mind that you need blood for the things require it in the mod index.
 config.blood_height_range=The height range that blood can splash from.
 config.render_hidden_plates=Should the hidden plate renderer be run for all players in creative mode.
 config.structure_ruin_chance=The rate of the ruin structures blocks being ruined. If you set this to 1, the ruin structures all blocks will be replaced with air.
