@@ -1003,24 +1003,23 @@ public class HarshenUtils
     public static void splashBlood(BlockPos pos, World world, int range, int amount)
     {
     	IBlockState state = world.getBlockState(pos);
-    	int rolls = (range + 1) * 4;
+    	int rolls = (range + 1) * 6;
     	
     	if (amount > Math.pow(2 * range + 1, 2))
     		amount = (int) Math.pow(2 * range + 1, 2);
     	
-    	for (int a=0; a<amount; a++)
-    		for(int i=-range; i<=range; i++)
-        	{
-    			for(int j=-range; j<=range; j++)
-    			{
-    				for(int h=0; h<GeneralConfig.bloodHeightRange; h++)
-    					if(world.isAirBlock(pos.south(i).east(j).down(h)) && !(world.isAirBlock(pos.south(i).east(j).down(h+1))))
+    	for(int i = 0; i < rolls; i++)
+    	{
+    		for (int a=0; a<amount; a++)
+        		for(BlockPos blockPos : BlockPos.getAllInBox(pos.north(range).west(range), pos.south(range).east(range)))
+        			for(int h=0; h<GeneralConfig.bloodHeightRange; h++)
+    					if(world.isAirBlock(blockPos.down(h)) && !(world.isAirBlock(blockPos.down(h+1))))
     					{
-    						BlockPos bloodpos = pos.south(i).east(j).down(h);
+    						BlockPos bloodpos = blockPos.down(h);
     						
     						if(world.isSideSolid(bloodpos.down(), EnumFacing.UP) && world.getBlockState(bloodpos).getBlock().canPlaceBlockAt(world, bloodpos) && amount > 0)
     						{
-    							if(world.rand.nextFloat() < 0.12)
+    							if(world.rand.nextFloat() < 0.14)
     							{
     								world.setBlockState(bloodpos, HarshenBlocks.BLOOD_BLOCK.getDefaultState(), 3);
         							amount--;
@@ -1028,18 +1027,9 @@ public class HarshenUtils
     							}
     						}
     					}
-    				if(amount == 0)
-    					break;
-    				if(i == range*2 && j == i && amount > 0 && rolls > 0)
-    				{
-    					i = 0;
-    					j = 0;
-    					rolls--;
-    				}
-    			}
-    			if(amount == 0)
-    				break;
-        	}
+    		if(amount == 0)
+    			break;
+    	}
     }
     
     public static boolean isPosBloodSplashable(BlockPos pos, World world)
