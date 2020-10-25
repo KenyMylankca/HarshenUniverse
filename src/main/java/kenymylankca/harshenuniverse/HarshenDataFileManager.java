@@ -109,4 +109,12 @@ public class HarshenDataFileManager
 			}
 		return null;
 	}
+	
+	public boolean readBooleanFromFile(String name)
+	{
+		if(readNBTFromFile(dataFile) != null)
+			if(readNBTFromFile(dataFile).hasKey(name))
+				return readNBTFromFile(dataFile).getBoolean(name);
+		return false;
+	}
 }
