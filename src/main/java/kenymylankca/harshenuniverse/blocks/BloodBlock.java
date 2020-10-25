@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
+import kenymylankca.harshenuniverse.dimensions.DimensionPontus;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -50,7 +51,8 @@ public class BloodBlock extends Block
 			tickMap.put(pos, 0);
 		tickMap.put(pos, tickMap.get(pos) + 1);
 		if(tickMap.get(pos) > 17 || worldIn.isRaining())
-			worldIn.setBlockToAir(pos);
+			if(worldIn.provider.getDimension() != DimensionPontus.DIMENSION_ID)
+				worldIn.setBlockToAir(pos);
 	}
 	
 	@Override
