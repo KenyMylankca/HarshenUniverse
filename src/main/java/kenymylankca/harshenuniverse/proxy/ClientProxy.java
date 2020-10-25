@@ -132,7 +132,6 @@ public class ClientProxy extends CommonProxy
     	
     	ItemColors itemcolors = Minecraft.getMinecraft().getItemColors();
     	itemcolors.registerItemColorHandler(new IItemColor() {
-			
 			@Override
 			public int colorMultiplier(ItemStack stack, int tintIndex) {
 				return tintIndex == 1 ? -1 : GlassContainerValue.getContainerFromMeta(stack.getMetadata()).color;
