@@ -5,6 +5,7 @@ import kenymylankca.harshenuniverse.config.HarshenConfigs;
 import kenymylankca.harshenuniverse.structures.overworld.Castle;
 import kenymylankca.harshenuniverse.structures.overworld.Graveyard;
 import kenymylankca.harshenuniverse.structures.overworld.Shrine;
+import kenymylankca.harshenuniverse.structures.pontus.House;
 import kenymylankca.harshenuniverse.structures.pontus.PontusRitual;
 import kenymylankca.harshenuniverse.structures.pontus.TreeDome;
 
@@ -15,6 +16,7 @@ public class HarshenStructures
 	public static final HarshenStructure PONTUS_TREE_DOME = new TreeDome();
 	public static final HarshenStructure PONTUS_RITUAL = new PontusRitual();
 	public static final HarshenStructure GRAVEYARD = new Graveyard();
+	public static final HarshenStructure HOUSE = new House();
 	
 	public static void preInit()
 	{
@@ -23,6 +25,7 @@ public class HarshenStructures
 		regStructure(SHRINE);
 		regStructure(PONTUS_TREE_DOME);
 		regStructure(PONTUS_RITUAL);
+		regStructure(HOUSE);
 	}
 	
 	public static void register()

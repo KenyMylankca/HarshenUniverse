@@ -36,9 +36,11 @@ public class HarshenWorldGen implements IWorldGenerator
     
     public static final int [] castleChunks = {23, 25};
     public static final int [] graveyardChunks = {17, -15};
+    public static final int [] houseChunks = {40, 42};
     
     public static int castleDelay = 0;
     public static int graveyardDelay = 0;
+    public static int houseDelay = 0;
     
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
@@ -77,6 +79,23 @@ public class HarshenWorldGen implements IWorldGenerator
 		}
 		else if(dim == DimensionPontus.DIMENSION_ID)
 		{
+			if(houseDelay > 0)
+				houseDelay++;
+			
+			if(chunkX == houseChunks[0] && chunkZ == houseChunks[1])
+			{
+				houseDelay++;
+				HarshenDataFileManager manager = new HarshenDataFileManager(world);
+				manager.writebooleanToFile("bloody_mary_alive", false);
+			}
+			
+			if(houseDelay >= GeneralConfig.structureProtectorDelay)
+			{
+				HarshenDataFileManager manager = new HarshenDataFileManager(world);
+				manager.writeStructurePosToFile(world, HarshenStructures.HOUSE.generateStucture(world, random, houseChunks[0], houseChunks[1]), "house");
+				houseDelay = 0;
+			}
+			
 	    	blockGenerator(this.pontusItiumOre, world, random, chunkX, chunkZ, 11, 0, 255);
 	    	blockGenerator(this.pontusEmeraldOre, world, random, chunkX, chunkZ, 12, 0, 255);
 	    	plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.5f, 100, 200, false);
