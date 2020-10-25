@@ -15,7 +15,7 @@ public class FauxCauldronStructure implements ICommandStructure
 {
 	@Override
 	public String structureName() {
-		return "hereticritual";
+		return "fauxcauldron";
 	}
 
 	@Override
