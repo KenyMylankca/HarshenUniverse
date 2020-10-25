@@ -42,6 +42,25 @@ public class HarshenDataFileManager
 		writeNBTToFile(nbt, dataFile);
 	}
 	
+	public void writebooleanToFile(String name, boolean bool)
+	{
+		if(!dataFile.exists())
+			try {
+				dataFile.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		
+		NBTTagCompound nbt = new NBTTagCompound();
+		
+		if(dataFile.exists())
+			if(readNBTFromFile(dataFile) != null)
+				nbt = readNBTFromFile(dataFile);
+		
+		nbt.setBoolean(name, bool);
+		writeNBTToFile(nbt, dataFile);
+	}
+	
 	public void writeNBTToFile(NBTTagCompound nbt, File file)
 	{
 		try {
