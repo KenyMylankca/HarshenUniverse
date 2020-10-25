@@ -2,6 +2,7 @@ package kenymylankca.harshenuniverse.handlers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import kenymylankca.harshenuniverse.HarshenBlocks;
 import kenymylankca.harshenuniverse.HarshenDataFileManager;
@@ -13,6 +14,7 @@ import kenymylankca.harshenuniverse.base.BaseBloodyBed;
 import kenymylankca.harshenuniverse.config.AccessoryConfig;
 import kenymylankca.harshenuniverse.config.GeneralConfig;
 import kenymylankca.harshenuniverse.damagesource.DamageSourceReflectorPendant;
+import kenymylankca.harshenuniverse.dimensions.DimensionPontus;
 import kenymylankca.harshenuniverse.handlers.CooldownHandler.ICooldownHandler;
 import kenymylankca.harshenuniverse.items.HarshenNightBlade;
 import kenymylankca.harshenuniverse.items.SoulShield;
@@ -47,6 +49,7 @@ public class HandlerServerNeedingHarshenEffects
 	int trustTimer=666;
 	int nocturnalTimer=0;
 	int castleSoundTimer=3000;
+	int houseSoundTimer=0;
 	
 	@SubscribeEvent
 	public void onPlayerTick(PlayerTickEvent event)
@@ -55,21 +58,53 @@ public class HandlerServerNeedingHarshenEffects
 			return;
 		
 		if(event.side.isServer())
-			if(event.player.world.getSunBrightness(0) < 0.76)
-				if(event.player.world.isChunkGeneratedAt(HarshenWorldGen.castleChunks[0], HarshenWorldGen.castleChunks[1]))
+		{
+			if(event.player.world.provider.getDimension() == 0)
+				if(event.player.world.getSunBrightness(0) < 0.76)
+					if(event.player.world.isChunkGeneratedAt(HarshenWorldGen.castleChunks[0], HarshenWorldGen.castleChunks[1]))
+					{
+						HarshenDataFileManager manager = new HarshenDataFileManager(event.player.world);
+						if(manager.readStructurePosFromFile("castle") != null)
+						{
+							BlockPos castlePos = manager.readStructurePosFromFile("castle");
+							if(event.player.getDistanceSq(castlePos) < 1000)
+								if(castleSoundTimer++ > 3320)
+								{
+									HarshenNetwork.sendToPlayer(event.player, new MessagePacketPlaySound(HarshenSounds.CASTLE_AMBIENT, 1f, 1f, castlePos));
+									castleSoundTimer=0;
+								}
+						}
+					}
+			
+			if(event.player.world.provider.getDimension() == DimensionPontus.DIMENSION_ID)
+				if(event.player.world.isChunkGeneratedAt(HarshenWorldGen.houseChunks[0], HarshenWorldGen.houseChunks[1]))
 				{
 					HarshenDataFileManager manager = new HarshenDataFileManager(event.player.world);
-					if(manager.readStructurePosFromFile("castle") != null)
+					if(manager.readStructurePosFromFile("house") != null)
 					{
-						BlockPos castlePos = manager.readStructurePosFromFile("castle");
-						if(event.player.getDistanceSq(castlePos) < 1000)
-							if(castleSoundTimer++ > 3320)
-							{
-								HarshenNetwork.sendToPlayer(event.player, new MessagePacketPlaySound(HarshenSounds.CASTLE_AMBIENT, 1f, 1f, castlePos));
-								castleSoundTimer=0;
-							}
+						Random rand = event.player.world.rand;
+						BlockPos housePos = manager.readStructurePosFromFile("house");
+						
+						if(manager.readBooleanFromFile("bloody_mary_alive"))
+						{
+							
+							if(event.player.getDistanceSq(housePos) < 300)
+								if(houseSoundTimer++ > rand.nextInt(666) + 666)
+								{
+									HarshenNetwork.sendToPlayer(event.player, new MessagePacketPlaySound(HarshenSounds.HOUSE_ALIVE, rand.nextFloat(), rand.nextFloat()/2 + 0.666F, housePos));
+									houseSoundTimer=0;
+								}
+						}
+						else
+							if(event.player.getDistanceSq(housePos) < 300)
+								if(houseSoundTimer++ > rand.nextInt(666) + 666)
+								{
+									HarshenNetwork.sendToPlayer(event.player, new MessagePacketPlaySound(HarshenSounds.HOUSE_KILLED, rand.nextFloat(), rand.nextFloat()/2 + 0.666F, housePos));
+									houseSoundTimer=0;
+								}
 					}
 				}
+		}
 		
 		if(trustTimer < 669)
 			trustTimer++;
