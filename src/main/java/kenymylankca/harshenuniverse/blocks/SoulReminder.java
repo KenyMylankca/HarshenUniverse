@@ -3,6 +3,8 @@ package kenymylankca.harshenuniverse.blocks;
 import java.util.List;
 import java.util.Random;
 
+import kenymylankca.harshenuniverse.HarshenPotions;
+import kenymylankca.harshenuniverse.HarshenSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -76,6 +78,8 @@ public class SoulReminder extends Block
     			{
     				for(int i=0; i<10; i++)
     					worldIn.spawnParticle(EnumParticleTypes.CLOUD, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 0.7, 0.7, 0.6, 0);
+    				player.addPotionEffect(new PotionEffect(HarshenPotions.potionSoulless, 200));
+    				player.playSound(HarshenSounds.SOUL_SHIELD_REMOVE, 1f, 0.7f);
     				worldIn.setBlockToAir(pos);
     			}
     		}
