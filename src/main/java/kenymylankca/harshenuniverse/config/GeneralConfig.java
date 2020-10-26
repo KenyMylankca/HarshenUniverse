@@ -14,6 +14,7 @@ public class GeneralConfig extends BaseConfig
 	public static int nocturnalDistance;
 	public static boolean trueInvisibility;
 	public static int structureProtectorDelay;
+	public static boolean repairableItemsJEIFeature;
 	
 	@Override
 	public String getName() {
@@ -31,5 +32,6 @@ public class GeneralConfig extends BaseConfig
 		nocturnalDistance = get("nocturnal_distance", 2);
 		trueInvisibility = get("true_invisibility", true);
 		structureProtectorDelay = get("structure_protector_delay", 75);
+		repairableItemsJEIFeature = get("repairable_items_jei_feature", true);
 	}
 }

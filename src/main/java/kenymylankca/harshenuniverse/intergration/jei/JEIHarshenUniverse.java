@@ -1,9 +1,13 @@
 package kenymylankca.harshenuniverse.intergration.jei;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import kenymylankca.harshenuniverse.HarshenBlocks;
 import kenymylankca.harshenuniverse.HarshenItems;
 import kenymylankca.harshenuniverse.HarshenUtils;
 import kenymylankca.harshenuniverse.armor.HarshenArmors;
+import kenymylankca.harshenuniverse.config.GeneralConfig;
 import kenymylankca.harshenuniverse.containers.ContainerMagicTable;
 import kenymylankca.harshenuniverse.enchantment.HarshenEnchantmetns;
 import kenymylankca.harshenuniverse.gui.GuiMagicTable;
@@ -30,6 +34,7 @@ import mezz.jei.api.recipe.IRecipeCategoryRegistration;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 @JEIPlugin
@@ -37,7 +42,8 @@ public class JEIHarshenUniverse implements IModPlugin
 {
 	private IModRegistry registry;
 	@Override
-	public void register(IModRegistry registry) { 
+	public void register(IModRegistry registry)
+	{ 
 		this.registry = registry;
 
 		registry.handleRecipes(LightningRitualRecipes.class, new JEILightningRitualHandler(), JEICategoryUIDs.LIGHTNING_RITUAL);
@@ -102,6 +108,30 @@ public class JEIHarshenUniverse implements IModPlugin
 		info(HarshenBlocks.BLOOD_PLACER);
 		info(HarshenBlocks.AKZENIA_MUSHROOM);
 		info(HarshenBlocks.HARSHEN_DISPLAY_BLOCK);
+		
+		if(Loader.isModLoaded("jei"))
+			if(GeneralConfig.repairableItemsJEIFeature)
+				for(Item itemBeRepaired : ForgeRegistries.ITEMS)
+				{
+					ItemStack itemBeRepairedStack = new ItemStack(itemBeRepaired);
+					for(Item itemWillRepair : ForgeRegistries.ITEMS)
+					{
+						ItemStack itemWillRepairStack = new ItemStack(itemWillRepair);
+						if(itemBeRepaired.getIsRepairable(itemBeRepairedStack, itemWillRepairStack))
+						{
+							itemBeRepairedStack.setItemDamage(itemBeRepaired.getMaxDamage() / 2);
+							ItemStack outputStack = new ItemStack(itemBeRepaired);
+							outputStack.setItemDamage(itemBeRepaired.getMaxDamage() / 4);
+							
+							List <ItemStack> rightInputList = new ArrayList <ItemStack> ();
+							List <ItemStack> outputList = new ArrayList <ItemStack> ();
+							rightInputList.add(itemWillRepairStack);
+							outputList.add(outputStack);
+							
+							registry.addAnvilRecipe(itemBeRepairedStack, rightInputList, outputList);
+						}
+					}
+				}
 	}
 	
 	private void info(String name, Item... items)
