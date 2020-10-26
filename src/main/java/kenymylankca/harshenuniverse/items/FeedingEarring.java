@@ -13,7 +13,6 @@ public class FeedingEarring extends Item implements IHarshenAccessoryProvider
 	public FeedingEarring() {
 		setRegistryName("feeding_earring");
 		setUnlocalizedName("feeding_earring");
-		this.canRepair = false;
 	}
 
 	@Override

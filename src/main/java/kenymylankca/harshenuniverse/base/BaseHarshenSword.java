@@ -1,9 +1,5 @@
 package kenymylankca.harshenuniverse.base;
 
-import javax.annotation.Nullable;
-
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraftforge.common.util.EnumHelper;
 
@@ -18,12 +14,4 @@ public abstract class BaseHarshenSword extends ItemSword
 	}
 	
 	protected abstract String getName();
-	
-	@Override
-	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
-		return repair.getItem() == getRepairItem();
-	}
-	
-	@Nullable
-	protected abstract Item getRepairItem();
 }

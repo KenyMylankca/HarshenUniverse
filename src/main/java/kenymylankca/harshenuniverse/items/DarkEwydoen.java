@@ -8,6 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemAxe;
@@ -31,6 +32,11 @@ public class DarkEwydoen extends ItemAxe
 		setRegistryName("dark_ewydoen");
 		this.attackDamage=12f;
 		this.setMaxDamage(3175);
+	}
+	
+	@Override
+	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
+		return repair.getItem() == Items.GHAST_TEAR;
 	}
 	
 	@Override

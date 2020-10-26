@@ -10,7 +10,6 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
@@ -23,8 +22,8 @@ public class SoulHarsherSword extends BaseHarshenSword
 	}
 	
 	@Override
-	protected Item getRepairItem() {
-		return HarshenItems.HARSHEN_SOUL_FRAGMENT;
+	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
+		return repair.getItem() == HarshenItems.HARSHEN_SOUL_FRAGMENT;
 	}
 	
 	@Override

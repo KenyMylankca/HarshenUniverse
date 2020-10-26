@@ -34,6 +34,14 @@ public class HarshenNightBlade extends ItemSword
 	}
 	
 	@Override
+	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
+		if(repair.getItem() instanceof GlassContainer)
+			if(repair.getMetadata() == 1)
+				return true;
+		return false;
+	}
+	
+	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		tooltip.add("\u00A73" + new TextComponentTranslation("nightblade1").getFormattedText());
 		tooltip.add("\u00A73" + new TextComponentTranslation("nightblade2").getFormattedText());

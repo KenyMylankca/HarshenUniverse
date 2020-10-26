@@ -6,7 +6,6 @@ import kenymylankca.harshenuniverse.HarshenItems;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 
@@ -26,6 +25,6 @@ public class SoulHarsherSpade extends ItemSpade
 
 	@Override
 	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
-		return repair.getItem() == HarshenItems.SOUL_INFUSED_INGOT;
+		return repair.getItem() == HarshenItems.HARSHEN_SOUL_INGOT;
 	}
 }
