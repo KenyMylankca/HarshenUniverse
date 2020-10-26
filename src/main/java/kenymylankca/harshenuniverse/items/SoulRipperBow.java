@@ -102,9 +102,9 @@ public class SoulRipperBow extends BaseHarshenStaff
 			{
 				EntityLivingBase entityLiving = (EntityLivingBase) result.entityHit;
 				orb.setDead();
+				
 				if(HarshenUtils.hasJaguarArmorSet(entityLiving))
 					entityLiving.playSound(HarshenSounds.JAGUAR_DEFENSE, 1f, 1f);
-
 				else if(entityLiving.attackEntityFrom(new EntityDamageSourceIndirect("soul_ripper_bow", orb, orb.getThrower() == null ? orb : orb.getThrower()).setProjectile(), power * 13f))
 				{
 					orb.playSound(SoundEvents.ENTITY_ENDERMITE_HURT, 0F, 1.2F / (itemRand.nextFloat() * 0.2F + 0.9F));

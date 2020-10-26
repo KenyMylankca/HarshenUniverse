@@ -1,6 +1,7 @@
 package kenymylankca.harshenuniverse.entity;
 
 import kenymylankca.harshenuniverse.HarshenSounds;
+import kenymylankca.harshenuniverse.HarshenUtils;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
@@ -58,11 +59,16 @@ public class EntityKazzendre extends EntityMob
 	@Override
 	public void onCollideWithPlayer(EntityPlayer entityIn)
 	{
-		if(this.rand.nextFloat() < 0.01 && this.isSwingInProgress && !entityIn.isCreative())
+		if(this.isSwingInProgress)
 		{
-			entityIn.attackEntityFrom(new DamageSource("kazzendre"), 8);
-			this.heal(12);
-			this.world.playSound(null, this.getPosition(), HarshenSounds.SOUL_HARSHER_SWORD_HIT, SoundCategory.MASTER, 1, (this.rand.nextFloat() + 1F)/2);
+			if(this.rand.nextFloat() < 0.01 && !entityIn.isCreative() && !HarshenUtils.hasJaguarArmorSet(entityIn))
+			{
+				entityIn.attackEntityFrom(new DamageSource(this.getName().toLowerCase()), 8);
+				this.heal(12);
+				this.world.playSound(null, this.getPosition(), HarshenSounds.SOUL_HARSHER_SWORD_HIT, SoundCategory.MASTER, 1, (this.rand.nextFloat() + 1F)/2);
+			}
+			else
+				entityIn.playSound(HarshenSounds.KAZZENDRE_HIT, 1f, 1f);
 		}
 		super.onCollideWithPlayer(entityIn);
 	}

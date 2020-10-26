@@ -37,6 +37,7 @@ public class EnionBow extends BaseHarshenBow
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
 		if(entity instanceof EntityLivingBase && player.getCooledAttackStrength(1) == 1)
 		{
+			player.playSound(HarshenSounds.LIGHTNING_HIT, 0.8f, 1.3f);
 			((EntityLivingBase)entity).addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 70));
 			((EntityLivingBase)entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 30, 7));
 		}

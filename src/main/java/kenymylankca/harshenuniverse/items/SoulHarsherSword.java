@@ -3,6 +3,7 @@ package kenymylankca.harshenuniverse.items;
 import java.util.List;
 
 import kenymylankca.harshenuniverse.HarshenItems;
+import kenymylankca.harshenuniverse.HarshenSounds;
 import kenymylankca.harshenuniverse.HarshenUtils;
 import kenymylankca.harshenuniverse.base.BaseHarshenSword;
 import net.minecraft.client.util.ITooltipFlag;
@@ -28,7 +29,14 @@ public class SoulHarsherSword extends BaseHarshenSword
 	
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
-		HarshenUtils.bleedTarget((EntityLivingBase) entity, 150, 1);
+		if(entity instanceof EntityLivingBase)
+			if(HarshenUtils.hasJaguarArmorSet((EntityLivingBase) entity))
+				player.playSound(HarshenSounds.JAGUAR_DEFENSE, 1f, 1f);
+			else
+			{
+				player.playSound(HarshenSounds.SOUL_HARSHER_SWORD_HIT, 1f, 1f);
+				HarshenUtils.bleedTarget((EntityLivingBase) entity, 150, 1);
+			}
 		return super.onLeftClickEntity(stack, player, entity);
 	}
 	

@@ -3,6 +3,7 @@ package kenymylankca.harshenuniverse.items;
 import java.util.List;
 
 import kenymylankca.harshenuniverse.HarshenItems;
+import kenymylankca.harshenuniverse.HarshenSounds;
 import kenymylankca.harshenuniverse.HarshenUtils;
 import kenymylankca.harshenuniverse.base.BaseHarshenScythe;
 import net.minecraft.client.util.ITooltipFlag;
@@ -44,10 +45,14 @@ public class RaptorScythe extends BaseHarshenScythe
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
 		if(entity instanceof EntityLivingBase && player.getCooledAttackStrength(1) == 1)
-		{
-			HarshenUtils.bleedTarget((EntityLivingBase)entity, 150, 1);
-			player.heal(1.9f);
-		}
+			if(HarshenUtils.hasJaguarArmorSet((EntityLivingBase) entity))
+				player.playSound(HarshenSounds.JAGUAR_DEFENSE, 1f, 1f);
+			else
+			{
+				HarshenUtils.bleedTarget((EntityLivingBase)entity, 150, 1);
+				player.heal(1.9f);
+				player.playSound(HarshenSounds.RAPTOR_SCYTHE_HIT, 1f, 1f);
+			}
 		return super.onLeftClickEntity(stack, player, entity);
 	}
 	

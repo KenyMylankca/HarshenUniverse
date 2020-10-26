@@ -36,6 +36,8 @@ public class DarkEwydoen extends ItemAxe
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity)
 	{
+		if(player.getCooledAttackStrength(1) == 1)
+			player.playSound(HarshenSounds.EWYDOEN_HIT, 1f, 1f);
 		if(entity instanceof EntityLivingBase)
 			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 50, 1));
 		if(player.isPotionActive(MobEffects.SPEED))
