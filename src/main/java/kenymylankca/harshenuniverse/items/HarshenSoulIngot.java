@@ -10,5 +10,4 @@ public class HarshenSoulIngot extends Item
 		setRegistryName("harshen_soul_ingot");
 		
 	}
-
 }

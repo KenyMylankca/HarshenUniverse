@@ -6,7 +6,8 @@ import net.minecraft.item.Item;
 
 public class FieryRing extends Item implements IHarshenAccessoryProvider
 {
-	public FieryRing() {
+	public FieryRing()
+	{
 		setUnlocalizedName("fiery_ring");
 		setRegistryName("fiery_ring");
 	}

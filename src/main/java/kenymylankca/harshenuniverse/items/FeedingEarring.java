@@ -10,7 +10,9 @@ import net.minecraft.item.Item;
 public class FeedingEarring extends Item implements IHarshenAccessoryProvider
 {
 	int tick=0;
-	public FeedingEarring() {
+	
+	public FeedingEarring()
+	{
 		setRegistryName("feeding_earring");
 		setUnlocalizedName("feeding_earring");
 	}

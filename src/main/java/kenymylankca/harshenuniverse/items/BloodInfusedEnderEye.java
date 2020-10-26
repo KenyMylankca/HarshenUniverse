@@ -9,5 +9,4 @@ public class BloodInfusedEnderEye extends Item
 		setUnlocalizedName("blood_infused_ender_eye");
 		setRegistryName("blood_infused_ender_eye");
 	}
-
 }

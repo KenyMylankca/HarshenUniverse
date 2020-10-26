@@ -16,12 +16,12 @@ import net.minecraft.world.World;
 
 public class LightEmittedSeed extends ItemSeeds
 {
-
-	public LightEmittedSeed() {
+	public LightEmittedSeed()
+	{
 		super(HarshenBlocks.CROP_OF_GLEAM, HarshenBlocks.HARSHEN_DIMENSIONAL_DIRT);
 		setUnlocalizedName("light_emitted_seed");
 		setRegistryName("light_emitted_seed");	
-		}
+	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {

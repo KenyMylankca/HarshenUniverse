@@ -9,5 +9,4 @@ public class LightEmittedEssence extends Item
 		setUnlocalizedName("light_emitted_essence");
 		setRegistryName("light_emitted_essence");
 	}
-
 }

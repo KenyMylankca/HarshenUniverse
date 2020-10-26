@@ -9,5 +9,4 @@ public class PontusCube extends Item
 		setRegistryName("pontus_cube");
 		setUnlocalizedName("pontus_cube");
 	}
-
 }

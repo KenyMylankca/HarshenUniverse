@@ -10,5 +10,4 @@ public class HarshenSoulFragment extends Item
 		setRegistryName("harshen_soul_fragment");
 		
 	}
-
 }

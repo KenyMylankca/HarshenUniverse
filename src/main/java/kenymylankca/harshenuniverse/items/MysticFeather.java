@@ -18,5 +18,4 @@ public class MysticFeather extends Item
     {
         return true;
     }
-
 }

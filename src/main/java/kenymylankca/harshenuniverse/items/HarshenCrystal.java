@@ -9,5 +9,4 @@ public class HarshenCrystal extends Item
 		setUnlocalizedName("harshen_crystal");
 		setRegistryName("harshen_crystal");
 	}
-
 }

@@ -10,5 +10,4 @@ public class SoulInfusedIngot extends Item
 		setRegistryName("soul_infused_ingot");
 		
 	}
-
 }

@@ -15,7 +15,6 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickEmpt
 
 public class ElytraPendant extends Item implements IHarshenAccessoryProvider
 {
-
 	public ElytraPendant() {
 		setRegistryName("elytra_pendant");
 		setUnlocalizedName("elytra_pendant");

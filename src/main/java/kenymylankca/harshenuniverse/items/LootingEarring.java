@@ -6,7 +6,6 @@ import net.minecraft.item.Item;
 
 public class LootingEarring extends Item implements IHarshenAccessoryProvider
 {
-
 	public LootingEarring() {
 		setRegistryName("looting_earring");
 		setUnlocalizedName("looting_earring");
