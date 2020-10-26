@@ -99,7 +99,7 @@ public class HandlerServerNeedingHarshenEffects
 							if(event.player.getDistanceSq(housePos) < 300)
 								if(houseSoundTimer++ > rand.nextInt(666) + 666)
 								{
-									HarshenNetwork.sendToPlayer(event.player, new MessagePacketPlaySound(HarshenSounds.HOUSE_KILLED, rand.nextFloat(), rand.nextFloat()/2 + 0.666F, housePos));
+									HarshenNetwork.sendToPlayer(event.player, new MessagePacketPlaySound(HarshenSounds.HOUSE_KILLED, rand.nextFloat()/2 + 0.3f, rand.nextFloat()/2 + 0.666F, housePos));
 									houseSoundTimer=0;
 								}
 					}
