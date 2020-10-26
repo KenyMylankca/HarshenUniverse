@@ -5,7 +5,6 @@ import kenymylankca.harshenuniverse.base.BaseHarshenScythe;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 
@@ -24,10 +23,10 @@ public class IronScythe extends BaseHarshenScythe
 	protected float getSpeed() {
 		return 1.4f;
 	}
-
+	
 	@Override
-	protected Item getRepairItem() {
-		return Items.IRON_INGOT;
+	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
+		return repair.getItem() == Items.IRON_INGOT;
 	}
 
 	@Override
