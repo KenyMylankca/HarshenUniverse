@@ -92,7 +92,6 @@ public class JEIHarshenUniverse implements IModPlugin
 		info(HarshenItems.GLASS_CONTAINER, 10);
 		info(HarshenItems.GLASS_CONTAINER, 11);
 		info(HarshenItems.GLASS_CONTAINER, new int[] {4,5,7,9});
-		info(HarshenItems.SOUL_SHIELD);
 		info(HarshenItems.SOUL_HARSHER_SPADE);
 		info(HarshenItems.DARK_EWYDOEN);
 		info(HarshenItems.PONTUS_CUBE);
