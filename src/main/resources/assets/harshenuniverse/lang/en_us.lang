@@ -141,6 +141,7 @@ config.nocturnal_distance=Nocturnal Torch range in blocks.
 config.true_invisibility=The feature that makes the player untargetable by hostiles if the player is invisible and has no any armor.
 config.structure_protector_delay=The delay in ticks that Harshen Universe uses to protect its structures being demolished by other structures/ruins. Lower values may cause demolition, higher values may cause Harshen Universe structures doesn't get generated.
 config.bleedable_entities=The entity name list of the entities that can bleed. Players are inclueded already. For example, if you add a custom entity called "Lord Kyallis" you should put "lord kyallis" in the list(letter case doesn't matter).
+config.repairable_items_jei_feature=If true, all the repairable items in the game (including modded) will be shown in anvil recipes with their repairing items. Such cool feature, isn't? Now you know how to repair any item! Go ahead!
 
 config.xray_blacklist=What blocks shouldnt work with the xray pendant.
 config.xray_distance_x=The distance from the player that the xray pendant should be able to find, along the x axis(The higher this is the more lag it makes)
