@@ -42,8 +42,9 @@ public class HandlerHarshenAccessoryInventory
 	@SubscribeEvent
 	public void onPlayerTick(PlayerTickEvent event)
 	{
-		if(event.player instanceof EntityOtherPlayerMP)
-			return;
+		if(event.side.isClient())
+			if(event.player instanceof EntityOtherPlayerMP)
+				return;
 		if(event.player.world.isRemote && !event.player.getEntityData().hasKey("harshenInventory"))
 			HarshenNetwork.sendToServer(new MessagePacketRequestHarshenInv());
 		

@@ -54,13 +54,14 @@ public class HandlerServerNeedingHarshenEffects
 	@SubscribeEvent
 	public void onPlayerTick(PlayerTickEvent event)
 	{
-		if(event.player instanceof EntityOtherPlayerMP)
-			return;
+		if(event.side.isClient())
+			if(event.player instanceof EntityOtherPlayerMP)
+				return;
 		
 		if(event.side.isServer())
 		{
 			if(event.player.world.provider.getDimension() == 0)
-				if(event.player.world.getSunBrightness(0) < 0.76)
+				if(!event.player.world.isDaytime())
 					if(event.player.world.isChunkGeneratedAt(HarshenWorldGen.castleChunks[0], HarshenWorldGen.castleChunks[1]))
 					{
 						HarshenDataFileManager manager = new HarshenDataFileManager(event.player.world);
