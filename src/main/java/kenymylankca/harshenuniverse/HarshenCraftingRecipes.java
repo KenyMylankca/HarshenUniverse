@@ -12,13 +12,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-public class HarshenCraftingRecipes 
+public class HarshenCraftingRecipes
 {
 	private static final String modid = HarshenUniverse.MODID;
 	private static final String group = "harshen_items";
 	
 	public static void register()
-	{		
+	{
 		GameRegistry.addShapedRecipe(new ResourceLocation(modid, "harshen_soul_ingot"), new ResourceLocation(group),
 				new ItemStack(HarshenItems.HARSHEN_SOUL_INGOT, 2),
 				" e ",

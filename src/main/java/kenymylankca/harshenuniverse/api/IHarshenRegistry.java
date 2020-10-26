@@ -24,7 +24,7 @@ public interface IHarshenRegistry
 	
 	/**
 	 * Used to register a cauldron recipe. This recipe will be automatically be added to JEI and into game.
-	 * @param input The Item that goes on the top of the Cauldron; the input item.
+	 * @param input The Item that goes on the top of the Heretic Cauldron; the input item.
 	 * @param output The Item that is created by the recipe
 	 * @param liquid The {@link CauldronLiquid} that is used for this recipe.
 	 * @see IHarshenRegistry#registerCauldronLiquid(ItemStack, ItemStack, CauldronLiquid, int)
@@ -79,10 +79,10 @@ public interface IHarshenRegistry
 
 	/**
 	 * Used to register a CauldronLiquid through forge universal buckets. 
-	 * @param fluid the fluid which the univeral bucket holds.
+	 * @param fluid the fluid which the universal bucket holds.
 	 * @param liquid The Actual Liquid that is used by the cauldron.
 	 * @param fillBy The amount that this item fills the cauldron each time. Clamped to 1 and 3.
-	 * @return The CauldronLiquid you registered. Note on some occasions it will register a new intance of the cauldron liquid.
+	 * @return The CauldronLiquid you registered. Note on some occasions it will register a new instance of the cauldron liquid.
 	 */
 	CauldronLiquid registerCauldronLiquid(FluidStack fluid, CauldronLiquid liquid, int fillBy);
 
@@ -128,7 +128,7 @@ public interface IHarshenRegistry
 
 	/**
 	 * Used to get the helper for this API.
-	 *<br>If you want somthing added to this, please make an issue on my github page, and (depending on how difficult it is)
+	 *<br>If you want something added to this, please make an issue on my github page, and (depending on how difficult it is)
 	 * I'd be happy to add it
 	 * @return the helper
 	 */
