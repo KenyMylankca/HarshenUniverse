@@ -144,12 +144,20 @@ public class HandlerServerNeedingHarshenEffects
 				hand=EnumHand.OFF_HAND;
 			ICooldownHandler cap = event.player.getHeldItem(hand).getCapability(CooldownHandler.COOLDOWN, EnumFacing.DOWN);
 			
-			if(event.player.world.getSunBrightness(0) < 0.76)
-			{
-				cap.addProgress();
-				if(cap.isReady())
-					event.player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 40, 0));
-			}
+			if(event.player.world.isRemote)
+				if(event.player.world.getSunBrightness(0) < 0.76)
+				{
+					cap.addProgress();
+					if(cap.isReady())
+						event.player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 40, 0));
+				}
+			if(!event.player.world.isRemote)
+				if(!event.player.world.isDaytime())
+				{
+					cap.addProgress();
+					if(cap.isReady())
+						event.player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 40, 0));
+				}
 		}
 	}
 	

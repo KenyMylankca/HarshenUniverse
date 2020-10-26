@@ -67,7 +67,7 @@ public class HarshenNightBlade extends ItemSword
 		if(entity instanceof EntityLivingBase && cap.isReady())
 		{
 			cap.setCooldown(1);
-			entity.playSound(HarshenSounds.NIGHT_BLADE_STAB, 1f, 1f);
+			player.playSound(HarshenSounds.NIGHT_BLADE_STAB, 1f, 1f);
 			if(player.isPotionActive(MobEffects.INVISIBILITY))
 				entity.attackEntityFrom(DamageSource.causePlayerDamage(player), 27f);
 			else
