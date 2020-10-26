@@ -31,12 +31,11 @@ import kenymylankca.harshenuniverse.handlers.CooldownHandler;
 import kenymylankca.harshenuniverse.handlers.GuiHandler;
 import kenymylankca.harshenuniverse.handlers.HandlerBlockBurn;
 import kenymylankca.harshenuniverse.handlers.HandlerBloodOnHurt;
-import kenymylankca.harshenuniverse.handlers.HandlerBurnInDaylight;
 import kenymylankca.harshenuniverse.handlers.HandlerExtraRange;
 import kenymylankca.harshenuniverse.handlers.HandlerGlassContainer;
+import kenymylankca.harshenuniverse.handlers.HandlerHarshenAccessoryInventory;
 import kenymylankca.harshenuniverse.handlers.HandlerHarshenArmourEffects;
 import kenymylankca.harshenuniverse.handlers.HandlerHarshenDrops;
-import kenymylankca.harshenuniverse.handlers.HandlerHarshenAccessoryInventory;
 import kenymylankca.harshenuniverse.handlers.HandlerPontusAllowed;
 import kenymylankca.harshenuniverse.handlers.HandlerPotionEffects;
 import kenymylankca.harshenuniverse.handlers.HandlerServerNeedingHarshenEffects;
@@ -49,9 +48,9 @@ import kenymylankca.harshenuniverse.structures.pontus.FauxCauldronStructure;
 import kenymylankca.harshenuniverse.tileentity.TileEntityBloodFactory;
 import kenymylankca.harshenuniverse.tileentity.TileEntityBloodVessel;
 import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenDimensionalGate;
-import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenRitualPedestal;
 import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenDisplayBlock;
 import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenMagicTable;
+import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenRitualPedestal;
 import kenymylankca.harshenuniverse.tileentity.TileEntityHarshenSpawner;
 import kenymylankca.harshenuniverse.tileentity.TileEntityHereticCauldron;
 import kenymylankca.harshenuniverse.tileentity.TileEntityHereticCauldronTop;
@@ -163,8 +162,7 @@ public class CommonProxy
     		new HandlerBlockBurn(),
     		new HandlerVillagerSpawn(),
     		new HandlerServerNeedingHarshenEffects(),
-    		new HandlerExtraRange(),
-    		new HandlerBurnInDaylight());
+    		new HandlerExtraRange());
     	
     	GameRegistry.registerWorldGenerator(new HarshenWorldGen(), 0);
     	
