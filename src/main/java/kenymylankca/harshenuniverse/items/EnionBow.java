@@ -8,6 +8,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
@@ -21,6 +22,11 @@ public class EnionBow extends BaseHarshenBow
 		super(HarshenSounds.LIGHTNING_HIT);
 		setUnlocalizedName("enion_bow");
 		setRegistryName("enion_bow");
+	}
+	
+	@Override
+	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
+		return repair.getItem() == Items.REDSTONE;
 	}
 
 	@Override
@@ -38,8 +44,8 @@ public class EnionBow extends BaseHarshenBow
 		if(entity instanceof EntityLivingBase && player.getCooledAttackStrength(1) == 1)
 		{
 			player.playSound(HarshenSounds.LIGHTNING_HIT, 0.8f, 1.3f);
-			((EntityLivingBase)entity).addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 70));
-			((EntityLivingBase)entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 30, 7));
+			((EntityLivingBase)entity).addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 30));
+			((EntityLivingBase)entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 45, 7));
 		}
 		return super.onLeftClickEntity(stack, player, entity);
 	}
