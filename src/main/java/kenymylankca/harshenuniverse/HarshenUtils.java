@@ -1081,4 +1081,27 @@ public class HarshenUtils
     	AxisAlignedBB t = new AxisAlignedBB(pos).grow(distance);
     	return worldIn.getEntitiesWithinAABB(EntityPlayer.class, t);
     }
+    
+    public static void makeEntityLookAt(EntityLivingBase entityLiving, double pX, double pY, double pZ)
+    {
+        World world = entityLiving.world;
+        int x = (int) entityLiving.posX;
+        int y = (int) entityLiving.posY + 1;
+        int z = (int) entityLiving.posZ;
+        double dirx = x - pX;
+        double diry = y - pY;
+        double dirz = z - pZ;
+        double len = Math.sqrt(dirx * dirx + diry * diry + dirz * dirz);
+        dirx /= len;
+        diry /= len;
+        dirz /= len;
+        double pitch = Math.asin(diry);
+        double yaw = Math.atan2(dirz, dirx);
+        // to degree
+        pitch = pitch * 180.0 / Math.PI;
+        yaw = yaw * 180.0 / Math.PI;
+        yaw += 90f;
+        entityLiving.rotationPitch = (float) pitch;
+        entityLiving.rotationYaw = (float) yaw;
+    }
 }
