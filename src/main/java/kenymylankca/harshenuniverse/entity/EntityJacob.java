@@ -70,10 +70,10 @@ public class EntityJacob extends EntityMob
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(111);
-		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(4d);
+		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(5d);
 		this.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(3d);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4d);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3d);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.4d);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8d);
 		this.isImmuneToFire = false;
 	}
@@ -82,13 +82,13 @@ public class EntityJacob extends EntityMob
 	public void onLivingUpdate()
 	{
 		healingCounter++;
-		if(healingCounter > 23)
+		if(healingCounter > 22)
 		{
 			healingCounter=0;
-			this.heal(2.1f);
+			this.heal(2.2f);
 		}
 		
-		if(this.getAttackTarget() instanceof EntityPlayer && !this.isSwingInProgress && rand.nextFloat() < 0.19F && healingCounter > 22 && !draining)
+		if(this.getAttackTarget() instanceof EntityPlayer && !this.isSwingInProgress && rand.nextFloat() < 0.1F && healingCounter == 0 && !draining)
 			if(!((EntityPlayer)this.getAttackTarget()).isCreative())
 			{
 				draining = true;
@@ -115,13 +115,13 @@ public class EntityJacob extends EntityMob
 			if(!HarshenUtils.hasJaguarArmorSet(player))
 				if(drainingCounter % 10 == 0)
 				{
-					player.attackEntityFrom(new DamageSourceJacobDraining(), 1);
+					player.attackEntityFrom(new DamageSourceJacobDraining(), 2);
 					if(rand.nextFloat() < 0.2)
 						player.getFoodStats().setFoodLevel(player.getFoodStats().getFoodLevel() - 1);
-					this.heal(1);
+					this.heal(1.9f);
 				}
 			
-			if(drainingCounter > drainDuration || player.getDistanceSqToCenter(this.getPosition()) > 60)
+			if(drainingCounter > drainDuration || player.getDistanceSqToCenter(this.getPosition()) > 65)
 			{
 				draining=false;
 				drainingCounter=0;
