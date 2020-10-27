@@ -7,8 +7,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 
-public class MessagePacketTileEntityBloodPlacerUpdated extends BaseMessagePacket<MessagePacketTileEntityBloodPlacerUpdated>{
-
+public class MessagePacketTileEntityBloodPlacerUpdated extends BaseMessagePacket<MessagePacketTileEntityBloodPlacerUpdated>
+{
 	public MessagePacketTileEntityBloodPlacerUpdated() {
 	}
 	

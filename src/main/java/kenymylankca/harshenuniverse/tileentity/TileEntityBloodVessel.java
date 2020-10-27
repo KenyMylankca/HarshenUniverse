@@ -79,7 +79,7 @@ public class TileEntityBloodVessel extends BaseHarshenTileEntity implements IHud
 		for(int i = 0; i < bloodLevel / (capacity / 10); i++)
 			for(int x = 0; x < 3; x++)
 				for(int z = 0; z < 3; z++)
-					HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.BLOOD, new Vec3d(this.pos).addVector((0.15d*x) + 0.35d, (Float.valueOf(i * (capacity / 10)) / Float.valueOf(capacity)) * 0.7f, (0.15d*z) + 0.35d), Vec3d.ZERO, 1f, true);
+					HarshenUniverse.commonProxy.spawnParticle(EnumHarshenParticle.BLOOD, new Vec3d(this.pos).addVector((0.15d*x) + 0.35d, (Float.valueOf(i * (capacity / 10)) / Float.valueOf(capacity)) * 0.7f, (0.15d*z) + 0.35d), Vec3d.ZERO, 1f, true);
 		if(BloodVessel.updateMap.containsKey(pos))
 		{
 			world.setBlockState(pos, world.getBlockState(pos).getBlock().getStateFromMeta(BloodVessel.updateMap.get(pos)), 16);

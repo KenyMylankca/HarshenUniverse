@@ -51,7 +51,7 @@ public class TileEntityHarshenMagicTable extends BaseTileEntityHarshenInventory
 			}
 			else
 				for(int i = 0; i < (fuseTime / 20f) * (fuseTime / 20f); i++)
-					HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.ITEM, new Vec3d(pos).addVector(0.5, 1.25, 0.5), 
+					HarshenUniverse.commonProxy.spawnParticle(EnumHarshenParticle.ITEM, new Vec3d(pos).addVector(0.5, 1.25, 0.5), 
 							new Vec3d(( MathHelper.clamp(new Random().nextDouble(), 0.15, 0.85) - 0.5D) / 30D, 
 									(new Random().nextBoolean() ? -1 : 1 ) / 50D, (MathHelper.clamp(new Random().nextDouble(), 0.15, 0.85) - 0.5D) / 30D),
 							1.5f, false, overstandingRecipe.getOutput());

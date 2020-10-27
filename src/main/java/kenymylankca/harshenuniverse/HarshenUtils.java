@@ -749,7 +749,7 @@ public class HarshenUtils
 		if(event instanceof LivingEvent && ((LivingEvent)event).getEntity() instanceof EntityPlayer)
 			return (EntityPlayer)((LivingEvent)event).getEntity();
 		if(event instanceof RenderGameOverlayEvent || event instanceof RenderWorldLastEvent || event instanceof ClientTickEvent)
-			return HarshenUniverse.proxy.getPlayer();
+			return HarshenUniverse.commonProxy.getPlayer();
 		if(event instanceof PlayerTickEvent)
 			return ((PlayerTickEvent)event).player;
 		if(event instanceof PlayerEvent)

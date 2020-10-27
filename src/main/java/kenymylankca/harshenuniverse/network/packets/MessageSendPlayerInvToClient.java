@@ -8,8 +8,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
 
-public class MessageSendPlayerInvToClient extends BaseMessagePacket<MessageSendPlayerInvToClient>{
-
+public class MessageSendPlayerInvToClient extends BaseMessagePacket<MessageSendPlayerInvToClient>
+{
 	public MessageSendPlayerInvToClient() {
 	}
 	

@@ -7,8 +7,8 @@ import kenymylankca.harshenuniverse.base.BaseMessagePacket;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.Vec3d;
 
-public class MessagePacketSummonFirework extends BaseMessagePacket<MessagePacketSummonFirework>{
-
+public class MessagePacketSummonFirework extends BaseMessagePacket<MessagePacketSummonFirework>
+{
 	@Override
 	public void fromBytes(ByteBuf buf) {		
 	}

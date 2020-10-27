@@ -46,6 +46,6 @@ public class HarshenFluids
 	public static void regRenders()
 	{
 		for(Block fluidBlock : BLOCK_MAP.keySet())
-	        HarshenUniverse.proxy.registerFluidBlockRendering(fluidBlock, BLOCK_MAP.get(fluidBlock));
+	        HarshenUniverse.commonProxy.registerFluidBlockRendering(fluidBlock, BLOCK_MAP.get(fluidBlock));
 	}
 }

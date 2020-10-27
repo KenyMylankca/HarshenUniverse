@@ -45,7 +45,7 @@ public class MessagePacketPlayerTeleportEffects extends BaseMessagePacket<Messag
             double d1 = blockpos.x + (double)(player.getPosition().getX() - blockpos.x) * d0 + (world.rand.nextDouble() - 0.5D) + 0.5D;
             double d2 = blockpos.y + (double)(player.getPosition().getY() - blockpos.y) * d0 + world.rand.nextDouble() - 0.5D;
             double d3 = blockpos.z + (double)(player.getPosition().getZ() - blockpos.z) * d0 + (world.rand.nextDouble() - 0.5D) + 0.5D;
-            HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.PORTAL, new Vec3d(d1, d2, d3), new Vec3d(f, f1, f2), 1f, false);
+            HarshenUniverse.commonProxy.spawnParticle(EnumHarshenParticle.PORTAL, new Vec3d(d1, d2, d3), new Vec3d(f, f1, f2), 1f, false);
         }
 	}
 }

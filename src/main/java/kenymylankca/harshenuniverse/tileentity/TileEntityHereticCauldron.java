@@ -130,7 +130,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 			if(level > 0)
 				level --;
 			for(int i = 0; i < 35; i++)
-				HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.CAULDRON,
+				HarshenUniverse.commonProxy.spawnParticle(EnumHarshenParticle.CAULDRON,
 						new Vec3d(pos).addVector((new Random().nextDouble() / 2) + 0.25D, yPosOfDrains[layersDrained], (new Random().nextDouble() / 2) + 0.25D), new Vec3d(0, 0.01d, 0), 1f, false,
 						workingFluid.getStateOrLoc());
 			reactivate(1);
@@ -345,8 +345,8 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 		pedestals.clear();
 		blockErrorList.clear();
 		renderBlockErrorList.clear();
-		if(world.isRemote && setRecipe && players[0] != null && players[0].getUniqueID().equals(HarshenUniverse.proxy.getPlayer().getUniqueID()))
-			HarshenUniverse.proxy.resetErroredPositions();
+		if(world.isRemote && setRecipe && players[0] != null && players[0].getUniqueID().equals(HarshenUniverse.commonProxy.getPlayer().getUniqueID()))
+			HarshenUniverse.commonProxy.resetErroredPositions();
 		erroredPositions.clear();
 		ArrayList<Integer> maxList = new ArrayList<>(HarshenUtils.toArray(-4, 5));
 		maxList.add(Math.abs(maxList.get(0)));
@@ -420,7 +420,7 @@ public class TileEntityHereticCauldron extends BaseTileEntityHarshenSingleItemIn
 						blockErrorList.get(0) == Blocks.BARRIER ? I18n.translateToLocal("ritual.not") + " " + blockErrorList.get(1).getLocalizedName() : blockErrorList.get(0).getLocalizedName(),
 						blockErrorList.get(1).getLocalizedName()), false);
 				for(int i = 0; i < erroredPositions.size(); i++)
-					HarshenUniverse.proxy.addErroredPosition(new FaceRenderer(erroredPositions.get(i), renderBlockErrorList.get(i)));
+					HarshenUniverse.commonProxy.addErroredPosition(new FaceRenderer(erroredPositions.get(i), renderBlockErrorList.get(i)));
 			}
 			else if(this.overstandingRecipe == null)
 				players[0].sendStatusMessage(new TextComponentTranslation("ritual.fail.recipe"), false);

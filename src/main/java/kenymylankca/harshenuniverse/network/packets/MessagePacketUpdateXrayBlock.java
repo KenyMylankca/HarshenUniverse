@@ -7,8 +7,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
 
-public class MessagePacketUpdateXrayBlock extends BaseMessagePacket<MessagePacketUpdateXrayBlock>{
-
+public class MessagePacketUpdateXrayBlock extends BaseMessagePacket<MessagePacketUpdateXrayBlock>
+{
 	public MessagePacketUpdateXrayBlock() {
 	}
 	

@@ -37,7 +37,7 @@ public class TileEntityPedestalSlab extends BaseTileEntityHarshenSingleItemInven
 						for(int i = 0; i < 8; i ++)
 						{
 							Vec3d vec = new Vec3d(this.pos.add(x, 0, z)).addVector(randPos(), -0.1, randPos());
-							HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.BLOOD, vec, 
+							HarshenUniverse.commonProxy.spawnParticle(EnumHarshenParticle.BLOOD, vec, 
 									new Vec3d((this.pos.getX() + 0.5 - vec.x) / 20D, (this.pos.getY() + 0.5 - vec.y) / 20D, (this.pos.getZ() + 0.5 - vec.z) / 20D), 1f, false);
 						}
 		
@@ -138,7 +138,7 @@ public class TileEntityPedestalSlab extends BaseTileEntityHarshenSingleItemInven
 				{
 					world.setBlockToAir(pos.add(x, 0, z));
 					for(int i = 0; i < new Random().nextInt(20) + 100; i++)
-						HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.BLOOD, new Vec3d(pos.add(x, 0, z)).addVector(randPos(), 0, randPos()), new Vec3d(0, 0.01, 0), 1f, false);
+						HarshenUniverse.commonProxy.spawnParticle(EnumHarshenParticle.BLOOD, new Vec3d(pos.add(x, 0, z)).addVector(randPos(), 0, randPos()), new Vec3d(0, 0.01, 0), 1f, false);
 				}
 	}
 }

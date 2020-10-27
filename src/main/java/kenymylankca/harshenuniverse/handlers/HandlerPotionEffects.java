@@ -55,12 +55,12 @@ public class HandlerPotionEffects
 				if(!attribute.hasModifier(modifier))	
 					attribute.applyModifier(modifier);
 			}
-			if(event.getEntity().world.isRemote && !Minecraft.getMinecraft().entityRenderer.isShaderActive() && event.getEntityLiving().equals(HarshenUniverse.proxy.getPlayer()))
+			if(event.getEntity().world.isRemote && !Minecraft.getMinecraft().entityRenderer.isShaderActive() && event.getEntityLiving().equals(HarshenUniverse.commonProxy.getPlayer()))
 				Minecraft.getMinecraft().entityRenderer.loadShader(new ResourceLocation("minecraft", "shaders/post/desaturate.json"));
 		}
 		else if(arrayLivingNoSoul.contains(event.getEntityLiving()))
 		{
-			if(event.getEntity().world.isRemote && event.getEntityLiving().equals(HarshenUniverse.proxy.getPlayer()))
+			if(event.getEntity().world.isRemote && event.getEntityLiving().equals(HarshenUniverse.commonProxy.getPlayer()))
 			{
 				arrayLivingNoSoul.remove(event.getEntityLiving());
 				Minecraft.getMinecraft().entityRenderer.stopUseShader();

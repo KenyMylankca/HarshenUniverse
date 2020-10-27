@@ -34,7 +34,7 @@ public class HarshenUniverse
     public static boolean hasLoaded;
 
     @SidedProxy(clientSide = "kenymylankca.harshenuniverse.proxy.ClientProxy", serverSide = "kenymylankca.harshenuniverse.proxy.ServerProxy")
-    public static CommonProxy proxy;
+    public static CommonProxy commonProxy;
     
     public static final CreativeTabs harshenTab = new HarshenTab();
     
@@ -51,20 +51,20 @@ public class HarshenUniverse
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) 
     {
-    	proxy.preInit(event);
-    	proxy.regRenders(event);
+    	commonProxy.preInit(event);
+    	commonProxy.regRenders(event);
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) 
     {
-    	proxy.init(event);
+    	commonProxy.init(event);
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) 
     {
-    	proxy.postInit(event);
+    	commonProxy.postInit(event);
 		hasLoaded = true;
     }
     

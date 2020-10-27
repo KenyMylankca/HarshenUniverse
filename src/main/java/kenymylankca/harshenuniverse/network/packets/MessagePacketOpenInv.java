@@ -6,8 +6,8 @@ import kenymylankca.harshenuniverse.base.BaseMessagePacket;
 import kenymylankca.harshenuniverse.handlers.GuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
 
-public class MessagePacketOpenInv extends BaseMessagePacket<MessagePacketOpenInv>{
-
+public class MessagePacketOpenInv extends BaseMessagePacket<MessagePacketOpenInv>
+{
 	@Override
 	public void fromBytes(ByteBuf buf) {		
 		

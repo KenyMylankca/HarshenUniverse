@@ -9,8 +9,7 @@ public class MessagePacketKillAllWithTag extends BaseMessagePacket<MessagePacket
 {
 	private String tag;
 	
-	public MessagePacketKillAllWithTag()
-	{
+	public MessagePacketKillAllWithTag() {
 		
 	}
 	

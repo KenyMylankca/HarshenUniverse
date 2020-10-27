@@ -78,7 +78,7 @@ public class EntityThrown extends EntityThrowable
 		for(int i = 0; i < 16; i++)
 			try
 			{
-				((BaseHarshenParticle)HarshenUniverse.proxy.spawnParticle(isLocation() ? EnumHarshenParticle.CAULDRON : EnumHarshenParticle.ITEM, new Vec3d(this.posX, this.posY, this.posZ),
+				((BaseHarshenParticle)HarshenUniverse.commonProxy.spawnParticle(isLocation() ? EnumHarshenParticle.CAULDRON : EnumHarshenParticle.ITEM, new Vec3d(this.posX, this.posY, this.posZ),
 						new Vec3d(((double)this.rand.nextFloat() - 0.5D) / 30D, ((double)this.rand.nextFloat() - 0.5D) / 30D, ((double)this.rand.nextFloat() - 0.5D) / 30D),
 						3f, false, isLocation() ? location : stack)).setParticleGravity(1f);
 			}

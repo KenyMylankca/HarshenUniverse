@@ -5,8 +5,8 @@ import kenymylankca.harshenuniverse.base.BaseMessagePacket;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
 
-public class MessagePacketHitWithRange extends BaseMessagePacket<MessagePacketHitWithRange>{
-
+public class MessagePacketHitWithRange extends BaseMessagePacket<MessagePacketHitWithRange>
+{
 	private int entityId;
 
     public MessagePacketHitWithRange() { 
@@ -34,5 +34,4 @@ public class MessagePacketHitWithRange extends BaseMessagePacket<MessagePacketHi
 	{
         player.attackTargetEntityWithCurrentItem(player.world.getEntityByID(message.entityId));
     }
-
 }

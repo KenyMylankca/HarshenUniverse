@@ -18,7 +18,7 @@ public class PontusWorldProvider extends WorldProviderHell
 	public void init() {
 		this.hasSkyLight = false;
 		this.biomeProvider = new PontusBiomeProvider();
-		HarshenUniverse.proxy.setWorldRenderer(this);
+		HarshenUniverse.commonProxy.setWorldRenderer(this);
 	}
 	
 	@Override

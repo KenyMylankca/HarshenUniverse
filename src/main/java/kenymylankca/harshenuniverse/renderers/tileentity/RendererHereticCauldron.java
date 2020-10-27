@@ -50,7 +50,7 @@ public class RendererHereticCauldron extends TileEntitySpecialRenderer<TileEntit
 				levelMove.put(te.getPos(), levelMove.get(te.getPos()) + (Math.min(levelMove.get(te.getPos()), te.getLevel()) == te.getLevel()? - moveBy : moveBy));
 			}
 			if(te.getLevel() > 0)
-				particleMap.put(te.getPos(), HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.CAULDRON_LIQUID, new Vec3d(te.getPos()).addVector(0.5D, MathHelper.clamp(Math.sin(serialMove.get(te.getPos()) / 200d) / 50d + 0.05D + levelMove.get(te.getPos()) / 4d, 0.2D, 1D), 0.5D), Vec3d.ZERO, -1, true, te.getFluid().getStateOrLoc()));
+				particleMap.put(te.getPos(), HarshenUniverse.commonProxy.spawnParticle(EnumHarshenParticle.CAULDRON_LIQUID, new Vec3d(te.getPos()).addVector(0.5D, MathHelper.clamp(Math.sin(serialMove.get(te.getPos()) / 200d) / 50d + 0.05D + levelMove.get(te.getPos()) / 4d, 0.2D, 1D), 0.5D), Vec3d.ZERO, -1, true, te.getFluid().getStateOrLoc()));
 			GlStateManager.translate(x, y, z);
 			GlStateManager.translate(0.5f, 1.45f,0.5f);
 			boolean flag = true;
@@ -73,7 +73,7 @@ public class RendererHereticCauldron extends TileEntitySpecialRenderer<TileEntit
 						flag = false;
 						for(int i = 0; i < 45; i ++)
 						{
-							HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.ITEM, 
+							HarshenUniverse.commonProxy.spawnParticle(EnumHarshenParticle.ITEM, 
 									new Vec3d(te.getPos()).addVector(0.5d, 0.6d + (te.getActiveTimer() >= 130? (te.getActiveTimer()-130) / 40f : 0), 0.5d), Vec3d.ZERO, 1f, false, stack);
 						}
 					}
@@ -81,7 +81,7 @@ public class RendererHereticCauldron extends TileEntitySpecialRenderer<TileEntit
 						for(int i = 0; i < 15; i ++)
 						{
 							Vec3d vec = new Vec3d((new Random().nextDouble() - 0.5D) / 1.5D, new Random().nextDouble() / 4D, (new Random().nextDouble() - 0.5D) / 1.5D);
-							HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.CAULDRON, new Vec3d(te.getPos()).addVector(0.5d, 0.225d, 0.5d).add(vec), 
+							HarshenUniverse.commonProxy.spawnParticle(EnumHarshenParticle.CAULDRON, new Vec3d(te.getPos()).addVector(0.5d, 0.225d, 0.5d).add(vec), 
 									new Vec3d(-vec.x / 20D, -vec.y / 20D, -vec.z / 20D), 1f, false, te.getWorkingFluid().getStateOrLoc());
 						}
 				}	

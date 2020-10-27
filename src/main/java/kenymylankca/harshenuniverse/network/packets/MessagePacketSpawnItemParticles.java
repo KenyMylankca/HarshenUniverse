@@ -45,35 +45,28 @@ public class MessagePacketSpawnItemParticles extends BaseMessagePacket<MessagePa
 		this.disableMoving = buf.readBoolean();
 		this.timesSpawn = buf.readInt();
 		this.tag = ByteBufUtils.readUTF8String(buf);
-
 	}
 
 	@Override
-	public void toBytes(ByteBuf buf) {		
+	public void toBytes(ByteBuf buf)
+	{		
 		buf.writeDouble(position.x);
 		buf.writeDouble(position.y);
 		buf.writeDouble(position.z);
-		
 		buf.writeDouble(directionSpeed.x);
 		buf.writeDouble(directionSpeed.y);
 		buf.writeDouble(directionSpeed.z);
-		
 		ByteBufUtils.writeItemStack(buf, stack);
-		
 		buf.writeFloat(scale);
-		
 		buf.writeBoolean(disableMoving);
-		
 		buf.writeInt(timesSpawn);
-		
 		ByteBufUtils.writeUTF8String(buf, tag);
-		
 	}
 
 	@Override
 	public void onReceived(MessagePacketSpawnItemParticles message, EntityPlayer player) {	
 		for(int i = 0; i < message.timesSpawn; i++)
-			((ParticleItem)HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.ITEM, message.position, message.directionSpeed, message.scale, message.disableMoving, message.stack))
+			((ParticleItem)HarshenUniverse.commonProxy.spawnParticle(EnumHarshenParticle.ITEM, message.position, message.directionSpeed, message.scale, message.disableMoving, message.stack))
 				.addToList(message.tag);
 	}
 }

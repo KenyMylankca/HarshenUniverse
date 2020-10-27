@@ -31,28 +31,23 @@ public class MessagePacketSpawnBloodParticle extends BaseMessagePacket<MessagePa
 		this.directionSpeed = new Vec3d(buf.readDouble(), buf.readDouble(), buf.readDouble());
 		this.scale = buf.readFloat();
 		this.disableMoving = buf.readBoolean();
-
 	}
 
 	@Override
-	public void toBytes(ByteBuf buf) {		
+	public void toBytes(ByteBuf buf)
+	{		
 		buf.writeDouble(position.x);
 		buf.writeDouble(position.y);
 		buf.writeDouble(position.z);
-		
 		buf.writeDouble(directionSpeed.x);
 		buf.writeDouble(directionSpeed.y);
 		buf.writeDouble(directionSpeed.z);
-				
 		buf.writeFloat(scale);
-		
 		buf.writeBoolean(disableMoving);
-		
-		
 	}
 
 	@Override
 	public void onReceived(MessagePacketSpawnBloodParticle message, EntityPlayer player) {	
-		HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.BLOOD, message.position, message.directionSpeed, message.scale, message.disableMoving);
+		HarshenUniverse.commonProxy.spawnParticle(EnumHarshenParticle.BLOOD, message.position, message.directionSpeed, message.scale, message.disableMoving);
 	}
 }
