@@ -14,7 +14,6 @@ public class ParticleCauldronTop extends BaseHarshenParticle
 		super(world, xCoordIn, yCoordIn, zCoordIn, 0, 0, 0, par14, true, location);
 		setCauldronTop();
 	}
-
 	
 	public ParticleCauldronTop(World world, double xCoordIn, double yCoordIn, double zCoordIn, float par14, IBlockState state) {
 		this(world, xCoordIn, yCoordIn, zCoordIn, par14, (ResourceLocation)null);
@@ -48,5 +47,4 @@ public class ParticleCauldronTop extends BaseHarshenParticle
 		particleAge = 0;
 		super.onUpdate();
 	}
-
 }

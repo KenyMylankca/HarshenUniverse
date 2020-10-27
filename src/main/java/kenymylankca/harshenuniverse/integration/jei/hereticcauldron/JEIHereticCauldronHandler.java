@@ -1,4 +1,4 @@
-package kenymylankca.harshenuniverse.intergration.jei.hereticcauldron;
+package kenymylankca.harshenuniverse.integration.jei.hereticcauldron;
 
 import kenymylankca.harshenuniverse.base.BaseJeiHandler;
 import kenymylankca.harshenuniverse.recipes.CauldronRecipes;

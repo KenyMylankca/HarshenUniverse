@@ -7,11 +7,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
 public class ParticleCauldron extends BaseHarshenParticle
-{ 	
-	
+{
 	private int fxLayer;
 	private IBlockState state;
-
 	
     public ParticleCauldron(World world, ResourceLocation location, double xCoordIn, double yCoordIn, double zCoordIn, double motionXIn, double motionYIn, double motionZIn, float par14, boolean disableMoving)
     {

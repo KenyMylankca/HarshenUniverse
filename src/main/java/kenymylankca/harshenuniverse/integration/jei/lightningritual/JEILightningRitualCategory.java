@@ -1,4 +1,4 @@
-package kenymylankca.harshenuniverse.intergration.jei.lightningritual;
+package kenymylankca.harshenuniverse.integration.jei.lightningritual;
 
 import java.awt.Dimension;
 import java.util.List;

@@ -1,4 +1,4 @@
-package kenymylankca.harshenuniverse.intergration.noodle;
+package kenymylankca.harshenuniverse.integration.noodle;
 
 import java.util.ArrayList;
 

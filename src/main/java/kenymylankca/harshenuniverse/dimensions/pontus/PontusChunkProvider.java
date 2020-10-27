@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 import kenymylankca.harshenuniverse.HarshenUtils;
 import kenymylankca.harshenuniverse.biomes.PontusBiomeProvider;
 import kenymylankca.harshenuniverse.fluids.HarshenFluids;
-import kenymylankca.harshenuniverse.intergration.noodle.NoodleEvent;
+import kenymylankca.harshenuniverse.integration.noodle.NoodleEvent;
 import kenymylankca.harshenuniverse.worldgenerators.pontus.PontusCaveGenerator;
 import kenymylankca.harshenuniverse.worldgenerators.pontus.PontusRavineGenerator;
 import net.minecraft.block.Block;

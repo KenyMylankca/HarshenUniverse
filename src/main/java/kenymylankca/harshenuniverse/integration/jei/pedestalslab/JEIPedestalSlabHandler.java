@@ -1,4 +1,4 @@
-package kenymylankca.harshenuniverse.intergration.jei.pedestalslab;
+package kenymylankca.harshenuniverse.integration.jei.pedestalslab;
 
 import kenymylankca.harshenuniverse.base.BaseJeiHandler;
 import kenymylankca.harshenuniverse.recipes.PedestalSlabRecipes;

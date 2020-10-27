@@ -1,4 +1,4 @@
-package kenymylankca.harshenuniverse.intergration.jei.lightningritual;
+package kenymylankca.harshenuniverse.integration.jei.lightningritual;
 
 import kenymylankca.harshenuniverse.base.BaseJeiHandler;
 import kenymylankca.harshenuniverse.recipes.LightningRitualRecipes;

@@ -1,4 +1,4 @@
-package kenymylankca.harshenuniverse.intergration.jei.lightningritual;
+package kenymylankca.harshenuniverse.integration.jei.pedestalslab;
 
 import java.util.List;
 
@@ -6,22 +6,20 @@ import javax.annotation.Nonnull;
 
 import com.google.common.collect.ImmutableList;
 
-import kenymylankca.harshenuniverse.api.HarshenStack;
 import kenymylankca.harshenuniverse.base.BaseJeiWrapper;
-import kenymylankca.harshenuniverse.recipes.LightningRitualRecipes;
+import kenymylankca.harshenuniverse.recipes.PedestalSlabRecipes;
 import mezz.jei.api.ingredients.IIngredients;
 import net.minecraft.item.ItemStack;
 
-public class JEILightningRitualWrapper extends BaseJeiWrapper
+public class JEIPedestalSlabWrapper extends BaseJeiWrapper
 {
 	private final List<List<ItemStack>> input;
 	private final ItemStack output;
 
 	@SuppressWarnings("unchecked")
-	public JEILightningRitualWrapper(LightningRitualRecipes recipe) {
+	public JEIPedestalSlabWrapper(PedestalSlabRecipes recipe) {
 		ImmutableList.Builder<List<ItemStack>> builder = ImmutableList.builder();
-		for(HarshenStack hStack : recipe.getInputs())
-			builder.add(hStack.getStackList());
+		builder.add(recipe.getInput().getStackList());
 		input = builder.build();
 		output = recipe.getOutput();
 	}

@@ -1,4 +1,4 @@
-package kenymylankca.harshenuniverse.intergration.jei.hereticritual;
+package kenymylankca.harshenuniverse.integration.jei.hereticritual;
 
 import kenymylankca.harshenuniverse.base.BaseJeiHandler;
 import kenymylankca.harshenuniverse.recipes.HereticRitualRecipes;

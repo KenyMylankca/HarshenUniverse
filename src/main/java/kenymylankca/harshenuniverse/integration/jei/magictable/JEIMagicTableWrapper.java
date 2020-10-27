@@ -1,4 +1,4 @@
-package kenymylankca.harshenuniverse.intergration.jei.magictable;
+package kenymylankca.harshenuniverse.integration.jei.magictable;
 
 import java.util.List;
 

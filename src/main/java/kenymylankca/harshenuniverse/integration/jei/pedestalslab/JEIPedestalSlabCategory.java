@@ -1,4 +1,4 @@
-package kenymylankca.harshenuniverse.intergration.jei.pedestalslab;
+package kenymylankca.harshenuniverse.integration.jei.pedestalslab;
 
 import kenymylankca.harshenuniverse.base.BaseJeiCategory;
 import mezz.jei.api.gui.IRecipeLayout;

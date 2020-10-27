@@ -21,14 +21,13 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.UniversalBucket;
 
-public class ParticleItem extends BaseHarshenParticle {
-
+public class ParticleItem extends BaseHarshenParticle
+{
 	public static HashMap<String, ArrayList<ParticleItem>> itemMap = new HashMap<>();
-		
 	private int fxLayer = 1;
 	
-	public ParticleItem(World world, double xCoordIn, double yCoordIn, double zCoordIn, double motionXIn,
-			double motionYIn, double motionZIn, float par14, boolean disableMoving, ItemStack stack) {
+	public ParticleItem(World world, double xCoordIn, double yCoordIn, double zCoordIn, double motionXIn, double motionYIn, double motionZIn, float par14, boolean disableMoving, ItemStack stack)
+	{
 		super(world, xCoordIn, yCoordIn, zCoordIn, motionXIn, motionYIn, motionZIn, par14, disableMoving);
 		this.setParticleTexture(Minecraft.getMinecraft().getRenderItem().getItemModelMesher().getParticleIcon(stack.getItem(), stack.getMetadata()));
 		if(stack.getItem() instanceof ItemBlock)
@@ -103,5 +102,4 @@ public class ParticleItem extends BaseHarshenParticle {
 	protected int getYIndex() {
 		return new Random().nextInt(8);
 	}
-
 }

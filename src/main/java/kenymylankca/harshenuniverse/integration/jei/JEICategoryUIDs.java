@@ -1,4 +1,4 @@
-package kenymylankca.harshenuniverse.intergration.jei;
+package kenymylankca.harshenuniverse.integration.jei;
 
 import kenymylankca.harshenuniverse.HarshenUniverse;
 

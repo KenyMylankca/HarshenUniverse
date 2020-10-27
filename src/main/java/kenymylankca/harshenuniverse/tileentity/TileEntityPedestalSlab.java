@@ -36,9 +36,9 @@ public class TileEntityPedestalSlab extends BaseTileEntityHarshenSingleItemInven
 					if(!(x == 0 && z == 0))
 						for(int i = 0; i < 8; i ++)
 						{
-							Vec3d pos = new Vec3d(this.pos.add(x, 0, z)).addVector(randPos(), -0.1, randPos());
-							HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.BLOOD, pos, 
-									new Vec3d((this.pos.getX() + 0.5 - pos.x) / 20D, (this.pos.getY() + 0.5 - pos.y) / 20D, (this.pos.getZ() + 0.5 - pos.z) / 20D), 1f, false);
+							Vec3d vec = new Vec3d(this.pos.add(x, 0, z)).addVector(randPos(), -0.1, randPos());
+							HarshenUniverse.proxy.spawnParticle(EnumHarshenParticle.BLOOD, vec, 
+									new Vec3d((this.pos.getX() + 0.5 - vec.x) / 20D, (this.pos.getY() + 0.5 - vec.y) / 20D, (this.pos.getZ() + 0.5 - vec.z) / 20D), 1f, false);
 						}
 		
 		if(!checkForCompletion(true) && isActive())
