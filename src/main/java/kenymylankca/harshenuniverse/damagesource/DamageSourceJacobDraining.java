@@ -8,11 +8,11 @@ import net.minecraft.util.text.TextComponentTranslation;
 public class DamageSourceJacobDraining extends DamageSource
 {
 	public DamageSourceJacobDraining() {
-		super("drained");
+		super("drained_by_jacob");
 	}
 	
 	@Override
 	public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn) {
-		return new TextComponentTranslation("death.attack.drained", entityLivingBaseIn.getDisplayName());
+		return new TextComponentTranslation("death.drained_by_jacob", entityLivingBaseIn.getDisplayName());
 	}
 }

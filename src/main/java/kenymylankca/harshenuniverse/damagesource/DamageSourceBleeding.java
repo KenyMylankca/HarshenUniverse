@@ -13,6 +13,6 @@ public class DamageSourceBleeding extends DamageSource
 	
 	@Override
 	public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn) {
-		return new TextComponentTranslation("death.attack.bleeding", entityLivingBaseIn.getDisplayName());
+		return new TextComponentTranslation("death.bleeding", entityLivingBaseIn.getDisplayName());
 	}
 }

@@ -13,6 +13,6 @@ public class DamageSourceHarshed extends DamageSource
 	
 	@Override
 	public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn) {
-		return new TextComponentTranslation("death.attack.harshed", entityLivingBaseIn.getDisplayName());
+		return new TextComponentTranslation("death.harshed", entityLivingBaseIn.getDisplayName());
 	}
 }
