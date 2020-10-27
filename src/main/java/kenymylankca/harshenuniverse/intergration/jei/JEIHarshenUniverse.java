@@ -115,6 +115,7 @@ public class JEIHarshenUniverse implements IModPlugin
 					ItemStack itemBeRepairedStack = new ItemStack(itemBeRepaired);
 					for(Item itemWillRepair : ForgeRegistries.ITEMS)
 					{
+						//TODO if(itemWillRepair.meta)
 						ItemStack itemWillRepairStack = new ItemStack(itemWillRepair);
 						if(itemBeRepaired.getIsRepairable(itemBeRepairedStack, itemWillRepairStack))
 						{
