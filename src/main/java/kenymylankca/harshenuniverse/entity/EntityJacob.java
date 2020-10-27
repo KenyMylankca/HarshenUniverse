@@ -1,10 +1,13 @@
 package kenymylankca.harshenuniverse.entity;
 
+import java.util.Random;
+
 import kenymylankca.harshenuniverse.HarshenItems;
 import kenymylankca.harshenuniverse.HarshenSounds;
+import kenymylankca.harshenuniverse.HarshenUniverse;
 import kenymylankca.harshenuniverse.HarshenUtils;
 import kenymylankca.harshenuniverse.damagesource.DamageSourceJacobDraining;
-import net.minecraft.client.Minecraft;
+import kenymylankca.harshenuniverse.enums.particle.EnumHarshenParticle;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -23,9 +26,9 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -57,7 +60,7 @@ public class EntityJacob extends EntityMob
 	{
 		this.tasks.addTask(1, new EntityAISwimming(this));
 		this.tasks.addTask(2, new EntityAIAttackMelee(this, 0.4d, true));
-		this.tasks.addTask(2, new EntityAIMoveTowardsTarget(this, 1.4d, 80));
+		this.tasks.addTask(2, new EntityAIMoveTowardsTarget(this, 1.5d, 80));
 		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 9.0F));
 		this.tasks.addTask(4, new EntityAIWanderAvoidWater(this, 1.0D));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
@@ -100,17 +103,16 @@ public class EntityJacob extends EntityMob
 			this.motionZ=0;
 			
 			EntityPlayer player = (EntityPlayer) this.getAttackTarget();
-			Vec3d vec3d = this.getLook(0);
 			
-			for(float i = 1; i<15; i++)
-				Minecraft.getMinecraft().world.spawnParticle(EnumParticleTypes.CRIT_MAGIC, false,
-						 (player.posX - i/2 * vec3d.x),
-						 (player.posY + 1D) + vec3d.y,
-						 (player.posZ - i/2 * vec3d.z),
-						 0.1D, 0.1D, 0.1D);
+			HarshenUtils.makeEntityLookAt(this, player.posX, player.posY, player.posZ);
+			
+			Vec3d vec = new Vec3d(player.getPosition()).addVector(randPos(), 1, randPos());
+			
+			for(int i=0; i<40; i++)
+			HarshenUniverse.commonProxy.spawnParticle(EnumHarshenParticle.BLOOD, vec, 
+					new Vec3d((posX + randPos() - vec.x) / 25D, (posY + 1.2 - vec.y) / 25D, (posZ + randPos() - vec.z) / 25D), 2f, false);
 			
 			if(!HarshenUtils.hasJaguarArmorSet(player))
-			{
 				if(drainingCounter % 10 == 0)
 				{
 					player.attackEntityFrom(new DamageSourceJacobDraining(), 1);
@@ -118,7 +120,6 @@ public class EntityJacob extends EntityMob
 						player.getFoodStats().setFoodLevel(player.getFoodStats().getFoodLevel() - 1);
 					this.heal(1);
 				}
-			}
 			
 			if(drainingCounter > drainDuration || player.getDistanceSqToCenter(this.getPosition()) > 60)
 			{
@@ -151,4 +152,9 @@ public class EntityJacob extends EntityMob
     protected SoundEvent getDeathSound() {
     	return HarshenSounds.JACOB_DEATH;
     }
+    
+    protected double randPos()
+	{
+		return MathHelper.clamp(new Random().nextDouble(), 0.1, 0.7);
+	}
 }
