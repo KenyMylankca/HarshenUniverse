@@ -92,7 +92,7 @@ public class EntityJacob extends EntityMob
 				this.world.playSound(null, this.getPosition(), HarshenSounds.JACOB_DRAINING, SoundCategory.NEUTRAL, 1F, this.rand.nextFloat() / 2 + 0.5F);
 			}
 		
-		if(draining)
+		if(draining && this.getAttackTarget() != null)
 		{
 			drainingCounter++;
 			this.motionX=0;
