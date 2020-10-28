@@ -32,8 +32,10 @@ import mezz.jei.api.IModRegistry;
 import mezz.jei.api.JEIPlugin;
 import mezz.jei.api.recipe.IRecipeCategoryRegistration;
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
@@ -111,27 +113,45 @@ public class JEIHarshenUniverse implements IModPlugin
 		if(Loader.isModLoaded("jei"))
 			if(GeneralConfig.repairableItemsJEIFeature)
 				for(Item itemBeRepaired : ForgeRegistries.ITEMS)
-				{
-					ItemStack itemBeRepairedStack = new ItemStack(itemBeRepaired);
 					for(Item itemWillRepair : ForgeRegistries.ITEMS)
 					{
-						//TODO if(itemWillRepair.meta)
+						ItemStack itemBeRepairedStack = new ItemStack(itemBeRepaired);
 						ItemStack itemWillRepairStack = new ItemStack(itemWillRepair);
-						if(itemBeRepaired.getIsRepairable(itemBeRepairedStack, itemWillRepairStack))
+						
+						if(itemWillRepair.getHasSubtypes())
 						{
-							itemBeRepairedStack.setItemDamage(itemBeRepaired.getMaxDamage() / 2);
-							ItemStack outputStack = new ItemStack(itemBeRepaired);
-							outputStack.setItemDamage(itemBeRepaired.getMaxDamage() / 4);
-							
-							List <ItemStack> rightInputList = new ArrayList <ItemStack> ();
-							List <ItemStack> outputList = new ArrayList <ItemStack> ();
-							rightInputList.add(itemWillRepairStack);
-							outputList.add(outputStack);
-							
-							registry.addAnvilRecipe(itemBeRepairedStack, rightInputList, outputList);
+							NonNullList <ItemStack> subItemsList = NonNullList.create();
+							itemWillRepair.getSubItems(CreativeTabs.SEARCH, subItemsList);
+							for(ItemStack subStack : subItemsList)
+								if(itemBeRepaired.getIsRepairable(itemBeRepairedStack, subStack))
+								{
+									itemWillRepairStack = subStack;
+									itemBeRepairedStack.setItemDamage(itemBeRepaired.getMaxDamage() / 2);
+									ItemStack outputStack = new ItemStack(itemBeRepaired);
+									outputStack.setItemDamage(itemBeRepaired.getMaxDamage() / 4);
+									
+									List <ItemStack> rightInputList = new ArrayList <ItemStack> ();
+									List <ItemStack> outputList = new ArrayList <ItemStack> ();
+									rightInputList.add(itemWillRepairStack);
+									outputList.add(outputStack);
+									
+									registry.addAnvilRecipe(itemBeRepairedStack, rightInputList, outputList);
+								}
 						}
+						else if(itemBeRepaired.getIsRepairable(itemBeRepairedStack, itemWillRepairStack))
+							{
+								itemBeRepairedStack.setItemDamage(itemBeRepaired.getMaxDamage() / 2);
+								ItemStack outputStack = new ItemStack(itemBeRepaired);
+								outputStack.setItemDamage(itemBeRepaired.getMaxDamage() / 4);
+								
+								List <ItemStack> rightInputList = new ArrayList <ItemStack> ();
+								List <ItemStack> outputList = new ArrayList <ItemStack> ();
+								rightInputList.add(itemWillRepairStack);
+								outputList.add(outputStack);
+								
+								registry.addAnvilRecipe(itemBeRepairedStack, rightInputList, outputList);
+							}
 					}
-				}
 	}
 	
 	private void info(String name, Item... items)
