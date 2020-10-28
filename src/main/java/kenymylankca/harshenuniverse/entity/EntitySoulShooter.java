@@ -87,7 +87,7 @@ public class EntitySoulShooter extends EntityMob implements IRangedAttackMob
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(32);
 		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(2d);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5d);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
 	}
 
     protected void initEntityAI()
