@@ -2,6 +2,7 @@ package kenymylankca.harshenuniverse.network.packets;
 
 import io.netty.buffer.ByteBuf;
 import kenymylankca.harshenuniverse.base.BaseMessagePacket;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
@@ -18,7 +19,7 @@ public class MessagePacketPlaySound extends BaseMessagePacket<MessagePacketPlayS
 	private String sound;
 	private NBTTagCompound nbt = new NBTTagCompound();
 	
-	public MessagePacketPlaySound(SoundEvent sound, float volume, float pitch, BlockPos pos)
+	public MessagePacketPlaySound(SoundEvent sound, float volume, float pitch, BlockPos pos, boolean stopMusics)
 	{
 		this.sound = sound.getRegistryName().toString();
 		this.nbt.setFloat("volume", volume);
@@ -26,6 +27,7 @@ public class MessagePacketPlaySound extends BaseMessagePacket<MessagePacketPlayS
 		this.nbt.setDouble("posX", pos.getX());
 		this.nbt.setDouble("posY", pos.getY());
 		this.nbt.setDouble("posZ", pos.getZ());
+		this.nbt.setBoolean("stopMusics", stopMusics);
 	}
 	
 	@Override
@@ -43,6 +45,8 @@ public class MessagePacketPlaySound extends BaseMessagePacket<MessagePacketPlayS
 	@Override
 	public void onReceived(MessagePacketPlaySound message, EntityPlayer player)
 	{
+		if(message.nbt.getBoolean("stopMusics"))
+			Minecraft.getMinecraft().getSoundHandler().stop("", SoundCategory.MUSIC);
 		SoundEvent soundEvent = new SoundEvent(new ResourceLocation(message.sound));
 		BlockPos pos = new BlockPos(message.nbt.getDouble("posX"), message.nbt.getDouble("posY"), message.nbt.getDouble("posZ"));
 		

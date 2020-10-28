@@ -71,7 +71,7 @@ public class HandlerServerNeedingHarshenEffects
 							if(event.player.getDistanceSq(castlePos) < 1000)
 								if(castleSoundTimer++ > 3320)
 								{
-									HarshenNetwork.sendToPlayer(event.player, new MessagePacketPlaySound(HarshenSounds.CASTLE_AMBIENT, 1f, 1f, castlePos));
+									HarshenNetwork.sendToPlayer(event.player, new MessagePacketPlaySound(HarshenSounds.CASTLE_AMBIENT, 1f, 1f, castlePos, true));
 									castleSoundTimer=0;
 								}
 						}
@@ -92,7 +92,7 @@ public class HandlerServerNeedingHarshenEffects
 							if(event.player.getDistanceSq(housePos) < 300)
 								if(houseSoundTimer++ > rand.nextInt(666) + 666)
 								{
-									HarshenNetwork.sendToPlayer(event.player, new MessagePacketPlaySound(HarshenSounds.HOUSE_ALIVE, rand.nextFloat(), rand.nextFloat()/2 + 0.666F, housePos));
+									HarshenNetwork.sendToPlayer(event.player, new MessagePacketPlaySound(HarshenSounds.HOUSE_ALIVE, rand.nextFloat(), rand.nextFloat()/2 + 0.666F, housePos, true));
 									houseSoundTimer=0;
 								}
 						}
@@ -100,7 +100,7 @@ public class HandlerServerNeedingHarshenEffects
 							if(event.player.getDistanceSq(housePos) < 300)
 								if(houseSoundTimer++ > rand.nextInt(666) + 666)
 								{
-									HarshenNetwork.sendToPlayer(event.player, new MessagePacketPlaySound(HarshenSounds.HOUSE_KILLED, rand.nextFloat()/2 + 0.3f, rand.nextFloat()/2 + 0.666F, housePos));
+									HarshenNetwork.sendToPlayer(event.player, new MessagePacketPlaySound(HarshenSounds.HOUSE_KILLED, rand.nextFloat()/2 + 0.3f, rand.nextFloat()/2 + 0.666F, housePos, true));
 									houseSoundTimer=0;
 								}
 					}
@@ -207,13 +207,13 @@ public class HandlerServerNeedingHarshenEffects
 			{
 				event.getSource().getTrueSource().attackEntityFrom(new DamageSourceReflectorPendant(), event.getAmount()/2f);
 				HarshenUtils.damageFirstOccuringItem(attackedPlayer, HarshenItems.REFLECTOR_PENDANT);
-				HarshenNetwork.sendToPlayer(attackedPlayer, new MessagePacketPlaySound(HarshenSounds.JAGUAR_DEFENSE, 0.6f, event.getEntityLiving().world.rand.nextFloat() / 2 + 2f, attackedPlayer.getPosition()));
+				HarshenNetwork.sendToPlayer(attackedPlayer, new MessagePacketPlaySound(HarshenSounds.JAGUAR_DEFENSE, 0.6f, event.getEntityLiving().world.rand.nextFloat() / 2 + 2f, attackedPlayer.getPosition(), false));
 			}
 			
 			if(HarshenUtils.hasAccessoryTimes(attackedPlayer, HarshenItems.SOUL_SHIELD) > 0 && !attackedPlayer.isCreative() && event.getEntityLiving().world.rand.nextFloat() < SoulShield.chance)
 			{
 				HarshenUtils.damageFirstOccuringItem(attackedPlayer, HarshenItems.SOUL_SHIELD, (int) event.getAmount() + 1);
-				HarshenNetwork.sendToPlayer(attackedPlayer, new MessagePacketPlaySound(HarshenSounds.JAGUAR_DEFENSE, 0.6f, event.getEntityLiving().world.rand.nextFloat() / 2 + 0.1f, attackedPlayer.getPosition()));
+				HarshenNetwork.sendToPlayer(attackedPlayer, new MessagePacketPlaySound(HarshenSounds.JAGUAR_DEFENSE, 0.6f, event.getEntityLiving().world.rand.nextFloat() / 2 + 0.1f, attackedPlayer.getPosition(), false));
 				event.setAmount(0);
 			}
 		}

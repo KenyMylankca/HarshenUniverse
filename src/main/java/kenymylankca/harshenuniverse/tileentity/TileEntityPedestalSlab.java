@@ -87,11 +87,11 @@ public class TileEntityPedestalSlab extends BaseTileEntityHarshenSingleItemInven
 							outputStack = ItemStack.EMPTY;
 							if(!world.isRemote)
 								for(EntityPlayer player : HarshenUtils.getPlayersInDistance(world, 20, pos, true))
-									HarshenNetwork.sendToPlayer(player, new MessagePacketPlaySound(SoundEvents.ENTITY_LIGHTNING_IMPACT, 1f + (1 - chance), 1, pos));
+									HarshenNetwork.sendToPlayer(player, new MessagePacketPlaySound(SoundEvents.ENTITY_LIGHTNING_IMPACT, 1f + (1 - chance), 1, pos, false));
 						}
 						else if(!world.isRemote)
 							for(EntityPlayer player : HarshenUtils.getPlayersInDistance(world, 20, pos, true))
-								HarshenNetwork.sendToPlayer(player, new MessagePacketPlaySound(HarshenSounds.RAPTOR_SCYTHE_HIT, 1, 1f - (1 - chance)/3, pos));
+								HarshenNetwork.sendToPlayer(player, new MessagePacketPlaySound(HarshenSounds.RAPTOR_SCYTHE_HIT, 1, 1f - (1 - chance)/3, pos, false));
 						
 						PedestalSlabRecipes EARecipe = new PedestalSlabRecipes(new HarshenStack(getItemStack()), outputStack);
 						workingRecipe = EARecipe;

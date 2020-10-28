@@ -32,7 +32,7 @@ public class HandlerBloodOnHurt
 					HarshenUtils.splashBlood(event.getEntityLiving().getPosition(), event.getEntityLiving().world, 1, 1);
 					if(!(event.getSource() instanceof DamageSourceBleeding))
 						for(EntityPlayer player : HarshenUtils.getPlayersInDistance(world, 10, event.getEntityLiving().getPosition(), true))
-							HarshenNetwork.sendToPlayer(player, new MessagePacketPlaySound(HarshenSounds.BLOOD_SPLASH, world.rand.nextFloat(), world.rand.nextFloat() + 0.5f, event.getEntityLiving().getPosition()));
+							HarshenNetwork.sendToPlayer(player, new MessagePacketPlaySound(HarshenSounds.BLOOD_SPLASH, world.rand.nextFloat(), world.rand.nextFloat() + 0.5f, event.getEntityLiving().getPosition(), false));
 				}
 	}
 }
