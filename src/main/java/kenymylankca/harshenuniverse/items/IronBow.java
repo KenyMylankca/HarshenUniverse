@@ -38,6 +38,11 @@ public class IronBow extends BaseHarshenBow
 	}
 	
 	@Override
+	public float getArrowVelocity() {
+		return 3.8f;
+	}
+	
+	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
 		if(player.getCooledAttackStrength(1) == 1)
 			player.playSound(HarshenSounds.IRON_HIT, 1f, 1.4f);

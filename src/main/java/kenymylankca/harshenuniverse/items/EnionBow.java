@@ -40,6 +40,11 @@ public class EnionBow extends BaseHarshenBow
 	}
 	
 	@Override
+	public float getArrowVelocity() {
+		return 4.4f;
+	}
+	
+	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
 		if(entity instanceof EntityLivingBase && player.getCooledAttackStrength(1) == 1)
 		{
