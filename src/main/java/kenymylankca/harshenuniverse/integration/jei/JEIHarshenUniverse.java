@@ -103,7 +103,6 @@ public class JEIHarshenUniverse implements IModPlugin
 		
 		info(HarshenBlocks.HERETIC_CAULDRON);
 		info(HarshenBlocks.BLOOD_VESSEL);
-		info(HarshenBlocks.HARSHEN_SOUL_FLOWER);
 		info(HarshenBlocks.BLOOD_BLOCK);
 		info(HarshenBlocks.JEWEL_DIRT, 0);
 		info(HarshenBlocks.BLOOD_PLACER);
