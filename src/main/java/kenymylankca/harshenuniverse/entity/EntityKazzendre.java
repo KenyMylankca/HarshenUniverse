@@ -21,6 +21,8 @@ import net.minecraft.world.World;
 
 public class EntityKazzendre extends EntityMob
 {
+	private static int brutalStabTimer = 0;
+	
 	public EntityKazzendre(World worldIn) {
 		super(worldIn);
 		
@@ -57,19 +59,23 @@ public class EntityKazzendre extends EntityMob
 	}
 	
 	@Override
+	public void onUpdate() {
+		if(brutalStabTimer < 300)
+			brutalStabTimer++;
+		super.onUpdate();
+	}
+	
+	@Override
 	public void onCollideWithPlayer(EntityPlayer entityIn)
 	{
 		if(this.isSwingInProgress)
-		{
-			if(this.rand.nextFloat() < 0.01 && !entityIn.isCreative() && !HarshenUtils.hasJaguarArmorSet(entityIn))
+			if(!entityIn.isCreative() && !HarshenUtils.hasJaguarArmorSet(entityIn) && brutalStabTimer == 300)
 			{
-				entityIn.attackEntityFrom(new DamageSource(this.getName().toLowerCase()), 8);
-				this.heal(12);
-				this.world.playSound(null, this.getPosition(), HarshenSounds.SOUL_HARSHER_SWORD_HIT, SoundCategory.MASTER, 1, (this.rand.nextFloat() + 1F)/2);
+				brutalStabTimer=0;
+				entityIn.attackEntityFrom(new DamageSource(this.getName().toLowerCase()), 15);
+				this.heal(14);
+				this.world.playSound(null, this.getPosition(), HarshenSounds.KAZZENDRE_HIT, SoundCategory.MASTER, 1, 1);
 			}
-			else
-				entityIn.playSound(HarshenSounds.KAZZENDRE_HIT, 1f, 1f);
-		}
 		super.onCollideWithPlayer(entityIn);
 	}
     
