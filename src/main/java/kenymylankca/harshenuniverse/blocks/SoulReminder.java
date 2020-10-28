@@ -24,7 +24,7 @@ public class SoulReminder extends Block
 	private World world;
 	private BlockPos pos;
 	private boolean isTicking;
-	private int disappearCounter;
+	private int disappearCounter = 180;
 	
 	public SoulReminder()
 	{
@@ -89,7 +89,6 @@ public class SoulReminder extends Block
 	@Override
 	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
 		worldIn.scheduleBlockUpdate(pos, this, 10, 3);
-		this.disappearCounter = 180;
 		super.onBlockAdded(worldIn, pos, state);
 	}
 	
