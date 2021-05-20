@@ -70,7 +70,7 @@ public class HarshenWorldGen implements IWorldGenerator
 				graveyardDelay = 0;
 			}
 			
-			blockGenerator(this.harshenSoulOreOverworld, world, random, chunkX, chunkZ, 6, 0, 20);
+			blockGenerator(this.harshenSoulOreOverworld, world, random, chunkX, chunkZ, 4, 0, 20);
 			plantGenerator(HarshenBlocks.HARSHEN_SOUL_FLOWER, world, random, chunkX, chunkZ, 0.1f, 60, 130, false);
 			plantGenerator(HarshenBlocks.PLANT_OF_GLEAM, world, random, chunkX, chunkZ, 0.1f, 111, 255, true);
 			plantGenerator(HarshenBlocks.AKZENIA_MUSHROOM, world, random, chunkX, chunkZ, 0.1f, 0, 120, true);
