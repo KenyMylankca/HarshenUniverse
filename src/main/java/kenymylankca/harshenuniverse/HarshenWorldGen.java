@@ -34,8 +34,8 @@ public class HarshenWorldGen implements IWorldGenerator
     private final WorldGenerator pontusEmeraldOre = new PontusWorldGeneratorPontusEmeraldOre();
     private final WorldGenerator pontusJewelDirt = new JewelDirtGenPontus();
     
-    public static final int [] castleChunks = {23, 25};
-    public static final int [] graveyardChunks = {17, -15};
+    public static final int [] castleChunks = {33, 35};
+    public static final int [] graveyardChunks = {27, -25};
     public static final int [] houseChunks = {40, 42};
     
     public static int castleDelay = 0;
