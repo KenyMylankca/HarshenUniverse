@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="All rights reserved"
+[[mods]]
+modId="harshenuniverse"
+version="2.0.0"
+displayName="Harshen Universe"
+logoFile="harshenuniverse.png"
+credits="KenyMylankca, Wyn Price, Zetko"
+authors="KenyMylankca"
+description='''
+Rituals&souls&blood, big structures with powerful bosses&mobs&traps, armors&tools&accessories, new dimensions and more
+
+'''
+[[dependencies.harshenuniverse]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.harshenuniverse]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"

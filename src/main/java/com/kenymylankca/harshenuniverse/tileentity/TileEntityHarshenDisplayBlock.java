@@ -1,0 +1,7 @@
+package com.kenymylankca.harshenuniverse.tileentity;
+
+import kenymylankca.harshenuniverse.base.BaseTileEntityHarshenSingleItemInventory;
+
+public class TileEntityHarshenDisplayBlock extends BaseTileEntityHarshenSingleItemInventory
+{
+}
