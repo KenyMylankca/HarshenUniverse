@@ -10,6 +10,8 @@ import net.minecraftforge.fml.common.Mod;
 public class HarshenUniverse
 {
 	public static final String MOD_ID = "harshenuniverse";
+	public static final String MOD_NAME = "Harshen Universe";
+	public static final String VERSION = "2.0.0";
 	public static final CreativeModeTab HarshenTab = new HarshenTab();
 	public HarshenUniverse()
 	{
@@ -25,16 +27,9 @@ public class HarshenUniverse
 
 
 
-
-
 /*
 
-
-
 @Mod(
-		modid = HarshenUniverse.MODID,
-		name = HarshenUniverse.MODNAME,
-		version = HarshenUniverse.VERSION,
 		useMetadata = true,
 		acceptedMinecraftVersions = "[1.12.2]",
 		dependencies = "required-after:forge@[14.23.5.2847,)")

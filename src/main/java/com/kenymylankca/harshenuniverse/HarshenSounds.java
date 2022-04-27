@@ -3,6 +3,7 @@ package com.kenymylankca.harshenuniverse;
 import java.util.ArrayList;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class HarshenSounds {
@@ -90,7 +91,7 @@ public class HarshenSounds {
 		ArrayList<SoundEvent> fin = new ArrayList<SoundEvent>();
 		for(String name : names)
 		{
-			ResourceLocation loc = new ResourceLocation(HarshenUniverse.MODID, name);
+			ResourceLocation loc = new ResourceLocation(HarshenUniverse.MOD_ID, name);
 			ForgeRegistries.SOUND_EVENTS.register(new SoundEvent(loc).setRegistryName(loc));
 			fin.add(ForgeRegistries.SOUND_EVENTS.getValue(loc));
 		}
@@ -99,7 +100,7 @@ public class HarshenSounds {
 	
 	private static SoundEvent reg(String name)
 	{
-		ResourceLocation loc = new ResourceLocation(HarshenUniverse.MODID, name);
+		ResourceLocation loc = new ResourceLocation(HarshenUniverse.MOD_ID, name);
 		ForgeRegistries.SOUND_EVENTS.register(new SoundEvent(loc).setRegistryName(loc));
 		return ForgeRegistries.SOUND_EVENTS.getValue(loc);
 	}
