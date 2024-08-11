@@ -1,7 +1,0 @@
-{
-    "parent": "block/door_top_rh",
-    "textures": {
-        "bottom": "harshenuniverse:blocks/harshen_dimensional_door_lower",
-        "top": "harshenuniverse:blocks/harshen_dimensional_door_upper"
-    }
-}

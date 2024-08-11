@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "harshenuniverse:heretic_cauldron" },
-        "facing=south": { "model": "harshenuniverse:heretic_cauldron", "y": 180 },
-        "facing=west":  { "model": "harshenuniverse:heretic_cauldron", "y": 270 },
-        "facing=east":  { "model": "harshenuniverse:heretic_cauldron", "y": 90 }
-    }
-}

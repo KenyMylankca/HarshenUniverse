@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "powered=true": { "model": "harshenuniverse:blank_model" },
-        "powered=false": { "model": "harshenuniverse:blank_model" }
-    }
-}

@@ -1,6 +1,0 @@
-{
-    "parent": "item/handheld",
-    "textures": {
-        "layer0": "harshenuniverse:items/harshen_dimensional_door"
-    }
-}

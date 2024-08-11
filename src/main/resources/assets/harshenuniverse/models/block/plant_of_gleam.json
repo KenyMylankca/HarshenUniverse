@@ -1,6 +1,0 @@
-{
-    "parent": "block/cross",
-    "textures": {
-        "cross": "harshenuniverse:blocks/plant_of_gleam"
-    }
-}

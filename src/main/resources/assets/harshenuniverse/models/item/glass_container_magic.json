@@ -1,7 +1,0 @@
-{
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "harshenuniverse:items/glass_container_magic",
-		"layer1": "harshenuniverse:items/glass_container"
-    }
-}
