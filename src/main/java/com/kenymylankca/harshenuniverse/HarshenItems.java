@@ -10,7 +10,7 @@ public class HarshenItems
 {
     public static final DeferredRegister.Items HARSHEN_ITEMS = DeferredRegister.createItems(HarshenUniverse.MOD_ID);
 
-    public static final DeferredItem<Item> AKZENIA_SOUP = HARSHEN_ITEMS.register("akzenia_soup", AkzeniaSoup::new);
+    public static final DeferredItem<Item> AKZENIA_SOUP = HARSHEN_ITEMS.register(AkzeniaSoup.registryName, AkzeniaSoup::new);
 
     public static void register(IEventBus eventBus)
     {
