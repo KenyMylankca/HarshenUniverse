@@ -1,6 +1,8 @@
 package com.kenymylankca.harshenuniverse;
 
+import com.kenymylankca.harshenuniverse.item.HarshenItems;
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -27,6 +29,8 @@ public class HarshenUniverse
 
         NeoForge.EVENT_BUS.register(this);
 
+        HarshenItems.register(modEventBus);
+
         modEventBus.addListener(this::addCreative);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -39,7 +43,8 @@ public class HarshenUniverse
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS)
+            event.accept(HarshenItems.AKZENIA_SOUP);
     }
 
     @SubscribeEvent
