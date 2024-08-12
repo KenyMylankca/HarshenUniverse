@@ -1,6 +1,5 @@
 package com.kenymylankca.harshenuniverse;
 
-import com.kenymylankca.harshenuniverse.item.HarshenItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.api.distmarker.Dist;
@@ -33,7 +32,7 @@ public class HarshenUniverse
 
         modEventBus.addListener(this::addCreative);
 
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        modContainer.registerConfig(ModConfig.Type.COMMON, HarshenConfig.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

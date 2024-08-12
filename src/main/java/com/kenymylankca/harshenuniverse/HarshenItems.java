@@ -1,6 +1,5 @@
-package com.kenymylankca.harshenuniverse.item;
+package com.kenymylankca.harshenuniverse;
 
-import com.kenymylankca.harshenuniverse.HarshenUniverse;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
