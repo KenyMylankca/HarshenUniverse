@@ -16,10 +16,11 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
 
-@Mod(HarshenUniverse.MODID)
+@Mod(HarshenUniverse.MOD_ID)
 public class HarshenUniverse
 {
-    public static final String MODID = "harshenuniverse";
+    public static final String MOD_ID = "harshenuniverse";
+    public static final String MOD_NAME = "Harshen Universe";
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public HarshenUniverse(IEventBus modEventBus, ModContainer modContainer)
@@ -42,7 +43,7 @@ public class HarshenUniverse
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS)
+        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS)
             event.accept(HarshenItems.AKZENIA_SOUP);
     }
 
@@ -52,7 +53,7 @@ public class HarshenUniverse
 
     }
 
-    @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
     {
         @SubscribeEvent
