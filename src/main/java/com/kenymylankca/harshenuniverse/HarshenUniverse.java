@@ -1,7 +1,6 @@
 package com.kenymylankca.harshenuniverse;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -12,7 +11,6 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
 
@@ -30,8 +28,7 @@ public class HarshenUniverse
         NeoForge.EVENT_BUS.register(this);
 
         HarshenItems.register(modEventBus);
-
-        modEventBus.addListener(this::addCreative);
+        HarshenCreativeTab.HARSHEN_CREATIVE_TABS.register(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, HarshenConfig.SPEC);
     }
@@ -39,12 +36,6 @@ public class HarshenUniverse
     private void commonSetup(final FMLCommonSetupEvent event)
     {
 
-    }
-
-    private void addCreative(BuildCreativeModeTabContentsEvent event)
-    {
-        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS)
-            event.accept(HarshenItems.AKZENIA_SOUP);
     }
 
     @SubscribeEvent
