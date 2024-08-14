@@ -28,6 +28,7 @@ public class HarshenUniverse
         NeoForge.EVENT_BUS.register(this);
 
         HarshenItems.register(modEventBus);
+        HarshenBlocks.register(modEventBus);
         HarshenCreativeTab.HARSHEN_CREATIVE_TABS.register(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, HarshenConfig.SPEC);

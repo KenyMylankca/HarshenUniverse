@@ -9,6 +9,7 @@ import net.minecraft.world.item.Rarity;
 public class AkzeniaSoup extends Item
 {
     public static final String registryName = "akzenia_soup";
+
     public AkzeniaSoup() {
         super(new Item.Properties().food(new FoodProperties.Builder()
                 .alwaysEdible()

@@ -23,9 +23,7 @@ public class HarshenCreativeTab
             //Add your items to the tab.
             .displayItems((params, output) -> {
                 for(DeferredHolder<Item, ? extends Item> item : HarshenItems.HARSHEN_ITEMS.getEntries())
-                {
                     output.accept(item.get());
-                }
             })
             .backgroundTexture(ResourceLocation.parse("textures/gui/creativetab/harshen_tab.png"))
             .withSearchBar(57)

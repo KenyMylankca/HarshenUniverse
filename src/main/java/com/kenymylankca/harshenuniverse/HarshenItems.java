@@ -1,7 +1,10 @@
 package com.kenymylankca.harshenuniverse;
 
+import com.kenymylankca.harshenuniverse.blocks.AkzeniaMushroom;
 import com.kenymylankca.harshenuniverse.items.AkzeniaSoup;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -10,7 +13,12 @@ public class HarshenItems
 {
     public static final DeferredRegister.Items HARSHEN_ITEMS = DeferredRegister.createItems(HarshenUniverse.MOD_ID);
 
+    //ITEMS
     public static final DeferredItem<Item> AKZENIA_SOUP = HARSHEN_ITEMS.register(AkzeniaSoup.registryName, AkzeniaSoup::new);
+
+    //BLOCKS
+    public static final DeferredItem<BlockItem> AKZENIA_MUSHROOM =
+            HARSHEN_ITEMS.register(AkzeniaMushroom.registryName, () -> new BlockItem(HarshenBlocks.AKZENIA_MUSHROOM.get(), new Item.Properties().rarity(Rarity.EPIC)));
 
     public static void register(IEventBus eventBus)
     {
