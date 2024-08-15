@@ -1,10 +1,17 @@
 package com.kenymylankca.harshenuniverse.items;
 
+import com.kenymylankca.harshenuniverse.HarshenUniverse;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.TooltipFlag;
+
+import java.util.List;
 
 public class AkzeniaSoup extends Item
 {
@@ -18,5 +25,11 @@ public class AkzeniaSoup extends Item
                 .effect(() -> new MobEffectInstance((MobEffects.DAMAGE_RESISTANCE), 1200, 1), 1F)
                 .build()).rarity(Rarity.EPIC)
         );
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        tooltipComponents.add(Component.translatable("tooltip." + HarshenUniverse.MOD_ID + ".akzenia_soup").withStyle(ChatFormatting.DARK_PURPLE).withStyle(ChatFormatting.ITALIC));
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 }
