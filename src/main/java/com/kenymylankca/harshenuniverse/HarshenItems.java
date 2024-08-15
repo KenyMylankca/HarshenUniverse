@@ -1,6 +1,7 @@
 package com.kenymylankca.harshenuniverse;
 
 import com.kenymylankca.harshenuniverse.blocks.AkzeniaMushroom;
+import com.kenymylankca.harshenuniverse.blocks.Archive;
 import com.kenymylankca.harshenuniverse.items.AkzeniaSoup;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -19,6 +20,8 @@ public class HarshenItems
     //BLOCKS
     public static final DeferredItem<BlockItem> AKZENIA_MUSHROOM =
             HARSHEN_ITEMS.register(AkzeniaMushroom.registryName, () -> new BlockItem(HarshenBlocks.AKZENIA_MUSHROOM.get(), new Item.Properties().rarity(Rarity.EPIC)));
+    public static final DeferredItem<BlockItem> ARCHIVE =
+            HARSHEN_ITEMS.register(Archive.registryName, () -> new BlockItem(HarshenBlocks.ARCHIVE.get(), new Item.Properties().rarity(Rarity.COMMON)));
 
     public static void register(IEventBus eventBus)
     {
