@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
+  "group": "harshen_items",
   "ingredients": [
     {
       "item": "harshenuniverse:akzenia_mushroom"

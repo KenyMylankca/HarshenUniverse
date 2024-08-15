@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "harshen_items",
+  "ingredients": [
+    {
+	  "item": "minecraft:wither_skeleton_skull"
+    },
+	{
+	  "item": "minecraft:skeleton_skull"
+    },
+	{
+      "item": "minecraft:zombie_head"
+    },
+	{
+      "item": "minecraft:skeleton_skull"
+    },
+	{
+	  "item": "minecraft:creeper_head"
+    },
+	{
+	  "item": "minecraft:zombie_head"
+    },
+	{
+      "item": "minecraft:creeper_head"
+    },
+	{
+      "item": "minecraft:wither_skeleton_skull"
+    },
+	{
+      "item": "minecraft:string"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "harshenuniverse:block_of_heads"
+  }
+}

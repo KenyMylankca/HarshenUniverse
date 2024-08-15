@@ -1,8 +1,15 @@
 {
   "harshenuniverse": "Harshen Universe",
+
+  //ITEMS
   "item.harshenuniverse.akzenia_soup": "Akzenia Soup",
+
+  //BLOCKS
   "block.harshenuniverse.akzenia_mushroom": "Akzenia Mushroom",
   "block.harshenuniverse.archive": "Archive",
+  "block.harshenuniverse.block_of_heads": "Block of Heads",
+
+  //TOOLTIPS
   "tooltip.harshenuniverse.archive": "Need to be organized.",
   "tooltip.harshenuniverse.akzenia_soup": "It was one of favorites of the old battle wizards"
 }
