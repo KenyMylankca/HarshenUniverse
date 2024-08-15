@@ -1,7 +1,5 @@
 package com.kenymylankca.harshenuniverse;
 
-import com.kenymylankca.harshenuniverse.worldgen.HarshenBiomeFeatures;
-import com.kenymylankca.harshenuniverse.worldgen.HarshenBiomeModifiers;
 import com.mojang.logging.LogUtils;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -32,8 +30,6 @@ public class HarshenUniverse
         HarshenItems.register(modEventBus);
         HarshenBlocks.register(modEventBus);
         HarshenCreativeTab.HARSHEN_CREATIVE_TABS.register(modEventBus);
-        HarshenBiomeFeatures.register(modEventBus);
-        HarshenBiomeModifiers.register(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, HarshenConfig.SPEC);
     }

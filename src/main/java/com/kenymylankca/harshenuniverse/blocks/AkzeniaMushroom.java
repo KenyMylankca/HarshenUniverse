@@ -1,6 +1,7 @@
 package com.kenymylankca.harshenuniverse.blocks;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -8,13 +9,14 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SnowyDirtBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
-import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -35,7 +37,6 @@ public class AkzeniaMushroom extends Block
                 .strength(1, 2)
                 .replaceable()
                 .lightLevel(state -> 4)
-                .pushReaction(PushReaction.DESTROY)
         );
     }
 
@@ -45,8 +46,15 @@ public class AkzeniaMushroom extends Block
     }
 
     @Override
+    protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+        if (!(level.getBlockState(pos.below()).getBlock() instanceof SnowyDirtBlock))
+            level.destroyBlock(pos, true);
+        return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+    }
+
+    @Override
     protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        Vec3 vec3 = new Vec3(0.9, 0.9, 0.9);
+        Vec3 vec3 = new Vec3(0.95, 0.95, 0.95);
         entity.makeStuckInBlock(state, vec3);
         level.addParticle(ParticleTypes.PORTAL, false,
                 pos.getX() + RandomSource.create().nextFloat(),
@@ -96,6 +104,6 @@ public class AkzeniaMushroom extends Block
     @Override
     protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos)
     {
-        return level.getBlockState(pos.below()).isCollisionShapeFullBlock(level, pos);
+        return level.getBlockState(pos.below()).getBlock() instanceof SnowyDirtBlock;
     }
 }

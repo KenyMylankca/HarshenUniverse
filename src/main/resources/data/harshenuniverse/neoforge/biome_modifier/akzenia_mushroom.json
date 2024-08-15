@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_forest",
+  "features": "harshenuniverse:akzenia_mushroom",
+  "step": "vegetal_decoration"
+}
