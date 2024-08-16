@@ -3,6 +3,7 @@ package com.kenymylankca.harshenuniverse;
 import com.kenymylankca.harshenuniverse.blocks.AkzeniaMushroom;
 import com.kenymylankca.harshenuniverse.blocks.Archive;
 import com.kenymylankca.harshenuniverse.blocks.BlockOfHeads;
+import com.kenymylankca.harshenuniverse.blocks.Blood;
 import com.kenymylankca.harshenuniverse.items.AkzeniaSoup;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -25,6 +26,8 @@ public class HarshenItems
             HARSHEN_ITEMS.register(Archive.registryName, () -> new BlockItem(HarshenBlocks.ARCHIVE.get(), new Item.Properties().rarity(Rarity.COMMON)));
     public static final DeferredItem<BlockItem> BLOCK_OF_HEADS =
             HARSHEN_ITEMS.register(BlockOfHeads.registryName, () -> new BlockItem(HarshenBlocks.BLOCK_OF_HEADS.get(), new Item.Properties().rarity(Rarity.COMMON)));
+    public static final DeferredItem<BlockItem> BLOOD =
+            HARSHEN_ITEMS.register(Blood.registryName, () -> new BlockItem(HarshenBlocks.BLOOD.get(), new Item.Properties().rarity(Rarity.COMMON)));
 
     public static void register(IEventBus eventBus)
     {

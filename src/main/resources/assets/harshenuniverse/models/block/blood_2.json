@@ -1,0 +1,18 @@
+{
+    "textures": {
+        "blood": "harshenuniverse:block/blood_2",
+        "particle": "harshenuniverse:block/blood_2"
+    },
+    "render_type": "minecraft:cutout",
+    "elements": [
+        {
+            "name": "Cube",
+            "from": [ 0.0, 0.0, 0.0 ], 
+            "to": [ 16.0, 0.1, 16.0 ], 
+            "faces": {
+                "up": { "texture": "#blood", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "cullface": "up" },
+                "down": { "texture": "#blood", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "cullface": "down" }
+            }
+        }
+    ]
+}

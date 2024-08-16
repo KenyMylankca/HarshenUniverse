@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "": [
+          { "model": "harshenuniverse:block/blood_1" },
+          { "model": "harshenuniverse:block/blood_2" },
+          { "model": "harshenuniverse:block/blood_3" },
+          { "model": "harshenuniverse:block/blood_4" },
+          { "model": "harshenuniverse:block/blood_5" }
+        ]
+    }
+}
