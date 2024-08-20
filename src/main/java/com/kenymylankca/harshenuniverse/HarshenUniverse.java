@@ -1,6 +1,9 @@
 package com.kenymylankca.harshenuniverse;
 
+import org.slf4j.Logger;
+
 import com.mojang.logging.LogUtils;
+
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -12,7 +15,6 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import org.slf4j.Logger;
 
 @Mod(HarshenUniverse.MOD_ID)
 public class HarshenUniverse
@@ -27,10 +29,11 @@ public class HarshenUniverse
 
         NeoForge.EVENT_BUS.register(this);
 
+        HarshenCreativeTab.HARSHEN_CREATIVE_TABS.register(modEventBus);
         HarshenItems.register(modEventBus);
         HarshenBlocks.register(modEventBus);
-        HarshenCreativeTab.HARSHEN_CREATIVE_TABS.register(modEventBus);
-
+        HarshenSounds.HARSHEN_SOUND_EVENTS.register(modEventBus);
+        
         modContainer.registerConfig(ModConfig.Type.COMMON, HarshenConfig.SPEC);
     }
 
