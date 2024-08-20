@@ -2,6 +2,7 @@ package com.kenymylankca.harshenuniverse;
 
 import org.slf4j.Logger;
 
+import com.kenymylankca.harshenuniverse.handlers.BloodHandler;
 import com.mojang.logging.LogUtils;
 
 import net.neoforged.api.distmarker.Dist;
@@ -28,6 +29,8 @@ public class HarshenUniverse
         modEventBus.addListener(this::commonSetup);
 
         NeoForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.addListener(BloodHandler::onLivingHurt);
+        NeoForge.EVENT_BUS.addListener(BloodHandler::onLivingDeath);
 
         HarshenCreativeTab.HARSHEN_CREATIVE_TABS.register(modEventBus);
         HarshenItems.register(modEventBus);

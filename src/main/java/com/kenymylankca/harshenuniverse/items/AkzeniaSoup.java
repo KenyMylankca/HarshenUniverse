@@ -1,6 +1,9 @@
 package com.kenymylankca.harshenuniverse.items;
 
+import java.util.List;
+
 import com.kenymylankca.harshenuniverse.HarshenUniverse;
+
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -10,8 +13,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
-
-import java.util.List;
 
 public class AkzeniaSoup extends Item
 {
